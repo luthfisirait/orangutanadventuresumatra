@@ -380,14 +380,13 @@ export function HomeContent({
           <h2>{t.headings.packagesSub}</h2>
         </div>
 
-        <div className="category-tabs" role="tablist" aria-label="Trek categories">
+        <div className="category-tabs" role="group" aria-label="Trek categories">
           {trekCategoryIds.map((category) => (
             <button
               key={category}
               className={activeCategory === category ? "active" : ""}
               type="button"
-              role="tab"
-              aria-selected={activeCategory === category}
+              aria-pressed={activeCategory === category}
               onClick={() => setActiveCategory(category)}
             >
               {t.categories[category]}
