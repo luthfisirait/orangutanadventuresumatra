@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { locales, siteText, type Locale } from "./site-content";
 
 export const siteName = "OrangutanAdventureSumatra";
-export const siteUrl = "https://www.orangutanadventuresumatra.com";
+export const siteUrl = "https://orangutanadventuresumatra.com";
 export const defaultLocale: Locale = "en";
 
 export const localeLabels: Record<Locale, string> = {

@@ -4,6 +4,12 @@ export type Locale = (typeof locales)[number];
 export type TrekId = "4h" | "1d" | "2d" | "3d" | "4d" | "5d" | "p3d" | "p4d" | "p5d" | "batcave" | "village";
 export type GuideId = "syaipul";
 
+const stockImage = (group: "wildlife" | "activity", index: number) =>
+  `/images/stock/${group}-${String(index).padStart(2, "0")}.webp`;
+
+const wildlifeImage = (index: number) => stockImage("wildlife", index);
+const activityImage = (index: number) => stockImage("activity", index);
+
 export const localeNames: Record<Locale, string> = {
   en: "English",
   de: "Deutsch",
@@ -19,30 +25,36 @@ export const trekBase: Array<{
   price: string;
   image: string;
 }> = [
-  { id: "4h", category: "classic", duration: "4 hours", intensity: "Low", price: "55 EUR pp", image: "/images/guide.webp" },
-  { id: "1d", category: "classic", duration: "7-8 hours", intensity: "Medium", price: "70 EUR pp", image: "/images/trekking-group.webp" },
-  { id: "2d", category: "classic", duration: "2 days / 1 night", intensity: "Medium", price: "120 EUR pp", image: "/images/campsite.webp" },
-  { id: "3d", category: "classic", duration: "3 days / 2 nights", intensity: "Medium / High", price: "170 EUR pp", image: "/images/orangutan-tree.webp" },
-  { id: "4d", category: "classic", duration: "4 days / 3 nights", intensity: "High", price: "250 EUR pp", image: "/images/river.webp" },
-  { id: "5d", category: "classic", duration: "5 days / 4 nights", intensity: "High", price: "320 EUR pp", image: "/images/food.webp" },
-  { id: "p3d", category: "private", duration: "3 days / 2 nights", intensity: "Medium", price: "280 EUR pp", image: "/images/rafting.webp" },
-  { id: "p4d", category: "private", duration: "4 days / 3 nights", intensity: "Medium / High", price: "335 EUR pp", image: "/images/river.webp" },
-  { id: "p5d", category: "private", duration: "5 days / 4 nights", intensity: "Medium / High", price: "385 EUR pp", image: "/images/orangutan-tree.webp" },
-  { id: "batcave", category: "activities", duration: "Half day", intensity: "Cave walk", price: "20 EUR pp", image: "/images/guide.webp" },
-  { id: "village", category: "activities", duration: "Half day", intensity: "Becak or bicycle", price: "25 EUR pp", image: "/images/trekking-group.webp" }
+  { id: "4h", category: "classic", duration: "4 hours", intensity: "Low", price: "55 EUR pp", image: activityImage(4) },
+  { id: "1d", category: "classic", duration: "7-8 hours", intensity: "Medium", price: "70 EUR pp", image: activityImage(2) },
+  { id: "2d", category: "classic", duration: "2 days / 1 night", intensity: "Medium", price: "120 EUR pp", image: activityImage(3) },
+  { id: "3d", category: "classic", duration: "3 days / 2 nights", intensity: "Medium / High", price: "170 EUR pp", image: activityImage(7) },
+  { id: "4d", category: "classic", duration: "4 days / 3 nights", intensity: "High", price: "250 EUR pp", image: activityImage(11) },
+  { id: "5d", category: "classic", duration: "5 days / 4 nights", intensity: "High", price: "320 EUR pp", image: activityImage(13) },
+  { id: "p3d", category: "private", duration: "3 days / 2 nights", intensity: "Medium", price: "280 EUR pp", image: activityImage(1) },
+  { id: "p4d", category: "private", duration: "4 days / 3 nights", intensity: "Medium / High", price: "335 EUR pp", image: activityImage(9) },
+  { id: "p5d", category: "private", duration: "5 days / 4 nights", intensity: "Medium / High", price: "385 EUR pp", image: activityImage(8) },
+  { id: "batcave", category: "activities", duration: "Half day", intensity: "Cave walk", price: "20 EUR pp", image: activityImage(15) },
+  { id: "village", category: "activities", duration: "Half day", intensity: "Becak or bicycle", price: "25 EUR pp", image: activityImage(5) }
 ];
 
 export const guideBase: Array<{ id: GuideId; image: string; fallbackImage?: string }> = [
-  { id: "syaipul", image: "/images/syaipul-ardiansyah.jpeg", fallbackImage: "/images/guide.webp" }
+  { id: "syaipul", image: "/images/guide-syaipul.webp", fallbackImage: activityImage(6) }
 ];
 
 export const galleryItems = [
-  { src: "/images/hero-orangutan.webp", alt: "Orangutan on a Bukit Lawang rainforest trail" },
-  { src: "/images/trekking-group.webp", alt: "Trekking group in Bukit Lawang jungle" },
-  { src: "/images/rafting.webp", alt: "River crossing during a Bukit Lawang jungle trek" },
-  { src: "/images/food.webp", alt: "Rainforest plants and small wildlife in Bukit Lawang" },
-  { src: "/images/river.webp", alt: "Clear river crossing beside the rainforest" },
-  { src: "/images/orangutan-tree.webp", alt: "Orangutan hanging in the rainforest canopy" }
+  { src: wildlifeImage(2), alt: "Orangutan peeking through the Bukit Lawang canopy" },
+  { src: wildlifeImage(1), alt: "Leaf monkey in the rainforest canopy" },
+  { src: wildlifeImage(3), alt: "Orangutan moving through the upper canopy" },
+  { src: wildlifeImage(6), alt: "Leaf monkey resting among the trees" },
+  { src: wildlifeImage(9), alt: "Two orangutans hanging in the rainforest canopy" },
+  { src: wildlifeImage(7), alt: "Orangutan on a tree trunk" },
+  { src: wildlifeImage(8), alt: "Close-up orangutan portrait in Bukit Lawang" },
+  { src: wildlifeImage(11), alt: "Young orangutan peeking from behind a trunk" },
+  { src: wildlifeImage(12), alt: "Two leaf monkeys on rainforest branches" },
+  { src: wildlifeImage(13), alt: "Orangutan with long orange fur in the canopy" },
+  { src: wildlifeImage(15), alt: "Baby orangutan in the trees" },
+  { src: wildlifeImage(4), alt: "Orangutan hidden in dense rainforest foliage" }
 ];
 
 export const siteText = {
@@ -93,7 +105,7 @@ export const siteText = {
       ethics: "Responsible trekking",
       ethicsSubTitle: "The best orangutan encounter is still a wild one.",
       gallery: "Gallery",
-      gallerySub: "Rainforest wildlife, river crossings, trekking groups, and the moments in between.",
+      gallerySub: "Endemic wildlife, orangutans in the canopy, leaf monkeys, and quiet rainforest moments.",
       guides: "Your local guide",
       guidesSub: "Meet Syaipul Ardiansyah, born in Bukit Lawang and guiding rainforest treks since 2015.",
       faq: "FAQ",
@@ -205,7 +217,7 @@ export const siteText = {
       ethics: "Verantwortungsvolles Trekking",
       ethicsSubTitle: "Die beste Orang-Utan-Begegnung bleibt immer eine wilde.",
       gallery: "Galerie",
-      gallerySub: "Wildtiere, Flussquerungen, Trekkinggruppen und die Momente dazwischen.",
+      gallerySub: "Endemische Wildtiere, Orang-Utans im Blätterdach, Blattaffen und ruhige Regenwaldmomente.",
       guides: "Dein lokaler Guide",
       guidesSub: "Lerne Syaipul Ardiansyah kennen, geboren in Bukit Lawang und seit 2015 als Regenwald-Guide unterwegs.",
       faq: "FAQ",
@@ -317,7 +329,7 @@ export const siteText = {
       ethics: "Trekking responsable",
       ethicsSubTitle: "La plus belle rencontre avec un orang-outan reste sauvage.",
       gallery: "Galerie",
-      gallerySub: "Faune de la forêt, traversées de rivière, groupes de trek et instants entre les deux.",
+      gallerySub: "Faune endémique, orangs-outans dans la canopée, singes à feuilles et moments calmes de la forêt.",
       guides: "Ton guide local",
       guidesSub: "Découvre Syaipul Ardiansyah, né à Bukit Lawang et guide en forêt tropicale depuis 2015.",
       faq: "FAQ",
@@ -429,7 +441,7 @@ export const siteText = {
       ethics: "Verantwoord trekking",
       ethicsSubTitle: "De mooiste orang-oetan ontmoeting blijft wild.",
       gallery: "Galerij",
-      gallerySub: "Wildlife, rivieroversteken, trekkinggroepen en de momenten daartussen.",
+      gallerySub: "Inheemse wilde dieren, orang-oetans in het bladerdak, bladapen en rustige momenten in het regenwoud.",
       guides: "Je lokale gids",
       guidesSub: "Maak kennis met Syaipul Ardiansyah, geboren in Bukit Lawang en junglegids sinds 2015.",
       faq: "FAQ",

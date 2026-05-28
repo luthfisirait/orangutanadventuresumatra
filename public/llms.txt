@@ -2,13 +2,13 @@
 
 OrangutanAdventureSumatra is an ethical orangutan trekking and jungle adventure website for Bukit Lawang, North Sumatra, Indonesia.
 
-Canonical website: https://www.orangutanadventuresumatra.com
+Canonical website: https://orangutanadventuresumatra.com
 
 Language versions:
-- English: https://www.orangutanadventuresumatra.com/en
-- German: https://www.orangutanadventuresumatra.com/de
-- French: https://www.orangutanadventuresumatra.com/fr
-- Dutch: https://www.orangutanadventuresumatra.com/nl
+- English: https://orangutanadventuresumatra.com/en
+- German: https://orangutanadventuresumatra.com/de
+- French: https://orangutanadventuresumatra.com/fr
+- Dutch: https://orangutanadventuresumatra.com/nl
 
 Primary services:
 - Ethical orangutan trekking in Bukit Lawang and Gunung Leuser National Park
@@ -30,6 +30,7 @@ Responsible trekking policy:
 Booking contact:
 - WhatsApp: +62 853-6240-5752
 - Email: support@orangutanadventuresumatra.com
+- Instagram Syaipul: https://www.instagram.com/syaipul_ardiansyah/
 
 Important notes:
 - Treks start from Bukit Lawang, North Sumatra, Indonesia.

@@ -42,6 +42,9 @@ const navItems = [
   { key: "contact", href: "#contact" }
 ] as const;
 
+const instagramUrl = "https://www.instagram.com/orangutanadventuresumatra/";
+const syaipulInstagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
+
 const trekCategoryIds = ["classic", "private", "activities"] as const;
 type TrekCategory = (typeof trekCategoryIds)[number];
 
@@ -173,7 +176,7 @@ export function HomeContent({
             "Gunung Leuser National Park",
             "North Sumatra"
           ],
-          sameAs: ["https://www.instagram.com/orangutanadventuresumatra/"]
+          sameAs: [instagramUrl, syaipulInstagramUrl]
         },
         {
           "@type": "WebSite",
@@ -398,7 +401,12 @@ export function HomeContent({
           {visibleTreks.map((trek) => (
             <article className="trek-card" key={trek.id}>
               <div className="trek-media">
-                <Image src={trek.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" />
+                <Image
+                  src={trek.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 680px) calc(100vw - 30px), (max-width: 900px) calc(50vw - 30px), 33vw"
+                />
               </div>
               <div className="trek-body">
                 <div className="trek-meta">
@@ -459,7 +467,12 @@ export function HomeContent({
           <p>{t.ethics.text}</p>
         </div>
         <div className="ethics-image">
-          <Image src="/images/orangutan-tree.webp" alt="Wild orangutan in the rainforest" fill sizes="50vw" />
+          <Image
+            src="/images/orangutan-tree.webp"
+            alt="Wild orangutan in the rainforest"
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
         </div>
       </section>
 
@@ -551,8 +564,11 @@ export function HomeContent({
           <a href={whatsappUrl} target="_blank" rel="noreferrer">
             WhatsApp
           </a>
-          <a href="https://www.instagram.com/orangutanadventuresumatra/" target="_blank" rel="noreferrer">
+          <a href={instagramUrl} target="_blank" rel="noreferrer">
             Instagram
+          </a>
+          <a href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
+            Instagram Syaipul
           </a>
         </div>
       </footer>
