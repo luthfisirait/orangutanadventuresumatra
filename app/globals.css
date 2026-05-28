@@ -711,6 +711,20 @@ img {
   font-size: 1.8rem;
 }
 
+.guide-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--forest);
+  font-size: 0.95rem;
+  font-weight: 850;
+}
+
+.guide-social svg {
+  color: var(--river);
+}
+
 .faq-section {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1fr);

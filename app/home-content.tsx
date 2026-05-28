@@ -11,6 +11,7 @@ import {
   HeartHandshake,
   Leaf,
   Mail,
+  Instagram,
   MapPin,
   MessageCircle,
   Mountain,
@@ -42,7 +43,6 @@ const navItems = [
   { key: "contact", href: "#contact" }
 ] as const;
 
-const instagramUrl = "https://www.instagram.com/orangutanadventuresumatra/";
 const syaipulInstagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
 
 const trekCategoryIds = ["classic", "private", "activities"] as const;
@@ -176,7 +176,7 @@ export function HomeContent({
             "Gunung Leuser National Park",
             "North Sumatra"
           ],
-          sameAs: [instagramUrl, syaipulInstagramUrl]
+          sameAs: [syaipulInstagramUrl]
         },
         {
           "@type": "WebSite",
@@ -512,6 +512,10 @@ export function HomeContent({
                 <span>{t.guideRole}</span>
                 <h3>{guide.name}</h3>
                 <p>{guide.text}</p>
+                <a className="guide-social" href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
+                  <Instagram size={16} />
+                  Instagram
+                </a>
               </div>
             </article>
           ))}
@@ -564,11 +568,8 @@ export function HomeContent({
           <a href={whatsappUrl} target="_blank" rel="noreferrer">
             WhatsApp
           </a>
-          <a href={instagramUrl} target="_blank" rel="noreferrer">
-            Instagram
-          </a>
           <a href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
-            Instagram Syaipul
+            Instagram
           </a>
         </div>
       </footer>
