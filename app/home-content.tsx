@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   CalendarDays,
@@ -53,13 +52,6 @@ const brandTitle = (
     Sumatra
   </>
 );
-
-const fadeUp = {
-  initial: { opacity: 0, y: 28 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const }
-};
 
 type HomeProps = {
   initialLanguage?: Locale;
@@ -309,12 +301,7 @@ export function HomeContent({
           sizes="100vw"
         />
         <div className="hero-shade" />
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 34 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        <div className="hero-content">
           <span className="eyebrow">
             <Leaf size={16} />
             {t.hero.eyebrow}
@@ -331,13 +318,8 @@ export function HomeContent({
               {t.hero.secondary}
             </a>
           </div>
-        </motion.div>
-        <motion.div
-          className="hero-panel"
-          initial={{ opacity: 0, x: 34 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.25, duration: 0.8, ease: "easeOut" }}
-        >
+        </div>
+        <div className="hero-panel">
           {t.hero.stats.map((stat, index) => {
             const Icon = [Star, Clock3, ShieldCheck][index];
             return (
@@ -348,7 +330,7 @@ export function HomeContent({
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </section>
 
       <section className="quick-strip" aria-label="Booking highlights">
@@ -371,11 +353,11 @@ export function HomeContent({
       </section>
 
       <section className="section intro-section">
-        <motion.div className="section-heading" {...fadeUp}>
+        <div className="section-heading">
           <span className="section-kicker">{t.intro.kicker}</span>
           <h2>{t.intro.title}</h2>
-        </motion.div>
-        <motion.div className="intro-grid" {...fadeUp}>
+        </div>
+        <div className="intro-grid">
           <div className="intro-copy">
             {t.intro.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
@@ -389,14 +371,14 @@ export function HomeContent({
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <section className="section treks-section" id="treks">
-        <motion.div className="section-heading wide-heading" {...fadeUp}>
+        <div className="section-heading wide-heading">
           <span className="section-kicker">{t.headings.packages}</span>
           <h2>{t.headings.packagesSub}</h2>
-        </motion.div>
+        </div>
 
         <div className="category-tabs" role="tablist" aria-label="Trek categories">
           {trekCategoryIds.map((category) => (
@@ -413,17 +395,9 @@ export function HomeContent({
           ))}
         </div>
 
-        <motion.div className="trek-grid" layout>
+        <div className="trek-grid">
           {visibleTreks.map((trek) => (
-            <motion.article
-              layout
-              className="trek-card"
-              key={trek.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 24 }}
-              transition={{ duration: 0.35 }}
-            >
+            <article className="trek-card" key={trek.id}>
               <div className="trek-media">
                 <Image src={trek.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" />
               </div>
@@ -453,79 +427,68 @@ export function HomeContent({
                   <ArrowRight size={16} />
                 </a>
               </div>
-            </motion.article>
+            </article>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <section className="experience" id="experience">
-        <motion.div className="section-heading" {...fadeUp}>
+        <div className="section-heading">
           <span className="section-kicker">{t.headings.experience}</span>
           <h2>{t.headings.experienceSub}</h2>
-        </motion.div>
+        </div>
         <div className="experience-grid">
           {t.experience.map((item, index) => {
             const Icon = [Compass, Leaf, TentTree, Waves][index];
             return (
-              <motion.article
-                className="experience-card"
-                key={item.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08, duration: 0.55 }}
-              >
+              <article className="experience-card" key={item.title}>
                 <span className="icon-box">
                   <Icon size={24} />
                 </span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-              </motion.article>
+              </article>
             );
           })}
         </div>
       </section>
 
       <section className="ethics-band">
-        <motion.div className="ethics-content" {...fadeUp}>
+        <div className="ethics-content">
           <span className="section-kicker">{t.headings.ethics}</span>
           <h2>{t.headings.ethicsSubTitle}</h2>
           <p>{t.ethics.text}</p>
-        </motion.div>
+        </div>
         <div className="ethics-image">
           <Image src="/images/orangutan-tree.webp" alt="Wild orangutan in the rainforest" fill sizes="50vw" />
         </div>
       </section>
 
       <section className="section gallery-section">
-        <motion.div className="section-heading wide-heading" {...fadeUp}>
+        <div className="section-heading wide-heading">
           <span className="section-kicker">{t.headings.gallery}</span>
           <h2>{t.headings.gallerySub}</h2>
-        </motion.div>
+        </div>
         <div className="gallery-grid">
           {galleryItems.map((item, index) => (
-            <motion.figure
+            <figure
               key={item.src}
               className={index === 0 || index === 4 ? "feature" : ""}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.04, duration: 0.45 }}
             >
               <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 50vw, 25vw" />
-            </motion.figure>
+            </figure>
           ))}
         </div>
       </section>
 
       <section className="guides-section" id="guides">
-        <motion.div className="section-heading" {...fadeUp}>
+        <div className="section-heading">
           <span className="section-kicker">{t.headings.guides}</span>
           <h2>{t.headings.guidesSub}</h2>
-        </motion.div>
+        </div>
         <div className="guides-grid">
           {guides.map((guide) => (
-            <motion.article className="guide-card" key={guide.id} {...fadeUp}>
+            <article className="guide-card" key={guide.id}>
               <div className="guide-image">
                 <GuidePhoto
                   src={guide.image}
@@ -538,16 +501,16 @@ export function HomeContent({
                 <h3>{guide.name}</h3>
                 <p>{guide.text}</p>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </section>
 
       <section className="section faq-section" id="faq">
-        <motion.div className="section-heading" {...fadeUp}>
+        <div className="section-heading">
           <span className="section-kicker">{t.headings.faq}</span>
           <h2>{t.headings.faqSub}</h2>
-        </motion.div>
+        </div>
         <div className="faq-list">
           {t.faq.map((item) => (
             <details key={item.q}>
@@ -562,7 +525,7 @@ export function HomeContent({
       </section>
 
       <section className="contact-section" id="contact">
-        <motion.div className="contact-panel" {...fadeUp}>
+        <div className="contact-panel">
           <div>
             <span className="section-kicker">{t.headings.contact}</span>
             <h2>{t.headings.contactSub}</h2>
@@ -578,7 +541,7 @@ export function HomeContent({
               {t.contact.emailLabel}
             </a>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <footer>
