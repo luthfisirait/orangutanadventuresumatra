@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Home from "../page";
+import { HomeContent } from "../home-content";
 import { locales } from "../site-content";
 import { isLocale, metadataForLocale } from "../seo";
 
@@ -31,5 +31,5 @@ export default async function LocalePage({ params }: LocalePageProps) {
     notFound();
   }
 
-  return <Home initialLanguage={locale} routedLanguage />;
+  return <HomeContent initialLanguage={locale} routedLanguage />;
 }
