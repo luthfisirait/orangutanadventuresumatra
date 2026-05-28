@@ -67,7 +67,7 @@ export function metadataForLocale(locale: Locale, path = `/${locale}`): Metadata
   const text = siteText[locale];
   const title = text.metaTitle;
   const description = text.metaDescription;
-  const previewImage = "/images/link-preview.png";
+  const previewImage = "/images/link-preview.jpg";
 
   return {
     metadataBase: new URL(siteUrl),
@@ -114,6 +114,7 @@ export function metadataForLocale(locale: Locale, path = `/${locale}`): Metadata
       images: [
         {
           url: previewImage,
+          type: "image/jpeg",
           width: 1200,
           height: 630,
           alt: `${siteName} ethical orangutan trekking in Bukit Lawang`

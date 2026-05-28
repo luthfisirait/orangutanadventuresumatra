@@ -160,7 +160,7 @@ export function HomeContent({
           name: siteName,
           url: siteUrl,
           logo: absoluteUrl("/images/logo.png"),
-          image: absoluteUrl("/images/link-preview.png"),
+          image: absoluteUrl("/images/link-preview.jpg"),
           description: t.metaDescription,
           telephone: "+6285362405752",
           email: "support@orangutanadventuresumatra.com",

@@ -13,6 +13,7 @@ declare module "lucide-react" {
   export const Clock3: React.FC<IconProps>;
   export const Compass: React.FC<IconProps>;
   export const HeartHandshake: React.FC<IconProps>;
+  export const Instagram: React.FC<IconProps>;
   export const Leaf: React.FC<IconProps>;
   export const Mail: React.FC<IconProps>;
   export const MapPin: React.FC<IconProps>;

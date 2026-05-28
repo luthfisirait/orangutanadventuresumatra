@@ -25,7 +25,7 @@ const overlay = Buffer.from(`
 await sharp("public/images/hero-orangutan.webp")
   .resize(1200, 630, { fit: "cover" })
   .composite([{ input: overlay, left: 0, top: 0 }])
-  .png()
-  .toFile("public/images/link-preview.png");
+  .jpeg({ quality: 84, progressive: true, mozjpeg: true })
+  .toFile("public/images/link-preview.jpg");
 
-console.log("created public/images/link-preview.png");
+console.log("created public/images/link-preview.jpg");
