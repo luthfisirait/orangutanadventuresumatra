@@ -24,29 +24,40 @@ const localeKeywords: Record<Locale, string[]> = {
     "orangutan trekking Sumatra",
     "Bukit Lawang jungle trekking",
     "ethical orangutan tour",
-    "Gunung Leuser National Park tour",
-    "Sumatra jungle tour"
+    "Gunung Leuser National Park guide",
+    "Sumatra jungle tour",
+    "weekend jungle trek from Singapore",
+    "Medan weekend trip from Malaysia",
+    "sustainable Sumatra tours",
+    "private Sumatra rainforest tours",
+    "family friendly Bukit Lawang tour"
   ],
   de: [
     "Orang-Utan Trekking Sumatra",
     "Bukit Lawang Dschungeltour",
     "ethische Orang-Utan Tour",
     "Gunung Leuser Nationalpark Tour",
-    "Sumatra Dschungeltrekking"
+    "Sumatra Dschungeltrekking",
+    "nachhaltige Sumatra Reisen",
+    "private Dschungeltour Bukit Lawang"
   ],
   fr: [
     "trek orang-outan Sumatra",
     "trek jungle Bukit Lawang",
     "tour orang-outan ethique",
     "parc national Gunung Leuser",
-    "trek Sumatra"
+    "trek Sumatra",
+    "voyage durable Sumatra",
+    "trek privé jungle Sumatra"
   ],
   nl: [
     "orang-oetan trekking Sumatra",
     "Bukit Lawang jungletrekking",
     "ethische orang-oetan tour",
     "Gunung Leuser National Park tour",
-    "Sumatra jungle tour"
+    "Sumatra jungle tour",
+    "duurzame reizen Sumatra",
+    "privé jungletrek Bukit Lawang"
   ]
 };
 
