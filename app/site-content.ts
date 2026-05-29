@@ -59,7 +59,7 @@ export const galleryItems = [
 
 export const siteText = {
   en: {
-    metaTitle: "OrangutanAdventureSumatra | Ethical Bukit Lawang Jungle Tours",
+    metaTitle: "Paket Wisata Bukit Lawang | OrangutanAdventureSumatra",
     metaDescription:
       "paket wisata bukit lawang, trekking orangutan sumatera, dan wisata hutan bukit lawang untuk petualangan alam etis di Sumatra.",
     nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },
