@@ -8,9 +8,12 @@ Run locally:
 1. npm run build
 2. npm run start -- --hostname 127.0.0.1 --port 3000
 
-SEO and sharing:
+Sharing and routes:
 
 - Localized pages: /en, /de, /fr, /nl
+- Essential information page: /essential-information
+- Privacy policy page: /privacy
+- Travel blog index and articles: /blog
 - Sitemap: /sitemap.xml
 - Robots: /robots.txt
 - AI crawler summary: /llms.txt
@@ -22,7 +25,7 @@ Main files:
 - app/page.tsx: homepage content, trek packages, FAQ, guide sections, booking CTAs.
 - app/globals.css: responsive layout, animation, and visual design.
 - app/seo.ts: canonical URLs, hreflang, Open Graph, Twitter card, and robots metadata helpers.
-- app/[locale]/page.tsx: localized SEO routes.
+- app/[locale]/page.tsx: localized language routes.
 - public/images/: local copies of key images from the existing website.
 - scripts/fix-next-static-assets.mjs: post-build asset alias helper for the local Next build.
 - scripts/generate-link-preview.mjs: creates the Open Graph/Twitter preview image.

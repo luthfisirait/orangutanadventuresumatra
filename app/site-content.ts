@@ -61,7 +61,7 @@ export const siteText = {
   en: {
     metaTitle: "OrangutanAdventureSumatra | Ethical Bukit Lawang Jungle Tours",
     metaDescription:
-      "Modern booking website for ethical orangutan trekking, private jungle packages, Bat Cave visits, Village Tours, rafting, a local guide, and accommodation in Bukit Lawang, North Sumatra.",
+      "paket wisata bukit lawang, trekking orangutan sumatera, dan wisata hutan bukit lawang untuk petualangan alam etis di Sumatra.",
     nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },
     hero: {
       eyebrow: "Ethical trekking in Gunung Leuser National Park",

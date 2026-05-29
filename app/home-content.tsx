@@ -34,6 +34,7 @@ import {
   type TrekId
 } from "./site-content";
 import { absoluteUrl, siteName, siteUrl } from "./seo";
+import { blogPosts, impactVision, packageActivityOverview } from "./travel-content";
 
 const navItems = [
   { key: "treks", href: "#treks" },
@@ -439,6 +440,41 @@ export function HomeContent({
         </div>
       </section>
 
+      <section className="section package-detail-section">
+        <div className="package-detail-grid">
+          <div className="package-detail-image">
+            <Image
+              src={packageActivityOverview.image}
+              alt={packageActivityOverview.imageAlt}
+              fill
+              sizes="(max-width: 900px) 100vw, 44vw"
+            />
+          </div>
+          <div className="package-detail-copy">
+            <span className="section-kicker">{packageActivityOverview.kicker}</span>
+            <h2>{packageActivityOverview.title}</h2>
+            <p>{packageActivityOverview.intro}</p>
+            <div className="package-timeline">
+              {packageActivityOverview.steps.map((step) => (
+                <article key={step.label}>
+                  <span>{step.label}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="package-notes">
+          {packageActivityOverview.notes.map((note) => (
+            <div key={note}>
+              <Check size={18} />
+              <span>{note}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="experience" id="experience">
         <div className="section-heading">
           <span className="section-kicker">{t.headings.experience}</span>
@@ -473,6 +509,28 @@ export function HomeContent({
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
           />
+        </div>
+      </section>
+
+      <section className="impact-section">
+        <div className="impact-content">
+          <span className="section-kicker">{impactVision.kicker}</span>
+          <h2>{impactVision.title}</h2>
+          <p>{impactVision.text}</p>
+        </div>
+        <div className="impact-pillars">
+          {impactVision.pillars.map((pillar, index) => {
+            const Icon = [Leaf, HeartHandshake, ShieldCheck][index];
+            return (
+              <article key={pillar.title}>
+                <span className="icon-box">
+                  <Icon size={24} />
+                </span>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.text}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -540,6 +598,41 @@ export function HomeContent({
         </div>
       </section>
 
+      <section className="section blog-preview-section">
+        <div className="section-heading wide-heading">
+          <span className="section-kicker">Travel blog</span>
+          <h2>Travel guides for European travelers planning Bukit Lawang</h2>
+        </div>
+        <div className="home-blog-grid">
+          {blogPosts.slice(0, 3).map((post) => (
+            <article className="home-blog-card" key={post.slug}>
+              <div className="home-blog-image">
+                <Image src={post.image} alt={post.imageAlt} fill sizes="(max-width: 760px) 100vw, 33vw" />
+              </div>
+              <div>
+                <span>{post.readingTime}</span>
+                <h3>{post.title}</h3>
+                <p>{post.description}</p>
+                <a className="card-link" href={`/blog/${post.slug}`}>
+                  Read article
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="resource-links">
+          <a className="secondary-button dark" href="/essential-information">
+            Essential information
+            <ArrowRight size={18} />
+          </a>
+          <a className="secondary-button dark" href="/blog">
+            All blog articles
+            <ArrowRight size={18} />
+          </a>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact">
         <div className="contact-panel">
           <div>
@@ -564,6 +657,9 @@ export function HomeContent({
         <Image src="/images/logo.svg" alt="OrangutanAdventureSumatra" width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
         <div>
+          <a href="/essential-information">Essential information</a>
+          <a href="/blog">Blog</a>
+          <a href="/privacy">Privacy Policy</a>
           <a href="mailto:support@orangutanadventuresumatra.com">Email</a>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">
             WhatsApp
