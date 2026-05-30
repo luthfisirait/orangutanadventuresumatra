@@ -103,15 +103,6 @@ export function StaticHeader() {
           WhatsApp
         </a>
       </nav>
-      <a
-        className="whatsapp-float"
-        href={bookingWhatsappUrl}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="WhatsApp"
-      >
-        <MessageCircle size={26} />
-      </a>
     </header>
   );
 }
