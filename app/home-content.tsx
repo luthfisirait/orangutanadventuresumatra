@@ -13,13 +13,15 @@ import {
   Mail,
   Instagram,
   MapPin,
+  Menu,
   MessageCircle,
   Mountain,
   ShieldCheck,
   Sparkles,
   Star,
   TentTree,
-  Waves
+  Waves,
+  X
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -107,6 +109,7 @@ export function HomeContent({
 }: HomeProps = {}) {
   const [language, setLanguage] = useState<Locale>(initialLanguage);
   const [activeCategory, setActiveCategory] = useState<TrekCategory>("classic");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const t = siteText[language];
   const whatsappUrl = useMemo(
@@ -146,6 +149,29 @@ export function HomeContent({
   );
 
   const currentUrl = language === "en" && !routedLanguage ? siteUrl : absoluteUrl(`/${language}`);
+
+  const googleMapsUrl = "https://maps.app.goo.gl/EKrG3TFNG363k4jY7";
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const jsonLd = useMemo(() => {
     const trekItems = trekBase.map((trek, index) => {
@@ -192,6 +218,12 @@ export function HomeContent({
             addressRegion: "North Sumatra",
             addressCountry: "ID"
           },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 3.5553,
+            longitude: 98.1329
+          },
+          hasMap: googleMapsUrl,
           areaServed: [
             "Bukit Lawang",
             "Bukitlawang",
@@ -200,6 +232,34 @@ export function HomeContent({
             "North Sumatra"
           ],
           knowsAbout: [...coreSearchPhrases],
+          sameAs: [syaipulInstagramUrl],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "5",
+            reviewCount: String(t.testimonialsData.length),
+            bestRating: "5",
+            worstRating: "1"
+          },
+          review: t.testimonialsData.map((review) => ({
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5"
+            },
+            author: {
+              "@type": "Person",
+              name: review.author
+            },
+            reviewBody: review.text
+          }))
+        },
+        {
+          "@type": "Person",
+          "@id": `${siteUrl}/#guide`,
+          name: "Syaipul Ardiansyah",
+          jobTitle: "Local jungle guide",
+          worksFor: { "@id": `${siteUrl}/#business` },
           sameAs: [syaipulInstagramUrl]
         },
         {
@@ -243,7 +303,7 @@ export function HomeContent({
         }
       ]
     };
-  }, [currentUrl, language, t]);
+  }, [currentUrl, language, t, googleMapsUrl]);
 
   useEffect(() => {
     if (routedLanguage) {
@@ -318,8 +378,49 @@ export function HomeContent({
             <MessageCircle size={18} />
             {t.hero.secondary}
           </a>
+          <button
+            className="mobile-menu-toggle"
+            type="button"
+            aria-label={t.mobileMenu}
+            aria-controls="mobile-navigation"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </header>
+
+      {mobileMenuOpen && (
+        <button
+          className="mobile-menu-backdrop"
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+      <nav
+        id="mobile-navigation"
+        className={`mobile-drawer${mobileMenuOpen ? " open" : ""}`}
+        aria-label="Mobile navigation"
+        aria-hidden={!mobileMenuOpen}
+      >
+        {navItems.map((item) => (
+          <a key={item.key} href={item.href} onClick={() => setMobileMenuOpen(false)}>
+            {t.nav[item.key]}
+          </a>
+        ))}
+        <a
+          className="mobile-drawer-cta"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <MessageCircle size={16} />
+          {t.hero.secondary}
+        </a>
+      </nav>
 
       <section className="hero" id="top">
         <Image
@@ -655,8 +756,8 @@ export function HomeContent({
 
       <section className="section blog-preview-section">
         <div className="section-heading wide-heading">
-          <span className="section-kicker">Travel blog</span>
-          <h2>Travel guides for European travelers planning Bukit Lawang</h2>
+          <span className="section-kicker">{t.blog.kicker}</span>
+          <h2>{t.blog.heading}</h2>
         </div>
         <div className="home-blog-grid">
           {blogPosts.slice(0, 3).map((post) => (
@@ -669,7 +770,7 @@ export function HomeContent({
                 <h3>{post.title}</h3>
                 <p>{post.description}</p>
                 <a className="card-link" href={`/blog/${post.slug}`}>
-                  Read article
+                  {t.blog.readArticle}
                   <ArrowRight size={16} />
                 </a>
               </div>
@@ -678,11 +779,11 @@ export function HomeContent({
         </div>
         <div className="resource-links">
           <a className="secondary-button dark" href="/essential-information">
-            Essential information
+            {t.blog.essentialInfo}
             <ArrowRight size={18} />
           </a>
           <a className="secondary-button dark" href="/blog">
-            All blog articles
+            {t.blog.allArticles}
             <ArrowRight size={18} />
           </a>
         </div>
@@ -712,18 +813,31 @@ export function HomeContent({
         <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
         <div>
-          <a href="/essential-information">Essential information</a>
-          <a href="/blog">Blog</a>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="mailto:support@orangutanadventuresumatra.com">Email</a>
+          <a href="/essential-information">{t.footerLinks.essentialInfo}</a>
+          <a href="/blog">{t.footerLinks.blog}</a>
+          <a href="/privacy">{t.footerLinks.privacy}</a>
+          <a href="mailto:support@orangutanadventuresumatra.com">{t.footerLinks.email}</a>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">
-            WhatsApp
+            {t.footerLinks.whatsapp}
           </a>
           <a href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
-            Instagram
+            {t.footerLinks.instagram}
+          </a>
+          <a href={googleMapsUrl} target="_blank" rel="noreferrer">
+            Google Maps
           </a>
         </div>
       </footer>
+
+      <a
+        className="whatsapp-float"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="WhatsApp"
+      >
+        <MessageCircle size={26} />
+      </a>
     </main>
   );
 }

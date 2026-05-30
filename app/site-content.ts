@@ -170,6 +170,22 @@ export const siteText = {
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
+    blog: {
+      kicker: "Travel blog",
+      heading: "Travel guides for European travelers planning Bukit Lawang",
+      readArticle: "Read article",
+      essentialInfo: "Essential information",
+      allArticles: "All blog articles"
+    },
+    footerLinks: {
+      essentialInfo: "Essential information",
+      blog: "Blog",
+      privacy: "Privacy Policy",
+      email: "Email",
+      whatsapp: "WhatsApp",
+      instagram: "Instagram"
+    },
+    mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, North Sumatra, Indonesia" },
     whatsappMessage: "Hi Orangutan Adventure Sumatra, I would like to ask about a jungle trek.",
     testimonialsData: [
@@ -289,6 +305,22 @@ export const siteText = {
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
+    blog: {
+      kicker: "Reiseblog",
+      heading: "Reiseführer für europäische Reisende, die Bukit Lawang planen",
+      readArticle: "Artikel lesen",
+      essentialInfo: "Wichtige Informationen",
+      allArticles: "Alle Blogartikel"
+    },
+    footerLinks: {
+      essentialInfo: "Wichtige Infos",
+      blog: "Blog",
+      privacy: "Datenschutz",
+      email: "E-Mail",
+      whatsapp: "WhatsApp",
+      instagram: "Instagram"
+    },
+    mobileMenu: "Menü",
     footer: { location: "Bukit Lawang, Nord-Sumatra, Indonesien" },
     whatsappMessage: "Hallo Orangutan Adventure Sumatra, ich möchte mich nach einem Dschungeltrek erkundigen.",
     testimonialsData: [
@@ -408,6 +440,22 @@ export const siteText = {
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
+    blog: {
+      kicker: "Blog voyage",
+      heading: "Guides de voyage pour les voyageurs européens qui planifient Bukit Lawang",
+      readArticle: "Lire l'article",
+      essentialInfo: "Informations essentielles",
+      allArticles: "Tous les articles"
+    },
+    footerLinks: {
+      essentialInfo: "Infos essentielles",
+      blog: "Blog",
+      privacy: "Politique de confidentialité",
+      email: "E-mail",
+      whatsapp: "WhatsApp",
+      instagram: "Instagram"
+    },
+    mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, Sumatra du Nord, Indonésie" },
     whatsappMessage: "Bonjour Orangutan Adventure Sumatra, je souhaite me renseigner sur un trek dans la jungle.",
     testimonialsData: [
@@ -527,6 +575,22 @@ export const siteText = {
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
+    blog: {
+      kicker: "Reisblog",
+      heading: "Reisgidsen voor Europese reizigers die Bukit Lawang plannen",
+      readArticle: "Lees artikel",
+      essentialInfo: "Essentiële informatie",
+      allArticles: "Alle blogartikelen"
+    },
+    footerLinks: {
+      essentialInfo: "Essentiële info",
+      blog: "Blog",
+      privacy: "Privacybeleid",
+      email: "E-mail",
+      whatsapp: "WhatsApp",
+      instagram: "Instagram"
+    },
+    mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, Noord-Sumatra, Indonesië" },
     whatsappMessage: "Hoi Orangutan Adventure Sumatra, ik wil graag informatie over een jungletrek.",
     testimonialsData: [
@@ -580,6 +644,9 @@ export const siteText = {
   guides: Record<GuideId, { name: string; text: string }>;
   faq: [ { q: string; a: string }, { q: string; a: string }, { q: string; a: string }, { q: string; a: string } ];
   contact: { kicker: string; title: string; text: string; whatsappLabel: string; emailLabel: string };
+  blog: { kicker: string; heading: string; readArticle: string; essentialInfo: string; allArticles: string };
+  footerLinks: { essentialInfo: string; blog: string; privacy: string; email: string; whatsapp: string; instagram: string };
+  mobileMenu: string;
   footer: { location: string };
   whatsappMessage: string;
   testimonialsData: Array<{ text: string; author: string; location: string }>;

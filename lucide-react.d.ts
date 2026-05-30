@@ -17,6 +17,7 @@ declare module "lucide-react" {
   export const Leaf: React.FC<IconProps>;
   export const Mail: React.FC<IconProps>;
   export const MapPin: React.FC<IconProps>;
+  export const Menu: React.FC<IconProps>;
   export const MessageCircle: React.FC<IconProps>;
   export const Mountain: React.FC<IconProps>;
   export const ShieldCheck: React.FC<IconProps>;
@@ -24,4 +25,5 @@ declare module "lucide-react" {
   export const Star: React.FC<IconProps>;
   export const TentTree: React.FC<IconProps>;
   export const Waves: React.FC<IconProps>;
+  export const X: React.FC<IconProps>;
 }
