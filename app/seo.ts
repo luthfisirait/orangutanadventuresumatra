@@ -1,9 +1,32 @@
 import type { Metadata } from "next";
 import { locales, siteText, type Locale } from "./site-content";
 
-export const siteName = "OrangutanAdventureSumatra";
+export const siteName = "Orangutan Adventure Sumatra";
+export const compactSiteName = "OrangutanAdventureSumatra";
 export const siteUrl = "https://orangutanadventuresumatra.com";
 export const defaultLocale: Locale = "en";
+
+export const brandAlternateNames = [
+  compactSiteName,
+  "Orangutan Adventure Sumatra",
+  "Orangutan Adventures Sumatra",
+  "Orangutan Adventure",
+  "Bukit Lawang Orangutan Trekking"
+] as const;
+
+export const coreSearchPhrases = [
+  "orang utan",
+  "orangutan",
+  "orangutan trekking",
+  "orang utan trekking",
+  "Bukit Lawang",
+  "Bukitlawang",
+  "orangutan adventure sumatra",
+  "orangutanadventuresumatra",
+  "Sumatra",
+  "Sumatra orangutan trekking",
+  "Gunung Leuser National Park"
+] as const;
 
 export const localeLabels: Record<Locale, string> = {
   en: "English",
@@ -21,6 +44,7 @@ const openGraphLocales: Record<Locale, string> = {
 
 const localeKeywords: Record<Locale, string[]> = {
   en: [
+    ...coreSearchPhrases,
     "orangutan trekking Sumatra",
     "Bukit Lawang jungle trekking",
     "ethical orangutan tour",
@@ -96,10 +120,11 @@ export function metadataForLocale(locale: Locale, path = `/${locale}`): Metadata
     },
     icons: {
       icon: [
-        { url: "/images/logo-mark.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico", sizes: "any" },
         { url: "/images/logo-mark.png", type: "image/png", sizes: "512x512" }
       ],
-      apple: [{ url: "/images/logo-mark.png", sizes: "512x512" }]
+      shortcut: ["/favicon.ico"],
+      apple: [{ url: "/images/logo-mark.png", type: "image/png", sizes: "512x512" }]
     },
     robots: {
       index: true,

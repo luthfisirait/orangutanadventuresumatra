@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { siteName } from "./seo";
 import { bookingWhatsappUrl } from "./travel-content";
 
 const footerLinks = [
@@ -14,8 +15,8 @@ const footerLinks = [
 export function StaticHeader() {
   return (
     <header className="site-header static-header">
-      <Link className="brand" href="/" aria-label="OrangutanAdventureSumatra home">
-        <Image src="/images/logo.svg" alt="OrangutanAdventureSumatra" width={180} height={70} priority unoptimized />
+      <Link className="brand" href="/" aria-label={`${siteName} home`}>
+        <Image src="/images/logo.svg" alt={siteName} width={180} height={70} priority unoptimized />
       </Link>
       <nav className="desktop-nav" aria-label="Site navigation">
         <Link href="/#treks">Treks</Link>
@@ -36,7 +37,7 @@ export function StaticHeader() {
 export function StaticFooter() {
   return (
     <footer>
-      <Image src="/images/logo.svg" alt="OrangutanAdventureSumatra" width={155} height={60} unoptimized />
+      <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
       <p>Bukit Lawang, North Sumatra, Indonesia</p>
       <div>
         {footerLinks.map((link) =>

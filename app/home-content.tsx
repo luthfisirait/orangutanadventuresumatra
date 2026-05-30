@@ -33,7 +33,13 @@ import {
   type Locale,
   type TrekId
 } from "./site-content";
-import { absoluteUrl, siteName, siteUrl } from "./seo";
+import {
+  absoluteUrl,
+  brandAlternateNames,
+  coreSearchPhrases,
+  siteName,
+  siteUrl
+} from "./seo";
 import { blogPosts, impactVision, packageActivityOverview } from "./travel-content";
 
 const navItems = [
@@ -110,10 +116,10 @@ export function HomeContent({
 
   const createTrekWhatsappUrl = (trek: { price: string; title: string }) => {
     const messages: Record<Locale, string> = {
-      en: `Hi OrangutanAdventureSumatra, I would like to ask about the ${trek.title} package (${trek.price}). My preferred date is:`,
-      de: `Hallo OrangutanAdventureSumatra, ich möchte mich nach dem Paket ${trek.title} (${trek.price}) erkundigen. Mein Wunschtermin ist:`,
-      fr: `Bonjour OrangutanAdventureSumatra, je souhaite me renseigner sur le forfait ${trek.title} (${trek.price}). Ma date préférée est :`,
-      nl: `Hoi OrangutanAdventureSumatra, ik wil graag informatie over het pakket ${trek.title} (${trek.price}). Mijn voorkeursdatum is:`
+      en: `Hi Orangutan Adventure Sumatra, I would like to ask about the ${trek.title} package (${trek.price}). My preferred date is:`,
+      de: `Hallo Orangutan Adventure Sumatra, ich möchte mich nach dem Paket ${trek.title} (${trek.price}) erkundigen. Mein Wunschtermin ist:`,
+      fr: `Bonjour Orangutan Adventure Sumatra, je souhaite me renseigner sur le forfait ${trek.title} (${trek.price}). Ma date préférée est :`,
+      nl: `Hoi Orangutan Adventure Sumatra, ik wil graag informatie over het pakket ${trek.title} (${trek.price}). Mijn voorkeursdatum is:`
     };
 
     return whatsappUrlFor(messages[language]);
@@ -172,6 +178,7 @@ export function HomeContent({
           "@type": ["LocalBusiness", "TravelAgency"],
           "@id": `${siteUrl}/#business`,
           name: siteName,
+          alternateName: [...brandAlternateNames],
           url: siteUrl,
           logo: absoluteUrl("/images/logo.png"),
           image: absoluteUrl("/images/link-preview.jpg"),
@@ -187,17 +194,22 @@ export function HomeContent({
           },
           areaServed: [
             "Bukit Lawang",
+            "Bukitlawang",
             "Gunung Leuser National Park",
+            "Sumatra",
             "North Sumatra"
           ],
+          knowsAbout: [...coreSearchPhrases],
           sameAs: [syaipulInstagramUrl]
         },
         {
           "@type": "WebSite",
           "@id": `${siteUrl}/#website`,
           name: siteName,
+          alternateName: [...brandAlternateNames],
           url: siteUrl,
           inLanguage: language,
+          keywords: coreSearchPhrases.join(", "),
           publisher: { "@id": `${siteUrl}/#business` }
         },
         {
@@ -206,6 +218,7 @@ export function HomeContent({
           url: currentUrl,
           name: t.metaTitle,
           description: t.metaDescription,
+          keywords: coreSearchPhrases.join(", "),
           inLanguage: language,
           isPartOf: { "@id": `${siteUrl}/#website` },
           about: { "@id": `${siteUrl}/#business` }
@@ -276,8 +289,8 @@ export function HomeContent({
         }}
       />
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="OrangutanAdventureSumatra home">
-          <Image src="/images/logo.svg" alt="OrangutanAdventureSumatra" width={180} height={70} priority unoptimized />
+        <a className="brand" href="#top" aria-label={`${siteName} home`}>
+          <Image src="/images/logo.svg" alt={siteName} width={180} height={70} priority unoptimized />
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
@@ -696,7 +709,7 @@ export function HomeContent({
       </section>
 
       <footer>
-        <Image src="/images/logo.svg" alt="OrangutanAdventureSumatra" width={155} height={60} unoptimized />
+        <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
         <div>
           <a href="/essential-information">Essential information</a>
