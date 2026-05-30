@@ -45,14 +45,19 @@ const navItems = [
 ] as const;
 
 const syaipulInstagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
+const whatsappNumber = "6285362405752";
+
+function whatsappUrlFor(message: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
 const trekCategoryIds = ["classic", "private", "activities"] as const;
 type TrekCategory = (typeof trekCategoryIds)[number];
 
 const brandTitle = (
   <>
-    Orangutan<wbr />
-    Adventure<wbr />
+    Orangutan <wbr />
+    Adventure <wbr />
     Sumatra
   </>
 );
@@ -99,12 +104,20 @@ export function HomeContent({
 
   const t = siteText[language];
   const whatsappUrl = useMemo(
-    () =>
-      `https://wa.me/6285362405752?text=${encodeURIComponent(
-        t.whatsappMessage
-      )}`,
+    () => whatsappUrlFor(t.whatsappMessage),
     [t.whatsappMessage]
   );
+
+  const createTrekWhatsappUrl = (trek: { price: string; title: string }) => {
+    const messages: Record<Locale, string> = {
+      en: `Hi OrangutanAdventureSumatra, I would like to ask about the ${trek.title} package (${trek.price}). My preferred date is:`,
+      de: `Hallo OrangutanAdventureSumatra, ich möchte mich nach dem Paket ${trek.title} (${trek.price}) erkundigen. Mein Wunschtermin ist:`,
+      fr: `Bonjour OrangutanAdventureSumatra, je souhaite me renseigner sur le forfait ${trek.title} (${trek.price}). Ma date préférée est :`,
+      nl: `Hoi OrangutanAdventureSumatra, ik wil graag informatie over het pakket ${trek.title} (${trek.price}). Mijn voorkeursdatum is:`
+    };
+
+    return whatsappUrlFor(messages[language]);
+  };
 
   const visibleTreks = useMemo(
     () =>
@@ -399,7 +412,10 @@ export function HomeContent({
         </div>
 
         <div className="trek-grid">
-          {visibleTreks.map((trek) => (
+          {visibleTreks.map((trek) => {
+            const trekWhatsappUrl = createTrekWhatsappUrl(trek);
+
+            return (
             <article className="trek-card" key={trek.id}>
               <div className="trek-media">
                 <Image
@@ -430,13 +446,14 @@ export function HomeContent({
                     </li>
                   ))}
                 </ul>
-                <a className="card-link" href={whatsappUrl} target="_blank" rel="noreferrer">
+                <a className="card-link" href={trekWhatsappUrl} target="_blank" rel="noreferrer">
                   {language === "en" ? "Ask availability" : language === "de" ? "Verfügbarkeit anfragen" : language === "fr" ? "Demander les disponibilités" : "Beschikbaarheid vragen"}
                   <ArrowRight size={16} />
                 </a>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 

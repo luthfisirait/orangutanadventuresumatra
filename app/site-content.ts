@@ -59,9 +59,9 @@ export const galleryItems = [
 
 export const siteText = {
   en: {
-    metaTitle: "Paket Wisata Bukit Lawang | OrangutanAdventureSumatra",
+    metaTitle: "Bukit Lawang Orangutan Trekking | OrangutanAdventureSumatra",
     metaDescription:
-      "paket wisata bukit lawang, trekking orangutan sumatera, dan wisata hutan bukit lawang untuk petualangan alam etis di Sumatra.",
+      "Ethical Bukit Lawang orangutan trekking, Sumatra jungle tours, river camps, rafting, and local guide support for responsible rainforest adventures.",
     nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },
     hero: {
       eyebrow: "Ethical trekking in Gunung Leuser National Park",
