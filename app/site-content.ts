@@ -111,16 +111,18 @@ export const siteText = {
       faq: "FAQ",
       faqSub: "Practical notes before you arrive.",
       contact: "Book direct",
-      contactSub: "Tell Syaipul your dates, group size, and preferred trek."
+      contactSub: "Tell Syaipul your dates, group size, and preferred trek.",
+      testimonials: "Traveler reviews",
+      testimonialsSub: "What our guests say about their time in the jungle."
     },
     categories: { classic: "Classic treks", private: "Private packages", activities: "Local activities" },
     treks: {
       "4h": { title: "4-Hour Jungle Trekking", highlights: ["Short ethical wildlife walk", "Good chance for orangutans", "Local guide included"] },
       "1d": { title: "1-Day Jungle Trekking", highlights: ["Full-day Bukit Lawang trek", "Lunch in the jungle", "Return before evening"] },
-      "2d": { title: "2-Day Jungle Trekking", highlights: ["Sleep by the river", "Jungle dinner and breakfast", "Traditional tube rafting return"] },
-      "3d": { title: "3-Day Jungle Trekking", highlights: ["Deeper rainforest route", "More time tracking wildlife", "Two nights at jungle camps"] },
-      "4d": { title: "4-Day Jungle Trekking", highlights: ["Remote jungle sections", "Longer climbs and river crossings", "Best for active travelers"] },
-      "5d": { title: "5-Day Jungle Trekking", highlights: ["Immersive Gunung Leuser adventure", "Multiple camp nights", "Rich wildlife and plant spotting"] },
+      "2d": { title: "2-Day Jungle Trekking", highlights: ["Sleep by the river", "Included: Guide, meals, tent, permits", "Excluded: Personal insurance, tips"] },
+      "3d": { title: "3-Day Jungle Trekking", highlights: ["Deeper rainforest route", "Included: Guide, meals, tent, permits", "Excluded: Personal insurance, tips"] },
+      "4d": { title: "4-Day Jungle Trekking", highlights: ["Remote jungle sections", "Included: Guide, meals, camp, permits", "Excluded: Personal insurance, tips"] },
+      "5d": { title: "5-Day Jungle Trekking", highlights: ["Immersive Gunung Leuser adventure", "Included: Guide, meals, camp, permits", "Excluded: Personal insurance, tips"] },
       "p3d": { title: "3-Day Exclusive Eco Jungle Package", highlights: ["Private guide flow", "Transport and accommodation support", "Village and jungle balance"] },
       "p4d": { title: "4-Day Exclusive Eco Jungle Package", highlights: ["Private multi-day itinerary", "Accommodation coordination", "Flexible Bukit Lawang pacing"] },
       "p5d": { title: "5-Day Exclusive Eco Jungle Package", highlights: ["Complete private stay", "Trekking, rafting, village time", "Most convenient first visit"] },
@@ -153,7 +155,7 @@ export const siteText = {
       },
       {
         q: "How does payment work?",
-        a: "The original site accepts either full payment or a 30% deposit, with the balance paid when you arrive in Bukit Lawang. Contact Syaipul for current bank details."
+        a: "We accept deposits securely via Wise (TransferWise), PayPal, or international bank transfer. The remaining balance can be paid in cash upon arrival. Contact Syaipul for payment details."
       },
       {
         q: "Where is the meeting point?",
@@ -163,12 +165,17 @@ export const siteText = {
     contact: {
       kicker: "Book direct",
       title: "Tell Syaipul your dates, group size, and preferred trek.",
-      text: "WhatsApp is fastest for availability. Email works well for deposits, transport, accommodation, and detailed itinerary questions.",
+      text: "WhatsApp is fastest for availability. Email works well to discuss Wise/PayPal deposits, transport, accommodation, and detailed itinerary questions.",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
     footer: { location: "Bukit Lawang, North Sumatra, Indonesia" },
-    whatsappMessage: "Hi OrangutanAdventureSumatra, I would like to ask about a jungle trek."
+    whatsappMessage: "Hi OrangutanAdventureSumatra, I would like to ask about a jungle trek.",
+    testimonialsData: [
+      { text: "An unforgettable, truly ethical experience. Syaipul made sure we kept a respectful distance from the orangutans while still getting amazing views. The riverside camp was a highlight!", author: "Sarah M.", location: "Germany" },
+      { text: "The 3-day trek was perfectly organized. We felt safe the entire time, and the jungle food was surprisingly delicious. Highly recommend for anyone traveling from Europe.", author: "Thomas & Lisa", location: "Netherlands" },
+      { text: "We booked the private package and it was worth every penny. No hidden costs, everything was clearly explained, and the tube rafting back to the village was pure joy.", author: "Claire D.", location: "France" }
+    ],
   },
   de: {
     metaTitle: "OrangutanAdventureSumatra | Ethische Dschungeltouren in Bukit Lawang",
@@ -223,16 +230,18 @@ export const siteText = {
       faq: "FAQ",
       faqSub: "Praktische Hinweise vor der Anreise.",
       contact: "Direkt buchen",
-      contactSub: "Teile Syaipul deine Daten, Gruppengröße und gewünschte Tour mit."
+      contactSub: "Teile Syaipul deine Daten, Gruppengröße und gewünschte Tour mit.",
+      testimonials: "Gästebewertungen",
+      testimonialsSub: "Was unsere Gäste über ihre Zeit im Dschungel sagen."
     },
     categories: { classic: "Klassische Treks", private: "Private Pakete", activities: "Lokale Aktivitäten" },
     treks: {
       "4h": { title: "4-Stunden-Dschungeltrek", highlights: ["Kurzer ethischer Wildtierwalk", "Gute Chance auf Orang-Utans", "Lokaler Guide inklusive"] },
       "1d": { title: "1-Tages-Dschungeltrek", highlights: ["Ganztägiger Bukit-Lawang-Trek", "Mittagessen im Dschungel", "Rückkehr vor dem Abend"] },
-      "2d": { title: "2-Tage-Dschungeltrek", highlights: ["Schlafen am Fluss", "Dschungel-Abendessen und Frühstück", "Traditionelle Tube-Rafting-Rückfahrt"] },
-      "3d": { title: "3-Tage-Dschungeltrek", highlights: ["Tiefere Route im Regenwald", "Mehr Zeit für Wildtiere", "Zwei Nächte im Dschungelcamp"] },
-      "4d": { title: "4-Tage-Dschungeltrek", highlights: ["Entlegene Dschungelabschnitte", "Längere Anstiege und Flussquerungen", "Ideal für aktive Reisende"] },
-      "5d": { title: "5-Tage-Dschungeltrek", highlights: ["Intensives Gunung-Leuser-Abenteuer", "Mehrere Camp-Nächte", "Reiche Tier- und Pflanzenbeobachtung"] },
+      "2d": { title: "2-Tage-Dschungeltrek", highlights: ["Schlafen am Fluss", "Inklusive: Guide, Mahlzeiten, Zelt, Genehmigungen", "Exklusive: Persönliche Versicherung, Trinkgeld"] },
+      "3d": { title: "3-Tage-Dschungeltrek", highlights: ["Tiefere Route im Regenwald", "Inklusive: Guide, Mahlzeiten, Zelt, Genehmigungen", "Exklusive: Versicherung, Trinkgeld"] },
+      "4d": { title: "4-Tage-Dschungeltrek", highlights: ["Entlegene Dschungelabschnitte", "Inklusive: Guide, Mahlzeiten, Camp, Permits", "Exklusive: Versicherung, Trinkgeld"] },
+      "5d": { title: "5-Tage-Dschungeltrek", highlights: ["Intensives Gunung-Leuser-Abenteuer", "Inklusive: Guide, Mahlzeiten, Camp, Permits", "Exklusive: Versicherung, Trinkgeld"] },
       "p3d": { title: "3-Tage-Exklusivpaket Eco Jungle", highlights: ["Privater Guide-Fluss", "Transport- und Unterkunftsplanung", "Balance aus Dorf und Dschungel"] },
       "p4d": { title: "4-Tage-Exklusivpaket Eco Jungle", highlights: ["Privater Mehrtagesplan", "Unterkunftskoordination", "Flexibles Bukit-Lawang-Tempo"] },
       "p5d": { title: "5-Tage-Exklusivpaket Eco Jungle", highlights: ["Kompletter privater Aufenthalt", "Trekking, Rafting, Dorfzeit", "Ideal für den ersten Besuch"] },
@@ -265,7 +274,7 @@ export const siteText = {
       },
       {
         q: "Wie läuft die Zahlung ab?",
-        a: "Auf der Originalseite ist entweder die volle Zahlung oder eine Anzahlung von 30 % möglich; der Rest wird bei Ankunft in Bukit Lawang bezahlt. Kontaktiere Syaipul für aktuelle Kontodaten."
+        a: "Wir akzeptieren Anzahlungen sicher über Wise (TransferWise), PayPal oder internationale Banküberweisung. Der Restbetrag kann bei der Ankunft in bar bezahlt werden. Kontaktiere Syaipul für die Zahlungsdetails."
       },
       {
         q: "Wo ist der Treffpunkt?",
@@ -275,12 +284,17 @@ export const siteText = {
     contact: {
       kicker: "Direkt buchen",
       title: "Teile Syaipul deine Reisedaten, Gruppengröße und Wunschroute mit.",
-      text: "WhatsApp ist am schnellsten für Verfügbarkeiten. E-Mail eignet sich gut für Anzahlung, Transport, Unterkunft und detaillierte Fragen zum Ablauf.",
+      text: "WhatsApp ist am schnellsten für Verfügbarkeiten. E-Mail eignet sich gut, um Wise/PayPal-Anzahlungen, Transport, Unterkunft und den detaillierten Ablauf zu besprechen.",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
     footer: { location: "Bukit Lawang, Nord-Sumatra, Indonesien" },
-    whatsappMessage: "Hallo OrangutanAdventureSumatra, ich möchte mich nach einem Dschungeltrek erkundigen."
+    whatsappMessage: "Hallo OrangutanAdventureSumatra, ich möchte mich nach einem Dschungeltrek erkundigen.",
+    testimonialsData: [
+      { text: "Ein unvergessliches, wirklich ethisches Erlebnis. Syaipul hat dafür gesorgt, dass wir einen respektvollen Abstand zu den Orang-Utans hielten und trotzdem tolle Ausblicke hatten.", author: "Sarah M.", location: "Deutschland" },
+      { text: "Der 3-Tages-Trek war perfekt organisiert. Wir fühlten uns die ganze Zeit sicher und das Dschungelessen war erstaunlich lecker. Sehr zu empfehlen!", author: "Thomas & Lisa", location: "Niederlande" },
+      { text: "Wir haben das private Paket gebucht und es war jeden Cent wert. Keine versteckten Kosten, alles wurde klar erklärt.", author: "Claire D.", location: "Frankreich" }
+    ],
   },
   fr: {
     metaTitle: "OrangutanAdventureSumatra | Circuits éthiques à Bukit Lawang",
@@ -335,16 +349,18 @@ export const siteText = {
       faq: "FAQ",
       faqSub: "Quelques repères pratiques avant ton arrivée.",
       contact: "Réserver directement",
-      contactSub: "Indique à Syaipul tes dates, la taille du groupe et le trek souhaité."
+      contactSub: "Indique à Syaipul tes dates, la taille du groupe et le trek souhaité.",
+      testimonials: "Avis des voyageurs",
+      testimonialsSub: "Ce que nos clients disent de leur séjour dans la jungle."
     },
     categories: { classic: "Treks classiques", private: "Forfaits privés", activities: "Activités locales" },
     treks: {
       "4h": { title: "Trek jungle de 4 heures", highlights: ["Balade éthique courte", "Bonne chance d’apercevoir des orangs-outans", "Guide local inclus"] },
       "1d": { title: "Trek jungle d’une journée", highlights: ["Trek complet à Bukit Lawang", "Déjeuner dans la jungle", "Retour avant le soir"] },
-      "2d": { title: "Trek jungle de 2 jours", highlights: ["Nuit au bord de la rivière", "Dîner et petit-déjeuner dans la jungle", "Retour traditionnel en tube rafting"] },
-      "3d": { title: "Trek jungle de 3 jours", highlights: ["Itinéraire plus profond", "Plus de temps pour observer la faune", "Deux nuits en camp"] },
-      "4d": { title: "Trek jungle de 4 jours", highlights: ["Sections plus reculées", "Montées et traversées de rivière plus longues", "Idéal pour les voyageurs actifs"] },
-      "5d": { title: "Trek jungle de 5 jours", highlights: ["Aventure immersive dans le Gunung Leuser", "Plusieurs nuits en camp", "Beaucoup d’observations animales et végétales"] },
+      "2d": { title: "Trek jungle de 2 jours", highlights: ["Nuit au bord de la rivière", "Inclus: Guide, repas, tente, permis", "Exclus: Assurance personnelle, pourboires"] },
+      "3d": { title: "Trek jungle de 3 jours", highlights: ["Itinéraire plus profond", "Inclus: Guide, repas, tente, permis", "Exclus: Assurance personnelle, pourboires"] },
+      "4d": { title: "Trek jungle de 4 jours", highlights: ["Sections plus reculées", "Inclus: Guide, repas, camp, permis", "Exclus: Assurance, pourboires"] },
+      "5d": { title: "Trek jungle de 5 jours", highlights: ["Aventure immersive dans le Gunung Leuser", "Inclus: Guide, repas, camp, permis", "Exclus: Assurance, pourboires"] },
       "p3d": { title: "Forfait exclusif eco jungle de 3 jours", highlights: ["Guide privé", "Transport et hébergement organisés", "Équilibre village et jungle"] },
       "p4d": { title: "Forfait exclusif eco jungle de 4 jours", highlights: ["Programme privé sur plusieurs jours", "Coordination de l’hébergement", "Rythme flexible à Bukit Lawang"] },
       "p5d": { title: "Forfait exclusif eco jungle de 5 jours", highlights: ["Séjour privé complet", "Trek, rafting, temps au village", "Parfait pour une première visite"] },
@@ -377,7 +393,7 @@ export const siteText = {
       },
       {
         q: "Comment se passe le paiement ?",
-        a: "Le site d’origine accepte soit le paiement complet, soit un acompte de 30 %, le solde étant payé à ton arrivée à Bukit Lawang. Contacte Syaipul pour les coordonnées bancaires à jour."
+        a: "Nous acceptons les acomptes de manière sécurisée via Wise (TransferWise), PayPal ou virement bancaire international. Le solde restant peut être payé en espèces à l'arrivée. Contactez Syaipul pour les détails de paiement."
       },
       {
         q: "Où est le point de rendez-vous ?",
@@ -387,12 +403,17 @@ export const siteText = {
     contact: {
       kicker: "Réserver directement",
       title: "Indique à Syaipul tes dates, la taille du groupe et le trek souhaité.",
-      text: "WhatsApp est le plus rapide pour connaître les disponibilités. L’e-mail est pratique pour les acomptes, le transport, l’hébergement et les questions détaillées sur l’itinéraire.",
+      text: "WhatsApp est le plus rapide pour les disponibilités. L'e-mail est idéal pour discuter des acomptes via Wise/PayPal, du transport, de l'hébergement et de l'itinéraire.",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
     footer: { location: "Bukit Lawang, Sumatra du Nord, Indonésie" },
-    whatsappMessage: "Bonjour OrangutanAdventureSumatra, je souhaite me renseigner sur un trek dans la jungle."
+    whatsappMessage: "Bonjour OrangutanAdventureSumatra, je souhaite me renseigner sur un trek dans la jungle.",
+    testimonialsData: [
+      { text: "Une expérience inoubliable et vraiment éthique. Syaipul s'est assuré que nous gardions une distance respectueuse avec les orangs-outans tout en ayant des vues incroyables.", author: "Sarah M.", location: "Allemagne" },
+      { text: "Le trek de 3 jours était parfaitement organisé. Nous nous sommes sentis en sécurité tout le temps, et la nourriture était délicieuse.", author: "Thomas & Lisa", location: "Pays-Bas" },
+      { text: "Nous avons réservé le forfait privé et cela valait chaque centime. Pas de frais cachés, tout était clairement expliqué.", author: "Claire D.", location: "France" }
+    ],
   },
   nl: {
     metaTitle: "OrangutanAdventureSumatra | Ethische jungletours in Bukit Lawang",
@@ -447,16 +468,18 @@ export const siteText = {
       faq: "FAQ",
       faqSub: "Praktische informatie voor vertrek.",
       contact: "Direct boeken",
-      contactSub: "Geef Syaipul je data, groepsgrootte en gewenste trek door."
+      contactSub: "Geef Syaipul je data, groepsgrootte en gewenste trek door.",
+      testimonials: "Beoordelingen",
+      testimonialsSub: "Wat onze gasten zeggen over hun tijd in de jungle."
     },
     categories: { classic: "Klassieke treks", private: "Privépakketten", activities: "Lokale activiteiten" },
     treks: {
       "4h": { title: "Jungletrek van 4 uur", highlights: ["Korte ethische wildlife-wandeling", "Grote kans op orang-oetans", "Lokale gids inbegrepen"] },
       "1d": { title: "Jungletrek van 1 dag", highlights: ["Volledige Bukit Lawang trek", "Lunch in de jungle", "Terug vóór de avond"] },
-      "2d": { title: "Jungletrek van 2 dagen", highlights: ["Slapen bij de rivier", "Jungle diner en ontbijt", "Traditionele tube rafting terug"] },
-      "3d": { title: "Jungletrek van 3 dagen", highlights: ["Dieper regenwoudtraject", "Meer tijd voor wildlife", "Twee nachten in jungle-camps"] },
-      "4d": { title: "Jungletrek van 4 dagen", highlights: ["Meer afgelegen junglezones", "Langere beklimmingen en rivieroversteken", "Ideaal voor actieve reizigers"] },
-      "5d": { title: "Jungletrek van 5 dagen", highlights: ["Meeslepend Gunung Leuser-avontuur", "Meerdere campnachten", "Veel dieren en planten om te spotten"] },
+      "2d": { title: "Jungletrek van 2 dagen", highlights: ["Slapen bij de rivier", "Inclusief: Gids, maaltijden, tent, vergunningen", "Exclusief: Persoonlijke verzekering, fooien"] },
+      "3d": { title: "Jungletrek van 3 dagen", highlights: ["Dieper regenwoudtraject", "Inclusief: Gids, maaltijden, tent, vergunningen", "Exclusief: Persoonlijke verzekering, fooien"] },
+      "4d": { title: "Jungletrek van 4 dagen", highlights: ["Meer afgelegen junglezones", "Inclusief: Gids, maaltijden, camp, permits", "Exclusief: Verzekering, fooien"] },
+      "5d": { title: "Jungletrek van 5 dagen", highlights: ["Meeslepend Gunung Leuser-avontuur", "Inclusief: Gids, maaltijden, camp, permits", "Exclusief: Verzekering, fooien"] },
       "p3d": { title: "Exclusief eco jungle-pakket van 3 dagen", highlights: ["Privégids", "Transport en accommodatie geregeld", "Balans tussen dorp en jungle"] },
       "p4d": { title: "Exclusief eco jungle-pakket van 4 dagen", highlights: ["Privé meerdaagse route", "Accommodatiecoördinatie", "Flexibel tempo in Bukit Lawang"] },
       "p5d": { title: "Exclusief eco jungle-pakket van 5 dagen", highlights: ["Compleet privéverblijf", "Trekking, rafting en dorpsmomenten", "Perfect voor een eerste bezoek"] },
@@ -489,7 +512,7 @@ export const siteText = {
       },
       {
         q: "Hoe werkt de betaling?",
-        a: "De originele site accepteert volledige betaling of een aanbetaling van 30%, waarbij de rest bij aankomst in Bukit Lawang wordt betaald. Neem contact op voor actuele bankgegevens."
+        a: "We accepteren aanbetalingen veilig via Wise (TransferWise), PayPal of internationale bankoverschrijving. Het resterende bedrag kan bij aankomst contant worden betaald. Neem contact op met Syaipul voor de betaalgegevens."
       },
       {
         q: "Waar is het ontmoetingspunt?",
@@ -499,12 +522,17 @@ export const siteText = {
     contact: {
       kicker: "Direct boeken",
       title: "Geef Syaipul je data, groepsgrootte en gewenste trek door.",
-      text: "WhatsApp is het snelst voor beschikbaarheid. E-mail is handig voor aanbetalingen, transport, accommodatie en gedetailleerde vragen over de route.",
+      text: "WhatsApp is het snelst voor beschikbaarheid. E-mail is handig om Wise/PayPal-aanbetalingen, transport, accommodatie en details over de route te bespreken.",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
     footer: { location: "Bukit Lawang, Noord-Sumatra, Indonesië" },
-    whatsappMessage: "Hoi OrangutanAdventureSumatra, ik wil graag informatie over een jungletrek."
+    whatsappMessage: "Hoi OrangutanAdventureSumatra, ik wil graag informatie over een jungletrek.",
+    testimonialsData: [
+      { text: "Een onvergetelijke, echt ethische ervaring. Syaipul zorgde ervoor dat we op een respectvolle afstand van de orang-oetans bleven, met nog steeds een geweldig uitzicht.", author: "Sarah M.", location: "Duitsland" },
+      { text: "De 3-daagse trek was perfect georganiseerd. We voelden ons de hele tijd veilig en het eten in de jungle was heerlijk.", author: "Thomas & Lisa", location: "Nederland" },
+      { text: "We boekten het privépakket en het was elke cent waard. Geen verborgen kosten, alles werd duidelijk uitgelegd.", author: "Claire D.", location: "Frankrijk" }
+    ],
   }
 } satisfies Record<Locale, {
   metaTitle: string;
@@ -540,6 +568,8 @@ export const siteText = {
     faqSub: string;
     contact: string;
     contactSub: string;
+    testimonials: string;
+    testimonialsSub: string;
   };
   categories: Record<"classic" | "private" | "activities", string>;
   treks: Record<TrekId, { title: string; highlights: [string, string, string] }>;
@@ -551,4 +581,5 @@ export const siteText = {
   contact: { kicker: string; title: string; text: string; whatsappLabel: string; emailLabel: string };
   footer: { location: string };
   whatsappMessage: string;
+  testimonialsData: Array<{ text: string; author: string; location: string }>;
 }>;

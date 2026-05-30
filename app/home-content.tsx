@@ -580,6 +580,31 @@ export function HomeContent({
         </div>
       </section>
 
+      <section className="section testimonials-section" id="testimonials">
+        <div className="section-heading wide-heading">
+          <span className="section-kicker">{t.headings.testimonials}</span>
+          <h2>{t.headings.testimonialsSub}</h2>
+        </div>
+        <div className="testimonials-grid">
+          {t.testimonialsData.map((testimonial) => (
+            <article className="testimonial-card" key={testimonial.author}>
+              <div className="testimonial-stars">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p>"{testimonial.text}"</p>
+              <div className="testimonial-author">
+                <strong>{testimonial.author}</strong>
+                <span>{testimonial.location}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section faq-section" id="faq">
         <div className="section-heading">
           <span className="section-kicker">{t.headings.faq}</span>

@@ -241,6 +241,114 @@ export const privacyPolicy = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2-week-sumatra-itinerary-europe-travelers",
+    title: "The Ultimate 2-Week North Sumatra Itinerary: Bukit Lawang, Lake Toba, and Berastagi",
+    description:
+      "A complete travel guide for European visitors looking to explore the best of North Sumatra, from orangutan trekking to volcanic lakes.",
+    date: "2026-05-30",
+    readingTime: "8 min read",
+    image: "/images/stock/activity-10.webp",
+    imageAlt: "Stunning landscape view of Lake Toba in North Sumatra",
+    tags: ["Sumatra Itinerary", "Lake Toba", "Berastagi", "Bukit Lawang travel", "European travelers"],
+    sections: [
+      {
+        title: "Why 2 weeks is the perfect amount of time",
+        paragraphs: [
+          "For travelers flying all the way from Europe, spending just a few days in Sumatra doesn't do justice to the scale of the island. A 2-week itinerary allows you to recover from jet lag, immerse yourself in the jungle, experience unique local cultures, and relax by the largest volcanic lake in the world without rushing.",
+          "This classic 'North Sumatra Loop' is the most popular route for European backpackers and couples, combining wildlife, adventure, and relaxation."
+        ]
+      },
+      {
+        title: "Days 1-5: Arrival and the Bukit Lawang Jungle",
+        paragraphs: [
+          "Most European flights arrive in Medan (Kualanamu International Airport). Skip staying in the busy city and arrange a private transfer straight to Bukit Lawang. The 3.5 to 4-hour drive lets you wake up on your first full day to the sounds of the rainforest."
+        ],
+        bullets: [
+          "Day 1: Arrive in Medan, private car to Bukit Lawang, rest at your riverside guesthouse.",
+          "Day 2: Relax, explore the village, or take a short Bat Cave tour to acclimatize.",
+          "Days 3-5: Embark on a 3-Day/2-Night ethical jungle trek. Sleep by the river, track semi-wild orangutans, and return via traditional tube rafting."
+        ]
+      },
+      {
+        title: "Days 6-8: The cool climate of Berastagi",
+        paragraphs: [
+          "After the heat and humidity of the jungle, the highland town of Berastagi is incredibly refreshing. You can arrange a driver from Bukit Lawang directly to Berastagi (about 4-5 hours).",
+          "Berastagi is famous for its fruit markets, traditional Batak Karo villages, and accessible volcanoes."
+        ],
+        bullets: [
+          "Day 6: Drive from Bukit Lawang to Berastagi. Visit the vibrant local fruit market.",
+          "Day 7: Wake up early for a sunrise hike up Mount Sibayak (an active volcano), followed by a soak in the local hot springs.",
+          "Day 8: Visit the traditional Sipisopiso waterfall on your way down toward Lake Toba."
+        ]
+      },
+      {
+        title: "Days 9-13: Relaxing at Lake Toba (Samosir Island)",
+        paragraphs: [
+          "From Berastagi, it’s a scenic drive down to Parapat, where you catch a ferry across the massive crater lake to Samosir Island. This is where you slow down.",
+          "Lake Toba is twice the size of Singapore and sits in the caldera of a supervolcano. It’s culturally rich (the heartland of the Batak people) and incredibly peaceful."
+        ],
+        bullets: [
+          "Day 9: Ferry to Samosir Island (Tuktuk). Check into your lakeside accommodation.",
+          "Days 10-11: Rent a scooter and drive around the island. Visit traditional Batak houses, stone chairs, and weaving villages.",
+          "Days 12-13: Swim in the lake, read a book, enjoy local coffee, and recharge."
+        ]
+      },
+      {
+        title: "Day 14: Return to Medan and depart",
+        paragraphs: [
+          "On your final day, take the morning ferry back to Parapat and hire a shared taxi or private car to Kualanamu Airport (KNO) for your flight home or your next destination in Indonesia.",
+          "This loop is safe, well-established, and offers the perfect balance of adventure and recovery for long-haul travelers."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "weekend-guide-to-bukit-lawang-from-singapore",
+    title: "The Ultimate Weekend Guide to Bukit Lawang from Singapore & Malaysia",
+    description:
+      "How to plan a quick weekend getaway from Singapore or Kuala Lumpur to Bukit Lawang for an unforgettable orangutan trekking experience.",
+    date: "2026-05-30",
+    readingTime: "5 min read",
+    image: "/images/stock/activity-01.webp",
+    imageAlt: "Traveler standing near the river in Bukit Lawang",
+    tags: ["Singapore to Sumatra", "weekend trip", "Bukit Lawang travel", "short getaway", "Malaysia"],
+    sections: [
+      {
+        title: "A quick escape to the jungle",
+        paragraphs: [
+          "For travelers based in Singapore or Malaysia, Bukit Lawang offers a complete contrast to city life, and it is closer than you think. A short, direct flight to Medan followed by a drive into North Sumatra puts you right on the edge of the Gunung Leuser National Park.",
+          "This makes it a perfect weekend getaway for nature lovers, couples, or families who want a real jungle experience without burning through all their annual leave."
+        ]
+      },
+      {
+        title: "The ideal weekend itinerary",
+        paragraphs: [
+          "To maximize your time, take a Friday evening or Saturday morning flight from Changi (SIN) or Kuala Lumpur (KUL) to Kualanamu International Airport (KNO) in Medan. From there, a pre-arranged private car is the fastest way to get you straight to Bukit Lawang in about 3.5 to 4 hours."
+        ],
+        bullets: [
+          "Friday/Saturday: Arrive in Medan, private transfer to Bukit Lawang, check into your riverside guesthouse, and relax.",
+          "Sunday: Join a 1-day or half-day ethical orangutan trek. After lunch in the jungle, transfer back to Medan for an evening flight home."
+        ]
+      },
+      {
+        title: "Trekking options for short stays",
+        paragraphs: [
+          "If you only have the weekend, a 1-day jungle trek or a 4-hour walk is highly recommended. These shorter treks still give you an excellent chance of spotting semi-wild orangutans, Thomas leaf monkeys, and long-tailed macaques.",
+          "For a more relaxed pace, you can also consider a Village Tour or Bat Cave visit to experience local culture before heading back."
+        ]
+      },
+      {
+        title: "Travel tips for weekenders",
+        bullets: [
+          "Book a private driver in advance to avoid wasting time negotiating at the airport.",
+          "Pack light—a small backpack with quick-dry clothes and good walking shoes is all you need.",
+          "Bring some Indonesian Rupiah (IDR), as ATMs in Bukit Lawang can occasionally be unreliable.",
+          "Confirm flight times carefully so you have enough buffer between the trek ending and your airport transfer."
+        ]
+      }
+    ]
+  },
+  {
     slug: "3-day-bukit-lawang-jungle-trek-itinerary",
     title: "3-Day Bukit Lawang Jungle Trek Itinerary for First-Time Visitors",
     description:
