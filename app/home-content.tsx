@@ -112,7 +112,7 @@ type TestimonialCard = {
   meta: string;
   rating: number;
   profilePhotoUrl?: string | null;
-  source?: "google";
+  source?: "guest" | "google";
   text: string;
 };
 
@@ -222,6 +222,7 @@ export function HomeContent({
       author: testimonial.author,
       meta: testimonial.location,
       rating: 5,
+      source: "guest" as const,
       text: testimonial.text
     }));
 
@@ -238,7 +239,7 @@ export function HomeContent({
       text: review.text
     }));
 
-    return googleCards.slice(0, 3);
+    return [...localCards.slice(0, 2), ...googleCards.slice(0, 2)].slice(0, 4);
   }, [googleReviews, t.testimonialsData]);
 
   const visibleTreks = useMemo(
@@ -825,6 +826,24 @@ export function HomeContent({
             </p>
           )}
         </div>
+        <div className="testimonials-proof-strip">
+          {googleReviews?.averageRating ? (
+            <div>
+              <Star size={18} fill="currentColor" />
+              <span>
+                {googleReviews.averageRating.toFixed(1)} average on Google from {googleReviews.totalReviewCount} reviews
+              </span>
+            </div>
+          ) : null}
+          <div>
+            <HeartHandshake size={18} />
+            <span>{t.testimonialsData.length} guest stories from recent travelers</span>
+          </div>
+          <div>
+            <MessageCircle size={18} />
+            <span>Direct replies from Bukit Lawang by WhatsApp and email</span>
+          </div>
+        </div>
         <div className="testimonials-grid">
           {testimonialCards.map((testimonial) => (
             <article className="testimonial-card" key={`${testimonial.author}-${testimonial.text.slice(0, 24)}`}>
@@ -839,7 +858,7 @@ export function HomeContent({
                 <div className="testimonial-author-copy">
                   <strong>{testimonial.author}</strong>
                   <span>{testimonial.meta}</span>
-                  {testimonial.source === "google" && <small>Google review</small>}
+                  {testimonial.source === "google" ? <small>Verified Google review</small> : <small>Guest story</small>}
                 </div>
               </div>
             </article>

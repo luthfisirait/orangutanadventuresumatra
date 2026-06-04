@@ -2,7 +2,6 @@
 
 import { Check, Mail, MessageCircle, Sparkles, X } from "lucide-react";
 import { useEffect, useMemo, useState, type ChangeEvent, type FormEvent } from "react";
-import { useSearchParams } from "next/navigation";
 import { bookingPackages } from "./booking-data";
 import { whatsappNumber } from "../travel-content";
 import type { TrekId } from "../site-content";
@@ -21,6 +20,10 @@ type BookingFormState = {
 };
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
+
+type BookingFormProps = {
+  initialPackageId?: string;
+};
 
 function isBookingPackageId(value: string | null): value is TrekId {
   return bookingPackages.some((bookingPackage) => bookingPackage.id === value);
@@ -74,10 +77,8 @@ function buildMessage(form: BookingFormState, selectedPackage: (typeof bookingPa
   return lines.join("\n");
 }
 
-export function BookingForm() {
-  const searchParams = useSearchParams();
-  const packageFromQuery = searchParams.get("package");
-  const initialPackageId = isBookingPackageId(packageFromQuery) ? packageFromQuery : "";
+export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
+  const selectedPackageFromQuery = isBookingPackageId(initialPackageId) ? initialPackageId : "";
 
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -88,7 +89,7 @@ export function BookingForm() {
     email: "",
     whatsapp: "",
     country: "",
-    packageId: initialPackageId,
+    packageId: selectedPackageFromQuery,
     startDate: "",
     groupSize: "",
     transport: "",

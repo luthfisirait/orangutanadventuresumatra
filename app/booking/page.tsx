@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 import { ArrowRight, CalendarDays, Check, Clock3, HeartHandshake, MessageCircle, ShieldCheck } from "lucide-react";
 import { StaticFooter, StaticHeader } from "../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../seo";
@@ -46,7 +45,24 @@ export const metadata: Metadata = {
   }
 };
 
-export default function BookingPage() {
+type BookingPageProps = {
+  searchParams?: Promise<{
+    package?: string | string[];
+  }>;
+};
+
+function normalizePackageParam(value: string | string[] | undefined) {
+  if (Array.isArray(value)) {
+    return value[0] ?? "";
+  }
+
+  return value ?? "";
+}
+
+export default async function BookingPage({ searchParams }: BookingPageProps) {
+  const resolvedSearchParams = (await searchParams) ?? {};
+  const initialPackageId = normalizePackageParam(resolvedSearchParams.package);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -146,9 +162,7 @@ export default function BookingPage() {
 
         <div className="booking-layout">
           <article className="info-block booking-panel" id="booking-form">
-            <Suspense fallback={<p>Loading booking form...</p>}>
-              <BookingForm />
-            </Suspense>
+            <BookingForm initialPackageId={initialPackageId} />
           </article>
 
           <div className="booking-side">

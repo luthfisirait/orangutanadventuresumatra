@@ -1025,6 +1025,34 @@ img {
   font-weight: 900;
 }
 
+.testimonials-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.testimonials-proof-strip div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 72px;
+  padding: 14px 16px;
+  border: 1px solid rgba(24, 32, 25, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--forest);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.testimonials-proof-strip svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--river);
+}
+
 .testimonial-card p {
   display: -webkit-box;
   overflow: hidden;
