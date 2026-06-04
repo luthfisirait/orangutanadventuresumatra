@@ -3,18 +3,26 @@ import { locales } from "./site-content";
 import { languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
 
+function asLastModified(date: string) {
+  return new Date(`${date}T00:00:00.000Z`);
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const pageLastModified = asLastModified("2026-06-03");
+  const latestBlogPostDate = new Date(
+    Math.max(...blogPosts.map((post) => asLastModified(post.date).getTime()))
+  );
   const staticPages = [
-    { path: "/essential-information", priority: 0.82 },
-    { path: "/blog", priority: 0.84 },
-    { path: "/privacy", priority: 0.35 }
+    { path: "/booking", lastModified: pageLastModified, priority: 0.88 },
+    { path: "/essential-information", lastModified: pageLastModified, priority: 0.82 },
+    { path: "/blog", lastModified: pageLastModified > latestBlogPostDate ? pageLastModified : latestBlogPostDate, priority: 0.84 },
+    { path: "/privacy", lastModified: pageLastModified, priority: 0.35 }
   ];
 
   return [
     {
       url: siteUrl,
-      lastModified,
+      lastModified: pageLastModified,
       changeFrequency: "weekly",
       priority: 1,
       alternates: {
@@ -23,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...locales.map((locale) => ({
       url: `${siteUrl}/${locale}`,
-      lastModified,
+      lastModified: pageLastModified,
       changeFrequency: "weekly" as const,
       priority: locale === "en" ? 0.95 : 0.9,
       alternates: {
@@ -32,13 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...staticPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
-      lastModified,
+      lastModified: page.lastModified,
       changeFrequency: "monthly" as const,
       priority: page.priority
     })),
     ...blogPosts.map((post) => ({
       url: `${siteUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
+      lastModified: asLastModified(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.78
     }))

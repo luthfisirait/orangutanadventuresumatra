@@ -36,16 +36,39 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: privacyPolicy.title,
-    description: privacyPolicy.description,
-    url: absoluteUrl("/privacy"),
-    dateModified: privacyPolicy.lastUpdated,
-    publisher: {
-      "@type": "TravelAgency",
-      name: siteName,
-      url: siteUrl
-    }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${absoluteUrl("/privacy")}#webpage`,
+        name: privacyPolicy.title,
+        description: privacyPolicy.description,
+        url: absoluteUrl("/privacy"),
+        dateModified: privacyPolicy.lastUpdated,
+        publisher: {
+          "@type": "TravelAgency",
+          name: siteName,
+          url: siteUrl
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${absoluteUrl("/privacy")}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: siteName,
+            item: siteUrl
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Privacy Policy",
+            item: absoluteUrl("/privacy")
+          }
+        ]
+      }
+    ]
   };
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   CalendarDays,
@@ -42,7 +43,17 @@ import {
   siteName,
   siteUrl
 } from "./seo";
-import { blogPosts, impactVision, packageActivityOverview } from "./travel-content";
+import {
+  blogPosts,
+  contactEmail,
+  brandInstagramHandle,
+  brandInstagramUrl,
+  googleMapsUrl,
+  impactVision,
+  instagramUrl,
+  packageActivityOverview,
+  whatsappNumber
+} from "./travel-content";
 
 const navItems = [
   { key: "treks", href: "#treks" },
@@ -51,9 +62,6 @@ const navItems = [
   { key: "faq", href: "#faq" },
   { key: "contact", href: "#contact" }
 ] as const;
-
-const syaipulInstagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
-const whatsappNumber = "6285362405752";
 
 function whatsappUrlFor(message: string) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -80,6 +88,70 @@ type GuidePhotoProps = {
   fallbackSrc?: string;
   src: string;
 };
+
+type GoogleReview = {
+  author: string;
+  id: string;
+  rating: number;
+  profilePhotoUrl: string | null;
+  relativeTime: string;
+  source: "google";
+  text: string;
+};
+
+type GoogleReviewsResponse = {
+  averageRating: number | null;
+  configured: boolean;
+  reviews: GoogleReview[];
+  sourceUrl: string;
+  totalReviewCount: number;
+};
+
+type TestimonialCard = {
+  author: string;
+  meta: string;
+  rating: number;
+  profilePhotoUrl?: string | null;
+  source?: "google";
+  text: string;
+};
+
+function initialsForName(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() ?? "")
+    .join("") || "G";
+}
+
+function ReviewAvatar({
+  name,
+  profilePhotoUrl
+}: {
+  name: string;
+  profilePhotoUrl?: string | null;
+}) {
+  const [broken, setBroken] = useState(false);
+  const initials = initialsForName(name);
+
+  return (
+    <span className="testimonial-avatar" aria-hidden={profilePhotoUrl ? undefined : "true"}>
+      {profilePhotoUrl && !broken ? (
+        <img
+          className="testimonial-avatar-image"
+          src={profilePhotoUrl}
+          alt={`Profile photo of ${name}`}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          onError={() => setBroken(true)}
+        />
+      ) : (
+        <span className="testimonial-avatar-fallback">{initials}</span>
+      )}
+    </span>
+  );
+}
 
 function GuidePhoto({ alt, fallbackSrc, src }: GuidePhotoProps) {
   const [imageSrc, setImageSrc] = useState(src);
@@ -110,23 +182,64 @@ export function HomeContent({
   const [language, setLanguage] = useState<Locale>(initialLanguage);
   const [activeCategory, setActiveCategory] = useState<TrekCategory>("classic");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [googleReviews, setGoogleReviews] = useState<GoogleReviewsResponse | null>(null);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadGoogleReviews() {
+      try {
+        const response = await fetch("/api/reviews");
+
+        if (!response.ok) {
+          return;
+        }
+
+        const data = (await response.json()) as GoogleReviewsResponse;
+
+        if (!ignore && data.reviews.length > 0) {
+          setGoogleReviews(data);
+        }
+      } catch {
+        // Keep local testimonials if Google Places is not configured or unavailable.
+      }
+    }
+
+    loadGoogleReviews();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const t = siteText[language];
   const whatsappUrl = useMemo(
     () => whatsappUrlFor(t.whatsappMessage),
     [t.whatsappMessage]
   );
+  const testimonialCards = useMemo<TestimonialCard[]>(() => {
+    const localCards = t.testimonialsData.map((testimonial) => ({
+      author: testimonial.author,
+      meta: testimonial.location,
+      rating: 5,
+      text: testimonial.text
+    }));
 
-  const createTrekWhatsappUrl = (trek: { price: string; title: string }) => {
-    const messages: Record<Locale, string> = {
-      en: `Hi Orangutan Adventure Sumatra, I would like to ask about the ${trek.title} package (${trek.price}). My preferred date is:`,
-      de: `Hallo Orangutan Adventure Sumatra, ich möchte mich nach dem Paket ${trek.title} (${trek.price}) erkundigen. Mein Wunschtermin ist:`,
-      fr: `Bonjour Orangutan Adventure Sumatra, je souhaite me renseigner sur le forfait ${trek.title} (${trek.price}). Ma date préférée est :`,
-      nl: `Hoi Orangutan Adventure Sumatra, ik wil graag informatie over het pakket ${trek.title} (${trek.price}). Mijn voorkeursdatum is:`
-    };
+    if (!googleReviews?.reviews.length) {
+      return localCards;
+    }
 
-    return whatsappUrlFor(messages[language]);
-  };
+    const googleCards = googleReviews.reviews.map((review) => ({
+      author: review.author,
+      meta: review.relativeTime || "Google review",
+      rating: review.rating,
+      profilePhotoUrl: review.profilePhotoUrl,
+      source: "google" as const,
+      text: review.text
+    }));
+
+    return googleCards.slice(0, 3);
+  }, [googleReviews, t.testimonialsData]);
 
   const visibleTreks = useMemo(
     () =>
@@ -149,8 +262,6 @@ export function HomeContent({
   );
 
   const currentUrl = language === "en" && !routedLanguage ? siteUrl : absoluteUrl(`/${language}`);
-
-  const googleMapsUrl = "https://maps.app.goo.gl/EKrG3TFNG363k4jY7";
 
   useEffect(() => {
     if (!mobileMenuOpen) {
@@ -210,7 +321,7 @@ export function HomeContent({
           image: absoluteUrl("/images/link-preview.jpg"),
           description: t.metaDescription,
           telephone: "+6285362405752",
-          email: "support@orangutanadventuresumatra.com",
+          email: contactEmail,
           priceRange: "EUR 20 - EUR 385",
           address: {
             "@type": "PostalAddress",
@@ -232,27 +343,14 @@ export function HomeContent({
             "North Sumatra"
           ],
           knowsAbout: [...coreSearchPhrases],
-          sameAs: [syaipulInstagramUrl],
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "5",
-            reviewCount: String(t.testimonialsData.length),
-            bestRating: "5",
-            worstRating: "1"
-          },
-          review: t.testimonialsData.map((review) => ({
-            "@type": "Review",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "5",
-              bestRating: "5"
-            },
-            author: {
-              "@type": "Person",
-              name: review.author
-            },
-            reviewBody: review.text
-          }))
+          sameAs: [brandInstagramUrl],
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            telephone: "+6285362405752",
+            email: contactEmail,
+            availableLanguage: ["en", "de", "fr", "nl", "id"]
+          }
         },
         {
           "@type": "Person",
@@ -260,7 +358,7 @@ export function HomeContent({
           name: "Syaipul Ardiansyah",
           jobTitle: "Local jungle guide",
           worksFor: { "@id": `${siteUrl}/#business` },
-          sameAs: [syaipulInstagramUrl]
+          sameAs: [instagramUrl]
         },
         {
           "@type": "WebSite",
@@ -527,7 +625,7 @@ export function HomeContent({
 
         <div className="trek-grid">
           {visibleTreks.map((trek) => {
-            const trekWhatsappUrl = createTrekWhatsappUrl(trek);
+            const bookingUrl = `/booking?package=${encodeURIComponent(trek.id)}#booking-form`;
 
             return (
             <article className="trek-card" key={trek.id}>
@@ -560,10 +658,10 @@ export function HomeContent({
                     </li>
                   ))}
                 </ul>
-                <a className="card-link" href={trekWhatsappUrl} target="_blank" rel="noreferrer">
-                  {language === "en" ? "Ask availability" : language === "de" ? "Verfügbarkeit anfragen" : language === "fr" ? "Demander les disponibilités" : "Beschikbaarheid vragen"}
+                <Link className="card-link" href={bookingUrl}>
+                  {language === "en" ? "Check availability" : language === "de" ? "Verfügbarkeit prüfen" : language === "fr" ? "Vérifier les disponibilités" : "Beschikbaarheid checken"}
                   <ArrowRight size={16} />
-                </a>
+                </Link>
               </div>
             </article>
             );
@@ -701,9 +799,9 @@ export function HomeContent({
                 <span>{t.guideRole}</span>
                 <h3>{guide.name}</h3>
                 <p>{guide.text}</p>
-                <a className="guide-social" href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
+                <a className="guide-social" href={instagramUrl} target="_blank" rel="noreferrer">
                   <Instagram size={16} />
-                  Instagram
+                  Guide Instagram
                 </a>
               </div>
             </article>
@@ -715,21 +813,34 @@ export function HomeContent({
         <div className="section-heading wide-heading">
           <span className="section-kicker">{t.headings.testimonials}</span>
           <h2>{t.headings.testimonialsSub}</h2>
+          {googleReviews?.averageRating && (
+            <p className="google-rating-summary">
+              <Star size={18} fill="currentColor" />
+              <span>
+                {googleReviews.averageRating.toFixed(1)} Google rating from {googleReviews.totalReviewCount} reviews
+              </span>
+              <a href={googleReviews.sourceUrl} target="_blank" rel="noreferrer">
+                Read all on Google
+              </a>
+            </p>
+          )}
         </div>
         <div className="testimonials-grid">
-          {t.testimonialsData.map((testimonial) => (
-            <article className="testimonial-card" key={testimonial.author}>
+          {testimonialCards.map((testimonial) => (
+            <article className="testimonial-card" key={`${testimonial.author}-${testimonial.text.slice(0, 24)}`}>
               <div className="testimonial-stars">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
+                {Array.from({ length: Math.max(1, Math.min(5, testimonial.rating)) }).map((_, idx) => (
+                  <Star key={idx} size={16} fill="currentColor" />
+                ))}
               </div>
               <p>"{testimonial.text}"</p>
               <div className="testimonial-author">
-                <strong>{testimonial.author}</strong>
-                <span>{testimonial.location}</span>
+                <ReviewAvatar name={testimonial.author} profilePhotoUrl={testimonial.profilePhotoUrl} />
+                <div className="testimonial-author-copy">
+                  <strong>{testimonial.author}</strong>
+                  <span>{testimonial.meta}</span>
+                  {testimonial.source === "google" && <small>Google review</small>}
+                </div>
               </div>
             </article>
           ))}
@@ -797,11 +908,19 @@ export function HomeContent({
             <p>{t.contact.text}</p>
           </div>
           <div className="contact-actions">
-            <a className="primary-button" href={whatsappUrl} target="_blank" rel="noreferrer">
+            <Link className="primary-button" href="/booking">
+              <CalendarDays size={18} />
+              {t.contact.bookingLabel}
+            </Link>
+            <a className="secondary-button dark" href={whatsappUrl} target="_blank" rel="noreferrer">
               <MessageCircle size={18} />
               {t.contact.whatsappLabel}
             </a>
-            <a className="secondary-button dark" href="mailto:support@orangutanadventuresumatra.com">
+            <a className="secondary-button dark" href={brandInstagramUrl} target="_blank" rel="noreferrer">
+              <Instagram size={18} />
+              Instagram {brandInstagramHandle}
+            </a>
+            <a className="secondary-button dark" href={`mailto:${contactEmail}`}>
               <Mail size={18} />
               {t.contact.emailLabel}
             </a>
@@ -812,21 +931,33 @@ export function HomeContent({
       <footer>
         <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
-        <div>
+        <nav className="footer-links" aria-label="Footer navigation">
           <a href="/essential-information">{t.footerLinks.essentialInfo}</a>
+          <a href="/booking">{t.footerLinks.booking}</a>
           <a href="/blog">{t.footerLinks.blog}</a>
           <a href="/privacy">{t.footerLinks.privacy}</a>
-          <a href="mailto:support@orangutanadventuresumatra.com">{t.footerLinks.email}</a>
-          <a href={whatsappUrl} target="_blank" rel="noreferrer">
-            {t.footerLinks.whatsapp}
+        </nav>
+        <nav className="footer-contact-links" aria-label="Contact and social links">
+          <a className="footer-icon-link" href={`mailto:${contactEmail}`} aria-label={t.footerLinks.email} title={t.footerLinks.email}>
+            <Mail size={18} />
           </a>
-          <a href={syaipulInstagramUrl} target="_blank" rel="noreferrer">
-            {t.footerLinks.instagram}
+          <a className="footer-icon-link" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={t.footerLinks.whatsapp} title={t.footerLinks.whatsapp}>
+            <MessageCircle size={18} />
           </a>
-          <a href={googleMapsUrl} target="_blank" rel="noreferrer">
-            Google Maps
+          <a
+            className="footer-icon-link"
+            href={brandInstagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${t.footerLinks.instagram} ${brandInstagramHandle}`}
+            title={brandInstagramHandle}
+          >
+            <Instagram size={18} />
           </a>
-        </div>
+          <a className="footer-icon-link" href={googleMapsUrl} target="_blank" rel="noreferrer" aria-label={t.footerLinks.maps} title={t.footerLinks.maps}>
+            <MapPin size={18} />
+          </a>
+        </nav>
       </footer>
 
       <a

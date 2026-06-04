@@ -42,23 +42,46 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    name: `Bukit Lawang Orangutan Trekking Blog | ${siteName}`,
-    description: blogDescription,
-    url: absoluteUrl("/blog"),
-    publisher: {
-      "@type": "TravelAgency",
-      name: siteName,
-      url: siteUrl
-    },
-    blogPost: blogPosts.map((post) => ({
-      "@type": "BlogPosting",
-      headline: post.title,
-      description: post.description,
-      url: absoluteUrl(`/blog/${post.slug}`),
-      datePublished: post.date,
-      image: absoluteUrl(post.image)
-    }))
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": `${absoluteUrl("/blog")}#blog`,
+        name: `Bukit Lawang Orangutan Trekking Blog | ${siteName}`,
+        description: blogDescription,
+        url: absoluteUrl("/blog"),
+        publisher: {
+          "@type": "TravelAgency",
+          name: siteName,
+          url: siteUrl
+        },
+        blogPost: blogPosts.map((post) => ({
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.description,
+          url: absoluteUrl(`/blog/${post.slug}`),
+          datePublished: post.date,
+          image: absoluteUrl(post.image)
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${absoluteUrl("/blog")}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: siteName,
+            item: siteUrl
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: absoluteUrl("/blog")
+          }
+        ]
+      }
+    ]
   };
 
   return (

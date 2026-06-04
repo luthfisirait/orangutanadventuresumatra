@@ -20,11 +20,34 @@ Sharing and routes:
 - Link preview image: public/images/link-preview.jpg
 - Regenerate link preview: npm run preview-image
 
+Google Places reviews:
+
+1. Enable Places API in Google Cloud and make sure billing is enabled.
+2. Copy .env.example to .env.local.
+3. Fill GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID.
+4. Start the site and check /api/reviews. If configured correctly, the homepage testimonial section will show up to 3 Google reviews with 5 stars and comments. Profile photos appear automatically when Google returns profile_photo_url.
+
+Review display settings:
+
+- GOOGLE_PLACES_REVIEW_DISPLAY_LIMIT controls cards shown on the homepage.
+- GOOGLE_PLACES_REVIEW_MIN_TEXT_LENGTH filters reviews that are too short for the card layout.
+- GOOGLE_PLACES_REVIEW_MAX_TEXT_LENGTH truncates long Google reviews before they reach the UI.
+- GOOGLE_PLACES_REVIEWS_SORT defaults to most_relevant.
+- GOOGLE_PLACES_REVIEWS_CACHE_SECONDS defaults to 86400.
+
+Booking email:
+
+- The booking form sends mail through Zoho SMTP.
+- Use smtp.zoho.com for free/personal accounts or smtppro.zoho.com for paid organization/domain accounts.
+- Use the Zoho account email as SMTP_USER and an app-specific password in SMTP_PASS if 2FA is enabled.
+- BOOKING_EMAIL_TO and BOOKING_EMAIL_FROM can point to the same Zoho mailbox.
+
 Main files:
 
 - app/page.tsx: homepage content, trek packages, FAQ, guide sections, booking CTAs.
 - app/globals.css: responsive layout, animation, and visual design.
 - app/seo.ts: canonical URLs, hreflang, Open Graph, Twitter card, and robots metadata helpers.
+- app/api/reviews/route.ts: server-side Google Places reviews endpoint.
 - app/[locale]/page.tsx: localized language routes.
 - public/images/: local copies of key images from the existing website.
 - scripts/fix-next-static-assets.mjs: post-build asset alias helper for the local Next build.

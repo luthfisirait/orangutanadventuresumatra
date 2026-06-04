@@ -45,24 +45,47 @@ export const metadata: Metadata = {
 export default function EssentialInformationPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "TravelGuide",
-    name: essentialInformation.title,
-    description: essentialInformation.description,
-    image: absoluteUrl(essentialInformation.image),
-    about: {
-      "@type": "TouristDestination",
-      name: "Bukit Lawang",
-      address: {
-        "@type": "PostalAddress",
-        addressRegion: "North Sumatra",
-        addressCountry: "ID"
+    "@graph": [
+      {
+        "@type": "TravelGuide",
+        "@id": `${absoluteUrl("/essential-information")}#guide`,
+        name: essentialInformation.title,
+        description: essentialInformation.description,
+        image: absoluteUrl(essentialInformation.image),
+        about: {
+          "@type": "TouristDestination",
+          name: "Bukit Lawang",
+          address: {
+            "@type": "PostalAddress",
+            addressRegion: "North Sumatra",
+            addressCountry: "ID"
+          }
+        },
+        publisher: {
+          "@type": "TravelAgency",
+          name: siteName,
+          url: siteUrl
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${absoluteUrl("/essential-information")}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: siteName,
+            item: siteUrl
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Essential information",
+            item: absoluteUrl("/essential-information")
+          }
+        ]
       }
-    },
-    publisher: {
-      "@type": "TravelAgency",
-      name: siteName,
-      url: siteUrl
-    }
+    ]
   };
 
   return (

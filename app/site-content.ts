@@ -167,6 +167,7 @@ export const siteText = {
       kicker: "Book direct",
       title: "Tell Syaipul your dates, group size, and preferred trek.",
       text: "WhatsApp is fastest for availability. Email works well to discuss Wise/PayPal deposits, transport, accommodation, and detailed itinerary questions.",
+      bookingLabel: "Open booking form",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
@@ -179,11 +180,13 @@ export const siteText = {
     },
     footerLinks: {
       essentialInfo: "Essential information",
+      booking: "Booking",
       blog: "Blog",
       privacy: "Privacy Policy",
       email: "Email",
       whatsapp: "WhatsApp",
-      instagram: "Instagram"
+      instagram: "Instagram",
+      maps: "Google Maps"
     },
     mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, North Sumatra, Indonesia" },
@@ -302,6 +305,7 @@ export const siteText = {
       kicker: "Direkt buchen",
       title: "Teile Syaipul deine Reisedaten, Gruppengröße und Wunschroute mit.",
       text: "WhatsApp ist am schnellsten für Verfügbarkeiten. E-Mail eignet sich gut, um Wise/PayPal-Anzahlungen, Transport, Unterkunft und den detaillierten Ablauf zu besprechen.",
+      bookingLabel: "Buchungsformular öffnen",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
@@ -314,11 +318,13 @@ export const siteText = {
     },
     footerLinks: {
       essentialInfo: "Wichtige Infos",
+      booking: "Buchung",
       blog: "Blog",
       privacy: "Datenschutz",
       email: "E-Mail",
       whatsapp: "WhatsApp",
-      instagram: "Instagram"
+      instagram: "Instagram",
+      maps: "Google Maps"
     },
     mobileMenu: "Menü",
     footer: { location: "Bukit Lawang, Nord-Sumatra, Indonesien" },
@@ -437,6 +443,7 @@ export const siteText = {
       kicker: "Réserver directement",
       title: "Indique à Syaipul tes dates, la taille du groupe et le trek souhaité.",
       text: "WhatsApp est le plus rapide pour les disponibilités. L'e-mail est idéal pour discuter des acomptes via Wise/PayPal, du transport, de l'hébergement et de l'itinéraire.",
+      bookingLabel: "Ouvrir le formulaire",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
@@ -449,11 +456,13 @@ export const siteText = {
     },
     footerLinks: {
       essentialInfo: "Infos essentielles",
+      booking: "Réservation",
       blog: "Blog",
       privacy: "Politique de confidentialité",
       email: "E-mail",
       whatsapp: "WhatsApp",
-      instagram: "Instagram"
+      instagram: "Instagram",
+      maps: "Google Maps"
     },
     mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, Sumatra du Nord, Indonésie" },
@@ -572,6 +581,7 @@ export const siteText = {
       kicker: "Direct boeken",
       title: "Geef Syaipul je data, groepsgrootte en gewenste trek door.",
       text: "WhatsApp is het snelst voor beschikbaarheid. E-mail is handig om Wise/PayPal-aanbetalingen, transport, accommodatie en details over de route te bespreken.",
+      bookingLabel: "Boekingsformulier openen",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
     },
@@ -584,11 +594,13 @@ export const siteText = {
     },
     footerLinks: {
       essentialInfo: "Essentiële info",
+      booking: "Boeking",
       blog: "Blog",
       privacy: "Privacybeleid",
       email: "E-mail",
       whatsapp: "WhatsApp",
-      instagram: "Instagram"
+      instagram: "Instagram",
+      maps: "Google Maps"
     },
     mobileMenu: "Menu",
     footer: { location: "Bukit Lawang, Noord-Sumatra, Indonesië" },
@@ -643,9 +655,9 @@ export const siteText = {
   guideRole: string;
   guides: Record<GuideId, { name: string; text: string }>;
   faq: [ { q: string; a: string }, { q: string; a: string }, { q: string; a: string }, { q: string; a: string } ];
-  contact: { kicker: string; title: string; text: string; whatsappLabel: string; emailLabel: string };
+    contact: { kicker: string; title: string; text: string; bookingLabel: string; whatsappLabel: string; emailLabel: string };
   blog: { kicker: string; heading: string; readArticle: string; essentialInfo: string; allArticles: string };
-  footerLinks: { essentialInfo: string; blog: string; privacy: string; email: string; whatsapp: string; instagram: string };
+    footerLinks: { essentialInfo: string; booking: string; blog: string; privacy: string; email: string; whatsapp: string; instagram: string; maps: string };
   mobileMenu: string;
   footer: { location: string };
   whatsappMessage: string;

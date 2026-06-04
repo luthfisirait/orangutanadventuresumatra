@@ -16,8 +16,16 @@ export type BlogPost = {
   sections: ContentSection[];
 };
 
+export const contactEmail = "support@orangutanadventuresumatra.com";
+export const googleMapsUrl = "https://maps.app.goo.gl/EKrG3TFNG363k4jY7";
+export const brandInstagramHandle = "@orangutanadventuresumatra";
+export const brandInstagramUrl = "https://www.instagram.com/orangutanadventuresumatra/";
+export const instagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
+export const whatsappNumber = "6285362405752";
 export const bookingWhatsappUrl =
-  "https://wa.me/6285362405752?text=Hi%20OrangutanAdventureSumatra%2C%20I%20would%20like%20to%20ask%20about%20a%20jungle%20trek.";
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    "Hi Orangutan Adventure Sumatra, I would like to ask about a jungle trek."
+  )}`;
 
 export const packageActivityOverview = {
   kicker: "Package activity details",

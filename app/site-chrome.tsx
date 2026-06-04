@@ -2,20 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Instagram, Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { siteName } from "./seo";
-import { bookingWhatsappUrl } from "./travel-content";
+import {
+  bookingWhatsappUrl,
+  brandInstagramHandle,
+  brandInstagramUrl,
+  contactEmail,
+  googleMapsUrl
+} from "./travel-content";
 
 const footerLinks = [
+  { href: "/booking", label: "Booking" },
   { href: "/essential-information", label: "Essential information" },
   { href: "/blog", label: "Blog" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "mailto:support@orangutanadventuresumatra.com", label: "Email" },
-  { href: bookingWhatsappUrl, label: "WhatsApp", external: true }
+  { href: "/privacy", label: "Privacy Policy" }
 ];
 
+const footerContactLinks = [
+  { href: bookingWhatsappUrl, label: "WhatsApp", icon: MessageCircle, external: true },
+  { href: `mailto:${contactEmail}`, label: "Email", icon: Mail },
+  { href: brandInstagramUrl, label: `Instagram ${brandInstagramHandle}`, icon: Instagram, external: true },
+  { href: googleMapsUrl, label: "Google Maps", icon: MapPin, external: true }
+] as const;
+
 const headerLinks = [
+  { href: "/booking", label: "Booking" },
   { href: "/#treks", label: "Treks" },
   { href: "/essential-information", label: "Essential information" },
   { href: "/blog", label: "Blog" },
@@ -52,10 +65,11 @@ export function StaticHeader() {
         <Image src="/images/logo.svg" alt={siteName} width={180} height={70} priority unoptimized />
       </Link>
       <nav className="desktop-nav" aria-label="Site navigation">
-        <Link href="/#treks">Treks</Link>
-        <Link href="/essential-information">Info</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/privacy">Privacy</Link>
+        {headerLinks.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
       </nav>
       <div className="header-actions">
         <a className="nav-cta" href={bookingWhatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">
@@ -112,19 +126,33 @@ export function StaticFooter() {
     <footer>
       <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
       <p>Bukit Lawang, North Sumatra, Indonesia</p>
-      <div>
-        {footerLinks.map((link) =>
-          link.external ? (
-            <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-              {link.label}
+      <nav className="footer-links" aria-label="Footer navigation">
+        {footerLinks.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+      <nav className="footer-contact-links" aria-label="Contact and social links">
+        {footerContactLinks.map((link) => {
+          const Icon = link.icon;
+          const isExternal = "external" in link && link.external;
+
+          return (
+            <a
+              key={link.href}
+              className="footer-icon-link"
+              href={link.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+              aria-label={link.label}
+              title={link.label}
+            >
+              <Icon size={18} aria-hidden="true" />
             </a>
-          ) : (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          )
-        )}
-      </div>
+          );
+        })}
+      </nav>
     </footer>
   );
 }

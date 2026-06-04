@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, Clock3, MessageCircle } from "lucide-react";
+import { ArrowRight, CalendarDays, Check, Clock3 } from "lucide-react";
 import { StaticFooter, StaticHeader } from "../../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../../seo";
-import { blogPosts, bookingWhatsappUrl } from "../../travel-content";
+import { blogPosts } from "../../travel-content";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -75,27 +75,56 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = blogPosts.filter((candidate) => candidate.slug !== post.slug).slice(0, 3);
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.description,
-    image: absoluteUrl(post.image),
-    datePublished: post.date,
-    dateModified: post.date,
-    author: {
-      "@type": "Organization",
-      name: siteName,
-      url: siteUrl
-    },
-    publisher: {
-      "@type": "TravelAgency",
-      name: siteName,
-      url: siteUrl,
-      logo: {
-        "@type": "ImageObject",
-        url: absoluteUrl("/images/logo.png")
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${absoluteUrl(`/blog/${post.slug}`)}#blog-post`,
+        headline: post.title,
+        description: post.description,
+        image: absoluteUrl(post.image),
+        datePublished: post.date,
+        dateModified: post.date,
+        author: {
+          "@type": "Organization",
+          name: siteName,
+          url: siteUrl
+        },
+        publisher: {
+          "@type": "TravelAgency",
+          name: siteName,
+          url: siteUrl,
+          logo: {
+            "@type": "ImageObject",
+            url: absoluteUrl("/images/logo.png")
+          }
+        },
+        mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`)
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${absoluteUrl(`/blog/${post.slug}`)}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: siteName,
+            item: siteUrl
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: absoluteUrl("/blog")
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: absoluteUrl(`/blog/${post.slug}`)
+          }
+        ]
       }
-    },
-    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`)
+    ]
   };
 
   return (
@@ -132,10 +161,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <a className="primary-button" href={bookingWhatsappUrl} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} />
-              Ask availability
-            </a>
+            <Link className="primary-button" href="/booking#booking-form">
+              <CalendarDays size={18} />
+              Check availability
+            </Link>
           </aside>
 
           <div className="article-body">
