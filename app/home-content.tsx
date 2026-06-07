@@ -78,6 +78,84 @@ const brandTitle = (
   </>
 );
 
+type PackageActivityContent = {
+  kicker: string;
+  title: string;
+  intro: string;
+  image: string;
+  imageAlt: string;
+  steps: ReadonlyArray<{ label: string; title: string; text: string }>;
+  notes: ReadonlyArray<string>;
+};
+
+type ImpactContent = {
+  kicker: string;
+  title: string;
+  text: string;
+  pillars: ReadonlyArray<{ title: string; text: string }>;
+};
+
+const localizedPackageActivity: Partial<Record<Locale, PackageActivityContent>> = {
+  fr: {
+    ...packageActivityOverview,
+    kicker: "Détails du forfait",
+    title: "À quoi ressemble un trek classique de 3 jours à Bukit Lawang",
+    intro:
+      "Ce déroulé suit un trek orang-outan typique de 3 jours: observation calme de la faune, repas en forêt, nuits en camp au bord de la rivière et retour en tube rafting quand les conditions sont sûres. L'itinéraire final dépend toujours de la météo, du niveau du groupe, de la rivière et des règles du parc.",
+    steps: [
+      {
+        label: "Jour 1",
+        title: "Départ de Bukit Lawang, habitat des orangs-outans, premier camp",
+        text:
+          "Retrouve ton guide le matin, vérifie l'eau et les chaussures, puis entre dans la forêt à un rythme tranquille. La journée se concentre sur l'observation respectueuse des animaux, les plantes, les pauses fruits, le déjeuner en jungle et l'arrivée dans un camp simple au bord de l'eau."
+      },
+      {
+        label: "Jour 2",
+        title: "Forêt plus profonde, pauses rivière, deuxième nuit",
+        text:
+          "Le groupe avance vers des zones plus calmes avec plus de temps pour les singes de Thomas, gibbons, macaques, oiseaux, plantes médicinales et sons de la forêt. Attends-toi à des montées, de la boue en saison humide, un déjeuner frais et un second camp près de l'eau si les conditions le permettent."
+      },
+      {
+        label: "Jour 3",
+        title: "Dernière marche et retour en tube rafting",
+        text:
+          "Après le petit-déjeuner, le groupe fait une marche plus courte ou profite de la rivière avant de revenir vers Bukit Lawang en tube rafting traditionnel quand il est inclus et que le niveau de l'eau est sûr."
+      }
+    ],
+    notes: [
+      "Les observations d'orangs-outans sauvages ne sont jamais garanties et ne doivent jamais être forcées.",
+      "Les repas sont simples et frais: fruits, riz, légumes, oeufs, poisson ou poulet, thé et café.",
+      "Confirme les permis, le rafting, l'hébergement, le transport et les inclusions finales avant de payer un acompte."
+    ]
+  }
+};
+
+const localizedImpactVision: Partial<Record<Locale, ImpactContent>> = {
+  fr: {
+    kicker: "Vision conservation",
+    title: "Le voyage doit créer une vraie valeur pour la forêt et le village",
+    text:
+      "L'objectif de certains forfaits OrangutanAdventureSumatra est de réserver une partie des revenus du voyage au soutien de la conservation et aux bénéfices locaux autour de Bukit Lawang. L'approche est pratique: garder des guides qualifiés au travail, réduire la pression sur la forêt et aider les voyageurs à comprendre les règles d'un trek responsable.",
+    pillars: [
+      {
+        title: "Protection de la forêt",
+        text:
+          "Soutien à des actions locales orientées conservation, guidage à faible impact et explications avant d'entrer dans l'habitat des orangs-outans."
+      },
+      {
+        title: "Revenus locaux",
+        text:
+          "Les forfaits privilégient autant que possible les guides, cuisiniers, chauffeurs, hébergements et services du village."
+      },
+      {
+        title: "Choix transparents",
+        text:
+          "Les voyageurs peuvent demander quels forfaits incluent actuellement une allocation pour la conservation ou la communauté avant de confirmer."
+      }
+    ]
+  }
+};
+
 type HomeProps = {
   initialLanguage?: Locale;
   routedLanguage?: boolean;
@@ -213,6 +291,8 @@ export function HomeContent({
   }, []);
 
   const t = siteText[language];
+  const packageActivity = localizedPackageActivity[language] ?? packageActivityOverview;
+  const impactContent = localizedImpactVision[language] ?? impactVision;
   const whatsappUrl = useMemo(
     () => whatsappUrlFor(t.whatsappMessage),
     [t.whatsappMessage]
@@ -262,7 +342,7 @@ export function HomeContent({
     [t]
   );
 
-  const currentUrl = language === "en" && !routedLanguage ? siteUrl : absoluteUrl(`/${language}`);
+  const currentUrl = routedLanguage ? absoluteUrl(`/${language}`) : siteUrl;
 
   useEffect(() => {
     if (!mobileMenuOpen) {
@@ -436,7 +516,8 @@ export function HomeContent({
     window.localStorage.setItem("oas-locale", nextLanguage);
 
     const hash = window.location.hash;
-    window.location.assign(`/${nextLanguage}${hash}`);
+    const nextPath = nextLanguage === "en" ? `/${hash}` : `/${nextLanguage}${hash}`;
+    window.location.assign(nextPath);
   };
 
   return (
@@ -674,18 +755,18 @@ export function HomeContent({
         <div className="package-detail-grid">
           <div className="package-detail-image">
             <Image
-              src={packageActivityOverview.image}
-              alt={packageActivityOverview.imageAlt}
+              src={packageActivity.image}
+              alt={packageActivity.imageAlt}
               fill
               sizes="(max-width: 900px) 100vw, 44vw"
             />
           </div>
           <div className="package-detail-copy">
-            <span className="section-kicker">{packageActivityOverview.kicker}</span>
-            <h2>{packageActivityOverview.title}</h2>
-            <p>{packageActivityOverview.intro}</p>
+            <span className="section-kicker">{packageActivity.kicker}</span>
+            <h2>{packageActivity.title}</h2>
+            <p>{packageActivity.intro}</p>
             <div className="package-timeline">
-              {packageActivityOverview.steps.map((step) => (
+              {packageActivity.steps.map((step) => (
                 <article key={step.label}>
                   <span>{step.label}</span>
                   <h3>{step.title}</h3>
@@ -696,7 +777,7 @@ export function HomeContent({
           </div>
         </div>
         <div className="package-notes">
-          {packageActivityOverview.notes.map((note) => (
+          {packageActivity.notes.map((note) => (
             <div key={note}>
               <Check size={18} />
               <span>{note}</span>
@@ -744,12 +825,12 @@ export function HomeContent({
 
       <section className="impact-section">
         <div className="impact-content">
-          <span className="section-kicker">{impactVision.kicker}</span>
-          <h2>{impactVision.title}</h2>
-          <p>{impactVision.text}</p>
+          <span className="section-kicker">{impactContent.kicker}</span>
+          <h2>{impactContent.title}</h2>
+          <p>{impactContent.text}</p>
         </div>
         <div className="impact-pillars">
-          {impactVision.pillars.map((pillar, index) => {
+          {impactContent.pillars.map((pillar, index) => {
             const Icon = [Leaf, HeartHandshake, ShieldCheck][index];
             return (
               <article key={pillar.title}>
@@ -918,6 +999,26 @@ export function HomeContent({
           </a>
         </div>
       </section>
+
+      {language === "en" ? (
+        <section className="section landing-links-section">
+          <div className="section-heading">
+            <span className="section-kicker">High-intent pages</span>
+            <h2>Focused pages for travelers who are ready to book.</h2>
+          </div>
+          <div className="resource-links landing-links">
+            <a className="secondary-button dark" href="/sumatra-orangutan-tour">
+              Sumatra orangutan tour
+            </a>
+            <a className="secondary-button dark" href="/bukit-lawang-orangutan-trekking">
+              Bukit Lawang orangutan trekking
+            </a>
+            <a className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
+              3-day Bukit Lawang orangutan trek
+            </a>
+          </div>
+        </section>
+      ) : null}
 
       <section className="contact-section" id="contact">
         <div className="contact-panel">

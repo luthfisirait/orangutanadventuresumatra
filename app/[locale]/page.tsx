@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { HomeContent } from "../home-content";
 import { locales } from "../site-content";
-import { isLocale, metadataForLocale } from "../seo";
+import { defaultLocale, isLocale, metadataForLocale } from "../seo";
 
 type LocalePageProps = {
   params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales
+    .filter((locale) => locale !== defaultLocale)
+    .map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -29,6 +31,10 @@ export default async function LocalePage({ params }: LocalePageProps) {
 
   if (!isLocale(locale)) {
     notFound();
+  }
+
+  if (locale === defaultLocale) {
+    redirect("/");
   }
 
   return <HomeContent initialLanguage={locale} routedLanguage />;

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "./site-content";
 import { languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
+import { landingPages } from "./seo-landing-pages";
 
 function asLastModified(date: string) {
   return new Date(`${date}T00:00:00.000Z`);
@@ -30,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     },
     ...locales.map((locale) => ({
-      url: `${siteUrl}/${locale}`,
+      url: locale === "en" ? siteUrl : `${siteUrl}/${locale}`,
       lastModified: pageLastModified,
       changeFrequency: "weekly" as const,
       priority: locale === "en" ? 0.95 : 0.9,
@@ -38,6 +39,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: languageAlternates
       }
     })),
+    {
+      url: `${siteUrl}/${landingPages.sumatraOrangutanTour.slug}`,
+      lastModified: pageLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.86
+    },
+    {
+      url: `${siteUrl}/${landingPages.bukitLawangTrekking.slug}`,
+      lastModified: pageLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.9
+    },
+    {
+      url: `${siteUrl}/${landingPages.threeDayTrek.slug}`,
+      lastModified: pageLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.88
+    },
     ...staticPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
       lastModified: page.lastModified,

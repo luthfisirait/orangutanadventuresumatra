@@ -35,7 +35,7 @@ export const coreSearchPhrases = [
 export const localeLabels: Record<Locale, string> = {
   en: "English",
   de: "Deutsch",
-  fr: "Francais",
+  fr: "Français",
   nl: "Nederlands"
 };
 
@@ -73,8 +73,12 @@ const localeKeywords: Record<Locale, string[]> = {
   ],
   fr: [
     "trek orang-outan Sumatra",
+    "trek orang outan Sumatra",
+    "trek orang-outan Bukit Lawang",
     "trek jungle Bukit Lawang",
     "tour orang-outan ethique",
+    "voyage orang-outan Sumatra",
+    "circuit Sumatra orang-outan",
     "parc national Gunung Leuser",
     "trek Sumatra",
     "voyage durable Sumatra",
@@ -92,7 +96,7 @@ const localeKeywords: Record<Locale, string[]> = {
 };
 
 export const languageAlternates = Object.fromEntries([
-  ...locales.map((locale) => [locale, `${siteUrl}/${locale}`]),
+  ...locales.map((locale) => [locale, locale === defaultLocale ? siteUrl : `${siteUrl}/${locale}`]),
   ["x-default", siteUrl]
 ]) as Record<string, string>;
 
