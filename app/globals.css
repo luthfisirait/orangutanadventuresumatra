@@ -1437,6 +1437,25 @@ footer .footer-contact-links {
   flex: 0 0 auto;
 }
 
+.trek-profile-strip div {
+  display: grid;
+  align-items: start;
+  gap: 4px;
+}
+
+.trek-profile-strip span {
+  color: var(--clay);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.trek-profile-strip strong {
+  color: var(--forest);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

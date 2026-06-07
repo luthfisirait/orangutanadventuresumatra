@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, CalendarDays, Check, Clock3 } from "lucide-react";
+import { ArrowRight, Check, Clock3 } from "lucide-react";
 import { StaticFooter, StaticHeader } from "../../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../../seo";
 import { blogPosts } from "../../travel-content";
@@ -161,9 +161,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <Link className="primary-button" href="/booking#booking-form">
-              <CalendarDays size={18} />
-              Check availability
+            <Link className="primary-button" href="/treks">
+              <ArrowRight size={18} />
+              Browse trek details
             </Link>
           </aside>
 

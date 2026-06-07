@@ -54,6 +54,7 @@ import {
   packageActivityOverview,
   whatsappNumber
 } from "./travel-content";
+import { trekDetailHref } from "./trek-details";
 
 const navItems = [
   { key: "treks", href: "#treks" },
@@ -707,7 +708,7 @@ export function HomeContent({
 
         <div className="trek-grid">
           {visibleTreks.map((trek) => {
-            const bookingUrl = `/booking?package=${encodeURIComponent(trek.id)}#booking-form`;
+            const detailUrl = trekDetailHref(trek.id);
 
             return (
             <article className="trek-card" key={trek.id}>
@@ -740,8 +741,8 @@ export function HomeContent({
                     </li>
                   ))}
                 </ul>
-                <Link className="card-link" href={bookingUrl}>
-                  {language === "en" ? "Check availability" : language === "de" ? "Verfügbarkeit prüfen" : language === "fr" ? "Vérifier les disponibilités" : "Beschikbaarheid checken"}
+                <Link className="card-link" href={detailUrl}>
+                  {language === "en" ? "View details" : language === "de" ? "Details ansehen" : language === "fr" ? "Voir les détails" : "Bekijk details"}
                   <ArrowRight size={16} />
                 </Link>
               </div>

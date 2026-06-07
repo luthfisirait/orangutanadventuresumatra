@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "./site-content";
 import { languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
+import { trekDetailList } from "./trek-details";
 import { landingPages } from "./seo-landing-pages";
 
 function asLastModified(date: string) {
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const staticPages = [
     { path: "/booking", lastModified: pageLastModified, priority: 0.88 },
+    { path: "/treks", lastModified: pageLastModified, priority: 0.84 },
     { path: "/payment-and-deposit", lastModified: pageLastModified, priority: 0.62 },
     { path: "/essential-information", lastModified: pageLastModified, priority: 0.82 },
     { path: "/blog", lastModified: pageLastModified > latestBlogPostDate ? pageLastModified : latestBlogPostDate, priority: 0.84 },
@@ -69,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: asLastModified(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.78
+    })),
+    ...trekDetailList.map((page) => ({
+      url: `${siteUrl}/treks/${page.slug}`,
+      lastModified: pageLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.74
     }))
   ];
 }

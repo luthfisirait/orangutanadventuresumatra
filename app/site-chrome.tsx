@@ -15,6 +15,7 @@ import {
 
 const footerLinks = [
   { href: "/booking", label: "Booking" },
+  { href: "/treks", label: "Treks" },
   { href: "/essential-information", label: "Essential information" },
   { href: "/payment-and-deposit", label: "Payment and deposit" },
   { href: "/blog", label: "Blog" },
