@@ -80,7 +80,7 @@ export const siteText = {
       "Daily starts around 8:30",
       "Bukit Lawang, North Sumatra",
       "River camps and rafting options",
-      "30% deposit option"
+      "30% email-confirmed deposit"
     ],
     intro: {
       kicker: "Why this trek",
@@ -156,7 +156,7 @@ export const siteText = {
       },
       {
         q: "How does payment work?",
-        a: "We accept deposits securely via Wise (TransferWise), PayPal, or international bank transfer. The remaining balance can be paid in cash upon arrival. Contact Syaipul for payment details."
+        a: "After availability is confirmed, a 30% deposit is requested and payment instructions are sent by email. We do not use an automatic payment gateway such as Stripe. The remaining balance can be paid in cash when you meet the team, or 2 days before departure after email confirmation."
       },
       {
         q: "Where is the meeting point?",
@@ -166,7 +166,7 @@ export const siteText = {
     contact: {
       kicker: "Book direct",
       title: "Tell Syaipul your dates, group size, and preferred trek.",
-      text: "WhatsApp is fastest for availability. Email works well to discuss Wise/PayPal deposits, transport, accommodation, and detailed itinerary questions.",
+      text: "WhatsApp is fastest for availability. Email is used to confirm 30% deposit instructions, balance payment options, transport, accommodation, and detailed itinerary questions.",
       bookingLabel: "Open booking form",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
@@ -294,7 +294,7 @@ export const siteText = {
       },
       {
         q: "Wie läuft die Zahlung ab?",
-        a: "Wir akzeptieren Anzahlungen sicher über Wise (TransferWise), PayPal oder internationale Banküberweisung. Der Restbetrag kann bei der Ankunft in bar bezahlt werden. Kontaktiere Syaipul für die Zahlungsdetails."
+        a: "Nach der Verfuegbarkeitsbestaetigung wird eine Anzahlung von 30% angefragt. Die Zahlungsanweisung wird per E-Mail bestaetigt. Wir nutzen kein automatisches Zahlungsgateway wie Stripe. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestaetigung."
       },
       {
         q: "Wo ist der Treffpunkt?",
@@ -304,7 +304,7 @@ export const siteText = {
     contact: {
       kicker: "Direkt buchen",
       title: "Teile Syaipul deine Reisedaten, Gruppengröße und Wunschroute mit.",
-      text: "WhatsApp ist am schnellsten für Verfügbarkeiten. E-Mail eignet sich gut, um Wise/PayPal-Anzahlungen, Transport, Unterkunft und den detaillierten Ablauf zu besprechen.",
+      text: "WhatsApp ist am schnellsten fuer Verfuegbarkeiten. E-Mail wird genutzt, um die 30% Anzahlung, Restzahlung, Transport, Unterkunft und den detaillierten Ablauf zu bestaetigen.",
       bookingLabel: "Buchungsformular öffnen",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
@@ -433,7 +433,7 @@ export const siteText = {
       },
       {
         q: "Comment se passe le paiement ?",
-        a: "Nous acceptons les acomptes de manière sécurisée via Wise (TransferWise), PayPal ou virement bancaire international. Le solde restant peut être payé en espèces à l'arrivée. Contactez Syaipul pour les détails de paiement."
+        a: "Apres confirmation des disponibilites, un acompte de 30% est demande et les instructions de paiement sont envoyees par e-mail. Nous n'utilisons pas de passerelle de paiement automatique comme Stripe. Le solde peut etre paye en especes lors de la rencontre avec l'equipe, ou 2 jours avant le depart apres confirmation par e-mail."
       },
       {
         q: "Où est le point de rendez-vous ?",
@@ -443,7 +443,7 @@ export const siteText = {
     contact: {
       kicker: "Réserver directement",
       title: "Indique à Syaipul tes dates, la taille du groupe et le trek souhaité.",
-      text: "WhatsApp est le plus rapide pour les disponibilités. L'e-mail est idéal pour discuter des acomptes via Wise/PayPal, du transport, de l'hébergement et de l'itinéraire.",
+      text: "WhatsApp est le plus rapide pour les disponibilites. L'e-mail sert a confirmer l'acompte de 30%, les options de paiement du solde, le transport, l'hebergement et l'itineraire.",
       bookingLabel: "Ouvrir le formulaire",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
@@ -496,7 +496,7 @@ export const siteText = {
       "Dagelijks vertrek rond 8:30",
       "Bukit Lawang, Noord-Sumatra",
       "Rivierkampen en rafting-opties",
-      "30% aanbetaling mogelijk"
+      "30% aanbetaling per e-mail"
     ],
     intro: {
       kicker: "Waarom deze trek",
@@ -571,7 +571,7 @@ export const siteText = {
       },
       {
         q: "Hoe werkt de betaling?",
-        a: "We accepteren aanbetalingen veilig via Wise (TransferWise), PayPal of internationale bankoverschrijving. Het resterende bedrag kan bij aankomst contant worden betaald. Neem contact op met Syaipul voor de betaalgegevens."
+        a: "Na bevestiging van beschikbaarheid wordt een aanbetaling van 30% gevraagd en worden betaalinstructies per e-mail gestuurd. We gebruiken geen automatische payment gateway zoals Stripe. Het resterende bedrag kan contant worden betaald wanneer je het team ontmoet, of 2 dagen voor vertrek na bevestiging per e-mail."
       },
       {
         q: "Waar is het ontmoetingspunt?",
@@ -581,7 +581,7 @@ export const siteText = {
     contact: {
       kicker: "Direct boeken",
       title: "Geef Syaipul je data, groepsgrootte en gewenste trek door.",
-      text: "WhatsApp is het snelst voor beschikbaarheid. E-mail is handig om Wise/PayPal-aanbetalingen, transport, accommodatie en details over de route te bespreken.",
+      text: "WhatsApp is het snelst voor beschikbaarheid. E-mail wordt gebruikt om de 30% aanbetaling, betaling van het resterende bedrag, transport, accommodatie en route-details te bevestigen.",
       bookingLabel: "Boekingsformulier openen",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"

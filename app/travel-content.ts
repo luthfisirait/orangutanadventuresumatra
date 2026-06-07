@@ -163,7 +163,9 @@ export const essentialInformation = {
     {
       title: "Deposits, payments, and cancellation",
       paragraphs: [
-        "Ask for current payment details before sending money. A deposit may be requested to reserve guide time, transport, accommodation, or private package arrangements.",
+        "A 30% deposit is requested after your dates, package, group size, and guide availability are checked. Payment instructions are confirmed by email before you send money.",
+        "This site does not use an automatic payment gateway such as Stripe or international card checkout because those services can be limited for a small local trekking business in Indonesia.",
+        "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
         "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
       ]
     },
@@ -172,6 +174,62 @@ export const essentialInformation = {
       paragraphs: [
         "Check your passport validity, Indonesia entry requirements, health advice, and insurance terms before leaving Europe. Rules can change, so confirm current requirements with official sources before departure.",
         "Bring personal medication in original packaging and tell your guide about any condition that could matter during heat, hiking, river travel, or overnight camping."
+      ]
+    }
+  ] as readonly ContentSection[]
+} as const;
+
+export const paymentAndDeposit = {
+  title: "Payment and Deposit Information",
+  description:
+    "How deposits, cash balance payment, and email-confirmed payment instructions work for Bukit Lawang orangutan trekking bookings.",
+  image: "/images/privacy-hero.png",
+  imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
+  intro:
+    "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. We do not use an automatic online checkout or international card payment gateway.",
+  highlights: [
+    "30% deposit after availability is confirmed",
+    "Payment instructions are confirmed by email",
+    "No Stripe or international payment gateway checkout",
+    "Final balance by cash on arrival or email-confirmed prepayment"
+  ],
+  sections: [
+    {
+      title: "Deposit after availability check",
+      paragraphs: [
+        "A 30% deposit is requested after your trekking dates, group size, package, and guide availability have been checked.",
+        "Deposit instructions are sent by email, so you can review the amount, booking details, payment method, and next steps before sending any money."
+      ],
+      bullets: [
+        "No booking is confirmed automatically by the website.",
+        "Do not send a deposit before receiving payment instructions by email.",
+        "Keep your payment receipt or transfer proof for confirmation."
+      ]
+    },
+    {
+      title: "Why there is no payment gateway",
+      paragraphs: [
+        "This site does not use Stripe, automatic card checkout, or similar international payment gateways because access to those services can be limited for a small local trekking business in Indonesia.",
+        "Instead, every booking is handled manually by email or WhatsApp so the guide team can confirm availability, package details, transport needs, and the correct payment instruction before payment."
+      ]
+    },
+    {
+      title: "Final balance payment",
+      paragraphs: [
+        "The remaining balance can be paid in cash after you meet the guide team in Bukit Lawang.",
+        "If you prefer to pay the full balance before arrival, this can be arranged 2 days before departure, but only after the final payment instruction is confirmed by email."
+      ],
+      bullets: [
+        "Cash payment is handled on site when you meet the team.",
+        "Pre-arrival balance payment should be made only after email confirmation.",
+        "Ask for the current accepted payment method before sending any final payment."
+      ]
+    },
+    {
+      title: "Payment safety notes",
+      paragraphs: [
+        "Please use only the payment details sent through the confirmed booking email. If anything looks different or unclear, ask for confirmation before sending money.",
+        "Booking details can include dates, package, group size, pickup support, accommodation help, food notes, and any agreed deposit or balance payment timing."
       ]
     }
   ] as readonly ContentSection[]

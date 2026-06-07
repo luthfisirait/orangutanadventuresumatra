@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   );
   const staticPages = [
     { path: "/booking", lastModified: pageLastModified, priority: 0.88 },
+    { path: "/payment-and-deposit", lastModified: pageLastModified, priority: 0.62 },
     { path: "/essential-information", lastModified: pageLastModified, priority: 0.82 },
     { path: "/blog", lastModified: pageLastModified > latestBlogPostDate ? pageLastModified : latestBlogPostDate, priority: 0.84 },
     { path: "/privacy", lastModified: pageLastModified, priority: 0.35 }

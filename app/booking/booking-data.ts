@@ -37,7 +37,7 @@ export const bookingFlow = [
   {
     step: "4",
     title: "Confirm and prepare",
-    text: "You get availability, deposit guidance, and final trip notes before arrival."
+    text: "You get availability, 30% deposit instructions by email, and final trip notes before arrival."
   }
 ] as const;
 
@@ -50,6 +50,7 @@ export const bookingChecklist = [
 
 export const bookingAssurances = [
   "We contact you after checking guide and date availability.",
-  "Deposits may be requested for multi-day or private bookings.",
-  "The final balance is handled as agreed before arrival or on site."
+  "A 30% deposit is requested after availability is confirmed.",
+  "Payment instructions are confirmed by email because we do not use an automatic payment gateway.",
+  "The final balance is paid in cash when you meet the team, or 2 days before departure after email confirmation."
 ] as const;

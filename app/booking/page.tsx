@@ -217,6 +217,10 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
                 Need travel prep first?{" "}
                 <Link href="/essential-information">Read the essential information page</Link>.
               </p>
+              <p className="booking-support-link">
+                Have payment questions?{" "}
+                <Link href="/payment-and-deposit">Read the payment and deposit information</Link>.
+              </p>
             </article>
           </div>
         </div>
