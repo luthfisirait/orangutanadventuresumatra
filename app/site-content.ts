@@ -61,13 +61,13 @@ export const siteText = {
   en: {
     metaTitle: "Bukit Lawang Orangutan Trekking | Orangutan Adventure Sumatra",
     metaDescription:
-      "Ethical orangutan and orang utan trekking in Bukit Lawang, also searched as Bukitlawang, with local guides, rafting, and Sumatra jungle tours.",
+      "Ethical orangutan trekking in Bukit Lawang with local guides, private Sumatra jungle tours, river camps, rafting, and booking support.",
     nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },
     hero: {
       eyebrow: "Ethical trekking in Gunung Leuser National Park",
-      title: "Orangutan Adventure Sumatra",
+      title: "Bukit Lawang Orangutan Trekking",
       description:
-        "Guided jungle adventures from Bukit Lawang with a local guide, responsible wildlife encounters, riverside camps, fresh jungle food, and tube rafting back to the village.",
+        "Ethical orangutan trekking from Bukit Lawang with local guides, private Sumatra jungle packages, riverside camps, fresh jungle food, and tube rafting back to the village.",
       primary: "Explore treks",
       secondary: "WhatsApp",
       stats: [

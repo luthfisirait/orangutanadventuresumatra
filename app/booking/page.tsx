@@ -8,19 +8,22 @@ import { bookingAssurances, bookingChecklist, bookingFlow } from "./booking-data
 import { BookingForm } from "./booking-form";
 import { bookingWhatsappUrl } from "../travel-content";
 
+const bookingTitle = `Book a Bukit Lawang Orangutan Trek | ${siteName}`;
 const bookingDescription =
-  "Use the booking form to request a Bukit Lawang trek. Share your package, dates, group size, transport needs, and notes, then we contact you to confirm availability.";
+  "Request availability for Bukit Lawang orangutan trekking, private jungle tours, rafting, and transport help. Share your dates and group size, then we confirm by email or WhatsApp.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `Booking Form | ${siteName}`,
+  title: bookingTitle,
   description: bookingDescription,
   alternates: {
     canonical: "/booking"
   },
   keywords: [
     "Bukit Lawang booking form",
+    "Bukit Lawang orangutan trek booking",
     "orangutan trekking enquiry",
+    "Bukit Lawang jungle tour booking",
     "Sumatra jungle booking",
     "Bukit Lawang tour request"
   ],
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
     follow: true
   },
   openGraph: {
-    title: `Booking Form | ${siteName}`,
+    title: bookingTitle,
     description: bookingDescription,
     url: "/booking",
     siteName,
@@ -69,7 +72,7 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
       {
         "@type": "WebPage",
         "@id": `${absoluteUrl("/booking")}#webpage`,
-        name: `Booking Form | ${siteName}`,
+        name: bookingTitle,
         description: bookingDescription,
         url: absoluteUrl("/booking"),
         publisher: {
@@ -120,7 +123,7 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
         <div className="resource-hero-shade" />
         <div className="resource-hero-content">
           <span className="section-kicker">Booking</span>
-          <h1>Book your Bukit Lawang trek</h1>
+          <h1>Book your Bukit Lawang orangutan trek</h1>
           <p>{bookingDescription}</p>
           <div className="hero-actions">
             <a className="primary-button" href="#booking-form">

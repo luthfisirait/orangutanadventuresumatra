@@ -21,10 +21,14 @@ export const coreSearchPhrases = [
   "orang utan trekking",
   "Bukit Lawang",
   "Bukitlawang",
+  "Bukit Lawang orangutan trekking",
+  "Bukit Lawang jungle trekking",
+  "Bukit Lawang jungle tour",
   "orangutan adventure sumatra",
   "orangutanadventuresumatra",
   "Sumatra",
   "Sumatra orangutan trekking",
+  "Sumatra orangutan tour",
   "Gunung Leuser National Park"
 ] as const;
 
@@ -47,9 +51,11 @@ const localeKeywords: Record<Locale, string[]> = {
     ...coreSearchPhrases,
     "orangutan trekking Sumatra",
     "Bukit Lawang jungle trekking",
+    "Bukit Lawang orangutan trek",
     "ethical orangutan tour",
     "Gunung Leuser National Park guide",
     "Sumatra jungle tour",
+    "private Sumatra jungle tours",
     "weekend jungle trek from Singapore",
     "Medan weekend trip from Malaysia",
     "sustainable Sumatra tours",
