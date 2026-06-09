@@ -1817,6 +1817,76 @@ footer .footer-contact-links {
   line-height: 1.35;
 }
 
+/* CookieHub override: keep the consent notice compact and anchored at the bottom. */
+.ch2-block {
+  display: none !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+.ch2-container .ch2-dialog.ch2-visible {
+  top: auto !important;
+  right: max(16px, env(safe-area-inset-right)) !important;
+  bottom: max(16px, env(safe-area-inset-bottom)) !important;
+  left: auto !important;
+  width: min(420px, calc(100vw - 32px)) !important;
+  max-height: min(72vh, 560px) !important;
+  padding: 18px !important;
+  border: 1px solid rgba(24, 32, 25, 0.14) !important;
+  border-radius: 8px !important;
+  background: var(--surface) !important;
+  box-shadow: 0 18px 45px rgba(18, 60, 44, 0.18) !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+}
+
+.ch2-container .ch2-dialog-content {
+  max-height: 230px !important;
+  overflow: auto !important;
+}
+
+.ch2-container .ch2-dialog #ch2-dialog-title {
+  padding-right: 32px !important;
+  color: var(--forest) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.25 !important;
+}
+
+.ch2-container .ch2-dialog-content p {
+  color: var(--muted) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+}
+
+.ch2-container .ch2-dialog-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+}
+
+.ch2-container .ch2-dialog-actions > div,
+.ch2-container .ch2-dialog-actions button {
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+.ch2-container .ch2-dialog-actions button {
+  min-height: 38px !important;
+  height: auto !important;
+  padding: 10px 12px !important;
+  border-radius: 8px !important;
+  font-size: 0.82rem !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+}
+
+.ch2-container .ch2-dialog-branding {
+  padding-top: 10px !important;
+  font-size: 0.68rem !important;
+}
+
 @keyframes heroDrift {
   from {
     transform: scale(1.06) translate3d(0, 0, 0);
@@ -2119,6 +2189,23 @@ footer .footer-contact-links {
     bottom: 16px;
     width: 52px;
     height: 52px;
+  }
+
+  .ch2-container .ch2-dialog.ch2-visible {
+    right: 10px !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    max-height: min(76vh, 560px) !important;
+    padding: 16px !important;
+  }
+
+  .ch2-container .ch2-dialog-actions {
+    display: grid !important;
+  }
+
+  .ch2-container .ch2-dialog-actions button {
+    width: 100% !important;
   }
 }
 

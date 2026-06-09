@@ -27,8 +27,28 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           dangerouslySetInnerHTML={{
             __html: `
               (function loadCookieHubWhenReady() {
+                function compactCookieHubBanner() {
+                  if (!window.__cookiehub) {
+                    return;
+                  }
+
+                  window.__cookiehub.settings = window.__cookiehub.settings || {};
+                  window.__cookiehub.settings.ui = window.__cookiehub.settings.ui || {};
+                  window.__cookiehub.settings.ui.compact = true;
+                  window.__cookiehub.settings.ui.dark = false;
+
+                  if (Array.isArray(window.__cookiehub.regions)) {
+                    window.__cookiehub.regions.forEach(function(region) {
+                      region.banner = region.banner || {};
+                      region.banner.position = 'bottomright';
+                      region.banner.blockUI = false;
+                    });
+                  }
+                }
+
                 function loadCookieHub() {
                   if (window.cookiehub && typeof window.cookiehub.load === 'function') {
+                    compactCookieHubBanner();
                     window.cookiehub.load({});
                     return;
                   }
