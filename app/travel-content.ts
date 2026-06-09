@@ -255,7 +255,7 @@ export const privacyPolicy = {
       bullets: [
         "Name, email address, WhatsApp number, country, travel dates, group size, preferred package, and accommodation or transport requests when you contact us.",
         "Health, allergy, dietary, or fitness notes only when you choose to share them for trekking safety and meal planning.",
-        "Basic technical data normally produced by web hosting and analytics tools, such as IP address, device type, browser, requested page, timestamp, and approximate engagement information.",
+        "Basic technical data normally produced by web hosting, consent, and analytics tools, such as IP address, device type, browser, requested page, timestamp, cookie preference, and approximate engagement information.",
         "A local browser language preference named oas-locale so the site can remember your selected language."
       ]
     },
@@ -279,6 +279,7 @@ export const privacyPolicy = {
       title: "Sharing and external services",
       paragraphs: [
         "Booking details may be shared only with people needed to deliver the service, such as local guides, cooks, drivers, accommodation partners, or payment and communication providers.",
+        "CookieHub may process cookie consent preference information so the website can remember your choice.",
         "Google Analytics may process website usage data under Google's own privacy and data processing terms.",
         "When you click WhatsApp, Instagram, email, or other external services, those providers process data under their own privacy terms."
       ]
@@ -302,7 +303,7 @@ export const privacyPolicy = {
     {
       title: "Cookies and local storage",
       paragraphs: [
-        "This website uses Google Analytics to understand page views and general site usage. It also uses local browser storage to remember the language you selected. You can clear cookies and local storage through your browser settings."
+        "This website uses CookieHub to display and remember cookie consent choices, Google Analytics to understand page views and general site usage, and local browser storage to remember the language you selected. You can clear cookies and local storage through your browser settings."
       ]
     }
   ] as readonly ContentSection[]

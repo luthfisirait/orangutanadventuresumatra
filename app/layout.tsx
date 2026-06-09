@@ -5,6 +5,7 @@ import "./globals.css";
 import { defaultLocale, isLocale, metadataForLocale } from "./seo";
 
 export const metadata: Metadata = metadataForLocale(defaultLocale, "/");
+const cookieHubId = "274d5f78";
 const googleAnalyticsId = "G-4FZR3D7T1H";
 
 type RootLayoutProps = Readonly<{
@@ -19,6 +20,30 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
+        <Script src={`https://cdn.cookiehub.eu/c2/${cookieHubId}.js`} strategy="afterInteractive" />
+        <Script
+          id="cookiehub"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function loadCookieHubWhenReady() {
+                function loadCookieHub() {
+                  if (window.cookiehub && typeof window.cookiehub.load === 'function') {
+                    window.cookiehub.load({});
+                    return;
+                  }
+                  window.setTimeout(loadCookieHub, 50);
+                }
+
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', loadCookieHub);
+                } else {
+                  loadCookieHub();
+                }
+              })();
+            `
+          }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
           strategy="afterInteractive"
