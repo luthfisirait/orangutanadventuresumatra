@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import Script from "next/script";
 import "./globals.css";
 import { defaultLocale, isLocale, metadataForLocale } from "./seo";
 
 export const metadata: Metadata = metadataForLocale(defaultLocale, "/");
+const googleAnalyticsId = "G-4FZR3D7T1H";
 
 type RootLayoutProps = Readonly<{
   children: React.ReactNode;
@@ -16,7 +18,25 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleAnalyticsId}');
+            `
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

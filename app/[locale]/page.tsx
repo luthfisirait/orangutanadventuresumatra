@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
+import { getGoogleReviewsData } from "../google-reviews";
 import { HomeContent } from "../home-content";
 import { locales } from "../site-content";
 import { defaultLocale, isLocale, metadataForLocale } from "../seo";
+
+export const revalidate = 86400;
 
 type LocalePageProps = {
   params: Promise<{ locale: string }>;
@@ -37,5 +40,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
     redirect("/");
   }
 
-  return <HomeContent initialLanguage={locale} routedLanguage />;
+  const googleReviews = await getGoogleReviewsData();
+
+  return <HomeContent initialLanguage={locale} initialGoogleReviews={googleReviews} routedLanguage />;
 }

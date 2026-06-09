@@ -82,6 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         headline: post.title,
         description: post.description,
         image: absoluteUrl(post.image),
+        inLanguage: post.locale ?? "en",
         datePublished: post.date,
         dateModified: post.date,
         author: {

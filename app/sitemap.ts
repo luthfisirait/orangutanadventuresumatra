@@ -10,7 +10,7 @@ function asLastModified(date: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pageLastModified = asLastModified("2026-06-03");
+  const pageLastModified = asLastModified("2026-06-09");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => asLastModified(post.date).getTime()))
   );

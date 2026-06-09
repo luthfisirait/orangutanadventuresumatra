@@ -158,6 +158,7 @@ const localizedImpactVision: Partial<Record<Locale, ImpactContent>> = {
 };
 
 type HomeProps = {
+  initialGoogleReviews?: GoogleReviewsResponse | null;
   initialLanguage?: Locale;
   routedLanguage?: boolean;
 };
@@ -194,6 +195,14 @@ type TestimonialCard = {
   source?: "guest" | "google";
   text: string;
 };
+
+function hasGoogleReviewSignal(data: GoogleReviewsResponse | null | undefined) {
+  return Boolean(
+    data &&
+      (data.reviews.length > 0 ||
+        (typeof data.averageRating === "number" && data.totalReviewCount > 0))
+  );
+}
 
 function initialsForName(name: string) {
   return name
@@ -255,13 +264,16 @@ function GuidePhoto({ alt, fallbackSrc, src }: GuidePhotoProps) {
 }
 
 export function HomeContent({
+  initialGoogleReviews = null,
   initialLanguage = "en",
   routedLanguage = false
 }: HomeProps = {}) {
   const [language, setLanguage] = useState<Locale>(initialLanguage);
   const [activeCategory, setActiveCategory] = useState<TrekCategory>("classic");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [googleReviews, setGoogleReviews] = useState<GoogleReviewsResponse | null>(null);
+  const [googleReviews, setGoogleReviews] = useState<GoogleReviewsResponse | null>(() =>
+    hasGoogleReviewSignal(initialGoogleReviews) ? initialGoogleReviews : null
+  );
 
   useEffect(() => {
     let ignore = false;
@@ -276,7 +288,7 @@ export function HomeContent({
 
         const data = (await response.json()) as GoogleReviewsResponse;
 
-        if (!ignore && data.reviews.length > 0) {
+        if (!ignore && hasGoogleReviewSignal(data)) {
           setGoogleReviews(data);
         }
       } catch {
@@ -389,6 +401,16 @@ export function HomeContent({
         }
       };
     });
+    const aggregateRating =
+      typeof googleReviews?.averageRating === "number" && googleReviews.totalReviewCount > 0
+        ? {
+            "@type": "AggregateRating",
+            ratingValue: Number(googleReviews.averageRating.toFixed(1)),
+            reviewCount: googleReviews.totalReviewCount,
+            bestRating: 5,
+            worstRating: 1
+          }
+        : null;
 
     return {
       "@context": "https://schema.org",
@@ -417,6 +439,7 @@ export function HomeContent({
             longitude: 98.1329
           },
           hasMap: googleMapsUrl,
+          ...(aggregateRating ? { aggregateRating } : {}),
           areaServed: [
             "Bukit Lawang",
             "Bukitlawang",
@@ -483,7 +506,7 @@ export function HomeContent({
         }
       ]
     };
-  }, [currentUrl, language, t, googleMapsUrl]);
+  }, [currentUrl, language, t, googleReviews, googleMapsUrl]);
 
   useEffect(() => {
     if (routedLanguage) {

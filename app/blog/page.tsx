@@ -58,6 +58,7 @@ export default function BlogIndexPage() {
           "@type": "BlogPosting",
           headline: post.title,
           description: post.description,
+          inLanguage: post.locale ?? "en",
           url: absoluteUrl(`/blog/${post.slug}`),
           datePublished: post.date,
           image: absoluteUrl(post.image)
