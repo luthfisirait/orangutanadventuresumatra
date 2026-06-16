@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "./site-content";
-import { languageAlternates, siteUrl } from "./seo";
+import { defaultLocale, languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
 import { trekDetailList } from "./trek-details";
 import { landingPages } from "./seo-landing-pages";
@@ -33,11 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: languageAlternates
       }
     },
-    ...locales.map((locale) => ({
+    ...locales.filter((locale) => locale !== defaultLocale).map((locale) => ({
       url: locale === "en" ? siteUrl : `${siteUrl}/${locale}`,
       lastModified: pageLastModified,
       changeFrequency: "weekly" as const,
-      priority: locale === "en" ? 0.95 : 0.9,
+      priority: 0.9,
       alternates: {
         languages: languageAlternates
       }

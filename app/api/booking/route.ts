@@ -10,6 +10,7 @@ type BookingPayload = {
   accommodation?: unknown;
   country?: unknown;
   email?: unknown;
+  formAgeMs?: unknown;
   fullName?: unknown;
   groupSize?: unknown;
   notes?: unknown;
@@ -19,6 +20,33 @@ type BookingPayload = {
   website?: unknown;
   whatsapp?: unknown;
 };
+
+type BookingRateLimitEntry = {
+  count: number;
+  windowStartedAt: number;
+};
+
+const bookingRateLimits = new Map<string, BookingRateLimitEntry>();
+const rateLimitWindowMs = 60 * 60 * 1000;
+const rateLimitMaxRequests = 5;
+const minimumFormAgeMs = 3000;
+const seoSpamPatterns = [
+  /\bseo\b/i,
+  /\bsearch engine optimi[sz]ation\b/i,
+  /\bbacklinks?\b/i,
+  /\blink building\b/i,
+  /\bguest posts?\b/i,
+  /\bguest posting\b/i,
+  /\bdomain authority\b/i,
+  /\bwebsite audit\b/i,
+  /\bgoogle ranking\b/i,
+  /\brank(?:ing)? on google\b/i,
+  /\bfirst page of google\b/i,
+  /\borganic traffic\b/i,
+  /\bahrefs\b/i,
+  /\bsemrush\b/i,
+  /\bsponsored posts?\b/i
+];
 
 function cleanString(value: unknown, maxLength = 500) {
   if (typeof value !== "string") {
@@ -97,6 +125,70 @@ function parsePort(value: string | undefined) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 587;
 }
 
+function parseNumber(value: unknown) {
+  return typeof value === "number" && Number.isFinite(value) ? value : 0;
+}
+
+function getRequestHost(request: Request) {
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const host = request.headers.get("host");
+
+  return forwardedHost || host || "";
+}
+
+function hasAllowedOrigin(request: Request) {
+  const origin = request.headers.get("origin");
+
+  if (!origin) {
+    return true;
+  }
+
+  try {
+    return new URL(origin).host === getRequestHost(request);
+  } catch {
+    return false;
+  }
+}
+
+function getClientKey(request: Request) {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  const realIp = request.headers.get("x-real-ip");
+  const cloudflareIp = request.headers.get("cf-connecting-ip");
+
+  return (forwardedFor?.split(",")[0] || realIp || cloudflareIp || "unknown").trim();
+}
+
+function isRateLimited(clientKey: string) {
+  const now = Date.now();
+  const current = bookingRateLimits.get(clientKey);
+
+  for (const [key, entry] of bookingRateLimits) {
+    if (now - entry.windowStartedAt > rateLimitWindowMs) {
+      bookingRateLimits.delete(key);
+    }
+  }
+
+  if (!current || now - current.windowStartedAt > rateLimitWindowMs) {
+    bookingRateLimits.set(clientKey, { count: 1, windowStartedAt: now });
+    return false;
+  }
+
+  current.count += 1;
+  return current.count > rateLimitMaxRequests;
+}
+
+function countLinks(value: string) {
+  return (value.match(/\b(?:https?:\/\/|www\.|[a-z0-9-]+\.(?:com|net|org|io|co|id|info|biz|top|online|site)\b)/gi) || [])
+    .length;
+}
+
+function looksLikeSeoSpam(values: string[]) {
+  const text = values.join("\n");
+  const matchCount = seoSpamPatterns.reduce((count, pattern) => count + (pattern.test(text) ? 1 : 0), 0);
+
+  return matchCount >= 2 || (/\bseo\b/i.test(text) && countLinks(text) > 0) || countLinks(text) > 2;
+}
+
 function buildRequestText(fields: {
   accommodation: string;
   country: string;
@@ -142,6 +234,24 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
+  if (!hasAllowedOrigin(request)) {
+    return NextResponse.json({ error: "Invalid booking request." }, { status: 403 });
+  }
+
+  if (parseNumber(payload.formAgeMs) < minimumFormAgeMs) {
+    return NextResponse.json(
+      { error: "Please wait a moment before sending the booking request." },
+      { status: 400 }
+    );
+  }
+
+  if (isRateLimited(getClientKey(request))) {
+    return NextResponse.json(
+      { error: "Too many booking requests. Please wait before trying again, or contact us on WhatsApp." },
+      { status: 429 }
+    );
+  }
+
   const packageId = cleanString(payload.packageId, 80);
   const selectedPackage = bookingPackages.find((bookingPackage) => bookingPackage.id === packageId);
   const fullName = cleanString(payload.fullName, 120);
@@ -149,12 +259,20 @@ export async function POST(request: Request) {
   const whatsapp = cleanWhatsAppNumber(payload.whatsapp);
   const startDate = cleanString(payload.startDate, 40);
   const groupSize = cleanString(payload.groupSize, 20);
+  const accommodation = cleanString(payload.accommodation, 160);
+  const country = cleanString(payload.country, 120);
+  const notes = cleanMultiline(payload.notes);
+  const transport = cleanString(payload.transport, 160);
 
   if (!fullName || !selectedPackage || !startDate || !groupSize || !whatsapp) {
     return NextResponse.json(
       { error: "Please complete the required fields and include a WhatsApp number with country code." },
       { status: 400 }
     );
+  }
+
+  if (looksLikeSeoSpam([accommodation, country, email, fullName, notes, transport])) {
+    return NextResponse.json({ ok: true });
   }
 
   const host = process.env.SMTP_HOST;
@@ -172,15 +290,15 @@ export async function POST(request: Request) {
 
   const packageLabel = `${selectedPackage.title} (${selectedPackage.duration}, ${selectedPackage.price})`;
   const text = buildRequestText({
-    accommodation: cleanString(payload.accommodation, 160),
-    country: cleanString(payload.country, 120),
+    accommodation,
+    country,
     email,
     fullName,
     groupSize,
-    notes: cleanMultiline(payload.notes),
+    notes,
     packageLabel,
     startDate,
-    transport: cleanString(payload.transport, 160),
+    transport,
     whatsapp
   });
 

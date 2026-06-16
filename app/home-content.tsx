@@ -52,7 +52,8 @@ import {
   impactVision,
   instagramUrl,
   packageActivityOverview,
-  whatsappNumber
+  whatsappNumber,
+  type BlogPost
 } from "./travel-content";
 import { trekDetailHref } from "./trek-details";
 
@@ -70,6 +71,16 @@ function whatsappUrlFor(message: string) {
 
 const trekCategoryIds = ["classic", "private", "activities"] as const;
 type TrekCategory = (typeof trekCategoryIds)[number];
+
+const featuredHomeBlogSlugs = [
+  "sumatra-orangutan-trekking-cost-price-guide-2026",
+  "medan-airport-to-bukit-lawang-transport-options",
+  "is-bukit-lawang-safe-solo-female-travelers"
+] as const;
+
+const featuredHomeBlogPosts = featuredHomeBlogSlugs
+  .map((slug) => blogPosts.find((post) => post.slug === slug))
+  .filter((post): post is BlogPost => Boolean(post));
 
 const brandTitle = (
   <>
@@ -687,6 +698,32 @@ export function HomeContent({
         </div>
       </section>
 
+      {language === "en" ? (
+        <section className="intent-links-section" aria-labelledby="trip-pathways-heading">
+          <div className="section-heading wide-heading">
+            <span className="section-kicker">Plan by trip type</span>
+            <h2 id="trip-pathways-heading">Choose the page that matches your Sumatra orangutan trip.</h2>
+          </div>
+          <div className="intent-link-grid">
+            <Link className="intent-link-card" href="/sumatra-orangutan-tour">
+              <span>Sumatra orangutan tour</span>
+              <strong>Compare the main jungle package options from Bukit Lawang.</strong>
+              <ArrowRight size={18} />
+            </Link>
+            <Link className="intent-link-card" href="/bukit-lawang-orangutan-trekking">
+              <span>Bukit Lawang orangutan trekking</span>
+              <strong>Start with the core trekking page for first-time visitors.</strong>
+              <ArrowRight size={18} />
+            </Link>
+            <Link className="intent-link-card" href="/3-day-bukit-lawang-orangutan-trek">
+              <span>3-day Bukit Lawang orangutan trek</span>
+              <strong>See the camp flow, river return, and booking notes.</strong>
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section intro-section">
         <div className="section-heading">
           <span className="section-kicker">{t.intro.kicker}</span>
@@ -798,6 +835,18 @@ export function HomeContent({
                 </article>
               ))}
             </div>
+            {language === "en" ? (
+              <div className="resource-links package-detail-links">
+                <Link className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
+                  See the 3-day trek page
+                  <ArrowRight size={18} />
+                </Link>
+                <Link className="secondary-button dark" href="/blog/3-day-bukit-lawang-jungle-trek-itinerary">
+                  Read the 3-day itinerary guide
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            ) : null}
           </div>
         </div>
         <div className="package-notes">
@@ -995,7 +1044,7 @@ export function HomeContent({
           <h2>{t.blog.heading}</h2>
         </div>
         <div className="home-blog-grid">
-          {blogPosts.slice(0, 3).map((post) => (
+          {featuredHomeBlogPosts.map((post) => (
             <article className="home-blog-card" key={post.slug}>
               <div className="home-blog-image">
                 <Image src={post.image} alt={post.imageAlt} fill sizes="(max-width: 760px) 100vw, 33vw" />
@@ -1023,26 +1072,6 @@ export function HomeContent({
           </a>
         </div>
       </section>
-
-      {language === "en" ? (
-        <section className="section landing-links-section">
-          <div className="section-heading">
-            <span className="section-kicker">High-intent pages</span>
-            <h2>Focused pages for travelers who are ready to book.</h2>
-          </div>
-          <div className="resource-links landing-links">
-            <a className="secondary-button dark" href="/sumatra-orangutan-tour">
-              Sumatra orangutan tour
-            </a>
-            <a className="secondary-button dark" href="/bukit-lawang-orangutan-trekking">
-              Bukit Lawang orangutan trekking
-            </a>
-            <a className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
-              3-day Bukit Lawang orangutan trek
-            </a>
-          </div>
-        </section>
-      ) : null}
 
       <section className="contact-section" id="contact">
         <div className="contact-panel">

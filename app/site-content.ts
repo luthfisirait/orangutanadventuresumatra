@@ -59,7 +59,7 @@ export const galleryItems = [
 
 export const siteText = {
   en: {
-    metaTitle: "Bukit Lawang Orangutan Trekking | 4h-5d Jungle Tours",
+    metaTitle: "Bukit Lawang Orangutan Trekking | Orangutan Adventure Sumatra",
     metaDescription:
       "Book ethical Bukit Lawang orangutan trekking with a local guide. Choose 4-hour to 5-day Sumatra jungle tours, river camps, rafting, and WhatsApp booking.",
     nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },

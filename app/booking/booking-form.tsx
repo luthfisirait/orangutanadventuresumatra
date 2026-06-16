@@ -83,6 +83,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [isReady, setIsReady] = useState(false);
+  const [formReadyAt, setFormReadyAt] = useState(0);
   const [website, setWebsite] = useState("");
   const [form, setForm] = useState<BookingFormState>({
     fullName: "",
@@ -104,6 +105,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
 
   useEffect(() => {
     setIsReady(true);
+    setFormReadyAt(Date.now());
   }, []);
 
   const message = useMemo(() => buildMessage(form, selectedPackage), [form, selectedPackage]);
@@ -140,7 +142,11 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
 
     try {
       const response = await fetch("/api/booking", {
-        body: JSON.stringify({ ...form, website }),
+        body: JSON.stringify({
+          ...form,
+          formAgeMs: formReadyAt ? Date.now() - formReadyAt : 0,
+          website
+        }),
         headers: {
           "Content-Type": "application/json"
         },

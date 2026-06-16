@@ -15,6 +15,13 @@ function getPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
 }
 
+const planningLinks = [
+  { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" },
+  { href: "/bukit-lawang-orangutan-trekking", label: "Bukit Lawang orangutan trekking" },
+  { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
+  { href: "/booking", label: "Booking form" }
+] as const;
+
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
@@ -166,6 +173,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <ArrowRight size={18} />
               Browse trek details
             </Link>
+            <div className="article-planning-links" aria-label="Trip planning links">
+              <strong>Plan your trek</strong>
+              {planningLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span>{link.label}</span>
+                  <ArrowRight size={15} />
+                </Link>
+              ))}
+            </div>
           </aside>
 
           <div className="article-body">
@@ -187,6 +203,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ) : null}
               </section>
             ))}
+            <section className="article-cta-block">
+              <h2>Ready to compare trek options?</h2>
+              <p>
+                Use the booking pages to choose a route, confirm transport from Medan, and send your dates before paying a deposit.
+              </p>
+              <div className="resource-links">
+                <Link className="primary-button" href="/booking">
+                  Open booking form
+                  <ArrowRight size={18} />
+                </Link>
+                <Link className="secondary-button dark" href="/sumatra-orangutan-tour">
+                  Sumatra orangutan tour
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </section>
           </div>
         </section>
       </article>

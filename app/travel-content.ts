@@ -279,7 +279,7 @@ export const privacyPolicy = {
       title: "Sharing and external services",
       paragraphs: [
         "Booking details may be shared only with people needed to deliver the service, such as local guides, cooks, drivers, accommodation partners, or payment and communication providers.",
-        "CookieHub may process cookie consent preference information so the website can remember your choice.",
+        "This website stores your cookie consent choice in your browser so it can remember whether analytics cookies are allowed.",
         "Google Analytics may process website usage data under Google's own privacy and data processing terms.",
         "When you click WhatsApp, Instagram, email, or other external services, those providers process data under their own privacy terms."
       ]
@@ -303,7 +303,7 @@ export const privacyPolicy = {
     {
       title: "Cookies and local storage",
       paragraphs: [
-        "This website uses CookieHub to display and remember cookie consent choices, Google Analytics to understand page views and general site usage, and local browser storage to remember the language you selected. You can clear cookies and local storage through your browser settings."
+        "This website uses a custom cookie banner to display and remember cookie consent choices, Google Analytics to understand page views and general site usage when analytics are allowed, and local browser storage to remember the language you selected. You can clear cookies and local storage through your browser settings."
       ]
     }
   ] as readonly ContentSection[]
