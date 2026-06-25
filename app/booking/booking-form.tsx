@@ -74,6 +74,8 @@ declare global {
 const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
 const paypalCurrency = process.env.NEXT_PUBLIC_PAYPAL_CURRENCY || "EUR";
 const paypalEnvironment = process.env.NEXT_PUBLIC_PAYPAL_ENV === "live" ? "live" : "sandbox";
+const paypalManualEmail = process.env.NEXT_PUBLIC_PAYPAL_MANUAL_EMAIL || "Saipolvalley01@gmail.com";
+const paypalPaymentMode = process.env.NEXT_PUBLIC_PAYPAL_PAYMENT_MODE === "checkout" ? "checkout" : "manual";
 
 function isBookingPackageId(value: string | null): value is TrekId {
   return bookingPackages.some((bookingPackage) => bookingPackage.id === value);
@@ -277,6 +279,10 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
   };
 
   useEffect(() => {
+    if (paypalPaymentMode !== "checkout") {
+      return;
+    }
+
     if (!paypalClientId) {
       return;
     }
@@ -333,6 +339,10 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
   }, []);
 
   useEffect(() => {
+    if (paypalPaymentMode !== "checkout") {
+      return;
+    }
+
     const container = paypalContainerRef.current;
 
     if (!paypalScriptReady || !container || !window.paypal) {
@@ -612,9 +622,11 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       {selectedPackage ? (
         <section className="paypal-deposit-section" aria-labelledby="paypal-deposit-title">
           <div className="paypal-deposit-header">
-            <span className="section-kicker">PayPal {paypalEnvironment}</span>
+            <span className="section-kicker">
+              PayPal {paypalPaymentMode === "checkout" ? paypalEnvironment : "manual"}
+            </span>
             <h3 id="paypal-deposit-title">Pay {Math.round(depositRate * 100)}% deposit</h3>
-            <p>PayPal charges only the deposit. The remaining balance is handled after confirmation.</p>
+            <p>Send only the deposit shown below. The remaining balance is handled after confirmation.</p>
           </div>
 
           <div className="payment-summary" aria-label="Payment summary">
@@ -637,7 +649,24 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
             Total is calculated from {selectedPackage.price} x group size.
           </p>
 
-          {paypalClientId ? (
+          {paypalPaymentMode === "manual" ? (
+            <div className="manual-paypal-box">
+              <span>Send the deposit manually to this PayPal email</span>
+              <strong>{paypalManualEmail}</strong>
+              <p>
+                Add your name, travel date, and package in the PayPal note. After payment, send the PayPal
+                reference by WhatsApp or write it in the notes before submitting this form.
+              </p>
+              <a
+                className="secondary-button dark"
+                href="https://www.paypal.com/myaccount/transfer/send"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open PayPal
+              </a>
+            </div>
+          ) : paypalClientId ? (
             <>
               <div className="paypal-button-wrapper" ref={paypalContainerRef} />
               {!paypalScriptReady ? <small>Loading PayPal {paypalEnvironment}...</small> : null}

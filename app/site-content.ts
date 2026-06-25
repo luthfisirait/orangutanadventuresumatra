@@ -156,7 +156,7 @@ export const siteText = {
       },
       {
         q: "How does payment work?",
-        a: "The booking form can take a PayPal deposit for 30% of the package total. The remaining balance can be paid in cash when you meet the team, or 2 days before departure after email confirmation."
+        a: "The booking form shows a 30% PayPal deposit for the package total. For now, guests can send the deposit manually to the PayPal email shown on the form. The remaining balance can be paid in cash when you meet the team, or 2 days before departure after email confirmation."
       },
       {
         q: "Where is the meeting point?",
@@ -166,7 +166,7 @@ export const siteText = {
     contact: {
       kicker: "Book direct",
       title: "Tell Syaipul your dates, group size, and preferred trek.",
-      text: "WhatsApp is fastest for availability. Email is used to confirm PayPal deposit references, balance payment options, transport, accommodation, and detailed itinerary questions.",
+      text: "WhatsApp is fastest for availability. Email is used to confirm manual PayPal deposit references, balance payment options, transport, accommodation, and detailed itinerary questions.",
       bookingLabel: "Open booking form",
       whatsappLabel: "+62 853-6240-5752",
       emailLabel: "support@orangutanadventuresumatra.com"
@@ -294,7 +294,7 @@ export const siteText = {
       },
       {
         q: "Wie läuft die Zahlung ab?",
-        a: "Das Buchungsformular kann eine PayPal-Anzahlung von 30% des Paketpreises berechnen. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestaetigung."
+        a: "Das Buchungsformular zeigt eine PayPal-Anzahlung von 30% des Paketpreises. Zurzeit koennen Gaeste die Anzahlung manuell an die PayPal-E-Mail im Formular senden. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestaetigung."
       },
       {
         q: "Wo ist der Treffpunkt?",
@@ -433,7 +433,7 @@ export const siteText = {
       },
       {
         q: "Comment se passe le paiement ?",
-        a: "Le formulaire de reservation peut calculer un acompte PayPal de 30% du total du forfait. Le solde peut etre paye en especes lors de la rencontre avec l'equipe, ou 2 jours avant le depart apres confirmation par e-mail."
+        a: "Le formulaire de reservation affiche un acompte PayPal de 30% du total du forfait. Pour l'instant, les voyageurs peuvent envoyer l'acompte manuellement a l'e-mail PayPal indique sur le formulaire. Le solde peut etre paye en especes lors de la rencontre avec l'equipe, ou 2 jours avant le depart apres confirmation par e-mail."
       },
       {
         q: "Où est le point de rendez-vous ?",
@@ -571,7 +571,7 @@ export const siteText = {
       },
       {
         q: "Hoe werkt de betaling?",
-        a: "Het boekingsformulier kan een PayPal-aanbetaling van 30% van het pakketbedrag berekenen. Het resterende bedrag kan contant worden betaald wanneer je het team ontmoet, of 2 dagen voor vertrek na bevestiging per e-mail."
+        a: "Het boekingsformulier toont een PayPal-aanbetaling van 30% van het pakketbedrag. Voor nu kunnen gasten de aanbetaling handmatig sturen naar het PayPal-e-mailadres op het formulier. Het resterende bedrag kan contant worden betaald wanneer je het team ontmoet, of 2 dagen voor vertrek na bevestiging per e-mail."
       },
       {
         q: "Waar is het ontmoetingspunt?",

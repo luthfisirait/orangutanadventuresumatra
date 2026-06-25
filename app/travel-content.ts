@@ -164,8 +164,8 @@ export const essentialInformation = {
     {
       title: "Deposits, payments, and cancellation",
       paragraphs: [
-        "The booking form can calculate a 30% PayPal deposit from your selected package and group size. The payment reference is sent with your booking request.",
-        "PayPal charges only the deposit. The remaining balance is handled separately after the trip details are confirmed.",
+        "The booking form can calculate a 30% PayPal deposit from your selected package and group size. For now, guests can send the deposit manually to the PayPal email shown on the form.",
+        "After payment, send the PayPal reference by WhatsApp or include it in your booking notes. The remaining balance is handled separately after the trip details are confirmed.",
         "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
         "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
       ]
@@ -183,35 +183,35 @@ export const essentialInformation = {
 export const paymentAndDeposit = {
   title: "Payment and Deposit Information",
   description:
-    "How PayPal deposits, cash balance payment, and email-confirmed payment references work for Bukit Lawang orangutan trekking bookings.",
+    "How manual PayPal deposits, cash balance payment, and email-confirmed payment references work for Bukit Lawang orangutan trekking bookings.",
   image: "/images/privacy-hero.png",
   imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
   intro:
-    "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. The booking form can take only a 30% PayPal deposit, with the remaining balance handled separately.",
+    "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. The booking form shows only a 30% PayPal deposit, with the remaining balance handled separately.",
   highlights: [
     "30% PayPal deposit",
     "Deposit is calculated from package price and group size",
-    "Secure PayPal checkout",
+    "Manual PayPal transfer",
     "Final balance by cash on arrival or email-confirmed prepayment"
   ],
   sections: [
     {
       title: "PayPal deposit",
       paragraphs: [
-        "The booking form calculates 30% of the selected package total. For example, a package price is multiplied by the group size, then PayPal charges only 30% of that total.",
-        "After PayPal confirms the deposit, the payment reference is sent with the booking request so the guide team can match the payment to your trip details."
+        "The booking form calculates 30% of the selected package total. For example, a package price is multiplied by the group size, then the deposit is 30% of that total.",
+        "Send the deposit manually to the PayPal email shown on the form, then share the PayPal reference by WhatsApp or in your booking notes."
       ],
       bullets: [
         "No booking is confirmed automatically by the website.",
-        "PayPal charges only the deposit shown in the booking form.",
+        "Send only the deposit amount shown in the booking form.",
         "Keep your PayPal receipt or capture reference for confirmation."
       ]
     },
     {
-      title: "How PayPal checkout works",
+      title: "How manual PayPal payment works",
       paragraphs: [
-        "The PayPal button creates a secure checkout for the exact deposit amount shown in the booking form.",
-        "After the payment is approved, the booking request includes the PayPal order ID and capture ID so the guide team can match the payment to your trip."
+        "Open PayPal, send the deposit to the email address shown on the booking form, and include your name, travel date, and package in the PayPal note.",
+        "After the payment is sent, submit the booking form or send the reference by WhatsApp so the guide team can match the payment to your trip."
       ]
     },
     {
@@ -229,8 +229,8 @@ export const paymentAndDeposit = {
     {
       title: "Payment safety notes",
       paragraphs: [
-        "Please use only the PayPal button on the booking form or the payment details sent through the confirmed booking email. If anything looks different or unclear, ask for confirmation before sending money.",
-        "Booking details can include dates, package, group size, pickup support, accommodation help, food notes, PayPal order ID, PayPal capture ID, and any agreed balance payment timing."
+        "Please use only the PayPal email shown on the booking form or payment details sent through the confirmed booking email. If anything looks different or unclear, ask for confirmation before sending money.",
+        "Booking details can include dates, package, group size, pickup support, accommodation help, food notes, PayPal transaction reference, and any agreed balance payment timing."
       ]
     }
   ] as readonly ContentSection[]
@@ -430,7 +430,7 @@ const informationBlogPosts: BlogPost[] = [
       {
         title: "Deposit and booking notes",
         paragraphs: [
-          "The booking form can calculate and accept a 30% PayPal deposit from the selected package price and group size. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
+          "The booking form can calculate a 30% PayPal deposit from the selected package price and group size. For now, guests can send that deposit manually to the PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
           "Do not compare only the cheapest headline price. Ask what is included, who guides the trek, how wildlife rules are handled, where you sleep, what happens if river levels are unsafe, and whether the team can support transport or accommodation."
         ]
       }
@@ -1018,7 +1018,7 @@ export const blogPosts: BlogPost[] = [
     slug: "paypal-deposit-bukit-lawang-trek",
     title: "How the 30% PayPal Deposit Works for a Bukit Lawang Trek",
     description:
-      "A clear guide to paying only the 30% PayPal deposit for a Bukit Lawang orangutan trek, with examples, booking steps, and balance payment notes.",
+      "A clear guide to sending only the 30% PayPal deposit manually for a Bukit Lawang orangutan trek, with examples, booking steps, and balance payment notes.",
     date: "2026-06-25",
     readingTime: "5 min read",
     image: "/images/privacy-hero.png",
@@ -1029,27 +1029,27 @@ export const blogPosts: BlogPost[] = [
         title: "Why the booking form asks for a deposit",
         paragraphs: [
           "A jungle trek needs real preparation before the first step into the forest. Guides, cooks, food, permits, camp equipment, transport timing, and accommodation notes all need to be coordinated around your travel date and group size.",
-          "The PayPal payment on the booking form is designed as a deposit only. It helps secure the booking process without asking guests to pay the full trek cost online before arrival."
+          "The PayPal amount shown on the booking form is designed as a deposit only. It helps secure the booking process without asking guests to pay the full trek cost online before arrival."
         ]
       },
       {
         title: "How the 30% amount is calculated",
         paragraphs: [
-          "The calculation is simple: package price per person multiplied by group size, then 30% of that total is charged through PayPal.",
-          "For example, if a trek costs 250 EUR per person and the group size is 2, the package total is 500 EUR. The PayPal deposit is 30% of 500 EUR, which is 150 EUR."
+          "The calculation is simple: package price per person multiplied by group size, then 30% of that total is the PayPal deposit.",
+          "For example, if a trek costs 250 EUR per person and the group size is 2, the package total is 500 EUR. The manual PayPal deposit is 30% of 500 EUR, which is 150 EUR."
         ],
         bullets: [
           "Choose your package in the booking form.",
           "Enter the correct group size.",
           "Check the package total and deposit due before opening PayPal.",
-          "PayPal charges only the deposit shown on the form."
+          "Send only the deposit shown on the form."
         ]
       },
       {
-        title: "What happens after PayPal payment",
+        title: "What happens after manual PayPal payment",
         paragraphs: [
-          "After PayPal approves the payment, the booking request is sent with your selected package, travel date, group size, contact details, and PayPal payment reference.",
-          "The guide team can then match the deposit to your booking request and reply with availability, final trip notes, meeting details, and any transport or accommodation help you requested."
+          "After sending the PayPal payment, submit the booking request with your selected package, travel date, group size, contact details, and PayPal payment reference in the notes.",
+          "The guide team can then match the deposit to your booking request and reply with availability, final trip notes, meeting details, and any transport or accommodation help you requested. You can also send the reference directly by WhatsApp."
         ]
       },
       {
@@ -1062,10 +1062,10 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Payment safety notes",
         bullets: [
-          "Use only the PayPal button on the booking form or payment details confirmed by the team.",
+          "Use only the PayPal email shown on the booking form or payment details confirmed by the team.",
           "Make sure the selected package and group size are correct before paying.",
           "Do not send a second deposit if PayPal shows a completed payment.",
-          "Ask by WhatsApp if your browser closes before the confirmation message appears."
+          "Ask by WhatsApp if you are unsure where to add the payment reference."
         ]
       }
     ]

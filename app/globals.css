@@ -1691,6 +1691,38 @@ footer .footer-contact-links {
   color: var(--teal);
 }
 
+.manual-paypal-box {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(24, 32, 25, 0.14);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.manual-paypal-box span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.manual-paypal-box strong {
+  color: var(--forest);
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.manual-paypal-box p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.manual-paypal-box .secondary-button {
+  justify-self: start;
+  margin-top: 4px;
+}
+
 .paypal-button-wrapper {
   min-height: 46px;
 }
