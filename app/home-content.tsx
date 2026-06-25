@@ -437,7 +437,7 @@ export function HomeContent({
           description: t.metaDescription,
           telephone: "+6285362405752",
           email: contactEmail,
-          priceRange: "EUR 20 - EUR 385",
+          priceRange: "EUR 30 - EUR 385",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Bukit Lawang",

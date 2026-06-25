@@ -15,6 +15,12 @@ type BookingPayload = {
   groupSize?: unknown;
   notes?: unknown;
   packageId?: unknown;
+  paypalCaptureId?: unknown;
+  paypalDepositAmount?: unknown;
+  paypalDepositRate?: unknown;
+  paypalOrderId?: unknown;
+  paypalStatus?: unknown;
+  paypalTotalAmount?: unknown;
   startDate?: unknown;
   transport?: unknown;
   website?: unknown;
@@ -197,6 +203,12 @@ function buildRequestText(fields: {
   groupSize: string;
   notes: string;
   packageLabel: string;
+  paypalCaptureId?: string;
+  paypalDepositAmount?: string;
+  paypalDepositRate?: string;
+  paypalOrderId?: string;
+  paypalStatus?: string;
+  paypalTotalAmount?: string;
   startDate: string;
   transport: string;
   whatsapp: string;
@@ -215,6 +227,14 @@ function buildRequestText(fields: {
     fields.accommodation ? `Accommodation help: ${fields.accommodation}` : null,
     fields.notes ? `Notes: ${fields.notes}` : null,
     "",
+    fields.paypalOrderId || fields.paypalCaptureId ? "PayPal deposit:" : null,
+    fields.paypalOrderId ? `PayPal order ID: ${fields.paypalOrderId}` : null,
+    fields.paypalCaptureId ? `PayPal capture ID: ${fields.paypalCaptureId}` : null,
+    fields.paypalStatus ? `PayPal status: ${fields.paypalStatus}` : null,
+    fields.paypalDepositAmount ? `Deposit paid: ${fields.paypalDepositAmount}` : null,
+    fields.paypalTotalAmount ? `Package total: ${fields.paypalTotalAmount}` : null,
+    fields.paypalDepositRate ? `Deposit rate: ${fields.paypalDepositRate}` : null,
+    fields.paypalOrderId || fields.paypalCaptureId ? "" : null,
     "Follow up with this guest to confirm availability, deposit details, and next steps."
   ]
     .filter(Boolean)
@@ -262,6 +282,12 @@ export async function POST(request: Request) {
   const accommodation = cleanString(payload.accommodation, 160);
   const country = cleanString(payload.country, 120);
   const notes = cleanMultiline(payload.notes);
+  const paypalCaptureId = cleanString(payload.paypalCaptureId, 100);
+  const paypalDepositAmount = cleanString(payload.paypalDepositAmount, 60);
+  const paypalDepositRate = cleanString(payload.paypalDepositRate, 20);
+  const paypalOrderId = cleanString(payload.paypalOrderId, 100);
+  const paypalStatus = cleanString(payload.paypalStatus, 60);
+  const paypalTotalAmount = cleanString(payload.paypalTotalAmount, 60);
   const transport = cleanString(payload.transport, 160);
 
   if (!fullName || !selectedPackage || !startDate || !groupSize || !whatsapp) {
@@ -297,6 +323,12 @@ export async function POST(request: Request) {
     groupSize,
     notes,
     packageLabel,
+    paypalCaptureId,
+    paypalDepositAmount,
+    paypalDepositRate,
+    paypalOrderId,
+    paypalStatus,
+    paypalTotalAmount,
     startDate,
     transport,
     whatsapp

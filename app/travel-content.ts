@@ -164,8 +164,8 @@ export const essentialInformation = {
     {
       title: "Deposits, payments, and cancellation",
       paragraphs: [
-        "A 30% deposit is requested after your dates, package, group size, and guide availability are checked. Payment instructions are confirmed by email before you send money.",
-        "This site does not use an automatic payment gateway such as Stripe or international card checkout because those services can be limited for a small local trekking business in Indonesia.",
+        "The booking form can calculate a 30% PayPal deposit from your selected package and group size. The payment reference is sent with your booking request.",
+        "PayPal sandbox is used while testing the checkout flow. Before live bookings, the PayPal app credentials should be switched to live mode.",
         "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
         "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
       ]
@@ -183,35 +183,35 @@ export const essentialInformation = {
 export const paymentAndDeposit = {
   title: "Payment and Deposit Information",
   description:
-    "How deposits, cash balance payment, and email-confirmed payment instructions work for Bukit Lawang orangutan trekking bookings.",
+    "How PayPal deposits, cash balance payment, and email-confirmed payment references work for Bukit Lawang orangutan trekking bookings.",
   image: "/images/privacy-hero.png",
   imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
   intro:
-    "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. We do not use an automatic online checkout or international card payment gateway.",
+    "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. The booking form can take only a 30% PayPal deposit, with the remaining balance handled separately.",
   highlights: [
-    "30% deposit after availability is confirmed",
-    "Payment instructions are confirmed by email",
-    "No Stripe or international payment gateway checkout",
+    "30% PayPal deposit",
+    "Deposit is calculated from package price and group size",
+    "Sandbox mode while testing",
     "Final balance by cash on arrival or email-confirmed prepayment"
   ],
   sections: [
     {
-      title: "Deposit after availability check",
+      title: "PayPal deposit",
       paragraphs: [
-        "A 30% deposit is requested after your trekking dates, group size, package, and guide availability have been checked.",
-        "Deposit instructions are sent by email, so you can review the amount, booking details, payment method, and next steps before sending any money."
+        "The booking form calculates 30% of the selected package total. For example, a package price is multiplied by the group size, then PayPal charges only 30% of that total.",
+        "After PayPal confirms the deposit, the payment reference is sent with the booking request so the guide team can match the payment to your trip details."
       ],
       bullets: [
         "No booking is confirmed automatically by the website.",
-        "Do not send a deposit before receiving payment instructions by email.",
-        "Keep your payment receipt or transfer proof for confirmation."
+        "PayPal sandbox mode is for testing before live payments.",
+        "Keep your PayPal receipt or capture reference for confirmation."
       ]
     },
     {
-      title: "Why there is no payment gateway",
+      title: "Sandbox and live mode",
       paragraphs: [
-        "This site does not use Stripe, automatic card checkout, or similar international payment gateways because access to those services can be limited for a small local trekking business in Indonesia.",
-        "Instead, every booking is handled manually by email or WhatsApp so the guide team can confirm availability, package details, transport needs, and the correct payment instruction before payment."
+        "The current checkout is configured for PayPal sandbox credentials while the payment flow is tested.",
+        "Before accepting real deposits, switch the PayPal environment and credentials to live values and run one final booking test."
       ]
     },
     {
@@ -229,8 +229,8 @@ export const paymentAndDeposit = {
     {
       title: "Payment safety notes",
       paragraphs: [
-        "Please use only the payment details sent through the confirmed booking email. If anything looks different or unclear, ask for confirmation before sending money.",
-        "Booking details can include dates, package, group size, pickup support, accommodation help, food notes, and any agreed deposit or balance payment timing."
+        "Please use only the PayPal button on the booking form or the payment details sent through the confirmed booking email. If anything looks different or unclear, ask for confirmation before sending money.",
+        "Booking details can include dates, package, group size, pickup support, accommodation help, food notes, PayPal order ID, PayPal capture ID, and any agreed balance payment timing."
       ]
     }
   ] as readonly ContentSection[]
@@ -395,8 +395,8 @@ const informationBlogPosts: BlogPost[] = [
           "3-day private eco jungle package: 280 EUR per person.",
           "4-day private eco jungle package: 335 EUR per person.",
           "5-day private eco jungle package: 385 EUR per person.",
-          "Bat Cave visit: 20 EUR per person.",
-          "Village Tour: 25 EUR per person."
+          "Bat Cave visit: 30 EUR per person.",
+          "Village Tour: 30 EUR per person."
         ]
       },
       {
@@ -430,7 +430,7 @@ const informationBlogPosts: BlogPost[] = [
       {
         title: "Deposit and booking notes",
         paragraphs: [
-          "After dates, group size, package, and guide availability are checked, a 30% deposit is requested by email-confirmed payment instructions. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
+          "The booking form can calculate and accept a 30% PayPal deposit from the selected package price and group size. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
           "Do not compare only the cheapest headline price. Ask what is included, who guides the trek, how wildlife rules are handled, where you sleep, what happens if river levels are unsafe, and whether the team can support transport or accommodation."
         ]
       }
