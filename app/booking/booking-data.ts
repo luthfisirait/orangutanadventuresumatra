@@ -51,6 +51,6 @@ export const bookingChecklist = [
 export const bookingAssurances = [
   "We contact you after checking guide and date availability.",
   "PayPal charges only a 30% deposit based on package price and group size.",
-  "PayPal sandbox is used for testing before switching the site to live payments.",
+  "The PayPal payment reference is sent with your booking request.",
   "The final balance is paid in cash when you meet the team, or 2 days before departure after email confirmation."
 ] as const;

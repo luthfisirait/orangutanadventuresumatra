@@ -165,7 +165,7 @@ export const essentialInformation = {
       title: "Deposits, payments, and cancellation",
       paragraphs: [
         "The booking form can calculate a 30% PayPal deposit from your selected package and group size. The payment reference is sent with your booking request.",
-        "PayPal sandbox is used while testing the checkout flow. Before live bookings, the PayPal app credentials should be switched to live mode.",
+        "PayPal charges only the deposit. The remaining balance is handled separately after the trip details are confirmed.",
         "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
         "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
       ]
@@ -191,7 +191,7 @@ export const paymentAndDeposit = {
   highlights: [
     "30% PayPal deposit",
     "Deposit is calculated from package price and group size",
-    "Sandbox mode while testing",
+    "Secure PayPal checkout",
     "Final balance by cash on arrival or email-confirmed prepayment"
   ],
   sections: [
@@ -203,15 +203,15 @@ export const paymentAndDeposit = {
       ],
       bullets: [
         "No booking is confirmed automatically by the website.",
-        "PayPal sandbox mode is for testing before live payments.",
+        "PayPal charges only the deposit shown in the booking form.",
         "Keep your PayPal receipt or capture reference for confirmation."
       ]
     },
     {
-      title: "Sandbox and live mode",
+      title: "How PayPal checkout works",
       paragraphs: [
-        "The current checkout is configured for PayPal sandbox credentials while the payment flow is tested.",
-        "Before accepting real deposits, switch the PayPal environment and credentials to live values and run one final booking test."
+        "The PayPal button creates a secure checkout for the exact deposit amount shown in the booking form.",
+        "After the payment is approved, the booking request includes the PayPal order ID and capture ID so the guide team can match the payment to your trip."
       ]
     },
     {
@@ -1014,6 +1014,62 @@ const translatedInformationBlogPosts: BlogPost[] = [
 export const blogPosts: BlogPost[] = [
   ...informationBlogPosts,
   ...translatedInformationBlogPosts,
+  {
+    slug: "paypal-deposit-bukit-lawang-trek",
+    title: "How the 30% PayPal Deposit Works for a Bukit Lawang Trek",
+    description:
+      "A clear guide to paying only the 30% PayPal deposit for a Bukit Lawang orangutan trek, with examples, booking steps, and balance payment notes.",
+    date: "2026-06-25",
+    readingTime: "5 min read",
+    image: "/images/privacy-hero.png",
+    imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
+    tags: ["PayPal deposit", "Bukit Lawang booking", "trek payment", "Sumatra travel"],
+    sections: [
+      {
+        title: "Why the booking form asks for a deposit",
+        paragraphs: [
+          "A jungle trek needs real preparation before the first step into the forest. Guides, cooks, food, permits, camp equipment, transport timing, and accommodation notes all need to be coordinated around your travel date and group size.",
+          "The PayPal payment on the booking form is designed as a deposit only. It helps secure the booking process without asking guests to pay the full trek cost online before arrival."
+        ]
+      },
+      {
+        title: "How the 30% amount is calculated",
+        paragraphs: [
+          "The calculation is simple: package price per person multiplied by group size, then 30% of that total is charged through PayPal.",
+          "For example, if a trek costs 250 EUR per person and the group size is 2, the package total is 500 EUR. The PayPal deposit is 30% of 500 EUR, which is 150 EUR."
+        ],
+        bullets: [
+          "Choose your package in the booking form.",
+          "Enter the correct group size.",
+          "Check the package total and deposit due before opening PayPal.",
+          "PayPal charges only the deposit shown on the form."
+        ]
+      },
+      {
+        title: "What happens after PayPal payment",
+        paragraphs: [
+          "After PayPal approves the payment, the booking request is sent with your selected package, travel date, group size, contact details, and PayPal payment reference.",
+          "The guide team can then match the deposit to your booking request and reply with availability, final trip notes, meeting details, and any transport or accommodation help you requested."
+        ]
+      },
+      {
+        title: "How the remaining balance is paid",
+        paragraphs: [
+          "The remaining balance is not charged automatically by the website. It can usually be paid in cash when you meet the team in Bukit Lawang, or arranged before departure after direct confirmation.",
+          "Keep your PayPal receipt or capture reference until the booking is fully confirmed. If anything in the amount, date, package, or group size looks wrong, contact the team before making another payment."
+        ]
+      },
+      {
+        title: "Payment safety notes",
+        bullets: [
+          "Use only the PayPal button on the booking form or payment details confirmed by the team.",
+          "Make sure the selected package and group size are correct before paying.",
+          "Do not send a second deposit if PayPal shows a completed payment.",
+          "Ask by WhatsApp if your browser closes before the confirmation message appears."
+        ]
+      }
+    ]
+  },
   {
     slug: "2-week-sumatra-itinerary-europe-travelers",
     title: "The Ultimate 2-Week North Sumatra Itinerary: Bukit Lawang, Lake Toba, and Berastagi",

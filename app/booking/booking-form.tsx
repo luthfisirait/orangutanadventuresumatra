@@ -299,7 +299,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       if (isMounted) {
         setPaypalStatus("error");
         setPaypalMessage(
-          "Could not load PayPal. Check the sandbox Client ID in .env.local, then restart the dev server."
+          `Could not load PayPal. Check the ${paypalEnvironment} Client ID, then restart or redeploy the site.`
         );
       }
     };
@@ -466,7 +466,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       console.error("PayPal render error:", error);
       setPaypalStatus("error");
       setPaypalMessage(
-        "Could not show the PayPal button. Check the sandbox Client ID in .env.local, then restart the dev server."
+        `Could not show the PayPal button. Check the ${paypalEnvironment} Client ID, then restart or redeploy the site.`
       );
     });
 
