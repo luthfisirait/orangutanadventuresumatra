@@ -1081,6 +1081,52 @@ img {
   font-weight: 900;
 }
 
+.review-snippets-block {
+  margin: 34px 0;
+}
+
+.review-snippets-summary {
+  margin-top: 10px;
+}
+
+.review-snippet-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.review-snippet-card {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(24, 32, 25, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.review-snippet-card blockquote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.62;
+}
+
+.review-snippet-card figcaption {
+  display: grid;
+  gap: 2px;
+  margin-top: 14px;
+}
+
+.review-snippet-card figcaption strong {
+  color: var(--ink);
+}
+
+.review-snippet-card figcaption span,
+.review-snippet-fallback {
+  color: var(--muted);
+}
+
 .testimonials-proof-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1844,6 +1890,56 @@ footer .footer-contact-links {
   line-height: 1.78;
 }
 
+.article-table-wrap {
+  overflow-x: auto;
+  margin: 22px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.article-table-wrap table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.article-table-wrap caption {
+  padding: 14px 16px 0;
+  color: var(--ink);
+  font-weight: 900;
+  text-align: left;
+}
+
+.article-table-wrap th,
+.article-table-wrap td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-table-wrap th {
+  color: var(--forest);
+  font-weight: 900;
+}
+
+.article-table-wrap tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-callout {
+  padding: 16px 18px;
+  border-left: 4px solid var(--river);
+  border-radius: 8px;
+  background: rgba(34, 143, 128, 0.09);
+  color: var(--forest) !important;
+  font-weight: 800;
+}
+
 .info-block ul,
 .article-body ul {
   display: grid;
@@ -1866,6 +1962,10 @@ footer .footer-contact-links {
 .article-body li svg {
   margin-top: 4px;
   color: var(--river);
+}
+
+.article-faq-list {
+  margin-top: 22px;
 }
 
 .legal-block {
@@ -2133,6 +2233,7 @@ footer .footer-contact-links {
   .home-blog-grid,
   .blog-grid,
   .highlight-strip,
+  .review-snippet-grid,
   .related-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2293,6 +2394,7 @@ footer .footer-contact-links {
   .blog-grid,
   .highlight-strip,
   .resource-grid,
+  .review-snippet-grid,
   .related-grid {
     grid-template-columns: 1fr;
   }

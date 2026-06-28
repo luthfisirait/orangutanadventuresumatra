@@ -45,6 +45,7 @@ import {
 } from "./seo";
 import {
   blogPosts,
+  brandSameAsUrls,
   contactEmail,
   brandInstagramHandle,
   brandInstagramUrl,
@@ -459,7 +460,7 @@ export function HomeContent({
             "North Sumatra"
           ],
           knowsAbout: [...coreSearchPhrases],
-          sameAs: [brandInstagramUrl],
+          sameAs: brandSameAsUrls,
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",

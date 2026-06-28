@@ -2,6 +2,13 @@ export type ContentSection = {
   title: string;
   paragraphs?: readonly string[];
   bullets?: readonly string[];
+  callout?: string;
+  faq?: ReadonlyArray<{ q: string; a: string }>;
+  table?: {
+    caption?: string;
+    columns: readonly string[];
+    rows: ReadonlyArray<readonly string[]>;
+  };
 };
 
 export type BlogPost = {
@@ -10,11 +17,16 @@ export type BlogPost = {
   title: string;
   description: string;
   date: string;
+  dateModified?: string;
   readingTime: string;
   image: string;
   imageAlt: string;
   tags: string[];
+  primaryCtaHref?: string;
+  primaryCtaLabel?: string;
+  relatedSlugs?: readonly string[];
   sections: ContentSection[];
+  translationKey?: string;
 };
 
 export const contactEmail = "support@orangutanadventuresumatra.com";
@@ -22,6 +34,7 @@ export const googleMapsUrl = "https://maps.app.goo.gl/EKrG3TFNG363k4jY7";
 export const brandInstagramHandle = "@orangutanadventuresumatra";
 export const brandInstagramUrl = "https://www.instagram.com/orangutanadventuresumatra/";
 export const instagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
+export const brandSameAsUrls = [brandInstagramUrl, googleMapsUrl];
 export const whatsappNumber = "6285362405752";
 export const bookingWhatsappUrl =
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -317,10 +330,19 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "A practical comparison of Sumatra jungle trekking and Borneo klotok river trips for travelers choosing where to see orangutans in Indonesia.",
     date: "2026-06-09",
+    dateModified: "2026-06-28",
     readingTime: "7 min read",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orangutan resting in the rainforest canopy",
     tags: ["Bukit Lawang", "Tanjung Puting", "orangutan travel", "Sumatra vs Borneo"],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare Sumatra trek options",
+    relatedSlugs: [
+      "sumatra-orangutan-trekking-cost-price-guide-2026",
+      "ethical-orangutan-trekking-conservation-local-community",
+      "3-day-bukit-lawang-jungle-trek-itinerary"
+    ],
+    translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
         title: "The short answer",
@@ -328,6 +350,16 @@ const informationBlogPosts: BlogPost[] = [
           "Choose Bukit Lawang if you want an active rainforest trek, a North Sumatra route that connects naturally with Medan, Berastagi, Lake Toba, and Tangkahan, and a trip where walking is part of the experience.",
           "Choose Tanjung Puting if you want a river-based Borneo experience, sleeping or spending long hours on a klotok boat, visiting orangutan research and rehabilitation areas, and moving mostly by river rather than on steep jungle trails."
         ],
+        table: {
+          caption: "Quick comparison for orangutan travelers",
+          columns: ["Question", "Bukit Lawang", "Tanjung Puting"],
+          rows: [
+            ["Main style", "Rainforest trekking from North Sumatra", "Klotok boat journey in Central Kalimantan"],
+            ["Best for", "Active travelers who want walking, camps, and a Sumatra route", "Travelers who prefer a river-based wildlife trip"],
+            ["Main gateway", "Medan / Kualanamu Airport", "Pangkalan Bun Airport"],
+            ["Typical trip feel", "Physical, humid, trail-based", "Slower, boat-based, more seated travel"]
+          ]
+        },
         bullets: [
           "Best for trekking: Bukit Lawang.",
           "Best for a boat-based wildlife trip: Tanjung Puting.",
@@ -375,16 +407,43 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Updated 2026 guide to Bukit Lawang orangutan trekking prices, what is usually included, and extra costs to plan before booking.",
     date: "2026-06-09",
+    dateModified: "2026-06-28",
     readingTime: "7 min read",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekking group crossing a rainforest trail near Bukit Lawang",
     tags: ["Sumatra orangutan trekking cost", "Bukit Lawang prices", "2026 price guide"],
+    primaryCtaHref: "/booking",
+    primaryCtaLabel: "Check prices and send your dates",
+    relatedSlugs: [
+      "paypal-deposit-bukit-lawang-trek",
+      "3-day-bukit-lawang-jungle-trek-itinerary",
+      "medan-airport-to-bukit-lawang-transport-options"
+    ],
+    translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "2026 price snapshot",
         paragraphs: [
           "The prices below are the current Orangutan Adventure Sumatra package prices shown on this website for 2026. Always confirm final inclusions, guide availability, permit handling, transport, accommodation, and river conditions before paying a deposit."
         ],
+        table: {
+          caption: "Bukit Lawang trekking prices shown on this website for 2026",
+          columns: ["Package", "Duration", "Price"],
+          rows: [
+            ["Jungle trek", "4 hours", "55 EUR per person"],
+            ["Jungle trek", "1 day", "70 EUR per person"],
+            ["Jungle trek", "2 days / 1 night", "120 EUR per person"],
+            ["Jungle trek", "3 days / 2 nights", "170 EUR per person"],
+            ["Jungle trek", "4 days / 3 nights", "250 EUR per person"],
+            ["Jungle trek", "5 days / 4 nights", "320 EUR per person"],
+            ["Private eco jungle package", "3 days", "280 EUR per person"],
+            ["Private eco jungle package", "4 days", "335 EUR per person"],
+            ["Private eco jungle package", "5 days", "385 EUR per person"],
+            ["Bat Cave visit", "Short activity", "30 EUR per person"],
+            ["Village Tour", "Short activity", "30 EUR per person"]
+          ]
+        },
+        callout: "For most travelers, the 2-day or 3-day trek is the strongest value because meals, guiding, camp logistics, and the river return become part of the experience.",
         bullets: [
           "4-hour jungle trek: 55 EUR per person.",
           "1-day jungle trek: 70 EUR per person.",
@@ -443,10 +502,19 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Straightforward safety advice for Bukit Lawang, including solo travel, female travelers, jungle trekking, transport, rivers, guides, and common precautions.",
     date: "2026-06-09",
+    dateModified: "2026-06-28",
     readingTime: "7 min read",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Traveler walking through a green Bukit Lawang village path",
     tags: ["Bukit Lawang safety", "solo female travel", "Sumatra travel safety"],
+    primaryCtaHref: "/booking",
+    primaryCtaLabel: "Ask about a clear private trek",
+    relatedSlugs: [
+      "ethical-orangutan-trekking-conservation-local-community",
+      "what-to-pack-for-bukit-lawang-jungle-trek",
+      "medan-airport-to-bukit-lawang-transport-options"
+    ],
+    translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
         title: "The honest answer",
@@ -503,10 +571,19 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "How to get from Kualanamu International Airport or Medan city to Bukit Lawang by private car, shared transport, public bus, and train connections.",
     date: "2026-06-09",
+    dateModified: "2026-06-28",
     readingTime: "6 min read",
     image: "/images/blog-transport.png",
     imageAlt: "River and village view near Bukit Lawang in North Sumatra",
     tags: ["Medan Airport to Bukit Lawang", "Kualanamu transport", "Bukit Lawang transfer"],
+    primaryCtaHref: "/booking",
+    primaryCtaLabel: "Ask about transport with your trek",
+    relatedSlugs: [
+      "sumatra-orangutan-trekking-cost-price-guide-2026",
+      "best-time-to-visit-bukit-lawang-from-europe",
+      "weekend-guide-to-bukit-lawang-from-singapore"
+    ],
+    translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
         title: "Quick answer",
@@ -521,6 +598,15 @@ const informationBlogPosts: BlogPost[] = [
           "A private transfer is best for couples, families, late arrivals, travelers with large luggage, and anyone starting a trek the next morning. Your driver can meet you at the airport or hotel and take you directly toward Bukit Lawang.",
           "Ask your guide to confirm the pickup time, car size, driver name, total price, and whether tolls or parking are included. Travel time depends on traffic, weather, stops, and the exact guesthouse location."
         ],
+        table: {
+          caption: "Transport options from Medan or Kualanamu to Bukit Lawang",
+          columns: ["Option", "Best for", "Tradeoff"],
+          rows: [
+            ["Private transfer", "Couples, families, late arrivals, luggage", "Higher price, simplest route"],
+            ["Shared transport", "Flexible travelers watching budget", "Depends on pickup timing and other passengers"],
+            ["Public transport", "Lowest-cost backpacker route", "More changes, waiting, and uncertainty"]
+          ]
+        },
         bullets: [
           "Simplest option after a long-haul flight.",
           "Best if you arrive in the afternoon or evening.",
@@ -567,6 +653,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-Utan im Regenwald",
     tags: ["Bukit Lawang", "Tanjung Puting", "Orang-Utan Reise"],
+    translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
         title: "Kurzantwort",
@@ -607,6 +694,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggruppe im Regenwald von Bukit Lawang",
     tags: ["Orang-Utan Trekking Kosten", "Bukit Lawang Preise", "Sumatra 2026"],
+    translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Preisueberblick 2026",
@@ -646,6 +734,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-05.webp",
     imageAlt: "Reisende auf einem gruenen Weg in Bukit Lawang",
     tags: ["Bukit Lawang Sicherheit", "Solo Travel", "Frauenreise Sumatra"],
+    translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
         title: "Ehrliche Einschaetzung",
@@ -682,6 +771,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/blog-transport.png",
     imageAlt: "Flussblick in Bukit Lawang",
     tags: ["Medan nach Bukit Lawang", "Kualanamu Transfer", "Sumatra Transport"],
+    translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
         title: "Schnelle Empfehlung",
@@ -718,6 +808,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-outan dans la canopee",
     tags: ["Bukit Lawang", "Tanjung Puting", "orang-outan Indonesie"],
+    translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
         title: "Reponse courte",
@@ -758,6 +849,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-11.webp",
     imageAlt: "Groupe de trek dans la foret de Sumatra",
     tags: ["prix trek orang-outan", "Bukit Lawang prix", "Sumatra 2026"],
+    translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Prix 2026",
@@ -797,6 +889,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-05.webp",
     imageAlt: "Voyageuse sur un chemin vert a Bukit Lawang",
     tags: ["securite Bukit Lawang", "voyage solo", "femmes Sumatra"],
+    translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
         title: "Reponse honnete",
@@ -833,6 +926,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/blog-transport.png",
     imageAlt: "Vue de riviere a Bukit Lawang",
     tags: ["Medan Bukit Lawang", "transport Kualanamu", "transfert Sumatra"],
+    translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
         title: "Le plus simple",
@@ -869,6 +963,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-oetan in het regenwoud",
     tags: ["Bukit Lawang", "Tanjung Puting", "orang-oetan Indonesie"],
+    translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
         title: "Kort antwoord",
@@ -909,6 +1004,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggroep in het regenwoud van Sumatra",
     tags: ["orang-oetan trekking kosten", "Bukit Lawang prijzen", "Sumatra 2026"],
+    translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Prijsindicatie 2026",
@@ -948,6 +1044,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-05.webp",
     imageAlt: "Reiziger op een groen pad in Bukit Lawang",
     tags: ["Bukit Lawang veiligheid", "solo travel", "vrouwelijke reizigers Sumatra"],
+    translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
         title: "Eerlijk antwoord",
@@ -984,6 +1081,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/blog-transport.png",
     imageAlt: "Rivierzicht in Bukit Lawang",
     tags: ["Medan naar Bukit Lawang", "Kualanamu transfer", "Sumatra vervoer"],
+    translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
         title: "Makkelijkste optie",

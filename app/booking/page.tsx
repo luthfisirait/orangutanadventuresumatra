@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Check, Clock3, HeartHandshake, MessageCircle, ShieldCheck } from "lucide-react";
+import { ReviewSnippets } from "../components/review-snippets";
+import { TrackedLink } from "../components/tracked-link";
+import { getGoogleReviewsData } from "../google-reviews";
 import { StaticFooter, StaticHeader } from "../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../seo";
 import { bookingAssurances, bookingChecklist, bookingFlow } from "./booking-data";
@@ -65,6 +68,7 @@ function normalizePackageParam(value: string | string[] | undefined) {
 export default async function BookingPage({ searchParams }: BookingPageProps) {
   const resolvedSearchParams = (await searchParams) ?? {};
   const initialPackageId = normalizePackageParam(resolvedSearchParams.package);
+  const googleReviews = await getGoogleReviewsData();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -126,19 +130,26 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
           <h1>Book your Bukit Lawang orangutan trek</h1>
           <p>{bookingDescription}</p>
           <div className="hero-actions">
-            <a className="primary-button" href="#booking-form">
+            <TrackedLink
+              className="primary-button"
+              href="#booking-form"
+              eventName="booking_cta_click"
+              eventParams={{ source: "booking_hero", target: "booking_form" }}
+            >
               <CalendarDays size={18} />
               Go to form
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               className="secondary-button"
               href={bookingWhatsappUrl}
               target="_blank"
               rel="noreferrer"
+              eventName="whatsapp_click"
+              eventParams={{ source: "booking_hero" }}
             >
               <MessageCircle size={18} />
               WhatsApp
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -162,6 +173,12 @@ export default async function BookingPage({ searchParams }: BookingPageProps) {
             <span>No automatic confirmation before availability check</span>
           </div>
         </div>
+
+        <ReviewSnippets
+          googleReviews={googleReviews}
+          heading="Guest confidence before you book"
+          source="booking_page_reviews"
+        />
 
         <div className="booking-layout">
           <article className="info-block booking-panel" id="booking-form">

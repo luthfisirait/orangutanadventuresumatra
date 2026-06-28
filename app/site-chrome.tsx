@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { trackEvent } from "./analytics";
 import { siteName } from "./seo";
 import {
   bookingWhatsappUrl,
@@ -40,6 +41,10 @@ const headerLinks = [
 export function StaticHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const trackHeaderWhatsapp = () => {
+    trackEvent("whatsapp_click", { source: "site_header" });
+  };
+
   useEffect(() => {
     if (!mobileMenuOpen) {
       return;
@@ -74,7 +79,14 @@ export function StaticHeader() {
         ))}
       </nav>
       <div className="header-actions">
-        <a className="nav-cta" href={bookingWhatsappUrl} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+        <a
+          className="nav-cta"
+          href={bookingWhatsappUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="WhatsApp"
+          onClick={trackHeaderWhatsapp}
+        >
           <MessageCircle size={18} />
           WhatsApp
         </a>
@@ -113,7 +125,10 @@ export function StaticHeader() {
           href={bookingWhatsappUrl}
           target="_blank"
           rel="noreferrer"
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={() => {
+            trackEvent("whatsapp_click", { source: "mobile_drawer" });
+            setMobileMenuOpen(false);
+          }}
         >
           <MessageCircle size={16} />
           WhatsApp
@@ -124,6 +139,16 @@ export function StaticHeader() {
 }
 
 export function StaticFooter() {
+  const trackFooterContactClick = (href: string) => {
+    if (href === bookingWhatsappUrl) {
+      trackEvent("whatsapp_click", { source: "site_footer" });
+    }
+
+    if (href === googleMapsUrl) {
+      trackEvent("maps_click", { source: "site_footer" });
+    }
+  };
+
   return (
     <footer>
       <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
@@ -149,6 +174,7 @@ export function StaticFooter() {
               rel={isExternal ? "noreferrer" : undefined}
               aria-label={link.label}
               title={link.label}
+              onClick={() => trackFooterContactClick(link.href)}
             >
               <Icon size={18} aria-hidden="true" />
             </a>

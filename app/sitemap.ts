@@ -9,10 +9,14 @@ function asLastModified(date: string) {
   return new Date(`${date}T00:00:00.000Z`);
 }
 
+function blogLastModified(post: (typeof blogPosts)[number]) {
+  return asLastModified(post.dateModified ?? post.date);
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const pageLastModified = asLastModified("2026-06-09");
   const latestBlogPostDate = new Date(
-    Math.max(...blogPosts.map((post) => asLastModified(post.date).getTime()))
+    Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );
   const staticPages = [
     { path: "/booking", lastModified: pageLastModified, priority: 0.88 },
@@ -68,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...blogPosts.map((post) => ({
       url: `${siteUrl}/blog/${post.slug}`,
-      lastModified: asLastModified(post.date),
+      lastModified: blogLastModified(post),
       changeFrequency: "monthly" as const,
       priority: 0.78
     })),

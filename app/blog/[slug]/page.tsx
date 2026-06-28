@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, Clock3 } from "lucide-react";
+import { TrackedLink } from "../../components/tracked-link";
 import { StaticFooter, StaticHeader } from "../../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../../seo";
-import { blogPosts } from "../../travel-content";
+import { blogPosts, type BlogPost } from "../../travel-content";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
@@ -13,6 +14,60 @@ type BlogPostPageProps = {
 
 function getPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+function getPostModifiedDate(post: BlogPost) {
+  return post.dateModified ?? post.date;
+}
+
+function getBlogLanguageAlternates(post: BlogPost) {
+  if (!post.translationKey) {
+    return undefined;
+  }
+
+  const translations = blogPosts.filter((candidate) => candidate.translationKey === post.translationKey);
+
+  if (translations.length < 2) {
+    return undefined;
+  }
+
+  const englishPost = translations.find((candidate) => (candidate.locale ?? "en") === "en") ?? post;
+  return Object.fromEntries([
+    ...translations.map((translation) => [
+      translation.locale ?? "en",
+      absoluteUrl(`/blog/${translation.slug}`)
+    ]),
+    ["x-default", absoluteUrl(`/blog/${englishPost.slug}`)]
+  ]) as Record<string, string>;
+}
+
+function getRelatedPosts(post: BlogPost) {
+  const manualPosts =
+    post.relatedSlugs
+      ?.map((slug) => getPost(slug))
+      .filter((candidate): candidate is BlogPost => candidate !== undefined && candidate.slug !== post.slug) ?? [];
+  const selectedSlugs = new Set(manualPosts.map((candidate) => candidate.slug));
+  const postLocale = post.locale ?? "en";
+  const postTags = new Set(post.tags.map((tag) => tag.toLowerCase()));
+  const scoredPosts = blogPosts
+    .filter((candidate) => candidate.slug !== post.slug && !selectedSlugs.has(candidate.slug))
+    .map((candidate) => {
+      const sharedTags = candidate.tags.filter((tag) => postTags.has(tag.toLowerCase())).length;
+      const sameLocaleBoost = (candidate.locale ?? "en") === postLocale ? 2 : 0;
+      return { candidate, score: sharedTags + sameLocaleBoost };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || getPostModifiedDate(b.candidate).localeCompare(getPostModifiedDate(a.candidate)))
+    .map(({ candidate }) => candidate);
+  const fallbackPosts = blogPosts.filter(
+    (candidate) =>
+      candidate.slug !== post.slug &&
+      !selectedSlugs.has(candidate.slug) &&
+      !scoredPosts.some((scored) => scored.slug === candidate.slug) &&
+      (candidate.locale ?? "en") === postLocale
+  );
+
+  return [...manualPosts, ...scoredPosts, ...fallbackPosts].slice(0, 3);
 }
 
 const planningLinks = [
@@ -36,12 +91,16 @@ export async function generateMetadata({
     return {};
   }
 
+  const languages = getBlogLanguageAlternates(post);
+  const modifiedDate = getPostModifiedDate(post);
+
   return {
     metadataBase: new URL(siteUrl),
     title: `${post.title} | ${siteName}`,
     description: post.description,
     alternates: {
-      canonical: `/blog/${post.slug}`
+      canonical: `/blog/${post.slug}`,
+      ...(languages ? { languages } : {})
     },
     keywords: post.tags,
     authors: [{ name: siteName, url: siteUrl }],
@@ -52,6 +111,7 @@ export async function generateMetadata({
       siteName,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: modifiedDate,
       tags: post.tags,
       images: [
         {
@@ -79,7 +139,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const relatedPosts = blogPosts.filter((candidate) => candidate.slug !== post.slug).slice(0, 3);
+  const relatedPosts = getRelatedPosts(post);
+  const modifiedDate = getPostModifiedDate(post);
+  const sectionFaq = post.sections.flatMap((section) => section.faq ?? []);
+  const primaryCtaHref = post.primaryCtaHref ?? "/booking";
+  const primaryCtaLabel = post.primaryCtaLabel ?? "Open booking form";
+  const secondaryCta =
+    primaryCtaHref === "/sumatra-orangutan-tour"
+      ? { href: "/booking", label: "Open booking form" }
+      : { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" };
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -91,7 +159,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         image: absoluteUrl(post.image),
         inLanguage: post.locale ?? "en",
         datePublished: post.date,
-        dateModified: post.date,
+        dateModified: modifiedDate,
         author: {
           "@type": "Organization",
           name: siteName,
@@ -131,7 +199,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             item: absoluteUrl(`/blog/${post.slug}`)
           }
         ]
-      }
+      },
+      ...(sectionFaq.length
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${absoluteUrl(`/blog/${post.slug}`)}#faq`,
+              mainEntity: sectionFaq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a
+                }
+              }))
+            }
+          ]
+        : [])
     ]
   };
 
@@ -154,6 +238,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p>{post.description}</p>
             <div className="article-meta">
               <span>{new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
+              {modifiedDate !== post.date ? (
+                <span>
+                  Updated{" "}
+                  {new Date(modifiedDate).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                  })}
+                </span>
+              ) : null}
               <span>
                 <Clock3 size={16} />
                 {post.readingTime}
@@ -191,6 +285,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {section.paragraphs?.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+                {section.table ? (
+                  <div className="article-table-wrap">
+                    <table>
+                      {section.table.caption ? <caption>{section.table.caption}</caption> : null}
+                      <thead>
+                        <tr>
+                          {section.table.columns.map((column) => (
+                            <th key={column} scope="col">
+                              {column}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {section.table.rows.map((row) => (
+                          <tr key={row.join("|")}>
+                            {row.map((cell, index) => (
+                              <td key={`${cell}-${index}`}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                ) : null}
+                {section.callout ? <p className="article-callout">{section.callout}</p> : null}
                 {section.bullets ? (
                   <ul>
                     {section.bullets.map((bullet) => (
@@ -201,6 +321,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     ))}
                   </ul>
                 ) : null}
+                {section.faq ? (
+                  <div className="faq-list article-faq-list">
+                    {section.faq.map((item) => (
+                      <details key={item.q}>
+                        <summary>
+                          {item.q}
+                          <ArrowRight size={18} />
+                        </summary>
+                        <p>{item.a}</p>
+                      </details>
+                    ))}
+                  </div>
+                ) : null}
               </section>
             ))}
             <section className="article-cta-block">
@@ -209,14 +342,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Use the booking pages to choose a route, confirm transport from Medan, and send your dates before paying a deposit.
               </p>
               <div className="resource-links">
-                <Link className="primary-button" href="/booking">
-                  Open booking form
+                <TrackedLink
+                  className="primary-button"
+                  href={primaryCtaHref}
+                  eventName="booking_cta_click"
+                  eventParams={{ blog_post: post.slug, source: "blog_cta_primary" }}
+                >
+                  {primaryCtaLabel}
                   <ArrowRight size={18} />
-                </Link>
-                <Link className="secondary-button dark" href="/sumatra-orangutan-tour">
-                  Sumatra orangutan tour
+                </TrackedLink>
+                <TrackedLink
+                  className="secondary-button dark"
+                  href={secondaryCta.href}
+                  eventName="booking_cta_click"
+                  eventParams={{ blog_post: post.slug, source: "blog_cta_secondary" }}
+                >
+                  {secondaryCta.label}
                   <ArrowRight size={18} />
-                </Link>
+                </TrackedLink>
               </div>
             </section>
           </div>

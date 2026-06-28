@@ -2,6 +2,7 @@
 
 import { Check, Mail, MessageCircle, ShieldCheck, Sparkles, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent } from "react";
+import { trackEvent } from "../analytics";
 import { bookingPackages } from "./booking-data";
 import { calculateBookingPayment, depositRate, formatPaymentAmount } from "./pricing";
 import { whatsappNumber } from "../travel-content";
@@ -102,6 +103,11 @@ function formatDate(value: string) {
     month: "long",
     year: "numeric"
   }).format(parsed);
+}
+
+function groupSizeForAnalytics(value: string) {
+  const parsed = Number.parseInt(value, 10);
+  return Number.isInteger(parsed) && parsed > 0 ? parsed : undefined;
 }
 
 function buildMessage(form: BookingFormState, selectedPackage: (typeof bookingPackages)[number] | undefined) {
@@ -253,6 +259,11 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
 
     setStatus("success");
     setStatusMessage(successMessage);
+    trackEvent("booking_submit_success", {
+      group_size: groupSizeForAnalytics(currentForm.groupSize),
+      package_id: currentForm.packageId,
+      source: extraPayload.paypalOrderId ? "paypal_deposit" : "booking_form"
+    });
   }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -265,6 +276,13 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       setStatusMessage(requiredFormError);
       return;
     }
+
+    trackEvent("booking_submit", {
+      group_size: groupSizeForAnalytics(form.groupSize),
+      package_id: form.packageId,
+      package_name: selectedPackage?.title,
+      source: "booking_form"
+    });
 
     try {
       await submitBookingRequest();
@@ -411,12 +429,25 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
           throw new Error(capture.error || "Could not capture the PayPal payment.");
         }
 
+        trackEvent("paypal_deposit_success", {
+          currency: capture.currency,
+          deposit_amount: capture.depositAmount,
+          group_size: groupSizeForAnalytics(currentForm.groupSize),
+          package_id: currentForm.packageId,
+          paypal_order_id: capture.orderId || orderId
+        });
+
         const depositLabel =
           capture.depositAmount && capture.currency
             ? formatPaymentAmount(Number.parseFloat(capture.depositAmount), capture.currency)
             : "the 30% deposit";
 
         setPaypalMessage("Deposit captured. Sending booking request...");
+        trackEvent("booking_submit", {
+          group_size: groupSizeForAnalytics(currentForm.groupSize),
+          package_id: currentForm.packageId,
+          source: "paypal_deposit"
+        });
 
         await submitBookingRequest(
           {
@@ -455,6 +486,14 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
           return actions.reject();
         }
 
+        trackEvent("paypal_deposit_start", {
+          currency: currentPayment.currency,
+          deposit_amount: currentPayment.depositAmount,
+          group_size: currentPayment.groupSize,
+          package_id: currentPackage.id,
+          package_name: currentPackage.title,
+          payment_mode: "checkout"
+        });
         setPaypalStatus("idle");
         setPaypalMessage("");
         return actions.resolve();
@@ -662,6 +701,16 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
                 href="https://www.paypal.com/myaccount/transfer/send"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackEvent("paypal_deposit_start", {
+                    currency: paymentSummary?.currency,
+                    deposit_amount: paymentSummary?.depositAmount,
+                    group_size: paymentSummary?.groupSize,
+                    package_id: selectedPackage.id,
+                    package_name: selectedPackage.title,
+                    payment_mode: "manual"
+                  })
+                }
               >
                 Open PayPal
               </a>
@@ -697,7 +746,20 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
           <Mail size={18} />
           {status === "submitting" ? "Sending..." : "Send request"}
         </button>
-        <a className="secondary-button dark" href={whatsappHref} target="_blank" rel="noreferrer">
+        <a
+          className="secondary-button dark"
+          href={whatsappHref}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() =>
+            trackEvent("whatsapp_click", {
+              group_size: groupSizeForAnalytics(form.groupSize),
+              package_id: form.packageId,
+              package_name: selectedPackage?.title,
+              source: "booking_form"
+            })
+          }
+        >
           <MessageCircle size={18} />
           WhatsApp
         </a>

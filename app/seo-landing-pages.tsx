@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, Check, MessageCircle, ShieldCheck } from "lucide-react";
+import { ReviewSnippets } from "./components/review-snippets";
+import { TrackedLink } from "./components/tracked-link";
+import type { GoogleReviewsData } from "./google-reviews";
 import { StaticFooter, StaticHeader } from "./site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "./seo";
 import { bookingWhatsappUrl } from "./travel-content";
@@ -277,7 +280,13 @@ function metadataForLandingPage(page: LandingPage): Metadata {
   };
 }
 
-function LandingPageView({ page }: { page: LandingPage }) {
+function LandingPageView({
+  googleReviews = null,
+  page
+}: {
+  googleReviews?: GoogleReviewsData | null;
+  page: LandingPage;
+}) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -344,14 +353,26 @@ function LandingPageView({ page }: { page: LandingPage }) {
           <h1>{page.heroTitle}</h1>
           <p>{page.heroDescription}</p>
           <div className="hero-actions">
-            <a className="primary-button" href="/booking">
+            <TrackedLink
+              className="primary-button"
+              href="/booking"
+              eventName="booking_cta_click"
+              eventParams={{ landing_page: page.slug, source: "landing_hero" }}
+            >
               <CalendarDays size={18} />
               Open booking form
-            </a>
-            <a className="secondary-button" href={bookingWhatsappUrl} target="_blank" rel="noreferrer">
+            </TrackedLink>
+            <TrackedLink
+              className="secondary-button"
+              href={bookingWhatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              eventName="whatsapp_click"
+              eventParams={{ landing_page: page.slug, source: "landing_hero" }}
+            >
               <MessageCircle size={18} />
               WhatsApp
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </section>
@@ -365,6 +386,12 @@ function LandingPageView({ page }: { page: LandingPage }) {
             </div>
           ))}
         </div>
+
+        <ReviewSnippets
+          googleReviews={googleReviews}
+          heading="Recent Google reviews from travelers"
+          source={`${page.slug}_reviews`}
+        />
 
         <div className="resource-grid landing-resource-grid">
           {page.sections.map((section) => (
