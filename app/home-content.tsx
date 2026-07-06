@@ -49,6 +49,7 @@ import {
   contactEmail,
   brandInstagramHandle,
   brandInstagramUrl,
+  googleKnowledgeGraphId,
   googleMapsUrl,
   impactVision,
   instagramUrl,
@@ -75,7 +76,7 @@ type TrekCategory = (typeof trekCategoryIds)[number];
 
 const featuredHomeBlogSlugs = [
   "sumatra-orangutan-trekking-cost-price-guide-2026",
-  "medan-airport-to-bukit-lawang-transport-options",
+  "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
   "is-bukit-lawang-safe-solo-female-travelers"
 ] as const;
 
@@ -423,6 +424,21 @@ export function HomeContent({
             worstRating: 1
           }
         : null;
+    const reviewMarkup =
+      googleReviews?.reviews.slice(0, 3).map((review) => ({
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: review.author
+        },
+        reviewBody: review.text,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.rating,
+          bestRating: 5,
+          worstRating: 1
+        }
+      })) ?? [];
 
     return {
       "@context": "https://schema.org",
@@ -439,6 +455,11 @@ export function HomeContent({
           telephone: "+6285362405752",
           email: contactEmail,
           priceRange: "EUR 30 - EUR 385",
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: "Google Knowledge Graph MID",
+            value: googleKnowledgeGraphId
+          },
           address: {
             "@type": "PostalAddress",
             addressLocality: "Bukit Lawang",
@@ -452,6 +473,7 @@ export function HomeContent({
           },
           hasMap: googleMapsUrl,
           ...(aggregateRating ? { aggregateRating } : {}),
+          ...(reviewMarkup.length ? { review: reviewMarkup } : {}),
           areaServed: [
             "Bukit Lawang",
             "Bukitlawang",

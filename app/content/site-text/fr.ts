@@ -1,7 +1,7 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Trek orang-outan Sumatra | Bukit Lawang | Orangutan Adventure Sumatra",
+  metaTitle: "Trek Orang-Outan Sumatra | Guide Bukit Lawang",
   metaDescription:
     "Réserve un trek orang-outan éthique à Bukit Lawang avec un guide local: circuits jungle de 4 heures à 5 jours, camps en rivière, rafting et aide transport.",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },

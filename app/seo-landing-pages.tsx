@@ -112,6 +112,14 @@ const landingPages: Record<string, LandingPage> = {
         a: "Choose a 1-day trek if time is short, a 3-day trek if you want camps and river return, or a private package if you want more flexibility."
       },
       {
+        q: "How much do Sumatra orangutan tours cost?",
+        a: "Current public prices range from 55 EUR per person for a 4-hour jungle trek to 385 EUR per person for the longest private eco jungle package."
+      },
+      {
+        q: "Are orangutan sightings guaranteed?",
+        a: "No. The tours enter orangutan habitat around Bukit Lawang, but ethical wildlife trekking never forces sightings, feeding, touching, or close contact."
+      },
+      {
         q: "Can you help with transport from Medan?",
         a: "Yes. Pickup help from Medan or Kuala Namu can be arranged when you enquire."
       },

@@ -7,11 +7,12 @@ import { absoluteUrl, siteName, siteUrl } from "../seo";
 import { blogPosts } from "../travel-content";
 
 const blogDescription =
-  "Travel guides for European visitors planning ethical orangutan trekking, Bukit Lawang transport, packing, and conservation-minded jungle packages in North Sumatra.";
+  "Bukit Lawang travel guides for orangutan trekking, transport, packing, safety, costs, best time to visit, and ethical jungle tours.";
+const blogTitle = "Bukit Lawang Travel Blog | Orangutan Trekking";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `Bukit Lawang Orangutan Trekking Blog | ${siteName}`,
+  title: blogTitle,
   description: blogDescription,
   alternates: {
     canonical: "/blog"
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     "ethical orangutan trekking"
   ],
   openGraph: {
-    title: `Bukit Lawang Orangutan Trekking Blog | ${siteName}`,
+    title: blogTitle,
     description: blogDescription,
     url: "/blog",
     siteName,
@@ -46,7 +47,7 @@ export default function BlogIndexPage() {
       {
         "@type": "Blog",
         "@id": `${absoluteUrl("/blog")}#blog`,
-        name: `Bukit Lawang Orangutan Trekking Blog | ${siteName}`,
+        name: blogTitle,
         description: blogDescription,
         url: absoluteUrl("/blog"),
         publisher: {
@@ -95,7 +96,7 @@ export default function BlogIndexPage() {
       />
       <StaticHeader />
       <section className="resource-hero blog-hero">
-        <Image src="/images/blog-index-hero.png" alt="Travel planning at a Bukit Lawang rainforest lookout" fill priority sizes="100vw" />
+        <Image src="/images/blog-index-hero.webp" alt="Travel planning at a Bukit Lawang rainforest lookout" fill priority sizes="100vw" />
         <div className="resource-hero-shade" />
         <div className="resource-hero-content">
           <span className="section-kicker">Travel blog</span>

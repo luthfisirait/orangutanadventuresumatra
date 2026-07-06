@@ -13,6 +13,28 @@ function blogLastModified(post: (typeof blogPosts)[number]) {
   return asLastModified(post.dateModified ?? post.date);
 }
 
+function blogLanguageAlternates(post: (typeof blogPosts)[number]) {
+  if (!post.translationKey) {
+    return undefined;
+  }
+
+  const translations = blogPosts.filter((candidate) => candidate.translationKey === post.translationKey);
+
+  if (translations.length < 2) {
+    return undefined;
+  }
+
+  const fallbackPost = translations.find((candidate) => (candidate.locale ?? defaultLocale) === defaultLocale) ?? post;
+
+  return Object.fromEntries([
+    ...translations.map((translation) => [
+      translation.locale ?? defaultLocale,
+      `${siteUrl}/blog/${translation.slug}`
+    ]),
+    ["x-default", `${siteUrl}/blog/${fallbackPost.slug}`]
+  ]) as Record<string, string>;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const pageLastModified = asLastModified("2026-06-09");
   const latestBlogPostDate = new Date(
@@ -74,7 +96,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/blog/${post.slug}`,
       lastModified: blogLastModified(post),
       changeFrequency: "monthly" as const,
-      priority: 0.78
+      priority: 0.78,
+      ...(blogLanguageAlternates(post)
+        ? {
+            alternates: {
+              languages: blogLanguageAlternates(post)
+            }
+          }
+        : {})
     })),
     ...trekDetailList.map((page) => ({
       url: `${siteUrl}/treks/${page.slug}`,

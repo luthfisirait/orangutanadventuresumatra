@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const nl = {
-  metaTitle: "Orangutan Adventure Sumatra | Ethische jungletours in Bukit Lawang",
+  metaTitle: "Orang-Oetan Trekking Sumatra | Bukit Lawang",
   metaDescription:
-    "Moderne boekingssite voor ethische orang-oetan trekkings, privé junglepakketten, Bat Cave-bezoeken, Village Tours, rafting, een lokale gids en accommodatie in Bukit Lawang, Noord-Sumatra.",
+    "Boek ethische orang-oetan trekkings in Bukit Lawang met lokale gids, 4 uur tot 5 dagen, rivierkampen, rafting, vervoerhulp en WhatsApp.",
   nav: { treks: "Treks", experience: "Beleving", guides: "Gids", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Ethisch trekking in Gunung Leuser National Park",

@@ -29,6 +29,7 @@ export const coreSearchPhrases = [
   "Sumatra",
   "Sumatra orangutan trekking",
   "Sumatra orangutan tour",
+  "Sumatra orangutan tours",
   "Gunung Leuser National Park"
 ] as const;
 

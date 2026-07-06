@@ -31,10 +31,12 @@ export type BlogPost = {
 
 export const contactEmail = "support@orangutanadventuresumatra.com";
 export const googleMapsUrl = "https://maps.app.goo.gl/EKrG3TFNG363k4jY7";
+export const googleBusinessProfileUrl = "https://www.google.com/search?kgmid=/g/11npclkk1m";
+export const googleKnowledgeGraphId = "/g/11npclkk1m";
 export const brandInstagramHandle = "@orangutanadventuresumatra";
 export const brandInstagramUrl = "https://www.instagram.com/orangutanadventuresumatra/";
 export const instagramUrl = "https://www.instagram.com/syaipul_ardiansyah/";
-export const brandSameAsUrls = [brandInstagramUrl, googleMapsUrl];
+export const brandSameAsUrls = [brandInstagramUrl, googleMapsUrl, googleBusinessProfileUrl];
 export const whatsappNumber = "6285362405752";
 export const bookingWhatsappUrl =
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
@@ -197,7 +199,7 @@ export const paymentAndDeposit = {
   title: "Payment and Deposit Information",
   description:
     "How manual PayPal deposits, cash balance payment, and email-confirmed payment references work for Bukit Lawang orangutan trekking bookings.",
-  image: "/images/privacy-hero.png",
+  image: "/images/privacy-hero.webp",
   imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
   intro:
     "Use this page to understand how booking payments are handled before your Bukit Lawang orangutan trek. The booking form shows only a 30% PayPal deposit, with the remaining balance handled separately.",
@@ -254,7 +256,7 @@ export const privacyPolicy = {
   description:
     "How OrangutanAdventureSumatra handles booking enquiries, language preference storage, external booking links, and privacy rights for visitors, including European GDPR rights.",
   lastUpdated: "9 June 2026",
-  image: "/images/privacy-hero.png",
+  image: "/images/privacy-hero.webp",
   imageAlt: "Travel documents and planning items on a desk for a privacy policy page",
   sections: [
     {
@@ -416,6 +418,7 @@ const informationBlogPosts: BlogPost[] = [
     primaryCtaLabel: "Check prices and send your dates",
     relatedSlugs: [
       "paypal-deposit-bukit-lawang-trek",
+      "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
       "3-day-bukit-lawang-jungle-trek-itinerary",
       "medan-airport-to-bukit-lawang-transport-options"
     ],
@@ -459,6 +462,23 @@ const informationBlogPosts: BlogPost[] = [
         ]
       },
       {
+        title: "Example deposit amounts",
+        paragraphs: [
+          "The booking form uses a 30% deposit. The examples below show how that works before any transport, accommodation, or custom add-ons are confirmed."
+        ],
+        table: {
+          caption: "Example 30% deposits from the listed 2026 package prices",
+          columns: ["Example booking", "Package total", "30% deposit"],
+          rows: [
+            ["1 person, 1-day trek", "70 EUR", "21 EUR"],
+            ["2 people, 2-day trek", "240 EUR", "72 EUR"],
+            ["2 people, 3-day trek", "340 EUR", "102 EUR"],
+            ["4 people, 3-day trek", "680 EUR", "204 EUR"],
+            ["2 people, private 3-day package", "560 EUR", "168 EUR"]
+          ]
+        }
+      },
+      {
         title: "What is usually included",
         paragraphs: [
           "Classic overnight treks usually bundle the local guide, jungle meals, simple camp setup, and park permit handling into one price. This keeps planning easier for travelers who do not want to organize food, tents, guides, and route timing separately.",
@@ -491,6 +511,91 @@ const informationBlogPosts: BlogPost[] = [
         paragraphs: [
           "The booking form can calculate a 30% PayPal deposit from the selected package price and group size. For now, guests can send that deposit manually to the PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
           "Do not compare only the cheapest headline price. Ask what is included, who guides the trek, how wildlife rules are handled, where you sleep, what happens if river levels are unsafe, and whether the team can support transport or accommodation."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
+    locale: "en",
+    title: "1-Day vs 2-Day vs 3-Day Bukit Lawang Trek",
+    description:
+      "Compare 1-day, 2-day, and 3-day Bukit Lawang orangutan treks by time, price, fitness, camp life, wildlife watching, and river return.",
+    date: "2026-07-06",
+    readingTime: "7 min read",
+    image: "/images/package-activity-hero.webp",
+    imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
+    tags: ["Bukit Lawang trek comparison", "1 day vs 3 day trek", "orangutan trekking Sumatra"],
+    primaryCtaHref: "/treks",
+    primaryCtaLabel: "Compare trek details",
+    relatedSlugs: [
+      "sumatra-orangutan-trekking-cost-price-guide-2026",
+      "3-day-bukit-lawang-jungle-trek-itinerary",
+      "what-to-pack-for-bukit-lawang-jungle-trek"
+    ],
+    sections: [
+      {
+        title: "The quick answer",
+        paragraphs: [
+          "Choose a 1-day Bukit Lawang trek if you want one strong rainforest day without sleeping in the jungle. Choose a 2-day trek if you want a first overnight camp. Choose a 3-day trek if you want the best balance of wildlife watching, camp rhythm, and river return.",
+          "For most first-time visitors with enough time, the 3-day Bukit Lawang orangutan trek is the strongest choice because the trip has time to slow down after the first wildlife encounters."
+        ],
+        table: {
+          caption: "Best trek length by traveler need",
+          columns: ["Trek length", "Best for", "Tradeoff"],
+          rows: [
+            ["1 day", "Short stays, no camping, lighter fitness needs", "Less time for camp life and deeper forest"],
+            ["2 days / 1 night", "First overnight jungle experience", "Only one camp night and a tighter route"],
+            ["3 days / 2 nights", "Balanced orangutan trek with camps and river return", "Needs more time, energy, and budget"]
+          ]
+        }
+      },
+      {
+        title: "When a 1-day trek makes sense",
+        paragraphs: [
+          "A 1-day jungle trek works when you arrive with limited time or do not want to camp. You still get a real guided forest day, lunch in the jungle, and a chance to learn wildlife rules from a local guide.",
+          "It is not the best fit if Bukit Lawang is the main reason for your Sumatra trip. In that case, staying longer usually gives better value."
+        ],
+        bullets: [
+          "Good for first-time visitors with only one free day.",
+          "Good if you want to sleep in a guesthouse, not a jungle camp.",
+          "Good before or after a longer Sumatra route."
+        ]
+      },
+      {
+        title: "When a 2-day trek makes sense",
+        paragraphs: [
+          "A 2-day trek is the shortest option that includes a simple jungle night. It gives you the feeling of camp life without needing three full trekking days.",
+          "This is a practical middle choice for travelers who want more than a day walk but are unsure about fitness, humidity, or sleeping outdoors."
+        ]
+      },
+      {
+        title: "Why the 3-day trek is usually best",
+        paragraphs: [
+          "The 3-day trek gives the guide more room to adjust the route around weather, river level, group pace, and wildlife movement. It also gives guests more time to settle into forest sounds, riverside meals, and slower observation.",
+          "If you are comparing 1-day vs 2-day vs 3-day Bukit Lawang treks for a once-in-a-lifetime orangutan trip, the 3-day option is often worth the extra time."
+        ],
+        bullets: [
+          "Two nights in simple jungle camps.",
+          "Better rhythm for wildlife watching and forest learning.",
+          "Often includes a tube rafting return when river conditions are safe."
+        ]
+      },
+      {
+        title: "Booking questions before you choose",
+        faq: [
+          {
+            q: "Is the 3-day trek too hard for beginners?",
+            a: "It can suit active beginners, but you should be honest about fitness, heat tolerance, knees, footwear, and previous hiking experience."
+          },
+          {
+            q: "Can I switch from a 1-day to a 2-day or 3-day trek?",
+            a: "Ask before arrival. Camp equipment, food, guide scheduling, and permit handling need planning."
+          },
+          {
+            q: "Which trek is best for families?",
+            a: "Many families prefer a private 2-day or private 3-day flow because the guide can adjust pace and breaks around the group."
+          }
         ]
       }
     ]
@@ -574,7 +679,7 @@ const informationBlogPosts: BlogPost[] = [
     date: "2026-06-09",
     dateModified: "2026-06-28",
     readingTime: "6 min read",
-    image: "/images/blog-transport.png",
+    image: "/images/blog-transport.webp",
     imageAlt: "River and village view near Bukit Lawang in North Sumatra",
     tags: ["Medan Airport to Bukit Lawang", "Kualanamu transport", "Bukit Lawang transfer"],
     primaryCtaHref: "/booking",
@@ -769,7 +874,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
       "Private Transfers, geteilte Fahrten und oeffentliche Verkehrsmittel von Kualanamu oder Medan nach Bukit Lawang.",
     date: "2026-06-09",
     readingTime: "4 Min. Lesezeit",
-    image: "/images/blog-transport.png",
+    image: "/images/blog-transport.webp",
     imageAlt: "Flussblick in Bukit Lawang",
     tags: ["Medan nach Bukit Lawang", "Kualanamu Transfer", "Sumatra Transport"],
     translationKey: "medan-airport-to-bukit-lawang-transport",
@@ -924,7 +1029,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
       "Options de transport depuis Kualanamu ou Medan vers Bukit Lawang: voiture privee, transport partage, bus et connexions.",
     date: "2026-06-09",
     readingTime: "4 min de lecture",
-    image: "/images/blog-transport.png",
+    image: "/images/blog-transport.webp",
     imageAlt: "Vue de riviere a Bukit Lawang",
     tags: ["Medan Bukit Lawang", "transport Kualanamu", "transfert Sumatra"],
     translationKey: "medan-airport-to-bukit-lawang-transport",
@@ -1079,7 +1184,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
       "Praktische opties van Kualanamu of Medan naar Bukit Lawang: priveauto, gedeeld vervoer, bus en overstappen.",
     date: "2026-06-09",
     readingTime: "4 min leestijd",
-    image: "/images/blog-transport.png",
+    image: "/images/blog-transport.webp",
     imageAlt: "Rivierzicht in Bukit Lawang",
     tags: ["Medan naar Bukit Lawang", "Kualanamu transfer", "Sumatra vervoer"],
     translationKey: "medan-airport-to-bukit-lawang-transport",
@@ -1120,7 +1225,7 @@ export const blogPosts: BlogPost[] = [
       "A clear guide to sending only the 30% PayPal deposit manually for a Bukit Lawang orangutan trek, with examples, booking steps, and balance payment notes.",
     date: "2026-06-25",
     readingTime: "5 min read",
-    image: "/images/privacy-hero.png",
+    image: "/images/privacy-hero.webp",
     imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
     tags: ["PayPal deposit", "Bukit Lawang booking", "trek payment", "Sumatra travel"],
     sections: [
@@ -1386,7 +1491,7 @@ export const blogPosts: BlogPost[] = [
       "Bukit Lawang is a year-round orangutan trekking destination. Compare rain, river levels, drier months, holidays, trek length, and booking timing.",
     date: "2026-05-29",
     readingTime: "6 min read",
-    image: "/images/blog-best-time.png",
+    image: "/images/blog-best-time.webp",
     imageAlt: "Orangutan in the green rainforest canopy of Bukit Lawang",
     tags: ["best time", "Europe to Sumatra", "Bukit Lawang travel"],
     sections: [
@@ -1429,7 +1534,7 @@ export const blogPosts: BlogPost[] = [
       "Why no-feeding rules, local guide work, and conservation-minded travel choices matter for orangutan habitat around Bukit Lawang.",
     date: "2026-05-29",
     readingTime: "8 min read",
-    image: "/images/blog-conservation.png",
+    image: "/images/blog-conservation.webp",
     imageAlt: "Wild orangutan resting in a rainforest tree",
     tags: ["ethical trekking", "conservation", "local community"],
     sections: [
@@ -1473,7 +1578,7 @@ export const blogPosts: BlogPost[] = [
       "Transport options from Medan and Kuala Namu International Airport to Bukit Lawang, with timing tips for European arrivals.",
     date: "2026-05-29",
     readingTime: "5 min read",
-    image: "/images/blog-transport.png",
+    image: "/images/blog-transport.webp",
     imageAlt: "River view near Bukit Lawang village in North Sumatra",
     tags: ["Medan to Bukit Lawang", "North Sumatra travel", "transport"],
     sections: [
