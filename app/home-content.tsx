@@ -707,8 +707,8 @@ export function HomeContent({
           </div>
           <div className="intent-link-grid">
             <Link className="intent-link-card" href="/sumatra-orangutan-tour">
-              <span>Sumatra orangutan tour</span>
-              <strong>Compare the main jungle package options from Bukit Lawang.</strong>
+              <span>Sumatra orangutan tours</span>
+              <strong>Plan an orangutan trip in Sumatra and compare Bukit Lawang jungle packages.</strong>
               <ArrowRight size={18} />
             </Link>
             <Link className="intent-link-card" href="/bukit-lawang-orangutan-trekking">

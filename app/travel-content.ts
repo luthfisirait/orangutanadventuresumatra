@@ -498,9 +498,9 @@ const informationBlogPosts: BlogPost[] = [
   {
     slug: "is-bukit-lawang-safe-solo-female-travelers",
     locale: "en",
-    title: "Is Bukit Lawang Safe? Honest Guide for Solo and Female Travelers",
+    title: "Is Bukit Lawang Safe for Solo Female Travelers?",
     description:
-      "Straightforward safety advice for Bukit Lawang, including solo travel, female travelers, jungle trekking, transport, rivers, guides, and common precautions.",
+      "Safety guide for Bukit Lawang solo and female travelers: guides, transport, jungle trekking, rivers, arrivals, private treks, and practical precautions.",
     date: "2026-06-09",
     dateModified: "2026-06-28",
     readingTime: "7 min read",
@@ -519,7 +519,8 @@ const informationBlogPosts: BlogPost[] = [
       {
         title: "The honest answer",
         paragraphs: [
-          "Bukit Lawang is a well-established travel village and many solo travelers, couples, families, and backpackers visit without problems. That does not mean you should treat it as risk-free. It is a small jungle gateway with uneven paths, river currents, humid trails, limited lighting in places, and variable transport standards.",
+          "Bukit Lawang is generally safe for solo female travelers who book a reputable guide, arrive with a clear plan, and treat the jungle, river, and late-night transport with normal caution.",
+          "It is a well-established travel village and many solo travelers, couples, families, and backpackers visit without problems. That does not mean you should treat it as risk-free. It is a small jungle gateway with uneven paths, river currents, humid trails, limited lighting in places, and variable transport standards.",
           "The safest trips usually come from boring decisions made early: book a reputable guide, arrive before dark when possible, keep enough cash, carry a flashlight, share your plans with someone, and be clear about your comfort level before entering the forest."
         ]
       },
@@ -1278,19 +1279,22 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "3-day-bukit-lawang-jungle-trek-itinerary",
-    title: "3-Day Bukit Lawang Jungle Trek Itinerary for First-Time Visitors",
+    title: "3-Day Bukit Lawang Orangutan Trek Itinerary",
     description:
-      "A practical day-by-day guide to a 3-day orangutan trekking package in Bukit Lawang, including camps, meals, wildlife rules, and river return.",
+      "Day-by-day 3-day Bukit Lawang orangutan trek itinerary with jungle camps, meals, wildlife rules, river return, fitness notes, and booking tips.",
     date: "2026-05-29",
     readingTime: "7 min read",
     image: "/images/stock/activity-07.webp",
     imageAlt: "Rainforest trekking trail near Bukit Lawang",
-    tags: ["Bukit Lawang", "3 day trek", "orangutan trekking"],
+    tags: ["3-day Bukit Lawang orangutan trek", "Bukit Lawang", "orangutan trekking"],
+    primaryCtaHref: "/3-day-bukit-lawang-orangutan-trek",
+    primaryCtaLabel: "See the 3-day trek booking page",
     sections: [
       {
-        title: "Why the 3-day trek is popular",
+        title: "Why the 3-day Bukit Lawang orangutan trek is popular",
         paragraphs: [
-          "A 3-day Bukit Lawang jungle trek is often the best balance for travelers from Europe. It is long enough to feel the rhythm of the rainforest, sleep beside the river, and move beyond the busiest trails, but short enough to fit into a two-week Indonesia itinerary.",
+          "A 3-day Bukit Lawang orangutan trek usually includes two jungle nights, river camp life, slower wildlife watching, and a river return when conditions are safe.",
+          "It is often the best balance for travelers from Europe. It is long enough to feel the rhythm of the rainforest, sleep beside the river, and move beyond the busiest trails, but short enough to fit into a two-week Indonesia itinerary.",
           "The route is not a fixed performance. Weather, group fitness, wildlife movement, and national park guidance all influence the final plan. A good guide explains this before the trek so expectations stay realistic."
         ]
       },
@@ -1377,9 +1381,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "best-time-to-visit-bukit-lawang-from-europe",
-    title: "Best Time to Visit Bukit Lawang from Europe",
+    title: "Best Time to Visit Bukit Lawang for Orangutans",
     description:
-      "How to think about seasons, rain, humidity, European holidays, and trek length when planning a Bukit Lawang orangutan trip.",
+      "Bukit Lawang is a year-round orangutan trekking destination. Compare rain, river levels, drier months, holidays, trek length, and booking timing.",
     date: "2026-05-29",
     readingTime: "6 min read",
     image: "/images/blog-best-time.png",
@@ -1389,6 +1393,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Bukit Lawang is a year-round rainforest destination",
         paragraphs: [
+          "The best time to visit Bukit Lawang for orangutan trekking is the month that fits your travel dates, fitness, and tolerance for tropical rain. The rainforest is open year-round, and orangutan sightings should never be treated as guaranteed.",
           "There is no single perfect month for every traveler. Bukit Lawang is humid and tropical throughout the year, and rain can happen in any season. The better question is how much flexibility you want and how comfortable you are with mud, heat, and changing river conditions.",
           "For many European guests, the best itinerary includes one buffer night before the trek and one after it. That reduces stress if flights, road transfers, or weather slow the journey."
         ]

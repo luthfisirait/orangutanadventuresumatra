@@ -71,7 +71,7 @@ function getRelatedPosts(post: BlogPost) {
 }
 
 const planningLinks = [
-  { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" },
+  { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tours" },
   { href: "/bukit-lawang-orangutan-trekking", label: "Bukit Lawang orangutan trekking" },
   { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
   { href: "/booking", label: "Booking form" }
@@ -96,7 +96,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
-    title: `${post.title} | ${siteName}`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `/blog/${post.slug}`,
@@ -105,7 +105,7 @@ export async function generateMetadata({
     keywords: post.tags,
     authors: [{ name: siteName, url: siteUrl }],
     openGraph: {
-      title: `${post.title} | ${siteName}`,
+      title: post.title,
       description: post.description,
       url: `/blog/${post.slug}`,
       siteName,
@@ -124,7 +124,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | ${siteName}`,
+      title: post.title,
       description: post.description,
       images: [post.image]
     }

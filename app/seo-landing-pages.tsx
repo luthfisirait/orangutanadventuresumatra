@@ -26,6 +26,7 @@ type LandingPage = {
   image: string;
   imageAlt: string;
   highlights: string[];
+  keywords?: string[];
   sections: LandingSection[];
   faq: Array<{ q: string; a: string }>;
   relatedLinks: Array<{ href: string; label: string }>;
@@ -35,13 +36,13 @@ const landingPages: Record<string, LandingPage> = {
   sumatraOrangutanTour: {
     slug: "sumatra-orangutan-tour",
     title: "Sumatra Orangutan Tour",
-    metaTitle: "Sumatra Orangutan Tour | Bukit Lawang Jungle Packages | Orangutan Adventure Sumatra",
+    metaTitle: "Sumatra Orangutan Tours | Bukit Lawang Guide",
     metaDescription:
-      "Plan a Sumatra orangutan tour from Bukit Lawang with a local guide, ethical wildlife rules, 4-hour to 5-day jungle packages, river camps, rafting, and transport help.",
+      "Compare Sumatra orangutan tours from Bukit Lawang: ethical local guide, 4-hour to 5-day treks, river camps, rafting, transport help, and WhatsApp booking.",
     heroKicker: "High-intent travel page",
-    heroTitle: "Sumatra Orangutan Tour",
+    heroTitle: "Sumatra Orangutan Tours",
     heroDescription:
-      "A focused booking page for travelers searching for a Sumatra orangutan tour, Bukit Lawang jungle packages, and a direct line to a local guide.",
+      "Plan an orangutan trip in Sumatra from Bukit Lawang with clear trek options, ethical wildlife rules, and a direct line to a local guide.",
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
     highlights: [
@@ -50,12 +51,19 @@ const landingPages: Record<string, LandingPage> = {
       "Local guide since 2015",
       "Ethical wildlife rules"
     ],
+    keywords: [
+      "Sumatra orangutan tours",
+      "Sumatra orangutan travel",
+      "orangutan trip Sumatra",
+      "orangutan trekking Sumatra",
+      "orangutan tours Sumatra"
+    ],
     sections: [
       {
-        title: "What this page is for",
+        title: "Compare Sumatra orangutan tours from Bukit Lawang",
         paragraphs: [
-          "Use this page if you want a quick overview of the main Sumatra orangutan tour options without scanning the full homepage.",
-          "It is built for people who already know they want Bukit Lawang, Gunung Leuser, and a local guide who can handle route planning, meals, camp setup, and transport questions."
+          "Use this page if you want a quick overview of the main Sumatra orangutan tours without scanning the full homepage.",
+          "It is built for people planning Sumatra orangutan travel around Bukit Lawang, Gunung Leuser, and a local guide who can handle route planning, meals, camp setup, and transport questions."
         ],
         bullets: [
           "Short treks for limited time",
@@ -64,10 +72,22 @@ const landingPages: Record<string, LandingPage> = {
         ]
       },
       {
-        title: "What makes the tour different",
+        title: "What makes this orangutan trip in Sumatra different",
         paragraphs: [
           "The forest is treated as a real habitat, not a performance. That means no guaranteed sightings, no feeding, no touching, and no pressure to move animals closer for photos.",
           "The result is a slower but more honest experience that fits the kind of traveler who values wildlife, local knowledge, and clear trip planning."
+        ]
+      },
+      {
+        title: "Best tour length for your trip",
+        paragraphs: [
+          "A 4-hour or 1-day orangutan tour suits travelers with limited time. A 2-day or 3-day trek gives more forest time, river camp life, and a stronger Bukit Lawang experience.",
+          "If you want a private Sumatra orangutan tour, ask for a private guide flow so the pace, route, and camp rhythm can match your group."
+        ],
+        bullets: [
+          "Fast trip: 4-hour or 1-day trek",
+          "Balanced trip: 2-day or 3-day trek",
+          "Flexible trip: private 3-day to 5-day package"
         ]
       },
       {
@@ -86,6 +106,10 @@ const landingPages: Record<string, LandingPage> = {
       {
         q: "Is this the same as Bukit Lawang orangutan trekking?",
         a: "Yes. Bukit Lawang is the main starting point for orangutan trekking in this part of North Sumatra."
+      },
+      {
+        q: "Which Sumatra orangutan tour should I choose?",
+        a: "Choose a 1-day trek if time is short, a 3-day trek if you want camps and river return, or a private package if you want more flexibility."
       },
       {
         q: "Can you help with transport from Medan?",
@@ -250,6 +274,7 @@ function metadataForLandingPage(page: LandingPage): Metadata {
       canonical: `/${page.slug}`
     },
     keywords: [
+      ...(page.keywords ?? []),
       page.title,
       "Bukit Lawang",
       "orangutan trekking",
