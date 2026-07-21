@@ -77,6 +77,7 @@ const trekCategoryIds = ["classic", "private", "activities"] as const;
 type TrekCategory = (typeof trekCategoryIds)[number];
 
 const featuredHomeBlogSlugs = [
+  "bukit-lawang-vs-tanjung-puting-orangutans",
   "sumatra-orangutan-trekking-cost-price-guide-2026",
   "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
   "is-bukit-lawang-safe-solo-female-travelers"
