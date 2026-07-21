@@ -21,6 +21,11 @@ const nextConfig = {
         permanent: true
       },
       {
+        source: "/bukit-lawang-orangutan-trekking",
+        destination: "/",
+        permanent: true
+      },
+      {
         source: "/en",
         destination: "/",
         permanent: true
@@ -33,10 +38,9 @@ const nextConfig = {
     ];
   },
   async headers() {
-    const publicPageSources = [
+    const englishPublicPageSources = [
       "/booking",
       "/sumatra-orangutan-tour",
-      "/bukit-lawang-orangutan-trekking",
       "/3-day-bukit-lawang-orangutan-trek",
       "/blog",
       "/blog/:slug*",
@@ -47,9 +51,21 @@ const nextConfig = {
       "/privacy",
       "/gdpr"
     ];
+    const localizedBlogSources = [
+      "/de/blog",
+      "/de/blog/:slug*",
+      "/fr/blog",
+      "/fr/blog/:slug*",
+      "/nl/blog",
+      "/nl/blog/:slug*"
+    ];
 
     return [
-      ...publicPageSources.map((source) => ({
+      ...englishPublicPageSources.map((source) => ({
+        source,
+        headers: [{ key: "Content-Language", value: "en" }, cacheHeader]
+      })),
+      ...localizedBlogSources.map((source) => ({
         source,
         headers: [cacheHeader]
       })),

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, MouseEventHandler, ReactNode } from "react";
 import { trackEvent, type AnalyticsEventName, type AnalyticsParams } from "../analytics";
 
 type TrackedLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "onClick"> & {
@@ -9,6 +9,7 @@ type TrackedLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "
   eventName: AnalyticsEventName;
   eventParams?: AnalyticsParams;
   href: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
   prefetch?: boolean;
 };
 
@@ -17,10 +18,12 @@ export function TrackedLink({
   eventName,
   eventParams,
   href,
+  onClick,
   prefetch,
   ...anchorProps
 }: TrackedLinkProps) {
-  const handleClick = () => {
+  const handleClick: MouseEventHandler<HTMLAnchorElement> = (event) => {
+    onClick?.(event);
     trackEvent(eventName, {
       link_url: href,
       ...eventParams

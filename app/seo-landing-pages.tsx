@@ -129,100 +129,42 @@ const landingPages: Record<string, LandingPage> = {
       }
     ],
     relatedLinks: [
-      { href: "/bukit-lawang-orangutan-trekking", label: "Bukit Lawang orangutan trekking" },
+      { href: "/", label: "Bukit Lawang orangutan trekking" },
       { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
       { href: "/booking", label: "Booking form" }
-    ]
-  },
-  bukitLawangTrekking: {
-    slug: "bukit-lawang-orangutan-trekking",
-    title: "Bukit Lawang Orangutan Trekking",
-    metaTitle: "Bukit Lawang Orangutan Trekking | Local Guide, River Camps, Booking",
-    metaDescription:
-      "Book Bukit Lawang orangutan trekking with a local guide, clear package options, ethical wildlife rules, river camps, rafting, and direct booking support.",
-    heroKicker: "Core search page",
-    heroTitle: "Bukit Lawang Orangutan Trekking",
-    heroDescription:
-      "A practical page for travelers searching the exact Bukit Lawang orangutan trekking phrase and looking for a fast path to the right package.",
-    image: "/images/hero-orangutan.webp",
-    imageAlt: "Orangutan on a Bukit Lawang rainforest trail",
-    highlights: [
-      "Exact-match search phrase",
-      "Local guide support",
-      "River camps and rafting",
-      "Short and long trek options"
-    ],
-    sections: [
-      {
-        title: "Best for first-time visitors",
-        paragraphs: [
-          "If you are new to Bukit Lawang, start here. This page points you to the most common trekking options and explains what each one is good for.",
-          "Shorter treks suit travelers with limited time. Longer treks suit people who want a deeper forest stay and a more relaxed pace."
-        ],
-        bullets: [
-          "4-hour trek for a quick wildlife walk",
-          "1-day trek for a fuller jungle visit",
-          "2-day to 5-day treks for camp life and river return"
-        ]
-      },
-      {
-        title: "What to expect",
-        paragraphs: [
-          "Expect a real rainforest route: steep sections, mud after rain, heat, and a changing pace based on weather and group fitness.",
-          "What you should not expect is a zoo-style guarantee. The guide helps you watch quietly, stay safe, and respect the animals' distance."
-        ]
-      },
-      {
-        title: "Booking essentials",
-        paragraphs: [
-          "Before you send a deposit, share your travel dates, group size, arrival city, food needs, and whether you want transport or accommodation help."
-        ],
-        bullets: [
-          "Bring cash for village expenses",
-          "Carry trekking shoes with grip",
-          "Ask about insurance if you want a multi-day trek"
-        ]
-      }
-    ],
-    faq: [
-      {
-        q: "Which trek should I choose?",
-        a: "A 1-day trek fits most first visits. A 3-day trek fits active travelers who want camps and more forest time."
-      },
-      {
-        q: "Is the route fixed?",
-        a: "No. The final route depends on weather, river level, park guidance, and group pace."
-      },
-      {
-        q: "Can I book directly without using an agency?",
-        a: "Yes. The page is designed for direct booking with the local guide team."
-      }
-    ],
-    relatedLinks: [
-      { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" },
-      { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
-      { href: "/essential-information", label: "Essential information" }
     ]
   },
   threeDayTrek: {
     slug: "3-day-bukit-lawang-orangutan-trek",
     title: "3-Day Bukit Lawang Orangutan Trek",
-    metaTitle: "3-Day Bukit Lawang Orangutan Trek | Itinerary, Camps, River Return",
+    metaTitle: "Book a 3-Day Bukit Lawang Trek | Price & Availability",
     metaDescription:
-      "See the 3-day Bukit Lawang orangutan trek itinerary, including camps, meals, wildlife rules, river return, and direct booking support.",
-    heroKicker: "Itinerary page",
-    heroTitle: "3-Day Bukit Lawang Orangutan Trek",
+      "Check 3-day Bukit Lawang trek prices, inclusions, availability, jungle camps, river return, private options, and direct booking with a local guide.",
+    heroKicker: "3-day trek booking",
+    heroTitle: "Book a 3-Day Bukit Lawang Orangutan Trek",
     heroDescription:
-      "A detailed 3-day trek page for travelers who want the itinerary, camp flow, and practical booking notes before they send a request.",
+      "Choose a classic 3-day trek from 170 EUR per person or ask about a private package, then confirm dates before paying a deposit.",
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail overlooking the valley",
     highlights: [
+      "From 170 EUR per person",
       "Two jungle nights",
       "River camp and meals",
-      "Tube rafting return",
-      "Best for active travelers"
+      "Classic and private options"
     ],
     sections: [
+      {
+        title: "3-day trek price and package choices",
+        paragraphs: [
+          "The classic 3-day / 2-night jungle trek is listed at 170 EUR per person. The private 3-day eco jungle package is listed at 280 EUR per person and adds a more flexible guide flow plus transport and accommodation support.",
+          "Availability, the final route, river conditions, and any custom transport or accommodation must be confirmed before payment. The booking form calculates a 30% deposit only after you choose a package and group size."
+        ],
+        bullets: [
+          "Classic 3-day trek: 170 EUR per person",
+          "Private 3-day eco package: 280 EUR per person",
+          "Share dates and group size before paying a deposit"
+        ]
+      },
       {
         title: "Day-by-day flow",
         paragraphs: [
@@ -244,7 +186,7 @@ const landingPages: Record<string, LandingPage> = {
         ]
       },
       {
-        title: "Before you confirm",
+        title: "Check availability before paying",
         paragraphs: [
           "Ask about current permit rules, sleeping setup, food needs, transport help, and river conditions before paying a deposit.",
           "The route can change with weather and safety decisions, so the best booking is the one that leaves some flexibility in the plan."
@@ -252,6 +194,10 @@ const landingPages: Record<string, LandingPage> = {
       }
     ],
     faq: [
+      {
+        q: "How much is a 3-day Bukit Lawang trek?",
+        a: "The listed classic 3-day trek is 170 EUR per person. The private 3-day eco jungle package is 280 EUR per person before any custom extras."
+      },
       {
         q: "How many nights are in the package?",
         a: "The standard version includes two nights in the jungle."
@@ -267,7 +213,8 @@ const landingPages: Record<string, LandingPage> = {
     ],
     relatedLinks: [
       { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" },
-      { href: "/bukit-lawang-orangutan-trekking", label: "Bukit Lawang orangutan trekking" },
+      { href: "/blog/3-day-bukit-lawang-jungle-trek-itinerary", label: "Read the day-by-day 3-day itinerary" },
+      { href: "/", label: "Bukit Lawang orangutan trekking" },
       { href: "/booking", label: "Booking form" }
     ]
   }

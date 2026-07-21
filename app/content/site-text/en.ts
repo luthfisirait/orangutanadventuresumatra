@@ -1,7 +1,7 @@
 import type { LocaleContent } from "../../site-content";
 
 export const en = {
-  metaTitle: "Bukit Lawang Orangutan Trekking | Local Guide",
+  metaTitle: "Orangutan Adventure Sumatra | Bukit Lawang Trekking",
   metaDescription:
     "Book ethical Bukit Lawang orangutan trekking with a local guide. Choose 4-hour to 5-day Sumatra jungle tours, river camps, rafting, and WhatsApp booking.",
   nav: { treks: "Treks", experience: "Experience", guides: "Guide", faq: "FAQ", contact: "Contact" },

@@ -4,55 +4,49 @@ import { defaultLocale, languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
 import { trekDetailList } from "./trek-details";
 import { landingPages } from "./seo-landing-pages";
+import {
+  blogIndexLanguageAlternates,
+  blogIndexPath,
+  blogPostLocale,
+  blogPostPath,
+  getBlogLanguageAlternates
+} from "./blog/blog-routing";
 
 function asLastModified(date: string) {
   return new Date(`${date}T00:00:00.000Z`);
 }
 
 function blogLastModified(post: (typeof blogPosts)[number]) {
-  return asLastModified(post.dateModified ?? post.date);
-}
+  const contentDate = asLastModified(post.dateModified ?? post.date);
 
-function blogLanguageAlternates(post: (typeof blogPosts)[number]) {
-  if (!post.translationKey) {
-    return undefined;
+  if (blogPostLocale(post) === defaultLocale) {
+    return contentDate;
   }
 
-  const translations = blogPosts.filter((candidate) => candidate.translationKey === post.translationKey);
-
-  if (translations.length < 2) {
-    return undefined;
-  }
-
-  const fallbackPost = translations.find((candidate) => (candidate.locale ?? defaultLocale) === defaultLocale) ?? post;
-
-  return Object.fromEntries([
-    ...translations.map((translation) => [
-      translation.locale ?? defaultLocale,
-      `${siteUrl}/blog/${translation.slug}`
-    ]),
-    ["x-default", `${siteUrl}/blog/${fallbackPost.slug}`]
-  ]) as Record<string, string>;
+  const localizedRouteMigrationDate = asLastModified("2026-07-21");
+  return contentDate > localizedRouteMigrationDate ? contentDate : localizedRouteMigrationDate;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pageLastModified = asLastModified("2026-06-09");
+  const legacyPageLastModified = asLastModified("2026-06-09");
+  const seoReleaseLastModified = asLastModified("2026-07-21");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );
   const staticPages = [
-    { path: "/booking", lastModified: pageLastModified, priority: 0.88 },
-    { path: "/treks", lastModified: pageLastModified, priority: 0.84 },
-    { path: "/payment-and-deposit", lastModified: pageLastModified, priority: 0.62 },
-    { path: "/essential-information", lastModified: pageLastModified, priority: 0.82 },
-    { path: "/blog", lastModified: pageLastModified > latestBlogPostDate ? pageLastModified : latestBlogPostDate, priority: 0.84 },
-    { path: "/privacy", lastModified: pageLastModified, priority: 0.35 }
+    { path: "/booking", lastModified: legacyPageLastModified, priority: 0.88 },
+    { path: "/treks", lastModified: legacyPageLastModified, priority: 0.84 },
+    { path: "/payment-and-deposit", lastModified: legacyPageLastModified, priority: 0.62 },
+    { path: "/essential-information", lastModified: legacyPageLastModified, priority: 0.82 },
+    { path: "/privacy", lastModified: legacyPageLastModified, priority: 0.35 }
   ];
+  const blogIndexLastModified =
+    seoReleaseLastModified > latestBlogPostDate ? seoReleaseLastModified : latestBlogPostDate;
 
   return [
     {
       url: siteUrl,
-      lastModified: pageLastModified,
+      lastModified: seoReleaseLastModified,
       changeFrequency: "weekly",
       priority: 1,
       alternates: {
@@ -61,7 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...locales.filter((locale) => locale !== defaultLocale).map((locale) => ({
       url: locale === "en" ? siteUrl : `${siteUrl}/${locale}`,
-      lastModified: pageLastModified,
+      lastModified: seoReleaseLastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
       alternates: {
@@ -70,22 +64,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: `${siteUrl}/${landingPages.sumatraOrangutanTour.slug}`,
-      lastModified: pageLastModified,
+      lastModified: seoReleaseLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.86
     },
     {
-      url: `${siteUrl}/${landingPages.bukitLawangTrekking.slug}`,
-      lastModified: pageLastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.9
-    },
-    {
       url: `${siteUrl}/${landingPages.threeDayTrek.slug}`,
-      lastModified: pageLastModified,
+      lastModified: seoReleaseLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.88
     },
+    ...locales.map((locale) => ({
+      url: `${siteUrl}${blogIndexPath(locale)}`,
+      lastModified: blogIndexLastModified,
+      changeFrequency: "weekly" as const,
+      priority: locale === defaultLocale ? 0.84 : 0.72,
+      alternates: {
+        languages: blogIndexLanguageAlternates
+      }
+    })),
     ...staticPages.map((page) => ({
       url: `${siteUrl}${page.path}`,
       lastModified: page.lastModified,
@@ -93,21 +90,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.priority
     })),
     ...blogPosts.map((post) => ({
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: `${siteUrl}${blogPostPath(post)}`,
       lastModified: blogLastModified(post),
       changeFrequency: "monthly" as const,
       priority: 0.78,
-      ...(blogLanguageAlternates(post)
+      ...(getBlogLanguageAlternates(post)
         ? {
             alternates: {
-              languages: blogLanguageAlternates(post)
+              languages: getBlogLanguageAlternates(post)
             }
           }
         : {})
     })),
     ...trekDetailList.map((page) => ({
       url: `${siteUrl}/treks/${page.slug}`,
-      lastModified: pageLastModified,
+      lastModified: legacyPageLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.74
     }))

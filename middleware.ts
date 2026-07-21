@@ -6,6 +6,16 @@ const localePaths = ["/de", "/fr", "/nl"];
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
+  const legacyLocalizedBlog = pathname.match(/^\/blog\/(de|fr|nl)-(.+)$/);
+
+  if (legacyLocalizedBlog) {
+    const [, locale, slug] = legacyLocalizedBlog;
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}/blog/${slug}`;
+    url.search = search;
+    return NextResponse.redirect(url, 301);
+  }
+
   if (pathname === "/en" || pathname.startsWith("/en/")) {
     const destination = pathname === "/en" ? "/" : pathname.replace(/^\/en/, "");
     const url = request.nextUrl.clone();
@@ -36,5 +46,15 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/en", "/en/:path*", "/de", "/de/:path*", "/fr", "/fr/:path*", "/nl", "/nl/:path*"]
+  matcher: [
+    "/blog/:path*",
+    "/en",
+    "/en/:path*",
+    "/de",
+    "/de/:path*",
+    "/fr",
+    "/fr/:path*",
+    "/nl",
+    "/nl/:path*"
+  ]
 };

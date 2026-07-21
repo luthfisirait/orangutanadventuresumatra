@@ -25,6 +25,8 @@ import {
   X
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { TrackedLink } from "./components/tracked-link";
+import { blogIndexPath, blogPostLocale, blogPostPath } from "./blog/blog-routing";
 import {
   galleryItems,
   guideBase,
@@ -79,10 +81,6 @@ const featuredHomeBlogSlugs = [
   "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
   "is-bukit-lawang-safe-solo-female-travelers"
 ] as const;
-
-const featuredHomeBlogPosts = featuredHomeBlogSlugs
-  .map((slug) => blogPosts.find((post) => post.slug === slug))
-  .filter((post): post is BlogPost => Boolean(post));
 
 const brandTitle = (
   <>
@@ -319,6 +317,26 @@ export function HomeContent({
   const t = siteText[language];
   const packageActivity = localizedPackageActivity[language] ?? packageActivityOverview;
   const impactContent = localizedImpactVision[language] ?? impactVision;
+  const featuredBlogPosts = useMemo(
+    () =>
+      featuredHomeBlogSlugs
+        .map((slug) => {
+          const englishPost = blogPosts.find((post) => post.slug === slug);
+
+          if (!englishPost || language === "en") {
+            return englishPost;
+          }
+
+          return blogPosts.find(
+            (post) =>
+              blogPostLocale(post) === language &&
+              post.translationKey &&
+              post.translationKey === englishPost.translationKey
+          );
+        })
+        .filter((post): post is BlogPost => Boolean(post)),
+    [language]
+  );
   const whatsappUrl = useMemo(
     () => whatsappUrlFor(t.whatsappMessage),
     [t.whatsappMessage]
@@ -612,10 +630,18 @@ export function HomeContent({
               ))}
             </select>
           </label>
-          <a className="nav-cta" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={t.hero.secondary}>
+          <TrackedLink
+            className="nav-cta"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t.hero.secondary}
+            eventName="whatsapp_click"
+            eventParams={{ locale: language, source: "home_header" }}
+          >
             <MessageCircle size={18} />
             {t.hero.secondary}
-          </a>
+          </TrackedLink>
           <button
             className="mobile-menu-toggle"
             type="button"
@@ -648,16 +674,18 @@ export function HomeContent({
             {t.nav[item.key]}
           </a>
         ))}
-        <a
+        <TrackedLink
           className="mobile-drawer-cta"
           href={whatsappUrl}
           target="_blank"
           rel="noreferrer"
           onClick={() => setMobileMenuOpen(false)}
+          eventName="whatsapp_click"
+          eventParams={{ locale: language, source: "home_mobile_drawer" }}
         >
           <MessageCircle size={16} />
           {t.hero.secondary}
-        </a>
+        </TrackedLink>
       </nav>
 
       <section className="hero" id="top">
@@ -678,14 +706,26 @@ export function HomeContent({
           <h1>{t.hero.title === siteName ? brandTitle : t.hero.title}</h1>
           <p>{t.hero.description}</p>
           <div className="hero-actions">
-            <a className="primary-button" href="#treks">
+            <TrackedLink
+              className="primary-button"
+              href="#treks"
+              eventName="booking_cta_click"
+              eventParams={{ locale: language, source: "home_hero", target: "trek_packages" }}
+            >
               {t.hero.primary}
               <ArrowRight size={18} />
-            </a>
-            <a className="secondary-button" href={whatsappUrl} target="_blank" rel="noreferrer">
+            </TrackedLink>
+            <TrackedLink
+              className="secondary-button"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              eventName="whatsapp_click"
+              eventParams={{ locale: language, source: "home_hero" }}
+            >
               <MessageCircle size={18} />
               {t.hero.secondary}
-            </a>
+            </TrackedLink>
           </div>
         </div>
         <div className="hero-panel">
@@ -733,9 +773,9 @@ export function HomeContent({
               <strong>Plan an orangutan trip in Sumatra and compare Bukit Lawang jungle packages.</strong>
               <ArrowRight size={18} />
             </Link>
-            <Link className="intent-link-card" href="/bukit-lawang-orangutan-trekking">
-              <span>Bukit Lawang orangutan trekking</span>
-              <strong>Start with the core trekking page for first-time visitors.</strong>
+            <Link className="intent-link-card" href="/treks">
+              <span>Compare Bukit Lawang trek packages</span>
+              <strong>Review prices, duration, fitness, camp nights, and the best fit for your trip.</strong>
               <ArrowRight size={18} />
             </Link>
             <Link className="intent-link-card" href="/3-day-bukit-lawang-orangutan-trek">
@@ -1067,7 +1107,7 @@ export function HomeContent({
           <h2>{t.blog.heading}</h2>
         </div>
         <div className="home-blog-grid">
-          {featuredHomeBlogPosts.map((post) => (
+          {featuredBlogPosts.map((post) => (
             <article className="home-blog-card" key={post.slug}>
               <div className="home-blog-image">
                 <Image src={post.image} alt={post.imageAlt} fill sizes="(max-width: 760px) 100vw, 33vw" />
@@ -1076,10 +1116,10 @@ export function HomeContent({
                 <span>{post.readingTime}</span>
                 <h3>{post.title}</h3>
                 <p>{post.description}</p>
-                <a className="card-link" href={`/blog/${post.slug}`}>
+                <Link className="card-link" href={blogPostPath(post)}>
                   {t.blog.readArticle}
                   <ArrowRight size={16} />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
@@ -1089,10 +1129,10 @@ export function HomeContent({
             {t.blog.essentialInfo}
             <ArrowRight size={18} />
           </a>
-          <a className="secondary-button dark" href="/blog">
+          <Link className="secondary-button dark" href={blogIndexPath(language)}>
             {t.blog.allArticles}
             <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -1104,14 +1144,26 @@ export function HomeContent({
             <p>{t.contact.text}</p>
           </div>
           <div className="contact-actions">
-            <Link className="primary-button" href="/booking">
+            <TrackedLink
+              className="primary-button"
+              href="/booking"
+              eventName="booking_cta_click"
+              eventParams={{ locale: language, source: "home_contact" }}
+            >
               <CalendarDays size={18} />
               {t.contact.bookingLabel}
-            </Link>
-            <a className="secondary-button dark" href={whatsappUrl} target="_blank" rel="noreferrer">
+            </TrackedLink>
+            <TrackedLink
+              className="secondary-button dark"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              eventName="whatsapp_click"
+              eventParams={{ locale: language, source: "home_contact" }}
+            >
               <MessageCircle size={18} />
               {t.contact.whatsappLabel}
-            </a>
+            </TrackedLink>
             <a className="secondary-button dark" href={brandInstagramUrl} target="_blank" rel="noreferrer">
               <Instagram size={18} />
               Instagram {brandInstagramHandle}
@@ -1129,17 +1181,32 @@ export function HomeContent({
         <p>{t.footer.location}</p>
         <nav className="footer-links" aria-label="Footer navigation">
           <a href="/essential-information">{t.footerLinks.essentialInfo}</a>
-          <a href="/booking">{t.footerLinks.booking}</a>
-          <a href="/blog">{t.footerLinks.blog}</a>
+          <TrackedLink
+            href="/booking"
+            eventName="booking_cta_click"
+            eventParams={{ locale: language, source: "home_footer" }}
+          >
+            {t.footerLinks.booking}
+          </TrackedLink>
+          <Link href={blogIndexPath(language)}>{t.footerLinks.blog}</Link>
           <a href="/privacy">{t.footerLinks.privacy}</a>
         </nav>
         <nav className="footer-contact-links" aria-label="Contact and social links">
           <a className="footer-icon-link" href={`mailto:${contactEmail}`} aria-label={t.footerLinks.email} title={t.footerLinks.email}>
             <Mail size={18} />
           </a>
-          <a className="footer-icon-link" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label={t.footerLinks.whatsapp} title={t.footerLinks.whatsapp}>
+          <TrackedLink
+            className="footer-icon-link"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t.footerLinks.whatsapp}
+            title={t.footerLinks.whatsapp}
+            eventName="whatsapp_click"
+            eventParams={{ locale: language, source: "home_footer" }}
+          >
             <MessageCircle size={18} />
-          </a>
+          </TrackedLink>
           <a
             className="footer-icon-link"
             href={brandInstagramUrl}
@@ -1150,21 +1217,32 @@ export function HomeContent({
           >
             <Instagram size={18} />
           </a>
-          <a className="footer-icon-link" href={googleMapsUrl} target="_blank" rel="noreferrer" aria-label={t.footerLinks.maps} title={t.footerLinks.maps}>
+          <TrackedLink
+            className="footer-icon-link"
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={t.footerLinks.maps}
+            title={t.footerLinks.maps}
+            eventName="maps_click"
+            eventParams={{ locale: language, source: "home_footer" }}
+          >
             <MapPin size={18} />
-          </a>
+          </TrackedLink>
         </nav>
       </footer>
 
-      <a
+      <TrackedLink
         className="whatsapp-float"
         href={whatsappUrl}
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
+        eventName="whatsapp_click"
+        eventParams={{ locale: language, source: "home_floating_button" }}
       >
         <MessageCircle size={26} />
-      </a>
+      </TrackedLink>
     </main>
   );
 }

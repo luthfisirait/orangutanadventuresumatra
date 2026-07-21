@@ -1384,10 +1384,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "3-day-bukit-lawang-jungle-trek-itinerary",
-    title: "3-Day Bukit Lawang Orangutan Trek Itinerary",
+    title: "3-Day Bukit Lawang Itinerary: Day-by-Day Jungle Trek",
     description:
-      "Day-by-day 3-day Bukit Lawang orangutan trek itinerary with jungle camps, meals, wildlife rules, river return, fitness notes, and booking tips.",
+      "Follow a day-by-day 3-day Bukit Lawang jungle trek itinerary with two camps, meals, wildlife rules, river return, fitness notes, and route expectations.",
     date: "2026-05-29",
+    dateModified: "2026-07-21",
     readingTime: "7 min read",
     image: "/images/stock/activity-07.webp",
     imageAlt: "Rainforest trekking trail near Bukit Lawang",
@@ -1396,7 +1397,7 @@ export const blogPosts: BlogPost[] = [
     primaryCtaLabel: "See the 3-day trek booking page",
     sections: [
       {
-        title: "Why the 3-day Bukit Lawang orangutan trek is popular",
+        title: "What this 3-day Bukit Lawang itinerary covers",
         paragraphs: [
           "A 3-day Bukit Lawang orangutan trek usually includes two jungle nights, river camp life, slower wildlife watching, and a river return when conditions are safe.",
           "It is often the best balance for travelers from Europe. It is long enough to feel the rhythm of the rainforest, sleep beside the river, and move beyond the busiest trails, but short enough to fit into a two-week Indonesia itinerary.",

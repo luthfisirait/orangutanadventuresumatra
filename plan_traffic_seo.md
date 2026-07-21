@@ -1,6 +1,6 @@
 # Traffic & SEO Growth Plan — Orangutan Adventure Sumatra
 
-_Last updated: 28 June 2026_
+_Last updated: 6 July 2026_
 
 This plan is tailored to the actual codebase (Next.js 15 App Router, multilingual EN/DE/FR/NL, deployed at `https://orangutanadventuresumatra.com`). It separates what is already done well from concrete, prioritized growth actions. The goal is more qualified organic traffic and more direct bookings (bypassing OTA commissions of 20–30%).
 
@@ -28,6 +28,25 @@ The technical SEO foundation is genuinely above average for this niche:
 5. **Keyword coverage has gaps** around high-intent long-tail and comparison/cost queries that bloggers currently own.
 6. **Internal linking** between blog → landing → booking could be more systematic (topic clusters).
 7. **No measurement loop**: Search Console integration, rank tracking, and conversion tracking on WhatsApp/booking events are not evident.
+
+### GA4 baseline from the exported report (8 Apr 2026 - 6 Jul 2026)
+This is a very small dataset, so treat it as a baseline, not a verdict. It is still useful because it shows where traction is starting.
+
+- **Traffic volume:** 62 active users, 61 new users, 633 events, and 29 key events on web.
+- **Organic search is present but small:** first-user traffic shows Google organic at 9 active users and Bing organic at 1; session traffic shows Google organic at 16 sessions and Bing organic at 2.
+- **Direct traffic dominates:** 36 sessions came from `(direct) / (none)`, so attribution is still weak or brand/direct discovery is doing most of the work.
+- **AI assistants already matter:** `chatgpt.com / ai-assistant` generated 7 sessions and `copilot.com / ai-assistant` generated 2 sessions. This supports the GEO/AI-citation work in this plan.
+- **Top viewed pages are money pages:** the main trekking page had 83 views, the homepage had 54 views, booking had 29 views, and the 3-day trek detail page had 13 views.
+- **Blog content has not yet broken through:** most blog posts recorded only 1-2 views. The content foundation exists, but Google has not yet turned it into meaningful discovery traffic.
+- **Geo signal is mixed:** Medan (12), Dublin (8), Jakarta (5), Lulea (3), and scattered Europe/Australia cities appear. With this sample size, some local/internal or data-center traffic may distort the picture.
+
+**What this changes:** prioritize measurement and distribution before publishing many more posts. The site already has useful content; the bigger gap is getting Google Search Console query data, tracking all booking/WhatsApp CTAs, building local visibility, and earning links/citations so existing pages can rank.
+
+### Live technical spot-check (7 Jul 2026)
+- `robots.txt` returns 200, references `sitemap.xml`, and allows major AI crawlers.
+- `sitemap.xml` returns 200 with 49 URLs; 20 entries include language alternates.
+- Key money pages (`/`, `/booking`, `/sumatra-orangutan-tour`, `/bukit-lawang-orangutan-trekking`, `/3-day-bukit-lawang-orangutan-trek`) return 200, have self-canonicals, one H1, index/follow robots metadata, and JSON-LD.
+- Minor SERP polish: `/booking`, `/bukit-lawang-orangutan-trekking`, and `/3-day-bukit-lawang-orangutan-trek` have titles/descriptions near or above common visible-length limits. Not critical, but worth tightening after tracking is fixed.
 
 ---
 
@@ -166,9 +185,101 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 ## 6. Quick wins to do first (this week)
 1. Verify Search Console + Bing, submit sitemap.
 2. Claim/optimize Google Business Profile.
-3. Add GA4 conversion events on WhatsApp + booking CTAs.
+3. Finish GA4 conversion tracking on every WhatsApp + booking CTA, especially homepage nav/hero/contact/footer/floating WhatsApp links.
 4. Start asking every guest for a Google review.
 5. Add a price table + definition-led intro to the existing cost guide post.
+
+---
+
+## 7. Add-on growth plan: ads + community
+
+Use this only after WhatsApp clicks, booking submits, and deposit starts are tracked in GA4. Without conversion tracking, ads will only buy traffic.
+
+### 7.1 Paid ads pilot
+
+**Goal:** direct booking leads from travelers already searching for Bukit Lawang / Sumatra orangutan tours.
+
+**Starting budget assumption:** IDR 2-5 million/month for 30 days. Increase only when leads are qualified and cost per lead is acceptable.
+
+| Campaign | Budget split | Landing page | Why |
+|----------|--------------|--------------|-----|
+| Google Search - high intent | 70% | `/sumatra-orangutan-tour` | Captures people already looking for tours |
+| Google Search - brand/local | 15% | `/` or `/booking` | Protects brand and Google Maps-driven searches |
+| Meta retargeting | 15% | `/booking` | Brings back site visitors with review/social-proof ads |
+
+**Google ad groups to launch first:**
+
+- `Sumatra Orangutan Tour`: `sumatra orangutan tour`, `sumatra orangutan tours`, `orangutan trip sumatra`
+- `Bukit Lawang Trekking`: `bukit lawang orangutan trekking`, `bukit lawang jungle trek`, `bukit lawang trek`
+- `3 Day Trek`: `3 day bukit lawang trek`, `3 day sumatra orangutan trek`, `overnight orangutan trek sumatra`
+- `Medan To Bukit Lawang`: `medan to bukit lawang tour`, `kuala namu to bukit lawang`, `bukit lawang from medan`
+
+**Campaign negatives:**
+
+- `free`, `job`, `jobs`, `salary`, `map only`, `zoo`, `cartoon`, `wallpaper`, `movie`, `pet`, `rescue job`, `volunteer free`
+
+**Meta retargeting creative:**
+
+- Real guest review card
+- Guide photo + "local Bukit Lawang guide since 2015"
+- Short itinerary card: 1-day vs 2-day vs 3-day trek
+- Objection card: ethical trek, no feeding, no guaranteed sightings
+
+**Do not run yet:**
+
+- Broad Meta prospecting. It needs strong creative volume and clean tracking.
+- Performance Max. Too early; it hides search-term learning.
+- Display ads. Low intent for this offer.
+
+### 7.2 90-day marketing plan
+
+| Time | Focus | Actions | KPI |
+|------|-------|---------|-----|
+| Weeks 1-2 | Measurement | GA4 key events, GSC/Bing, GBP actions, UTM template | Tracking works on real clicks |
+| Weeks 3-4 | Conversion | Booking page trust block, review snippets, clearer WhatsApp CTA, price/itinerary clarity | WhatsApp CTR and booking submit rate |
+| Weeks 5-8 | Acquisition | Publish/refresh 4 buyer-intent pages, start Google Search pilot, start backlink outreach | Non-brand clicks and qualified leads |
+| Weeks 9-12 | Compound | Translate winners, retarget visitors, partner links, guest review pipeline | Direct booking leads and review count |
+
+**Main bet:** SEO and Google Search first, community/reviews second, Meta only for retargeting. For this business, intent beats broad awareness.
+
+### 7.3 Community marketing flywheel
+
+Do not build a Discord or forum. Travelers do not need another community before a trek. Use WhatsApp, Google reviews, Instagram, and guest referrals instead.
+
+**Core loop:**
+
+1. Guest books direct.
+2. Guest joins WhatsApp planning thread.
+3. Guide delivers strong trek experience.
+4. Same day after trek: ask for Google review with direct link.
+5. After review: ask for 2 photo permissions and 1 short quote.
+6. Publish quote/photo on site and Instagram.
+7. Send referral message: "If a friend books through you, they get a small add-on and you support local guides."
+
+**Weekly ritual:**
+
+- 1 guest story post
+- 1 jungle/wildlife education post
+- 1 practical travel tip
+- 1 review/testimonial post
+- 1 partner outreach message to guesthouses, transport providers, or travel bloggers
+
+**Ambassador candidates:**
+
+- Guests who leave detailed reviews
+- Guests who post trek photos and tag the brand
+- Travel bloggers already visiting Sumatra
+- Local guesthouses and Medan transport drivers
+
+**Community KPIs:**
+
+- New Google reviews/month
+- Instagram saves and DMs
+- Referral leads/month
+- Partner links/month
+- Booking leads mentioning review, Instagram, guide, or friend referral
+
+**Skipped for now:** full ambassador portal, paid influencer program, Discord/Facebook group. Add when monthly direct bookings are consistent and manual tracking becomes messy.
 
 ---
 
