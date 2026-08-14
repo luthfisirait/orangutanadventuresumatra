@@ -7,12 +7,23 @@ import { TrackedLink } from "./components/tracked-link";
 import type { GoogleReviewsData } from "./google-reviews";
 import { StaticFooter, StaticHeader } from "./site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "./seo";
+import { siteText, trekBase, type TrekId } from "./site-content";
+import { trekBookingHref, trekDetailHref } from "./trek-details";
 import { bookingWhatsappUrl } from "./travel-content";
 
 type LandingSection = {
   title: string;
   paragraphs: string[];
   bullets?: string[];
+};
+
+type LandingComparison = {
+  title: string;
+  description: string;
+  options: Array<{
+    id: TrekId;
+    bestFor: string;
+  }>;
 };
 
 type LandingPage = {
@@ -27,10 +38,16 @@ type LandingPage = {
   imageAlt: string;
   highlights: string[];
   keywords?: string[];
+  comparison: LandingComparison;
   sections: LandingSection[];
   faq: Array<{ q: string; a: string }>;
   relatedLinks: Array<{ href: string; label: string }>;
 };
+
+const trekById = Object.fromEntries(trekBase.map((trek) => [trek.id, trek])) as Record<
+  TrekId,
+  (typeof trekBase)[number]
+>;
 
 const landingPages: Record<string, LandingPage> = {
   sumatraOrangutanTour: {
@@ -39,10 +56,10 @@ const landingPages: Record<string, LandingPage> = {
     metaTitle: "Sumatra Orangutan Tours | Bukit Lawang Guide",
     metaDescription:
       "Compare Sumatra orangutan tours from Bukit Lawang: ethical local guide, 4-hour to 5-day treks, river camps, rafting, transport help, and WhatsApp booking.",
-    heroKicker: "High-intent travel page",
+    heroKicker: "Choose your rainforest route",
     heroTitle: "Sumatra Orangutan Tours",
     heroDescription:
-      "Plan an orangutan trip in Sumatra from Bukit Lawang with clear trek options, ethical wildlife rules, and a direct line to a local guide.",
+      "Compare Bukit Lawang orangutan treks by time, effort, camp nights, and price, then ask a local guide which route fits your dates.",
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
     highlights: [
@@ -58,12 +75,24 @@ const landingPages: Record<string, LandingPage> = {
       "orangutan trekking Sumatra",
       "orangutan tours Sumatra"
     ],
+    comparison: {
+      title: "Compare the main Sumatra orangutan trek options",
+      description:
+        "Start with the time you have and the kind of forest experience you want. Prices are per person; routes and availability are confirmed before payment.",
+      options: [
+        { id: "4h", bestFor: "A first rainforest walk when your schedule is tight." },
+        { id: "1d", bestFor: "A full forest day without an overnight camp." },
+        { id: "2d", bestFor: "One river camp and a balanced first multi-day trek." },
+        { id: "3d", bestFor: "Two jungle nights and more time on quieter routes." },
+        { id: "p3d", bestFor: "A private pace with transport and accommodation support." }
+      ]
+    },
     sections: [
       {
-        title: "Compare Sumatra orangutan tours from Bukit Lawang",
+        title: "Start with the time you have",
         paragraphs: [
-          "Use this page if you want a quick overview of the main Sumatra orangutan tours without scanning the full homepage.",
-          "It is built for people planning Sumatra orangutan travel around Bukit Lawang, Gunung Leuser, and a local guide who can handle route planning, meals, camp setup, and transport questions."
+          "Most trips start in Bukit Lawang, on the edge of Gunung Leuser National Park. Choose by how much forest time you want, whether you want to sleep at a river camp, and how private you want the pace to be.",
+          "The guide team handles route planning, meals, camp setup, permits, and practical questions about transport from Medan or Kuala Namu."
         ],
         bullets: [
           "Short treks for limited time",
@@ -140,7 +169,7 @@ const landingPages: Record<string, LandingPage> = {
     metaTitle: "Book a 3-Day Bukit Lawang Trek | Price & Availability",
     metaDescription:
       "Check 3-day Bukit Lawang trek prices, inclusions, availability, jungle camps, river return, private options, and direct booking with a local guide.",
-    heroKicker: "3-day trek booking",
+    heroKicker: "Choose a 3-day format",
     heroTitle: "Book a 3-Day Bukit Lawang Orangutan Trek",
     heroDescription:
       "Choose a classic 3-day trek from 170 EUR per person or ask about a private package, then confirm dates before paying a deposit.",
@@ -152,6 +181,15 @@ const landingPages: Record<string, LandingPage> = {
       "River camp and meals",
       "Classic and private options"
     ],
+    comparison: {
+      title: "Choose between the classic and private 3-day trek",
+      description:
+        "Both options include two jungle nights. Compare the pace, planning support, and published price before you send your dates.",
+      options: [
+        { id: "3d", bestFor: "The established 3-day route at the standard package price." },
+        { id: "p3d", bestFor: "A private guide flow with more flexibility for your group." }
+      ]
+    },
     sections: [
       {
         title: "3-day trek price and package choices",
@@ -166,11 +204,10 @@ const landingPages: Record<string, LandingPage> = {
         ]
       },
       {
-        title: "Day-by-day flow",
+        title: "What you confirm before paying",
         paragraphs: [
-          "Day 1 usually starts from Bukit Lawang in the morning, with an easy first walk into the forest, lunch on trail, and a simple riverside camp by late afternoon.",
-          "Day 2 goes deeper into quieter forest sections with more time for wildlife, plants, river breaks, and a second camp when the route allows.",
-          "Day 3 is normally shorter and often ends with a return toward Bukit Lawang by tube rafting if the river is safe and the package includes it."
+          "The classic and private formats both include two jungle nights. The main difference is pace and planning support: the classic trek follows the established route format, while the private package gives your group more flexibility.",
+          "Send your dates and group size first. The team confirms availability, current route conditions, and any transport or accommodation help before you pay the 30% deposit."
         ]
       },
       {
@@ -314,6 +351,11 @@ function LandingPageView({
       }
     ]
   };
+  const comparisonOptions = page.comparison.options.map((option) => ({
+    ...option,
+    trek: trekById[option.id],
+    content: siteText.en.treks[option.id]
+  }));
 
   return (
     <main className="resource-main">
@@ -372,6 +414,58 @@ function LandingPageView({
           heading="Recent Google reviews from travelers"
           source={`${page.slug}_reviews`}
         />
+
+        <section className="landing-route-board" aria-labelledby={`${page.slug}-comparison-heading`}>
+          <div className="landing-route-board-heading">
+            <h2 id={`${page.slug}-comparison-heading`}>{page.comparison.title}</h2>
+            <p>{page.comparison.description}</p>
+          </div>
+          <ol className="landing-route-list">
+            {comparisonOptions.map((option, index) => (
+              <li className="landing-route-row" key={option.id}>
+                <span className="landing-route-marker" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="landing-route-copy">
+                  <h3>{option.content.title}</h3>
+                  <p>{option.bestFor}</p>
+                </div>
+                <dl className="landing-route-facts">
+                  <div>
+                    <dt>Duration</dt>
+                    <dd>{option.trek.duration}</dd>
+                  </div>
+                  <div>
+                    <dt>Effort</dt>
+                    <dd>{option.trek.intensity}</dd>
+                  </div>
+                  <div>
+                    <dt>Price</dt>
+                    <dd>{option.trek.price}</dd>
+                  </div>
+                </dl>
+                <div className="landing-route-actions">
+                  <Link className="landing-route-detail" href={trekDetailHref(option.id)}>
+                    View trek details
+                    <ArrowRight size={16} />
+                  </Link>
+                  <TrackedLink
+                    className="primary-button"
+                    href={trekBookingHref(option.id)}
+                    eventName="booking_cta_click"
+                    eventParams={{
+                      landing_page: page.slug,
+                      package_id: option.id,
+                      source: "landing_comparison"
+                    }}
+                  >
+                    Check dates
+                  </TrackedLink>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
 
         <div className="resource-grid landing-resource-grid">
           {page.sections.map((section) => (

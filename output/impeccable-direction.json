@@ -1,0 +1,34 @@
+{
+  "title": "Choose the new Orangutan Adventure Sumatra world",
+  "question": "I recommend a field-expedition system that turns trek comparison into a clear route through forest, camp, and river. Keep it, choose an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Forest Transect",
+      "kicker": "RECOMMENDED",
+      "lineage": "rainforest survey plots, trail tags, waterproof route charts",
+      "body": "Deep canopy photography leads. Numbered field markers, contour lines, safety-tape colors, and a continuous trek route organize packages, ethics, guides, camp, and river return. The first viewport feels like arriving at the trailhead with Syaipul, not browsing a tour catalog. Risk: field notation must stay human and never become technical clutter."
+    },
+    {
+      "id": "challenger-transit",
+      "label": "River Line",
+      "kicker": "ALTERNATE",
+      "lineage": "midnight enamel transit diagram fused with jungle routes",
+      "body": "Every trek becomes a colored line with stations for habitat, camp nights, and river return. Exceptionally clear for comparison and trip planning, but its urban transport grammar is less rooted in Bukit Lawang.",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-midnight-transit-diagram.webp"
+    },
+    {
+      "id": "challenger-glass",
+      "label": "Canopy Glass",
+      "kicker": "ALTERNATE",
+      "lineage": "hand-rolled glass partition fused with a documentary photo wall",
+      "body": "A black glazing grid frames real people, wildlife, and trip proof in clear, seeded, amber, and cobalt panes. It is visually distinctive and image-led, but carries less of the route-planning mechanism.",
+      "hero": "https://impeccable.style/worlds/cards/craft-making-glazier-colorfield-partition-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/craft-making-glazier-colorfield-partition.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "steer": true
+}

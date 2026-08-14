@@ -195,19 +195,27 @@ export function BlogPostView({ post }: { post: BlogPost }) {
   const modifiedDate = getPostModifiedDate(post);
   const sectionFaq = post.sections.flatMap((section) => section.faq ?? []);
   const path = blogPostPath(post);
+  const isEnglish = locale === "en";
   const localizedHome = locale === "en" ? "/" : `/${locale}`;
   const primaryCtaHref = post.primaryCtaHref ?? "/booking";
   const primaryCtaLabel = post.primaryCtaLabel ?? copy.defaultPrimary;
-  const secondaryCta =
-    primaryCtaHref === "/sumatra-orangutan-tour"
+  const secondaryCta = isEnglish
+    ? primaryCtaHref === "/sumatra-orangutan-tour"
       ? { href: "/booking", label: copy.booking }
-      : { href: "/sumatra-orangutan-tour", label: copy.sumatraTour };
-  const planningLinks = [
-    { href: localizedHome, label: copy.bukitLawang },
-    { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },
-    { href: "/3-day-bukit-lawang-orangutan-trek", label: copy.threeDay },
-    { href: "/booking", label: copy.booking }
-  ];
+      : { href: "/sumatra-orangutan-tour", label: copy.sumatraTour }
+    : { href: localizedHome, label: copy.bukitLawang };
+  const planningLinks = isEnglish
+    ? [
+        { href: localizedHome, label: copy.bukitLawang },
+        { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },
+        { href: "/3-day-bukit-lawang-orangutan-trek", label: copy.threeDay },
+        { href: "/booking", label: copy.booking }
+      ]
+    : [
+        { href: localizedHome, label: copy.bukitLawang },
+        { href: blogIndexPath(locale), label: copy.blog },
+        { href: "/booking", label: copy.booking }
+      ];
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -429,14 +437,20 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                   {primaryCtaLabel}
                   <ArrowRight size={18} />
                 </TrackedLink>
-                <TrackedLink
-                  className="secondary-button dark"
-                  href={secondaryCta.href}
-                  eventName="booking_cta_click"
-                  eventParams={{ blog_post: post.slug, locale, source: "blog_cta_secondary" }}
-                >
-                  {secondaryCta.label}
-                </TrackedLink>
+                {isEnglish ? (
+                  <TrackedLink
+                    className="secondary-button dark"
+                    href={secondaryCta.href}
+                    eventName="booking_cta_click"
+                    eventParams={{ blog_post: post.slug, locale, source: "blog_cta_secondary" }}
+                  >
+                    {secondaryCta.label}
+                  </TrackedLink>
+                ) : (
+                  <Link className="secondary-button dark" href={secondaryCta.href}>
+                    {secondaryCta.label}
+                  </Link>
+                )}
               </div>
             </section>
           </div>

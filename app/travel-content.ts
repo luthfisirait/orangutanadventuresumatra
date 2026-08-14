@@ -755,6 +755,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Ein praktischer Vergleich zwischen Sumatra-Trekking in Bukit Lawang und Klotok-Bootstouren in Tanjung Puting.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 Min. Lesezeit",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-Utan im Regenwald",
@@ -764,27 +765,27 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Kurzantwort",
         paragraphs: [
-          "Bukit Lawang passt besser, wenn du aktiv wandern, in Nord-Sumatra bleiben und Medan, Berastagi oder Lake Toba kombinieren moechtest.",
+          "Bukit Lawang passt besser, wenn du aktiv wandern, in Nord-Sumatra bleiben und Medan, Berastagi oder Lake Toba kombinieren möchtest.",
           "Tanjung Puting passt besser, wenn du eine Flussreise in Borneo suchst, viel Zeit auf einem Klotok-Boot verbringst und die Orang-Utan-Stationen per Boot erreichst."
         ],
         bullets: [
           "Mehr Trekking: Bukit Lawang.",
           "Mehr Boot und Fluss: Tanjung Puting.",
           "Einfacher ab Medan: Bukit Lawang.",
-          "Besser fuer eine Borneo-Route: Tanjung Puting."
+          "Besser für eine Borneo-Route: Tanjung Puting."
         ]
       },
       {
-        title: "Reisegefuehl",
+        title: "Reisegefühl",
         paragraphs: [
-          "Bukit Lawang ist koerperlicher: feuchte Pfade, Anstiege, Pausen im Wald und bei laengeren Touren einfache Camps am Fluss.",
-          "Tanjung Puting ist ruhiger und staerker vom Fluss gepraegt. Die Unterkunft und Fortbewegung sind oft Teil der Bootserfahrung."
+          "Bukit Lawang ist körperlicher: feuchte Pfade, Anstiege, Pausen im Wald und bei längeren Touren einfache Camps am Fluss.",
+          "Tanjung Puting ist ruhiger und stärker vom Fluss geprägt. Die Unterkunft und Fortbewegung sind oft Teil der Bootserfahrung."
         ]
       },
       {
         title: "Ethische Erwartungen",
         paragraphs: [
-          "In beiden Gebieten gilt: Orang-Utans nicht fuettern, nicht beruehren und Abstand halten. Ein guter Guide verspricht keine erzwungene Begegnung, sondern erklaert die Regeln vor dem Start."
+          "In beiden Gebieten gilt: Orang-Utans nicht füttern, nicht berühren und Abstand halten. Ein guter Guide verspricht keine erzwungene Begegnung, sondern erklärt die Regeln vor dem Start."
         ]
       }
     ]
@@ -792,10 +793,11 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "de-sumatra-orang-utan-trekking-kosten-2026",
     locale: "de",
-    title: "Sumatra Orang-Utan Trekking Kosten 2026: Preisguide fuer Bukit Lawang",
+    title: "Sumatra Orang-Utan Trekking Kosten 2026: Preisguide für Bukit Lawang",
     description:
-      "Aktuelle Orientierung zu Preisen, Inklusivleistungen und Zusatzkosten fuer Orang-Utan-Trekking in Bukit Lawang.",
+      "Aktuelle Orientierung zu Preisen, Inklusivleistungen und Zusatzkosten für Orang-Utan-Trekking in Bukit Lawang.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 Min. Lesezeit",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggruppe im Regenwald von Bukit Lawang",
@@ -803,28 +805,28 @@ const translatedInformationBlogPosts: BlogPost[] = [
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
-        title: "Preisueberblick 2026",
+        title: "Preisüberblick 2026",
         paragraphs: [
-          "Die aktuellen Paketpreise auf dieser Website reichen von 55 EUR pro Person fuer einen 4-Stunden-Trek bis 320 EUR pro Person fuer einen 5-Tage-Trek. Private Eco-Jungle-Pakete starten bei 280 EUR pro Person."
+          "Die aktuellen Paketpreise auf dieser Website reichen von 55 EUR pro Person für einen 4-Stunden-Trek bis 320 EUR pro Person für einen 5-Tage-Trek. Private Eco-Jungle-Pakete starten bei 280 EUR pro Person."
         ],
         bullets: [
           "4 Stunden: 55 EUR pro Person.",
           "1 Tag: 70 EUR pro Person.",
           "2 Tage / 1 Nacht: 120 EUR pro Person.",
-          "3 Tage / 2 Naechte: 170 EUR pro Person.",
+          "3 Tage / 2 Nächte: 170 EUR pro Person.",
           "Private Pakete: 280 bis 385 EUR pro Person."
         ]
       },
       {
         title: "Was oft enthalten ist",
         paragraphs: [
-          "Bei Mehrtagestouren sind normalerweise Guide, einfache Dschungelmahlzeiten, Camp-Setup und Permit-Organisation Teil des Pakets. Transport, Unterkunft vor und nach dem Trek, Trinkgeld und persoenliche Versicherung solltest du separat einplanen."
+          "Bei Mehrtagestouren sind normalerweise Guide, einfache Dschungelmahlzeiten, Camp-Setup und Permit-Organisation Teil des Pakets. Transport, Unterkunft vor und nach dem Trek, Trinkgeld und persönliche Versicherung solltest du separat einplanen."
         ]
       },
       {
         title: "Buchung und Anzahlung",
         paragraphs: [
-          "Nach Verfuegbarkeitspruefung wird eine Anzahlung von 30% per E-Mail bestaetigt. Vergleiche nicht nur den billigsten Preis, sondern frage nach Guide, Gruppengroesse, Camp, Wetterplan und Wildtierregeln."
+          "Nach Verfügbarkeitsprüfung wird eine Anzahlung von 30% per E-Mail bestätigt. Vergleiche nicht nur den billigsten Preis, sondern frage nach Guide, Gruppengröße, Camp, Wetterplan und Wildtierregeln."
         ]
       }
     ]
@@ -832,36 +834,37 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "de-ist-bukit-lawang-sicher-solo-frauenreisende",
     locale: "de",
-    title: "Ist Bukit Lawang sicher? Ehrlicher Guide fuer Solo- und Frauenreisende",
+    title: "Ist Bukit Lawang sicher? Ehrlicher Guide für Solo- und Frauenreisende",
     description:
-      "Sicherheitsnotizen fuer Bukit Lawang: Guides, Transport, Dschungelpfade, Fluss, Unterkunft und Solo-Reisen.",
+      "Sicherheitsnotizen für Bukit Lawang: Guides, Transport, Dschungelpfade, Fluss, Unterkunft und Solo-Reisen.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 Min. Lesezeit",
     image: "/images/stock/activity-05.webp",
-    imageAlt: "Reisende auf einem gruenen Weg in Bukit Lawang",
+    imageAlt: "Reisende auf einem grünen Weg in Bukit Lawang",
     tags: ["Bukit Lawang Sicherheit", "Solo Travel", "Frauenreise Sumatra"],
     translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
-        title: "Ehrliche Einschaetzung",
+        title: "Ehrliche Einschätzung",
         paragraphs: [
-          "Bukit Lawang ist ein etablierter Reiseort, aber kein risikofreier Ferienpark. Wege koennen dunkel, rutschig und uneben sein, der Fluss kann nach Regen staerker werden, und Transportstandards schwanken.",
-          "Sicherheit beginnt vor der Tour: waehle einen klar erreichbaren Guide, komme moeglichst bei Tageslicht an und teile deine Plaene mit einer vertrauten Person."
+          "Bukit Lawang ist ein etablierter Reiseort, aber kein risikofreier Ferienpark. Wege können dunkel, rutschig und uneben sein, der Fluss kann nach Regen stärker werden, und Transportstandards schwanken.",
+          "Sicherheit beginnt vor der Tour: Wähle einen klar erreichbaren Guide, komme möglichst bei Tageslicht an und teile deine Pläne mit einer vertrauten Person."
         ]
       },
       {
-        title: "Fuer Solo- und Frauenreisende",
+        title: "Für Solo- und Frauenreisende",
         bullets: [
-          "Frage vorab, wer dich fuehrt und wie gross die Gruppe ist.",
-          "Klaere Schlaf- und Camp-Setup bei Mehrtagestouren.",
-          "Buche privat, wenn du mehr Kontrolle ueber Tempo und Komfort willst.",
+          "Frage vorab, wer dich führt und wie groß die Gruppe ist.",
+          "Kläre Schlaf- und Camp-Setup bei Mehrtagestouren.",
+          "Buche privat, wenn du mehr Kontrolle über Tempo und Komfort willst.",
           "Lass dich nicht von unbekannten Anbietern unter Druck setzen."
         ]
       },
       {
         title: "Dschungel und Fluss",
         paragraphs: [
-          "Die realen Risiken sind oft praktisch: Hitze, Dehydrierung, Insekten, muede Beine, rutschige Abstiege und Flussbedingungen. Gute Schuhe, Wasser und ehrliche Angaben zur Fitness sind wichtiger als Mut."
+          "Die realen Risiken sind oft praktisch: Hitze, Dehydrierung, Insekten, müde Beine, rutschige Abstiege und Flussbedingungen. Gute Schuhe, Wasser und ehrliche Angaben zur Fitness sind wichtiger als Mut."
         ]
       }
     ]
@@ -871,8 +874,9 @@ const translatedInformationBlogPosts: BlogPost[] = [
     locale: "de",
     title: "Vom Flughafen Medan nach Bukit Lawang: Alle Transportoptionen",
     description:
-      "Private Transfers, geteilte Fahrten und oeffentliche Verkehrsmittel von Kualanamu oder Medan nach Bukit Lawang.",
+      "Private Transfers, geteilte Fahrten und öffentliche Verkehrsmittel von Kualanamu oder Medan nach Bukit Lawang.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "4 Min. Lesezeit",
     image: "/images/blog-transport.webp",
     imageAlt: "Flussblick in Bukit Lawang",
@@ -882,23 +886,23 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Schnelle Empfehlung",
         paragraphs: [
-          "Nach einem langen Flug ist ein vorab organisierter privater Transfer die einfachste Option. Er ist direkter, komfortabler und vermeidet Umstiege mit Gepaeck.",
-          "Oeffentliche Verkehrsmittel sind moeglich, brauchen aber mehr Zeit, Geduld und flexible Ankunftsplaene."
+          "Nach einem langen Flug ist ein vorab organisierter privater Transfer die einfachste Option. Er ist direkter, komfortabler und vermeidet Umstiege mit Gepäck.",
+          "Öffentliche Verkehrsmittel sind möglich, brauchen aber mehr Zeit, Geduld und flexible Ankunftspläne."
         ]
       },
       {
         title: "Optionen",
         bullets: [
           "Privatwagen vom Flughafen oder Hotel: am bequemsten.",
-          "Geteilter Transfer: guenstiger, aber abhaengig von Zeitplan und anderen Gaesten.",
-          "Public Transport: billig, aber mit Umstiegen ueber Medan oder Binjai.",
-          "Bei spaeter Ankunft: privat fahren oder eine Nacht in Medan einplanen."
+          "Geteilter Transfer: günstiger, aber abhängig von Zeitplan und anderen Gästen.",
+          "Public Transport: billig, aber mit Umstiegen über Medan oder Binjai.",
+          "Bei später Ankunft: privat fahren oder eine Nacht in Medan einplanen."
         ]
       },
       {
         title: "Vor dem Trek",
         paragraphs: [
-          "Starte keinen Mehrtagestrek direkt nach einem internationalen Flug. Plane eine Nacht in Bukit Lawang, pruefe dein Gepaeck, hebe Bargeld ab und bestaetige Treffpunkt und Startzeit mit deinem Guide."
+          "Starte keinen Mehrtagestrek direkt nach einem internationalen Flug. Plane eine Nacht in Bukit Lawang, prüfe dein Gepäck, hebe Bargeld ab und bestätige Treffpunkt und Startzeit mit deinem Guide."
         ]
       }
     ]
@@ -906,38 +910,39 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "fr-bukit-lawang-ou-tanjung-puting-orangs-outans",
     locale: "fr",
-    title: "Bukit Lawang ou Tanjung Puting : ou voir des orangs-outans ?",
+    title: "Bukit Lawang ou Tanjung Puting : où voir des orangs-outans ?",
     description:
-      "Comparaison simple entre trek a Sumatra et voyage en bateau klotok a Tanjung Puting pour voir des orangs-outans.",
+      "Comparaison simple entre trek à Sumatra et voyage en bateau klotok à Tanjung Puting pour voir des orangs-outans.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min de lecture",
     image: "/images/stock/wildlife-13.webp",
-    imageAlt: "Orang-outan dans la canopee",
-    tags: ["Bukit Lawang", "Tanjung Puting", "orang-outan Indonesie"],
+    imageAlt: "Orang-outan dans la canopée",
+    tags: ["Bukit Lawang", "Tanjung Puting", "orang-outan Indonésie"],
     translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
-        title: "Reponse courte",
+        title: "Réponse courte",
         paragraphs: [
-          "Choisis Bukit Lawang si tu veux marcher dans la foret tropicale, rester sur un itineraire de Sumatra du Nord et combiner Medan, Berastagi ou le lac Toba.",
-          "Choisis Tanjung Puting si tu veux une experience fluviale a Borneo, avec de longues heures sur un bateau klotok et des visites autour de stations de conservation."
+          "Choisis Bukit Lawang si tu veux marcher dans la forêt tropicale, rester sur un itinéraire de Sumatra du Nord et combiner Medan, Berastagi ou le lac Toba.",
+          "Choisis Tanjung Puting si tu veux une expérience fluviale à Bornéo, avec de longues heures sur un bateau klotok et des visites autour de stations de conservation."
         ],
         bullets: [
           "Plus de marche: Bukit Lawang.",
           "Plus de bateau: Tanjung Puting.",
           "Plus simple depuis Medan: Bukit Lawang.",
-          "Plus logique pour un voyage a Borneo: Tanjung Puting."
+          "Plus logique pour un voyage à Bornéo: Tanjung Puting."
         ]
       },
       {
         title: "Style de voyage",
         paragraphs: [
-          "Bukit Lawang est plus physique: sentiers humides, montees, pauses dans la jungle et camps simples pres de la riviere pendant les treks de plusieurs jours.",
-          "Tanjung Puting est plus lent et plus fluvial. Le bateau fait partie de l'experience autant que l'observation de la faune."
+          "Bukit Lawang est plus physique: sentiers humides, montées, pauses dans la jungle et camps simples près de la rivière pendant les treks de plusieurs jours.",
+          "Tanjung Puting est plus lent et plus fluvial. Le bateau fait partie de l'expérience autant que l'observation de la faune."
         ]
       },
       {
-        title: "Ethique",
+        title: "Éthique",
         paragraphs: [
           "Dans les deux destinations, il faut garder ses distances, ne pas nourrir les animaux et ne jamais toucher les orangs-outans. Un bon guide ne force pas une rencontre."
         ]
@@ -947,39 +952,40 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "fr-prix-trek-orang-outan-sumatra-2026",
     locale: "fr",
-    title: "Prix du trek orang-outan a Sumatra en 2026 : guide des couts",
+    title: "Prix du trek orang-outan à Sumatra en 2026 : guide des coûts",
     description:
-      "Guide 2026 des prix de trek a Bukit Lawang, inclusions habituelles, frais extras et acompte.",
+      "Guide 2026 des prix de trek à Bukit Lawang, inclusions habituelles, frais extras et acompte.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min de lecture",
     image: "/images/stock/activity-11.webp",
-    imageAlt: "Groupe de trek dans la foret de Sumatra",
+    imageAlt: "Groupe de trek dans la forêt de Sumatra",
     tags: ["prix trek orang-outan", "Bukit Lawang prix", "Sumatra 2026"],
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Prix 2026",
         paragraphs: [
-          "Les prix actuels affiches sur ce site vont de 55 EUR par personne pour un trek de 4 heures a 320 EUR par personne pour un trek de 5 jours. Les forfaits prives commencent a 280 EUR par personne."
+          "Les prix actuels affichés sur ce site vont de 55 EUR par personne pour un trek de 4 heures à 320 EUR par personne pour un trek de 5 jours. Les forfaits privés commencent à 280 EUR par personne."
         ],
         bullets: [
           "4 heures: 55 EUR par personne.",
           "1 jour: 70 EUR par personne.",
           "2 jours / 1 nuit: 120 EUR par personne.",
           "3 jours / 2 nuits: 170 EUR par personne.",
-          "Forfaits prives: 280 a 385 EUR par personne."
+          "Forfaits privés: 280 à 385 EUR par personne."
         ]
       },
       {
         title: "Ce qui est souvent inclus",
         paragraphs: [
-          "Les treks avec nuit incluent generalement le guide, les repas simples dans la jungle, le camp et l'organisation des permis. Prevois a part le transport, l'hebergement avant ou apres, les pourboires et l'assurance personnelle."
+          "Les treks avec nuit incluent généralement le guide, les repas simples dans la jungle, le camp et l'organisation des permis. Prévois à part le transport, l'hébergement avant ou après, les pourboires et l'assurance personnelle."
         ]
       },
       {
         title: "Acompte",
         paragraphs: [
-          "Apres verification des dates et disponibilites, un acompte de 30% est demande avec instructions confirmees par e-mail. Demande toujours ce qui est inclus avant de comparer les prix."
+          "Après vérification des dates et disponibilités, un acompte de 30% est demandé avec des instructions confirmées par e-mail. Demande toujours ce qui est inclus avant de comparer les prix."
         ]
       }
     ]
@@ -987,21 +993,22 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "fr-bukit-lawang-est-il-sur-voyage-solo-femmes",
     locale: "fr",
-    title: "Bukit Lawang est-il sur ? Guide honnete pour voyageurs solo et femmes",
+    title: "Bukit Lawang est-il sûr ? Guide honnête pour voyageurs solo et femmes",
     description:
-      "Conseils de securite pour Bukit Lawang: guides, transport, trek jungle, riviere et voyage solo.",
+      "Conseils de sécurité pour Bukit Lawang: guides, transport, trek jungle, rivière et voyage solo.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min de lecture",
     image: "/images/stock/activity-05.webp",
-    imageAlt: "Voyageuse sur un chemin vert a Bukit Lawang",
-    tags: ["securite Bukit Lawang", "voyage solo", "femmes Sumatra"],
+    imageAlt: "Voyageuse sur un chemin vert à Bukit Lawang",
+    tags: ["sécurité Bukit Lawang", "voyage solo", "femmes Sumatra"],
     translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
-        title: "Reponse honnete",
+        title: "Réponse honnête",
         paragraphs: [
-          "Bukit Lawang est un village touristique connu, mais il ne faut pas oublier les risques pratiques: chemins glissants, humidite, riviere, zones peu eclairees et standards de transport variables.",
-          "Les meilleurs choix sont simples: reserver un guide fiable, arriver de jour si possible, garder de l'argent liquide et partager ton plan avec quelqu'un."
+          "Bukit Lawang est un village touristique connu, mais il ne faut pas oublier les risques pratiques: chemins glissants, humidité, rivière, zones peu éclairées et standards de transport variables.",
+          "Les meilleurs choix sont simples: réserver un guide fiable, arriver de jour si possible, garder de l'argent liquide et partager ton plan avec quelqu'un."
         ]
       },
       {
@@ -1009,14 +1016,14 @@ const translatedInformationBlogPosts: BlogPost[] = [
         bullets: [
           "Demande qui sera ton guide et combien de personnes seront dans le groupe.",
           "Clarifie l'organisation du camp pour les treks avec nuit.",
-          "Choisis un trek prive si tu veux plus de controle.",
-          "Evite les vendeurs inconnus qui mettent la pression."
+          "Choisis un trek privé si tu veux plus de contrôle.",
+          "Évite les vendeurs inconnus qui mettent la pression."
         ]
       },
       {
-        title: "Jungle et riviere",
+        title: "Jungle et rivière",
         paragraphs: [
-          "Les risques les plus courants sont la chaleur, la fatigue, les insectes, les descentes glissantes et les conditions de riviere. De bonnes chaussures et une communication honnete avec le guide comptent beaucoup."
+          "Les risques les plus courants sont la chaleur, la fatigue, les insectes, les descentes glissantes et les conditions de rivière. De bonnes chaussures et une communication honnête avec le guide comptent beaucoup."
         ]
       }
     ]
@@ -1024,36 +1031,37 @@ const translatedInformationBlogPosts: BlogPost[] = [
   {
     slug: "fr-aeroport-medan-bukit-lawang-transport",
     locale: "fr",
-    title: "Aeroport de Medan a Bukit Lawang : toutes les options de transport",
+    title: "Aéroport de Medan à Bukit Lawang : toutes les options de transport",
     description:
-      "Options de transport depuis Kualanamu ou Medan vers Bukit Lawang: voiture privee, transport partage, bus et connexions.",
+      "Options de transport depuis Kualanamu ou Medan vers Bukit Lawang: voiture privée, transport partagé, bus et connexions.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "4 min de lecture",
     image: "/images/blog-transport.webp",
-    imageAlt: "Vue de riviere a Bukit Lawang",
+    imageAlt: "Vue de rivière à Bukit Lawang",
     tags: ["Medan Bukit Lawang", "transport Kualanamu", "transfert Sumatra"],
     translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
         title: "Le plus simple",
         paragraphs: [
-          "Une voiture privee reservee a l'avance est l'option la plus simple apres un vol. Elle evite les changements avec les bagages et te depose directement pres de ton hebergement.",
-          "Le transport public est moins cher, mais il demande plus de temps, d'attente et de flexibilite."
+          "Une voiture privée réservée à l'avance est l'option la plus simple après un vol. Elle évite les changements avec les bagages et te dépose directement près de ton hébergement.",
+          "Le transport public est moins cher, mais il demande plus de temps, d'attente et de flexibilité."
         ]
       },
       {
         title: "Options",
         bullets: [
-          "Voiture privee: meilleure option pour arrivee tardive ou bagages.",
-          "Transport partage: possible si tes horaires sont flexibles.",
-          "Bus public: economique, mais avec changements via Medan ou Binjai.",
-          "Arrivee tardive: dormir a Medan ou reserver un transfert direct."
+          "Voiture privée: meilleure option pour arrivée tardive ou bagages.",
+          "Transport partagé: possible si tes horaires sont flexibles.",
+          "Bus public: économique, mais avec changements via Medan ou Binjai.",
+          "Arrivée tardive: dormir à Medan ou réserver un transfert direct."
         ]
       },
       {
         title: "Avant le trek",
         paragraphs: [
-          "Evite de commencer un trek jungle le jour meme d'un vol international. Une nuit a Bukit Lawang rend le depart plus calme et plus sur."
+          "Évite de commencer un trek jungle le jour même d'un vol international. Une nuit à Bukit Lawang rend le départ plus calme et plus sûr."
         ]
       }
     ]
@@ -1065,10 +1073,11 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Een praktische vergelijking tussen jungletrekking in Sumatra en een klotok-bootreis in Tanjung Puting.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min leestijd",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-oetan in het regenwoud",
-    tags: ["Bukit Lawang", "Tanjung Puting", "orang-oetan Indonesie"],
+    tags: ["Bukit Lawang", "Tanjung Puting", "orang-oetan Indonesië"],
     translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
@@ -1106,6 +1115,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Overzicht van Bukit Lawang trekprijzen, inbegrepen onderdelen, extra kosten en aanbetaling in 2026.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min leestijd",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggroep in het regenwoud van Sumatra",
@@ -1115,14 +1125,14 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Prijsindicatie 2026",
         paragraphs: [
-          "De actuele pakketprijzen op deze site lopen van 55 EUR per persoon voor een trek van 4 uur tot 320 EUR per persoon voor een trek van 5 dagen. Privepakketten starten bij 280 EUR per persoon."
+          "De actuele pakketprijzen op deze site lopen van 55 EUR per persoon voor een trek van 4 uur tot 320 EUR per persoon voor een trek van 5 dagen. Privépakketten starten bij 280 EUR per persoon."
         ],
         bullets: [
           "4 uur: 55 EUR per persoon.",
           "1 dag: 70 EUR per persoon.",
           "2 dagen / 1 nacht: 120 EUR per persoon.",
           "3 dagen / 2 nachten: 170 EUR per persoon.",
-          "Privepakketten: 280 tot 385 EUR per persoon."
+          "Privépakketten: 280 tot 385 EUR per persoon."
         ]
       },
       {
@@ -1146,6 +1156,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Veiligheidsadvies voor Bukit Lawang: gidsen, transport, jungle, rivier, accommodatie en solo reizen.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "5 min leestijd",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Reiziger op een groen pad in Bukit Lawang",
@@ -1164,7 +1175,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
         bullets: [
           "Vraag vooraf wie je gids is en hoe groot de groep wordt.",
           "Bespreek de slaapopstelling bij meerdaagse treks.",
-          "Kies prive als je meer controle over tempo en comfort wilt.",
+          "Kies privé als je meer controle over tempo en comfort wilt.",
           "Laat je niet onder druk zetten door onbekende aanbieders."
         ]
       },
@@ -1181,8 +1192,9 @@ const translatedInformationBlogPosts: BlogPost[] = [
     locale: "nl",
     title: "Van Medan Airport naar Bukit Lawang: alle vervoersopties",
     description:
-      "Praktische opties van Kualanamu of Medan naar Bukit Lawang: priveauto, gedeeld vervoer, bus en overstappen.",
+      "Praktische opties van Kualanamu of Medan naar Bukit Lawang: privéauto, gedeeld vervoer, bus en overstappen.",
     date: "2026-06-09",
+    dateModified: "2026-08-14",
     readingTime: "4 min leestijd",
     image: "/images/blog-transport.webp",
     imageAlt: "Rivierzicht in Bukit Lawang",
@@ -1192,14 +1204,14 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Makkelijkste optie",
         paragraphs: [
-          "Een vooraf geregelde priveauto is meestal het makkelijkst na een vlucht. Je hoeft niet over te stappen met bagage en rijdt direct richting je accommodatie.",
+          "Een vooraf geregelde privéauto is meestal het makkelijkst na een vlucht. Je hoeft niet over te stappen met bagage en rijdt direct richting je accommodatie.",
           "Openbaar vervoer is goedkoper, maar vraagt meer tijd, wachten en flexibiliteit."
         ]
       },
       {
         title: "Opties",
         bullets: [
-          "Priveauto: beste keuze bij late aankomst of veel bagage.",
+          "Privéauto: beste keuze bij late aankomst of veel bagage.",
           "Gedeeld vervoer: mogelijk als je flexibel bent.",
           "Openbaar vervoer: goedkoop, maar met overstappen via Medan of Binjai.",
           "Late aankomst: slaap in Medan of boek direct transport."

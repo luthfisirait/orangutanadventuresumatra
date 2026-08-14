@@ -30,6 +30,7 @@ function blogLastModified(post: (typeof blogPosts)[number]) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPageLastModified = asLastModified("2026-06-09");
   const seoReleaseLastModified = asLastModified("2026-07-21");
+  const landingPageLastModified = asLastModified("2026-08-14");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );
@@ -64,13 +65,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     {
       url: `${siteUrl}/${landingPages.sumatraOrangutanTour.slug}`,
-      lastModified: seoReleaseLastModified,
+      lastModified: landingPageLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.86
     },
     {
       url: `${siteUrl}/${landingPages.threeDayTrek.slug}`,
-      lastModified: seoReleaseLastModified,
+      lastModified: landingPageLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.88
     },

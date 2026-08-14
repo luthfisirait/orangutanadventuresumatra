@@ -1,0 +1,111 @@
+
+> orangutan-adventure-sumatra@0.1.0 dev
+> node ./node_modules/next/dist/bin/next dev --hostname 127.0.0.1
+
+   ▲ Next.js 15.5.18
+   - Local:        http://127.0.0.1:3001
+   - Network:      http://127.0.0.1:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 7.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 950ms (725 modules)
+ GET / 200 in 1338ms
+ GET / 200 in 764ms
+ ✓ Compiled /api/reviews in 456ms (745 modules)
+ GET /api/reviews 200 in 628ms
+ GET / 200 in 437ms
+ GET /api/reviews 200 in 31ms
+ GET / 200 in 228ms
+ GET /api/reviews 200 in 25ms
+ ✓ Compiled in 1088ms (740 modules)
+ GET / 200 in 218ms
+ GET / 200 in 222ms
+ GET / 200 in 222ms
+ GET / 200 in 490ms
+ ✓ Compiled /api/reviews in 290ms (459 modules)
+ GET /api/reviews 200 in 686ms
+ GET / 200 in 401ms
+ GET /api/reviews 200 in 35ms
+ GET / 200 in 222ms
+ GET /api/reviews 200 in 27ms
+ GET / 200 in 305ms
+ GET /api/reviews 200 in 35ms
+ ○ Compiling /booking ...
+ ✓ Compiled /booking in 1075ms (775 modules)
+ GET /booking 200 in 1634ms
+ GET /booking 200 in 193ms
+ GET / 200 in 259ms
+ ✓ Compiled /api/reviews in 234ms (501 modules)
+ GET /api/reviews 200 in 361ms
+ GET / 200 in 428ms
+ GET /api/reviews 200 in 33ms
+ ✓ Compiled in 874ms (789 modules)
+ GET / 200 in 796ms
+ GET / 200 in 820ms
+ GET / 200 in 824ms
+ GET / 200 in 826ms
+ GET / 200 in 829ms
+ GET / 200 in 831ms
+ GET / 200 in 834ms
+ GET / 200 in 839ms
+ GET / 200 in 859ms
+ GET /booking 200 in 1564ms
+ GET / 200 in 354ms
+ ✓ Compiled /api/reviews in 243ms (501 modules)
+ GET /api/reviews 200 in 391ms
+ GET / 200 in 406ms
+ GET /api/reviews 200 in 26ms
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 529ms (115 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 689ms (785 modules)
+ GET /de 200 in 2071ms
+ ✓ Compiled /api/reviews in 154ms (511 modules)
+ GET /api/reviews 200 in 306ms
+ GET /fr 200 in 371ms
+ GET /nl 200 in 274ms
+ ✓ Compiled in 928ms (799 modules)
+ GET / 200 in 1166ms
+ GET / 200 in 1169ms
+ GET / 200 in 1171ms
+ GET / 200 in 1176ms
+ GET / 200 in 1177ms
+ GET / 200 in 1179ms
+ GET / 200 in 1179ms
+ GET / 200 in 1182ms
+ GET / 200 in 1183ms
+ GET / 200 in 1186ms
+ GET / 200 in 1205ms
+ GET /nl 200 in 1198ms
+ GET /booking 200 in 1985ms
+ ✓ Compiled in 195.2s (799 modules)
+ ✓ Compiled in 104.6s (799 modules)
+ GET / 200 in 199543ms
+ GET / 200 in 199810ms
+ GET / 200 in 199877ms
+ GET / 200 in 192991ms
+ GET / 200 in 191621ms
+ GET / 200 in 192997ms
+ GET / 200 in 199894ms
+ GET / 200 in 191631ms
+ GET / 200 in 198932ms
+ GET / 200 in 191765ms
+ GET / 200 in 191781ms
+ GET /nl 200 in 173713ms
+ GET / 200 in 80211ms
+ GET / 200 in 81306ms
+ GET / 200 in 81336ms
+ GET / 200 in 81352ms
+ GET / 200 in 83953ms
+ GET / 200 in 84019ms
+ GET / 200 in 84057ms
+ GET / 200 in 86167ms
+ GET / 200 in 86264ms
+ GET / 200 in 87053ms
+ GET / 200 in 89465ms
+ GET /nl 200 in 131673ms
+ GET /booking 200 in 370109ms
+ GET /booking 200 in 175606ms
+[?25h

@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-31T00:26:36.8204649+07:00",
+  "title": "Design System: Orangutan Adventure Sumatra",
+  "extensions": {
+    "colorMeta": {
+      "canopy-ink": {
+        "role": "primary",
+        "displayName": "Canopy Ink",
+        "canonical": "#071b14",
+        "tonalRamp": ["#03100b", "#071b14", "#12352a", "#285446", "#51766a", "#819b91", "#b4c4bd", "#edf3ef"]
+      },
+      "forest": {
+        "role": "primary",
+        "displayName": "Deep Forest",
+        "canonical": "#0b3524",
+        "tonalRamp": ["#04150e", "#0b3524", "#15553a", "#2a7454", "#529274", "#82b19a", "#b4d0c1", "#e8f1ec"]
+      },
+      "signal": {
+        "role": "secondary",
+        "displayName": "Field Signal",
+        "canonical": "#d8ff3e",
+        "tonalRamp": ["#253000", "#435500", "#657d00", "#8fa900", "#b8d516", "#d8ff3e", "#e8ff88", "#f6ffd1"]
+      },
+      "river-ink": {
+        "role": "secondary",
+        "displayName": "River Ink",
+        "canonical": "#0e6b76",
+        "tonalRamp": ["#042329", "#0a4750", "#0e6b76", "#268c98", "#56aab3", "#87c7cd", "#bce2e5", "#ecf7f8"]
+      },
+      "russet": {
+        "role": "tertiary",
+        "displayName": "Orangutan Russet",
+        "canonical": "#a84322",
+        "tonalRamp": ["#301008", "#5b2010", "#843118", "#a84322", "#c86847", "#df9378", "#efc1af", "#faeee8"]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Forest Mist",
+        "canonical": "#edf1e7",
+        "tonalRamp": ["#1d211a", "#394036", "#596253", "#7d8777", "#a4ada0", "#c8cfc3", "#edf1e7", "#fafbf8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Trailhead Display",
+        "purpose": "Hero offers, section theses, trek names, and guide names."
+      },
+      "body": {
+        "displayName": "International Body",
+        "purpose": "Practical planning copy, form labels, itineraries, and articles."
+      },
+      "label": {
+        "displayName": "Field Label",
+        "purpose": "Route markers, category states, locations, durations, and prices."
+      }
+    },
+    "shadows": [
+      {
+        "name": "mounted-sheet",
+        "value": "9px 9px 0 rgba(7, 27, 20, 0.16)",
+        "purpose": "Framed booking strips and itinerary tools."
+      },
+      {
+        "name": "field-card",
+        "value": "7px 7px 0 rgba(7, 27, 20, 0.13)",
+        "purpose": "Repeated reviews and editorial cards."
+      }
+    ],
+    "motion": [
+      {
+        "name": "expedition-reveal",
+        "value": "1100ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "One first-viewport photographic and copy reveal."
+      },
+      {
+        "name": "state-change",
+        "value": "180ms ease",
+        "purpose": "Color, border, and shadow changes on controls."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "structural",
+        "value": "1060px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main booking or route action.",
+      "html": "<button class=\"ds-button-primary\">Explore treks <span aria-hidden=\"true\">&rarr;</span></button>",
+      "css": ".ds-button-primary { min-height: 48px; padding: 0 22px; border: 0; border-radius: 2px; background: var(--signal, #d8ff3e); color: var(--ink, #071b14); font: 800 1rem/1 var(--font-body, sans-serif); box-shadow: 5px 5px 0 rgba(7,27,20,.36); cursor: pointer; transition: background-color 180ms ease, box-shadow 180ms ease; } .ds-button-primary:hover { background: var(--sun, #ffb51b); box-shadow: 2px 2px 0 rgba(7,27,20,.42); } .ds-button-primary:focus-visible { outline: 3px solid var(--signal, #d8ff3e); outline-offset: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A direct secondary command on dark photography.",
+      "html": "<button class=\"ds-button-secondary\">WhatsApp</button>",
+      "css": ".ds-button-secondary { min-height: 48px; padding: 0 22px; border: 1px solid rgba(248,250,243,.72); border-radius: 2px; background: rgba(7,27,20,.42); color: #fff; font: 800 1rem/1 var(--font-body, sans-serif); cursor: pointer; transition: background-color 180ms ease, border-color 180ms ease; } .ds-button-secondary:hover { border-color: var(--signal, #d8ff3e); background: var(--forest, #0b3524); } .ds-button-secondary:focus-visible { outline: 3px solid var(--signal, #d8ff3e); outline-offset: 4px; }"
+    },
+    {
+      "name": "Field Input",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "The standard booking and contact field.",
+      "html": "<label class=\"ds-field\"><span>Preferred start date</span><input type=\"text\" placeholder=\"mm/dd/yyyy\"></label>",
+      "css": ".ds-field { display: grid; gap: 8px; color: var(--ink, #071b14); font: 800 .9rem/1.3 var(--font-body, sans-serif); } .ds-field input { min-height: 48px; padding: 0 14px; border: 1px solid var(--ink, #071b14); border-radius: 2px; background: #fff; color: var(--ink, #071b14); font: 400 1rem/1.4 var(--font-body, sans-serif); } .ds-field input:focus-visible { outline: 3px solid var(--signal, #d8ff3e); outline-offset: 2px; }"
+    },
+    {
+      "name": "Route Filter",
+      "kind": "chip",
+      "description": "A three-way trek category selector with a single active route.",
+      "html": "<div class=\"ds-route-filter\"><button class=\"is-active\">Classic treks</button><button>Private packages</button><button>Local activities</button></div>",
+      "css": ".ds-route-filter { display: grid; grid-template-columns: repeat(3,1fr); border: 2px solid var(--steel, #b9c3ba); } .ds-route-filter button { min-height: 48px; border: 0; border-right: 1px solid var(--steel, #b9c3ba); border-radius: 0; background: transparent; color: #fff; font: 800 .9rem/1 var(--font-body, sans-serif); } .ds-route-filter button:last-child { border-right: 0; } .ds-route-filter .is-active { background: var(--signal, #d8ff3e); color: var(--ink, #071b14); } .ds-route-filter button:focus-visible { outline: 3px solid var(--signal, #d8ff3e); outline-offset: 3px; }"
+    },
+    {
+      "name": "Route Card",
+      "kind": "card",
+      "refersTo": "route-card",
+      "description": "A factual trek summary connected to the continuous route spine.",
+      "html": "<article class=\"ds-route-card\"><div class=\"ds-route-photo\"></div><div class=\"ds-route-copy\"><span>ROUTE 03</span><h3>2-DAY JUNGLE TREKKING</h3><strong>120 EUR pp</strong><p>Sleep by the river, with guide, meals, tent, and permits included.</p></div></article>",
+      "css": ".ds-route-card { display: grid; grid-template-columns: .8fr 1.2fr; min-height: 260px; border: 2px solid var(--steel, #b9c3ba); background: var(--surface, #f8faf3); color: var(--ink, #071b14); } .ds-route-photo { min-height: 260px; background: var(--forest, #0b3524); } .ds-route-copy { padding: 28px; } .ds-route-copy span { display: inline-block; padding: 5px 8px; background: var(--clay, #a84322); color: #fff; font: 800 .76rem/1 var(--font-body, sans-serif); } .ds-route-copy h3 { margin: 18px 0 10px; font: 700 2.2rem/.98 var(--font-display, sans-serif); } .ds-route-copy strong { color: var(--clay, #a84322); } .ds-route-copy p { max-width: 48ch; line-height: 1.6; }"
+    },
+    {
+      "name": "Field Navigation",
+      "kind": "nav",
+      "description": "The fixed dark route rail with one high-visibility action.",
+      "html": "<nav class=\"ds-nav\"><strong>ORANGUTAN ADVENTURE SUMATRA</strong><a href=\"#\">Treks</a><a href=\"#\">Guide</a><button>WhatsApp</button></nav>",
+      "css": ".ds-nav { display: flex; min-height: 68px; align-items: center; gap: 22px; padding: 0 10px 0 16px; border: 1px solid rgba(216,255,62,.36); background: rgba(7,27,20,.96); color: #fff; box-shadow: 8px 8px 0 rgba(7,27,20,.24); font-family: var(--font-body, sans-serif); } .ds-nav strong { margin-right: auto; color: var(--signal, #d8ff3e); } .ds-nav a { color: rgba(248,250,243,.78); text-decoration: none; font-weight: 800; } .ds-nav a:hover { color: var(--signal, #d8ff3e); } .ds-nav button { min-height: 48px; padding: 0 18px; border: 0; border-radius: 2px; background: var(--signal, #d8ff3e); color: var(--ink, #071b14); font-weight: 800; } .ds-nav :focus-visible { outline: 3px solid var(--signal, #d8ff3e); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Forest Transect",
+    "overview": "The interface borrows its authority from rainforest fieldwork: numbered trail tags, waterproof route charts, measured observation, and equipment made to be read outdoors. Real photography supplies emotion and proof; the system around it supplies orientation. The visual world stays useful across persuasive, booking, and editorial surfaces.",
+    "keyCharacteristics": [
+      "Documentary photography at decisive scale.",
+      "Strong black structural rules and measured grid alignment.",
+      "High-visibility field colors used as functional signals.",
+      "Route lines, trail tags, and coordinates that carry real information.",
+      "Direct, human copy grounded in Bukit Lawang."
+    ],
+    "rules": [
+      {
+        "name": "The Field Signal Rule",
+        "body": "Bright colors mark action, route, or state. They are never scattered as decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Pair Rule",
+        "body": "River Bright always carries Canopy Ink; River Ink is the text-safe blue on light surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Outdoor Read Rule",
+        "body": "Headings stay bold and compact, body copy stays generous, and no text crosses a structural route line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Equipment Rule",
+        "body": "Surfaces feel printed, tagged, clipped, or mounted, not softly floating.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use real forest, wildlife, guide, camp, and river imagery as proof.",
+      "Do connect sections with a meaningful route or field-marker sequence.",
+      "Do make prices, duration, intensity, and booking actions easy to compare.",
+      "Do keep wildlife language ethical and avoid implied guarantees.",
+      "Do preserve 44px minimum targets and visible keyboard focus."
+    ],
+    "donts": [
+      "Don't build pages from repeated generic icon cards.",
+      "Don't use field notation as decorative jargon.",
+      "Don't soften the system into beige eco-luxury styling.",
+      "Don't put cards inside cards; use rules and lists inside framed tools.",
+      "Don't let graphic expression obscure the route to booking or WhatsApp."
+    ]
+  }
+}

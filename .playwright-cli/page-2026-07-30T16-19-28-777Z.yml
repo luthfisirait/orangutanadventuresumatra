@@ -1,0 +1,600 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - link "Orangutan Adventure Sumatra home" [ref=e4] [cursor=pointer]:
+      - /url: "#top"
+      - img "Orangutan Adventure Sumatra" [ref=e5]
+    - navigation "Primary navigation" [ref=e6]:
+      - link "Treks" [ref=e7] [cursor=pointer]:
+        - /url: "#treks"
+      - link "Experience" [ref=e8] [cursor=pointer]:
+        - /url: "#experience"
+      - link "Guide" [ref=e9] [cursor=pointer]:
+        - /url: "#guides"
+      - link "FAQ" [ref=e10] [cursor=pointer]:
+        - /url: "#faq"
+      - link "Contact" [ref=e11] [cursor=pointer]:
+        - /url: "#contact"
+    - generic [ref=e12]:
+      - generic "Language selector" [ref=e13]:
+        - generic [ref=e14]: Language
+        - combobox "Language" [ref=e15]:
+          - option "English" [selected]
+          - option "Deutsch"
+          - option "Français"
+          - option "Nederlands"
+      - link "WhatsApp" [ref=e16] [cursor=pointer]:
+        - /url: https://wa.me/6285362405752?text=Hi%20Orangutan%20Adventure%20Sumatra%2C%20I%20would%20like%20to%20ask%20about%20a%20jungle%20trek.
+        - img [ref=e17]
+        - text: WhatsApp
+  - generic [ref=e19]:
+    - img "Orangutan on a Bukit Lawang rainforest trail" [ref=e20]
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - img [ref=e24]
+        - text: Ethical trekking in Gunung Leuser National Park
+      - heading "Bukit Lawang Orangutan Trekking" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Ethical orangutan trekking from Bukit Lawang with local guides, private Sumatra jungle packages, riverside camps, fresh jungle food, and tube rafting back to the village.
+      - generic [ref=e29]:
+        - link "Explore treks" [ref=e30] [cursor=pointer]:
+          - /url: "#treks"
+          - text: Explore treks
+          - img [ref=e31]
+        - link "WhatsApp" [ref=e33] [cursor=pointer]:
+          - /url: https://wa.me/6285362405752?text=Hi%20Orangutan%20Adventure%20Sumatra%2C%20I%20would%20like%20to%20ask%20about%20a%20jungle%20trek.
+          - img [ref=e34]
+          - text: WhatsApp
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - img [ref=e38]
+        - strong [ref=e40]: Experienced local guide
+        - generic [ref=e41]: Guiding in Bukit Lawang since 2015
+      - generic [ref=e42]:
+        - img [ref=e43]
+        - strong [ref=e46]: 4 hours to 5 days
+        - generic [ref=e47]: Choose a light walk or deep jungle trek
+      - generic [ref=e48]:
+        - img [ref=e49]
+        - strong [ref=e52]: Wildlife-first approach
+        - generic [ref=e53]: No feeding, no touching, no pressure on animals
+  - region "Booking highlights" [ref=e54]:
+    - generic [ref=e55]:
+      - img [ref=e56]
+      - generic [ref=e58]: Daily starts around 8:30
+    - generic [ref=e59]:
+      - img [ref=e60]
+      - generic [ref=e63]: Bukit Lawang, North Sumatra
+    - generic [ref=e64]:
+      - img [ref=e65]
+      - generic [ref=e69]: River camps and rafting options
+    - generic [ref=e70]:
+      - img [ref=e71]
+      - generic [ref=e76]: 30% PayPal deposit
+  - region "Choose the page that matches your Sumatra orangutan trip." [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]: Plan by trip type
+      - heading "Choose the page that matches your Sumatra orangutan trip." [level=2] [ref=e80]
+    - generic [ref=e81]:
+      - link "Sumatra orangutan tours Plan an orangutan trip in Sumatra and compare Bukit Lawang jungle packages." [ref=e82] [cursor=pointer]:
+        - /url: /sumatra-orangutan-tour
+        - generic [ref=e83]: Sumatra orangutan tours
+        - strong [ref=e84]: Plan an orangutan trip in Sumatra and compare Bukit Lawang jungle packages.
+        - img [ref=e85]
+      - link "Compare Bukit Lawang trek packages Review prices, duration, fitness, camp nights, and the best fit for your trip." [ref=e87] [cursor=pointer]:
+        - /url: /treks
+        - generic [ref=e88]: Compare Bukit Lawang trek packages
+        - strong [ref=e89]: Review prices, duration, fitness, camp nights, and the best fit for your trip.
+        - img [ref=e90]
+      - link "3-day Bukit Lawang orangutan trek See the camp flow, river return, and booking notes." [ref=e92] [cursor=pointer]:
+        - /url: /3-day-bukit-lawang-orangutan-trek
+        - generic [ref=e93]: 3-day Bukit Lawang orangutan trek
+        - strong [ref=e94]: See the camp flow, river return, and booking notes.
+        - img [ref=e95]
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - generic [ref=e99]: Why this trek
+      - heading "Modern adventure, local roots, serious respect for the forest." [level=2] [ref=e100]
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - paragraph [ref=e103]: Orangutan Adventure Sumatra runs ethical jungle trekking around Bukit Lawang, a gateway to Gunung Leuser National Park. The experience is built for travelers who want a real rainforest day without turning wildlife into a performance.
+        - paragraph [ref=e104]: Choose from short walks, classic overnight treks, exclusive private packages, Bat Cave visits, and Village Tours. Syaipul handles pacing, route choices, meals, camp setup, and the return by river when included.
+        - paragraph [ref=e105]: Travelers often search for this area as Bukit Lawang or Bukitlawang, and for wildlife trips as orangutan or orang utan trekking. All refer to the same North Sumatra rainforest gateway.
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - img [ref=e108]
+          - text: Local Indonesian guide
+        - generic [ref=e110]:
+          - img [ref=e111]
+          - text: No guaranteed wildlife claims
+        - generic [ref=e113]:
+          - img [ref=e114]
+          - text: Fresh fruit and jungle meals
+        - generic [ref=e116]:
+          - img [ref=e117]
+          - text: Transport and accommodation support
+        - generic [ref=e119]:
+          - img [ref=e120]
+          - text: Email and WhatsApp booking
+  - generic [ref=e122]:
+    - generic [ref=e123]:
+      - generic [ref=e124]: Trekking packages
+      - heading "Pick the route that matches your time, fitness, and appetite for the jungle." [level=2] [ref=e125]
+    - group "Trek categories" [ref=e126]:
+      - button "Classic treks" [pressed] [ref=e127] [cursor=pointer]
+      - button "Private packages" [ref=e128] [cursor=pointer]
+      - button "Local activities" [ref=e129] [cursor=pointer]
+    - generic [ref=e130]:
+      - article [ref=e131]:
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - img [ref=e136]
+              - text: 4 hours
+            - generic [ref=e139]:
+              - img [ref=e140]
+              - text: Low
+          - heading "4-Hour Jungle Trekking" [level=3] [ref=e142]
+          - paragraph [ref=e143]: 55 EUR pp
+          - list [ref=e144]:
+            - listitem [ref=e145]:
+              - img [ref=e146]
+              - text: Short ethical wildlife walk
+            - listitem [ref=e148]:
+              - img [ref=e149]
+              - text: Good chance for orangutans
+            - listitem [ref=e151]:
+              - img [ref=e152]
+              - text: Local guide included
+          - link "View details" [ref=e154] [cursor=pointer]:
+            - /url: /treks/4-hour-jungle-trek
+            - text: View details
+            - img [ref=e155]
+      - article [ref=e157]:
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - img [ref=e162]
+              - text: 7-8 hours
+            - generic [ref=e165]:
+              - img [ref=e166]
+              - text: Medium
+          - heading "1-Day Jungle Trekking" [level=3] [ref=e168]
+          - paragraph [ref=e169]: 70 EUR pp
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - img [ref=e172]
+              - text: Full-day Bukit Lawang trek
+            - listitem [ref=e174]:
+              - img [ref=e175]
+              - text: Lunch in the jungle
+            - listitem [ref=e177]:
+              - img [ref=e178]
+              - text: Return before evening
+          - link "View details" [ref=e180] [cursor=pointer]:
+            - /url: /treks/1-day-jungle-trek
+            - text: View details
+            - img [ref=e181]
+      - article [ref=e183]:
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - img [ref=e188]
+              - text: 2 days / 1 night
+            - generic [ref=e191]:
+              - img [ref=e192]
+              - text: Medium
+          - heading "2-Day Jungle Trekking" [level=3] [ref=e194]
+          - paragraph [ref=e195]: 120 EUR pp
+          - list [ref=e196]:
+            - listitem [ref=e197]:
+              - img [ref=e198]
+              - text: Sleep by the river
+            - listitem [ref=e200]:
+              - img [ref=e201]
+              - text: "Included: Guide, meals, tent, permits"
+            - listitem [ref=e203]:
+              - img [ref=e204]
+              - text: "Excluded: Personal insurance, tips"
+          - link "View details" [ref=e206] [cursor=pointer]:
+            - /url: /treks/2-day-jungle-trek
+            - text: View details
+            - img [ref=e207]
+      - article [ref=e209]:
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - img [ref=e214]
+              - text: 3 days / 2 nights
+            - generic [ref=e217]:
+              - img [ref=e218]
+              - text: Medium / High
+          - heading "3-Day Jungle Trekking" [level=3] [ref=e220]
+          - paragraph [ref=e221]: 170 EUR pp
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - img [ref=e224]
+              - text: Deeper rainforest route
+            - listitem [ref=e226]:
+              - img [ref=e227]
+              - text: "Included: Guide, meals, tent, permits"
+            - listitem [ref=e229]:
+              - img [ref=e230]
+              - text: "Excluded: Personal insurance, tips"
+          - link "View details" [ref=e232] [cursor=pointer]:
+            - /url: /treks/3-day-jungle-trek
+            - text: View details
+            - img [ref=e233]
+      - article [ref=e235]:
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - img [ref=e240]
+              - text: 4 days / 3 nights
+            - generic [ref=e243]:
+              - img [ref=e244]
+              - text: High
+          - heading "4-Day Jungle Trekking" [level=3] [ref=e246]
+          - paragraph [ref=e247]: 250 EUR pp
+          - list [ref=e248]:
+            - listitem [ref=e249]:
+              - img [ref=e250]
+              - text: Remote jungle sections
+            - listitem [ref=e252]:
+              - img [ref=e253]
+              - text: "Included: Guide, meals, camp, permits"
+            - listitem [ref=e255]:
+              - img [ref=e256]
+              - text: "Excluded: Personal insurance, tips"
+          - link "View details" [ref=e258] [cursor=pointer]:
+            - /url: /treks/4-day-jungle-trek
+            - text: View details
+            - img [ref=e259]
+      - article [ref=e261]:
+        - generic [ref=e263]:
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - img [ref=e266]
+              - text: 5 days / 4 nights
+            - generic [ref=e269]:
+              - img [ref=e270]
+              - text: High
+          - heading "5-Day Jungle Trekking" [level=3] [ref=e272]
+          - paragraph [ref=e273]: 320 EUR pp
+          - list [ref=e274]:
+            - listitem [ref=e275]:
+              - img [ref=e276]
+              - text: Immersive Gunung Leuser adventure
+            - listitem [ref=e278]:
+              - img [ref=e279]
+              - text: "Included: Guide, meals, camp, permits"
+            - listitem [ref=e281]:
+              - img [ref=e282]
+              - text: "Excluded: Personal insurance, tips"
+          - link "View details" [ref=e284] [cursor=pointer]:
+            - /url: /treks/5-day-jungle-trek
+            - text: View details
+            - img [ref=e285]
+  - generic [ref=e287]:
+    - generic [ref=e288]:
+      - img "Small trekking group hiking a Bukit Lawang rainforest trail overlooking the valley" [ref=e290]
+      - generic [ref=e291]:
+        - generic [ref=e292]: Package activity details
+        - heading "What a classic multi-day Bukit Lawang trek feels like" [level=2] [ref=e293]
+        - paragraph [ref=e294]: "The flow below follows a typical 3-day orangutan trekking package: slow wildlife watching, forest meals, riverside camping, and a tube-rafting return. The final route can change with weather, group fitness, river level, and park guidance."
+        - generic [ref=e295]:
+          - article [ref=e296]:
+            - text: Day 1
+            - heading "Bukit Lawang trailhead, orangutan habitat, first camp" [level=3] [ref=e297]
+            - paragraph [ref=e298]: Meet your guide in the morning, check water and footwear, then enter the rainforest at an easy pace. The first day focuses on respectful wildlife observation, forest plants, fruit breaks, lunch in the jungle, and arrival at a simple riverside camp.
+          - article [ref=e299]:
+            - text: Day 2
+            - heading "Deeper forest walking, river breaks, second night" [level=3] [ref=e300]
+            - paragraph [ref=e301]: Continue into quieter forest sections with more time for Thomas leaf monkeys, gibbons, macaques, birds, medicinal plants, and rainforest sounds. Expect climbs, muddy trails in rain season, a fresh jungle lunch, and a second camp near water when conditions allow.
+          - article [ref=e302]:
+            - text: Day 3
+            - heading "Morning trek and traditional tube rafting return" [level=3] [ref=e303]
+            - paragraph [ref=e304]: After breakfast, walk a shorter final route or relax by the river before returning toward Bukit Lawang by traditional tube rafting when it is included and river conditions are safe.
+        - generic [ref=e305]:
+          - link "See the 3-day trek page" [ref=e306] [cursor=pointer]:
+            - /url: /3-day-bukit-lawang-orangutan-trek
+            - text: See the 3-day trek page
+            - img [ref=e307]
+          - link "Read the 3-day itinerary guide" [ref=e309] [cursor=pointer]:
+            - /url: /blog/3-day-bukit-lawang-jungle-trek-itinerary
+            - text: Read the 3-day itinerary guide
+            - img [ref=e310]
+    - generic [ref=e312]:
+      - generic [ref=e313]:
+        - img [ref=e314]
+        - generic [ref=e316]: Wild orangutan sightings are never guaranteed and should never be forced.
+      - generic [ref=e317]:
+        - img [ref=e318]
+        - generic [ref=e320]: "Food is simple, fresh, and prepared for the trail: fruit, rice, vegetables, eggs, fish or chicken, tea, and coffee."
+      - generic [ref=e321]:
+        - img [ref=e322]
+        - generic [ref=e324]: Confirm current permit rules, rafting conditions, accommodation, pickup needs, and final inclusions before paying a deposit.
+  - generic [ref=e325]:
+    - generic [ref=e326]:
+      - generic [ref=e327]: The experience
+      - heading "From village trailhead to river return." [level=2] [ref=e328]
+    - generic [ref=e329]:
+      - article [ref=e330]:
+        - img [ref=e332]
+        - heading "Start in Bukit Lawang" [level=3] [ref=e335]
+        - paragraph [ref=e336]: Meet Syaipul, check your gear, and enter the rainforest with a local guide.
+      - article [ref=e337]:
+        - img [ref=e339]
+        - heading "Watch quietly" [level=3] [ref=e342]
+        - paragraph [ref=e343]: Track orangutans, Thomas leaf monkeys, gibbons, macaques, birds, and forest plants with proper distance.
+      - article [ref=e344]:
+        - img [ref=e346]
+        - heading "Eat and camp well" [level=3] [ref=e352]
+        - paragraph [ref=e353]: Fresh fruit, simple jungle meals, riverside rest stops, and overnight camps on longer treks.
+      - article [ref=e354]:
+        - img [ref=e356]
+        - heading "Return by river" [level=3] [ref=e360]
+        - paragraph [ref=e361]: Many overnight trips finish with a traditional tube rafting ride back toward the village.
+  - generic [ref=e362]:
+    - generic [ref=e363]:
+      - generic [ref=e364]: Responsible trekking
+      - heading "The best orangutan encounter is still a wild one." [level=2] [ref=e365]
+      - paragraph [ref=e366]: "Syaipul follows jungle rules that protect guests, the guide, and animals: keep distance, stay with the guide, never feed wildlife, never touch orangutans, and avoid flash or behavior that changes how animals move through the forest."
+    - img "Wild orangutan in the rainforest" [ref=e368]
+  - generic [ref=e369]:
+    - generic [ref=e370]:
+      - generic [ref=e371]: Conservation vision
+      - heading "Travel should leave real value in the forest and the village" [level=2] [ref=e372]
+      - paragraph [ref=e373]: "The vision behind selected OrangutanAdventureSumatra packages is to reserve part of travel income for rainforest conservation support and community benefit around Bukit Lawang. The goal is practical: keep skilled local people employed, reduce pressure on the forest, and help guests understand why ethical wildlife rules matter."
+    - generic [ref=e374]:
+      - article [ref=e375]:
+        - img [ref=e377]
+        - heading "Forest care" [level=3] [ref=e380]
+        - paragraph [ref=e381]: Support for conservation-minded local action, low-impact guiding, and guest education before entering orangutan habitat.
+      - article [ref=e382]:
+        - img [ref=e384]
+        - heading "Local livelihoods" [level=3] [ref=e389]
+        - paragraph [ref=e390]: Packages prioritize local guides, cooks, drivers, accommodation partners, and village services where possible.
+      - article [ref=e391]:
+        - img [ref=e393]
+        - heading "Transparent choices" [level=3] [ref=e396]
+        - paragraph [ref=e397]: Guests can ask which current packages include conservation or community allocation before confirming a booking.
+  - generic [ref=e398]:
+    - generic [ref=e399]:
+      - generic [ref=e400]: Gallery
+      - heading "Endemic wildlife, orangutans in the canopy, leaf monkeys, and quiet rainforest moments." [level=2] [ref=e401]
+    - generic [ref=e402]:
+      - figure [ref=e403]:
+        - img "Orangutan peeking through the Bukit Lawang canopy" [ref=e404]
+      - figure [ref=e405]:
+        - img "Leaf monkey in the rainforest canopy" [ref=e406]
+      - figure [ref=e407]:
+        - img "Orangutan moving through the upper canopy" [ref=e408]
+      - figure [ref=e409]:
+        - img "Leaf monkey resting among the trees" [ref=e410]
+      - figure [ref=e411]:
+        - img "Two orangutans hanging in the rainforest canopy" [ref=e412]
+      - figure [ref=e413]:
+        - img "Orangutan on a tree trunk" [ref=e414]
+      - figure [ref=e415]:
+        - img "Close-up orangutan portrait in Bukit Lawang" [ref=e416]
+      - figure [ref=e417]:
+        - img "Young orangutan peeking from behind a trunk" [ref=e418]
+      - figure [ref=e419]:
+        - img "Two leaf monkeys on rainforest branches" [ref=e420]
+      - figure [ref=e421]:
+        - img "Orangutan with long orange fur in the canopy" [ref=e422]
+      - figure [ref=e423]:
+        - img "Baby orangutan in the trees" [ref=e424]
+      - figure [ref=e425]:
+        - img "Orangutan hidden in dense rainforest foliage" [ref=e426]
+  - generic [ref=e427]:
+    - generic [ref=e428]:
+      - generic [ref=e429]: Your local guide
+      - heading "Meet Syaipul Ardiansyah, born in Bukit Lawang and guiding rainforest treks since 2015." [level=2] [ref=e430]
+    - article [ref=e432]:
+      - img "Syaipul Ardiansyah, Local guide since 2015" [ref=e434]
+      - generic [ref=e435]:
+        - text: Local guide since 2015
+        - heading "Syaipul Ardiansyah" [level=3] [ref=e436]
+        - paragraph [ref=e437]: My name is Syaipul Ardiansyah. I was born and raised in Bukit Lawang, and I have been guiding there since 2015. Over the years, I have built a deep knowledge of the flora, fauna, and rainforest trails around Bukit Lawang and Gunung Leuser National Park. I guide each trek with respect for the forest, the animals, and the people who visit.
+        - link "Guide Instagram" [ref=e438] [cursor=pointer]:
+          - /url: https://www.instagram.com/syaipul_ardiansyah/
+          - img [ref=e439]
+          - text: Guide Instagram
+  - generic [ref=e442]:
+    - generic [ref=e443]:
+      - generic [ref=e444]: Traveler reviews
+      - heading "What our guests say about their time in the jungle." [level=2] [ref=e445]
+      - paragraph [ref=e446]:
+        - img [ref=e447]
+        - generic [ref=e449]: 5.0 Google rating from 14 reviews
+        - link "Read all on Google" [ref=e450] [cursor=pointer]:
+          - /url: https://maps.google.com/?cid=12135351613624313656
+    - generic [ref=e451]:
+      - generic [ref=e452]:
+        - img [ref=e453]
+        - generic [ref=e455]: 5.0 average on Google from 14 reviews
+      - generic [ref=e456]:
+        - img [ref=e457]
+        - generic [ref=e462]: 3 guest stories from recent travelers
+      - generic [ref=e463]:
+        - img [ref=e464]
+        - generic [ref=e466]: Direct replies from Bukit Lawang by WhatsApp and email
+    - generic [ref=e467]:
+      - article [ref=e468]:
+        - generic [ref=e469]:
+          - img [ref=e470]
+          - img [ref=e472]
+          - img [ref=e474]
+          - img [ref=e476]
+          - img [ref=e478]
+        - paragraph [ref=e480]: "\"An unforgettable, truly ethical experience. Syaipul made sure we kept a respectful distance from the orangutans while still getting amazing views. The riverside camp was a highlight!\""
+        - generic [ref=e481]:
+          - generic [ref=e483]: SM
+          - generic [ref=e484]:
+            - strong [ref=e485]: Sarah M.
+            - generic [ref=e486]: Germany
+            - generic [ref=e487]: Guest story
+      - article [ref=e488]:
+        - generic [ref=e489]:
+          - img [ref=e490]
+          - img [ref=e492]
+          - img [ref=e494]
+          - img [ref=e496]
+          - img [ref=e498]
+        - paragraph [ref=e500]: "\"The 3-day trek was perfectly organized. We felt safe the entire time, and the jungle food was surprisingly delicious. Highly recommend for anyone traveling from Europe.\""
+        - generic [ref=e501]:
+          - generic [ref=e503]: T&
+          - generic [ref=e504]:
+            - strong [ref=e505]: Thomas & Lisa
+            - generic [ref=e506]: Netherlands
+            - generic [ref=e507]: Guest story
+      - article [ref=e508]:
+        - generic [ref=e509]:
+          - img [ref=e510]
+          - img [ref=e512]
+          - img [ref=e514]
+          - img [ref=e516]
+          - img [ref=e518]
+        - paragraph [ref=e520]: "\"Great experience! Our guides, Syaipul and Rizky, were fantastic. They took great care of us and provided clear and interesting explanations throughout the trek. The trekking itself was beautiful and well organized. There was plenty of room for jokes and fun, but they were also professional and serious whenever needed. We would definitely...\""
+        - generic [ref=e521]:
+          - img "Profile photo of Maxine Carael" [ref=e523]
+          - generic [ref=e524]:
+            - strong [ref=e525]: Maxine Carael
+            - generic [ref=e526]: a month ago
+            - generic [ref=e527]: Verified Google review
+      - article [ref=e528]:
+        - generic [ref=e529]:
+          - img [ref=e530]
+          - img [ref=e532]
+          - img [ref=e534]
+          - img [ref=e536]
+          - img [ref=e538]
+        - paragraph [ref=e540]: "\"Had an amazing time in the jungle! I did the day night 3 day tour which was perfect for my and my friend. We saw an 🦧 within the first two hours. The hosts were also the greatest 🍌🤴\""
+        - generic [ref=e541]:
+          - img "Profile photo of Dax Van Breemen" [ref=e543]
+          - generic [ref=e544]:
+            - strong [ref=e545]: Dax Van Breemen
+            - generic [ref=e546]: a month ago
+            - generic [ref=e547]: Verified Google review
+  - generic [ref=e548]:
+    - generic [ref=e549]:
+      - generic [ref=e550]: FAQ
+      - heading "Practical notes before you arrive." [level=2] [ref=e551]
+    - generic [ref=e552]:
+      - group [ref=e553]:
+        - generic "Will we definitely see orangutans?" [ref=e554] [cursor=pointer]:
+          - text: Will we definitely see orangutans?
+          - img [ref=e555]
+      - group [ref=e557]:
+        - generic "What should we pack for Bukit Lawang?" [ref=e558] [cursor=pointer]:
+          - text: What should we pack for Bukit Lawang?
+          - img [ref=e559]
+      - group [ref=e561]:
+        - generic "How does payment work?" [ref=e562] [cursor=pointer]:
+          - text: How does payment work?
+          - img [ref=e563]
+      - group [ref=e565]:
+        - generic "Where is the meeting point?" [ref=e566] [cursor=pointer]:
+          - text: Where is the meeting point?
+          - img [ref=e567]
+  - generic [ref=e569]:
+    - generic [ref=e570]:
+      - generic [ref=e571]: Travel blog
+      - heading "Travel guides for European travelers planning Bukit Lawang" [level=2] [ref=e572]
+    - generic [ref=e573]:
+      - article [ref=e574]:
+        - img "Orangutan resting in the rainforest canopy" [ref=e576]
+        - generic [ref=e577]:
+          - generic [ref=e578]: 7 min read
+          - 'heading "Bukit Lawang vs Tanjung Puting: Where to See Orangutans?" [level=3] [ref=e579]'
+          - paragraph [ref=e580]: A practical comparison of Sumatra jungle trekking and Borneo klotok river trips for travelers choosing where to see orangutans in Indonesia.
+          - link "Read article" [ref=e581] [cursor=pointer]:
+            - /url: /blog/bukit-lawang-vs-tanjung-puting-orangutans
+            - text: Read article
+            - img [ref=e582]
+      - article [ref=e584]:
+        - img "Trekking group crossing a rainforest trail near Bukit Lawang" [ref=e586]
+        - generic [ref=e587]:
+          - generic [ref=e588]: 7 min read
+          - heading "Sumatra Orangutan Trekking Cost and Price Guide 2026" [level=3] [ref=e589]
+          - paragraph [ref=e590]: Updated 2026 guide to Bukit Lawang orangutan trekking prices, what is usually included, and extra costs to plan before booking.
+          - link "Read article" [ref=e591] [cursor=pointer]:
+            - /url: /blog/sumatra-orangutan-trekking-cost-price-guide-2026
+            - text: Read article
+            - img [ref=e592]
+      - article [ref=e594]:
+        - img "Small trekking group hiking a Bukit Lawang rainforest trail" [ref=e596]
+        - generic [ref=e597]:
+          - generic [ref=e598]: 7 min read
+          - heading "1-Day vs 2-Day vs 3-Day Bukit Lawang Trek" [level=3] [ref=e599]
+          - paragraph [ref=e600]: Compare 1-day, 2-day, and 3-day Bukit Lawang orangutan treks by time, price, fitness, camp life, wildlife watching, and river return.
+          - link "Read article" [ref=e601] [cursor=pointer]:
+            - /url: /blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek
+            - text: Read article
+            - img [ref=e602]
+      - article [ref=e604]:
+        - img "Traveler walking through a green Bukit Lawang village path" [ref=e606]
+        - generic [ref=e607]:
+          - generic [ref=e608]: 7 min read
+          - heading "Is Bukit Lawang Safe for Solo Female Travelers?" [level=3] [ref=e609]
+          - paragraph [ref=e610]: "Safety guide for Bukit Lawang solo and female travelers: guides, transport, jungle trekking, rivers, arrivals, private treks, and practical precautions."
+          - link "Read article" [ref=e611] [cursor=pointer]:
+            - /url: /blog/is-bukit-lawang-safe-solo-female-travelers
+            - text: Read article
+            - img [ref=e612]
+    - generic [ref=e614]:
+      - link "Essential information" [ref=e615] [cursor=pointer]:
+        - /url: /essential-information
+        - text: Essential information
+        - img [ref=e616]
+      - link "All blog articles" [ref=e618] [cursor=pointer]:
+        - /url: /blog
+        - text: All blog articles
+        - img [ref=e619]
+  - generic [ref=e622]:
+    - generic [ref=e623]:
+      - generic [ref=e624]: Book direct
+      - heading "Tell Syaipul your dates, group size, and preferred trek." [level=2] [ref=e625]
+      - paragraph [ref=e626]: WhatsApp is fastest for availability. Email is used to confirm manual PayPal deposit references, balance payment options, transport, accommodation, and detailed itinerary questions.
+    - generic [ref=e627]:
+      - link "Open booking form" [ref=e628] [cursor=pointer]:
+        - /url: /booking
+        - img [ref=e629]
+        - text: Open booking form
+      - link "+62 853-6240-5752" [ref=e631] [cursor=pointer]:
+        - /url: https://wa.me/6285362405752?text=Hi%20Orangutan%20Adventure%20Sumatra%2C%20I%20would%20like%20to%20ask%20about%20a%20jungle%20trek.
+        - img [ref=e632]
+        - text: +62 853-6240-5752
+      - link "Instagram @orangutanadventuresumatra" [ref=e634] [cursor=pointer]:
+        - /url: https://www.instagram.com/orangutanadventuresumatra/
+        - img [ref=e635]
+        - text: Instagram @orangutanadventuresumatra
+      - link "support@orangutanadventuresumatra.com" [ref=e638] [cursor=pointer]:
+        - /url: mailto:support@orangutanadventuresumatra.com
+        - img [ref=e639]
+        - text: support@orangutanadventuresumatra.com
+  - generic [ref=e642]:
+    - img "Orangutan Adventure Sumatra" [ref=e643]
+    - paragraph [ref=e644]: Bukit Lawang, North Sumatra, Indonesia
+    - navigation "Footer navigation" [ref=e645]:
+      - link "Essential information" [ref=e646] [cursor=pointer]:
+        - /url: /essential-information
+      - link "Booking" [ref=e647] [cursor=pointer]:
+        - /url: /booking
+      - link "Blog" [ref=e648] [cursor=pointer]:
+        - /url: /blog
+      - link "Privacy Policy" [ref=e649] [cursor=pointer]:
+        - /url: /privacy
+    - navigation "Contact and social links" [ref=e650]:
+      - link "Email" [ref=e651] [cursor=pointer]:
+        - /url: mailto:support@orangutanadventuresumatra.com
+        - img [ref=e652]
+      - link "WhatsApp" [ref=e655] [cursor=pointer]:
+        - /url: https://wa.me/6285362405752?text=Hi%20Orangutan%20Adventure%20Sumatra%2C%20I%20would%20like%20to%20ask%20about%20a%20jungle%20trek.
+        - img [ref=e656]
+      - link "Instagram @orangutanadventuresumatra" [ref=e658] [cursor=pointer]:
+        - /url: https://www.instagram.com/orangutanadventuresumatra/
+        - img [ref=e659]
+      - link "Google Maps" [ref=e662] [cursor=pointer]:
+        - /url: https://maps.app.goo.gl/EKrG3TFNG363k4jY7
+        - img [ref=e663]

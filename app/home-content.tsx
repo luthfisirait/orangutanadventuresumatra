@@ -1,3 +1,10 @@
+/*
+THESIS: Forest Transect turns trek comparison into one legible journey and refuses the generic eco-tour hero plus card grid.
+OWN-WORLD: Documentary forest photography, black survey rules, mist surfaces, and chartreuse, river-blue, amber, and russet field signals.
+STORY: Arrive at Bukit Lawang, choose a route, understand ethical practice, meet the guide, then book directly.
+FIRST VIEWPORT: A full-bleed jungle approach holds the offer on the left and a three-station route rail on the right; the booking strip remains visible at the fold.
+FORM: Rainforest survey-plot system, sixth grounded direction, staged as a continuous trail transect; seed 95bdd5bb.
+*/
 "use client";
 
 import Image from "next/image";
@@ -24,7 +31,7 @@ import {
   Waves,
   X
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { TrackedLink } from "./components/tracked-link";
 import { blogIndexPath, blogPostLocale, blogPostPath } from "./blog/blog-routing";
 import {
@@ -283,6 +290,8 @@ export function HomeContent({
   const [language, setLanguage] = useState<Locale>(initialLanguage);
   const [activeCategory, setActiveCategory] = useState<TrekCategory>("classic");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileDrawerRef = useRef<HTMLElement>(null);
   const [googleReviews, setGoogleReviews] = useState<GoogleReviewsResponse | null>(() =>
     hasGoogleReviewSignal(initialGoogleReviews) ? initialGoogleReviews : null
   );
@@ -395,18 +404,44 @@ export function HomeContent({
     }
 
     const previousOverflow = document.body.style.overflow;
+    const trigger = mobileMenuToggleRef.current;
+    const drawer = mobileDrawerRef.current;
+    const drawerLinks = drawer
+      ? Array.from(drawer.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"))
+      : [];
+    const focusableElements = [trigger, ...drawerLinks].filter(
+      (element): element is HTMLElement => Boolean(element)
+    );
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setMobileMenuOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab" || focusableElements.length === 0) {
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
       }
     };
 
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
+    window.requestAnimationFrame(() => drawerLinks[0]?.focus());
 
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      trigger?.focus();
     };
   }, [mobileMenuOpen]);
 
@@ -644,6 +679,7 @@ export function HomeContent({
             {t.hero.secondary}
           </TrackedLink>
           <button
+            ref={mobileMenuToggleRef}
             className="mobile-menu-toggle"
             type="button"
             aria-label={t.mobileMenu}
@@ -660,11 +696,13 @@ export function HomeContent({
         <button
           className="mobile-menu-backdrop"
           type="button"
+          tabIndex={-1}
           aria-label="Close navigation menu"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
       <nav
+        ref={mobileDrawerRef}
         id="mobile-navigation"
         className={`mobile-drawer${mobileMenuOpen ? " open" : ""}`}
         aria-label="Mobile navigation"
@@ -692,8 +730,8 @@ export function HomeContent({
       <section className="hero" id="top">
         <Image
           className="hero-image"
-          src="/images/hero-orangutan.webp"
-          alt="Orangutan on a Bukit Lawang rainforest trail"
+          src="/images/trekking-group.webp"
+          alt="Travelers follow a local guide above the rainforest river near Bukit Lawang"
           fill
           priority
           sizes="100vw"
@@ -729,18 +767,23 @@ export function HomeContent({
             </TrackedLink>
           </div>
         </div>
-        <div className="hero-panel">
+        <div className="hero-coordinate" aria-label="Bukit Lawang coordinates">
+          <span>03.5553 N</span>
+          <span>98.1329 E</span>
+        </div>
+        <ol className="hero-route" aria-label="Trek overview">
           {t.hero.stats.map((stat, index) => {
             const Icon = [Star, Clock3, ShieldCheck][index];
             return (
-              <div key={stat.title}>
-                <Icon size={18} />
+              <li key={stat.title}>
+                <span className="hero-route-marker">0{index + 1}</span>
+                <span className="hero-route-icon"><Icon size={18} /></span>
                 <strong>{stat.title}</strong>
                 <span>{stat.text}</span>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ol>
       </section>
 
       <section className="quick-strip" aria-label="Booking highlights">
@@ -830,8 +873,8 @@ export function HomeContent({
           ))}
         </div>
 
-        <div className="trek-grid">
-          {visibleTreks.map((trek) => {
+        <div className="trek-grid" id="trek-results" aria-live="polite">
+          {visibleTreks.map((trek, trekIndex) => {
             const detailUrl = trekDetailHref(trek.id);
 
             return (
@@ -845,6 +888,7 @@ export function HomeContent({
                 />
               </div>
               <div className="trek-body">
+                <span className="trek-sequence" aria-hidden="true">Route {String(trekIndex + 1).padStart(2, "0")}</span>
                 <div className="trek-meta">
                   <span>
                     <Clock3 size={15} />
@@ -933,6 +977,7 @@ export function HomeContent({
             const Icon = [Compass, Leaf, TentTree, Waves][index];
             return (
               <article className="experience-card" key={item.title}>
+                <span className="experience-index" aria-hidden="true">0{index + 1}</span>
                 <span className="icon-box">
                   <Icon size={24} />
                 </span>
@@ -1140,6 +1185,7 @@ export function HomeContent({
       <section className="contact-section" id="contact">
         <div className="contact-panel">
           <div>
+            <span className="contact-coordinate">BUKIT LAWANG / NORTH SUMATRA</span>
             <span className="section-kicker">{t.headings.contact}</span>
             <h2>{t.headings.contactSub}</h2>
             <p>{t.contact.text}</p>
