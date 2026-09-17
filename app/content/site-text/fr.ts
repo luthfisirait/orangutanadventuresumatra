@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Trek Orang-Outan Sumatra | Guide Bukit Lawang",
+  metaTitle: "Trek Orang-outan Sumatra à Bukit Lawang | Guide Local Éthique",
   metaDescription:
-    "Réserve un trek orang-outan éthique à Bukit Lawang avec un guide local: circuits jungle de 4 heures à 5 jours, camps en rivière, rafting et aide transport.",
+    "Vivez une aventure éducative et éthique avec les orang-outans à Sumatra. Treks de 1 à 5 jours dans le parc Gunung Leuser, bivouac et rafting. Réservation directe.",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Trekking éthique dans le parc national de Gunung Leuser",

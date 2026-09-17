@@ -590,6 +590,7 @@ export function HomeContent({
           "@type": "ItemList",
           "@id": `${currentUrl}#trek-packages`,
           name: t.headings.packages,
+          url: absoluteUrl("/sumatra-orangutan-tour"),
           itemListElement: trekItems
         }
       ]
@@ -857,6 +858,15 @@ export function HomeContent({
         <div className="section-heading wide-heading">
           <span className="section-kicker">{t.headings.packages}</span>
           <h2>{t.headings.packagesSub}</h2>
+          {language === "en" ? (
+            <p className="section-lede">
+              Comparing routes before you pick a date? Explore our{" "}
+              <Link href="/sumatra-orangutan-tour">Sumatra orangutan tours</Link> for a full breakdown of
+              every <Link href="/sumatra-orangutan-tour">Sumatra orangutan trekking</Link> package, or read
+              the day-by-day{" "}
+              <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang orangutan trek</Link>.
+            </p>
+          ) : null}
         </div>
 
         <div className="category-tabs" role="group" aria-label="Trek categories">

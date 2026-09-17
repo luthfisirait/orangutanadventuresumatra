@@ -44,6 +44,11 @@ type LandingPage = {
   relatedLinks: Array<{ href: string; label: string }>;
 };
 
+// Trek prices live as display labels ("170 EUR pp"); schema.org Offer wants a bare number.
+function priceFromLabel(label: string) {
+  return label.replace(/[^\d.]/g, "");
+}
+
 const trekById = Object.fromEntries(trekBase.map((trek) => [trek.id, trek])) as Record<
   TrekId,
   (typeof trekBase)[number]
@@ -53,9 +58,9 @@ const landingPages: Record<string, LandingPage> = {
   sumatraOrangutanTour: {
     slug: "sumatra-orangutan-tour",
     title: "Sumatra Orangutan Tour",
-    metaTitle: "Sumatra Orangutan Tours | Bukit Lawang Guide",
+    metaTitle: "Sumatra Orangutan Tours (2026 Guide) – Ethical Trekking & Pricing",
     metaDescription:
-      "Compare Sumatra orangutan tours from Bukit Lawang: ethical local guide, 4-hour to 5-day treks, river camps, rafting, transport help, and WhatsApp booking.",
+      "Compare 2026 Sumatra orangutan tours in Bukit Lawang. Licensed local guides, ethical wildlife encounters, jungle river camps, and transparent EUR rates. Book via WhatsApp.",
     heroKicker: "Choose your rainforest route",
     heroTitle: "Sumatra Orangutan Tours",
     heroDescription:
@@ -73,7 +78,12 @@ const landingPages: Record<string, LandingPage> = {
       "Sumatra orangutan travel",
       "orangutan trip Sumatra",
       "orangutan trekking Sumatra",
-      "orangutan tours Sumatra"
+      "orangutan tours Sumatra",
+      "Sumatra orangutan trekking",
+      "Sumatra orangutan treks",
+      "best orangutan tours",
+      "Bukit Lawang jungle tour",
+      "Sumatra orangutan trekking packages"
     ],
     comparison: {
       title: "Compare the main Sumatra orangutan trek options",
@@ -84,6 +94,7 @@ const landingPages: Record<string, LandingPage> = {
         { id: "1d", bestFor: "A full forest day without an overnight camp." },
         { id: "2d", bestFor: "One river camp and a balanced first multi-day trek." },
         { id: "3d", bestFor: "Two jungle nights and more time on quieter routes." },
+        { id: "5d", bestFor: "Four jungle nights and the deepest Gunung Leuser route." },
         { id: "p3d", bestFor: "A private pace with transport and accommodation support." }
       ]
     },
@@ -120,6 +131,32 @@ const landingPages: Record<string, LandingPage> = {
         ]
       },
       {
+        title: "Trail intensity and guide ratios in Gunung Leuser",
+        paragraphs: [
+          "Gunung Leuser trails around Bukit Lawang are steep, root-covered, and humid. The 4-hour and 1-day treks stay on the shorter ridge loops closest to the village. The 2-day and 3-day treks push further into quieter forest, with river camps reached by a long descent. The 4-day and 5-day routes add sustained climbing and longer days between camps.",
+          "Groups stay small so the guide can read the forest rather than manage a crowd. Classic treks run with a lead guide plus an assistant for the camp and river sections; private packages keep one guide with your group for the whole route."
+        ],
+        bullets: [
+          "Low effort: 4-hour trek, short ridge loop near Bukit Lawang",
+          "Medium effort: 1-day, 2-day, and 3-day treks with river camp descents",
+          "High effort: 4-day and 5-day routes with sustained climbs between camps",
+          "Small groups with a lead guide, plus camp and river crew on longer treks"
+        ]
+      },
+      {
+        title: "How this compares with other Indonesian orangutan operators",
+        paragraphs: [
+          "Most Sumatra orangutan tours are resold by agencies in Medan or online marketplaces that subcontract the actual trek. Here you book the guide team directly, so the price you see is the price the forest crew is paid on.",
+          "Compared with Tanjung Puting in Kalimantan, Bukit Lawang is a trekking destination rather than a klotok riverboat cruise: you walk into the habitat, sleep at a river camp, and return by tube or raft instead of watching from a deck."
+        ],
+        bullets: [
+          "Direct booking with the local guide, no agency markup",
+          "Published EUR prices per person, no hidden permit surcharges",
+          "Bukit Lawang trekking versus Tanjung Puting boat cruising",
+          "No feeding, no touching, no staged wildlife encounters"
+        ]
+      },
+      {
         title: "How to book",
         paragraphs: [
           "Send your dates, group size, arrival city, and preferred trek length. You will get a reply with availability, package guidance, and the next step for deposit or final confirmation."
@@ -149,6 +186,10 @@ const landingPages: Record<string, LandingPage> = {
         a: "No. The tours enter orangutan habitat around Bukit Lawang, but ethical wildlife trekking never forces sightings, feeding, touching, or close contact."
       },
       {
+        q: "How hard is Sumatra orangutan trekking?",
+        a: "Trails in Gunung Leuser are steep, muddy, and humid. A 4-hour trek suits most fitness levels. The 2-day and 3-day treks need medium fitness, and the 4-day and 5-day routes involve sustained climbing between camps."
+      },
+      {
         q: "Can you help with transport from Medan?",
         a: "Yes. Pickup help from Medan or Kuala Namu can be arranged when you enquire."
       },
@@ -160,6 +201,8 @@ const landingPages: Record<string, LandingPage> = {
     relatedLinks: [
       { href: "/", label: "Bukit Lawang orangutan trekking" },
       { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
+      { href: "/blog/sumatra-orangutan-trekking-cost-price-guide-2026", label: "Sumatra orangutan trekking cost guide" },
+      { href: "/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek", label: "Compare 1-day, 2-day and 3-day treks" },
       { href: "/booking", label: "Booking form" }
     ]
   },
@@ -304,6 +347,11 @@ function LandingPageView({
   googleReviews?: GoogleReviewsData | null;
   page: LandingPage;
 }) {
+  const comparisonOptions = page.comparison.options.map((option) => ({
+    ...option,
+    trek: trekById[option.id],
+    content: siteText.en.treks[option.id]
+  }));
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -338,6 +386,50 @@ function LandingPageView({
         ]
       },
       {
+        "@type": "ItemList",
+        "@id": `${absoluteUrl(`/${page.slug}`)}#packages`,
+        name: page.comparison.title,
+        itemListElement: comparisonOptions.map((option, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "TouristTrip",
+            "@id": `${absoluteUrl(trekDetailHref(option.id))}#trip`,
+            name: option.content.title,
+            description: option.bestFor,
+            url: absoluteUrl(trekDetailHref(option.id)),
+            image: absoluteUrl(option.trek.image),
+            touristType: ["Eco traveler", "Wildlife traveler", "Adventure traveler"],
+            provider: {
+              "@type": "TravelAgency",
+              name: siteName,
+              url: siteUrl,
+              employee: {
+                "@type": "Person",
+                name: "Syaipul Ardiansyah",
+                jobTitle: "Local jungle guide"
+              }
+            },
+            itinerary: {
+              "@type": "ItemList",
+              name: `${option.content.title} route`,
+              itemListElement: option.content.highlights.map((highlight, step) => ({
+                "@type": "ListItem",
+                position: step + 1,
+                name: highlight
+              }))
+            },
+            offers: {
+              "@type": "Offer",
+              price: priceFromLabel(option.trek.price),
+              priceCurrency: "EUR",
+              availability: "https://schema.org/InStock",
+              url: absoluteUrl(trekBookingHref(option.id))
+            }
+          }
+        }))
+      },
+      {
         "@type": "FAQPage",
         "@id": `${absoluteUrl(`/${page.slug}`)}#faq`,
         mainEntity: page.faq.map((item) => ({
@@ -351,11 +443,6 @@ function LandingPageView({
       }
     ]
   };
-  const comparisonOptions = page.comparison.options.map((option) => ({
-    ...option,
-    trek: trekById[option.id],
-    content: siteText.en.treks[option.id]
-  }));
 
   return (
     <main className="resource-main">

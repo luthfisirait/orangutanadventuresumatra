@@ -68,6 +68,18 @@ export default function EssentialInformationPage() {
         }
       },
       {
+        "@type": "FAQPage",
+        "@id": `${absoluteUrl("/essential-information")}#faq`,
+        mainEntity: essentialInformation.faq.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a
+          }
+        }))
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": `${absoluteUrl("/essential-information")}#breadcrumb`,
         itemListElement: [
@@ -146,6 +158,33 @@ export default function EssentialInformationPage() {
               ) : null}
             </article>
           ))}
+        </div>
+
+        <div className="info-block landing-faq-block">
+          <h2>Bukit Lawang trekking FAQ</h2>
+          <div className="faq-list landing-faq-list">
+            {essentialInformation.faq.map((item) => (
+              <details key={item.q}>
+                <summary>
+                  {item.q}
+                  <ArrowRight size={18} />
+                </summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <div className="resource-links">
+          <Link className="secondary-button dark" href="/sumatra-orangutan-tour">
+            Compare Sumatra orangutan tours
+          </Link>
+          <Link className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
+            3-day Bukit Lawang orangutan trek
+          </Link>
+          <Link className="secondary-button dark" href="/booking">
+            Booking form
+          </Link>
         </div>
       </section>
       <StaticFooter />

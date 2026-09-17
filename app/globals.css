@@ -496,6 +496,20 @@ img {
   letter-spacing: 0;
 }
 
+.section-lede {
+  margin: 16px 0 0;
+  max-width: 62ch;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.section-lede a {
+  color: var(--clay);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .intent-links-section {
   width: min(1180px, calc(100% - 32px));
   margin: 42px auto 0;

@@ -192,7 +192,33 @@ export const essentialInformation = {
         "Bring personal medication in original packaging and tell your guide about any condition that could matter during heat, hiking, river travel, or overnight camping."
       ]
     }
-  ] as readonly ContentSection[]
+  ] as readonly ContentSection[],
+  faq: [
+    {
+      q: "What should I pack for a Bukit Lawang jungle trek?",
+      a: "Walking shoes with grip, quick-dry clothes, spare socks, a light rain jacket, mosquito repellent, sunscreen, a small towel, personal medicine, a reusable water bottle, a headlamp, a dry bag, and cash in Indonesian rupiah."
+    },
+    {
+      q: "How do I get from Medan to Bukit Lawang?",
+      a: "Most travelers arrive through Medan or Kualanamu International Airport and continue by private car, shared transport, or public bus. The road is slow, so plan around four to five hours and avoid trekking on the same day as a long-haul arrival."
+    },
+    {
+      q: "How fit do I need to be for Bukit Lawang trekking?",
+      a: "Trails can be steep, humid, slippery, and muddy after rain. A medium fitness level is enough for short treks. The 3-day to 5-day routes are better suited to active travelers."
+    },
+    {
+      q: "Are orangutan sightings guaranteed in Bukit Lawang?",
+      a: "No. The forest is habitat, not a zoo. Ethical trekking means keeping distance, never feeding or touching wildlife, avoiding flash photography, and letting the guide manage every encounter."
+    },
+    {
+      q: "How much deposit is needed to book a trek?",
+      a: "The booking form calculates a 30% PayPal deposit from your selected package and group size. The balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure."
+    },
+    {
+      q: "What food is available on multi-day treks?",
+      a: "Jungle meals are simple and fresh: fruit, rice, vegetables, eggs, noodles, fish or chicken, tea, and coffee. Tell your guide early if you need vegetarian, vegan, halal, gluten-free, or allergy-aware meals."
+    }
+  ]
 } as const;
 
 export const paymentAndDeposit = {
@@ -409,12 +435,17 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Updated 2026 guide to Bukit Lawang orangutan trekking prices, what is usually included, and extra costs to plan before booking.",
     date: "2026-06-09",
-    dateModified: "2026-06-28",
-    readingTime: "7 min read",
+    dateModified: "2026-09-17",
+    readingTime: "9 min read",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekking group crossing a rainforest trail near Bukit Lawang",
-    tags: ["Sumatra orangutan trekking cost", "Bukit Lawang prices", "2026 price guide"],
-    primaryCtaHref: "/booking",
+    tags: [
+      "Sumatra orangutan trekking cost",
+      "Bukit Lawang trekking cost",
+      "Sumatra orangutan trek price",
+      "2026 price guide"
+    ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
     primaryCtaLabel: "Check prices and send your dates",
     relatedSlugs: [
       "paypal-deposit-bukit-lawang-trek",
@@ -507,6 +538,32 @@ const informationBlogPosts: BlogPost[] = [
         ]
       },
       {
+        title: "Hidden fees and what they actually are",
+        paragraphs: [
+          "Most complaints about Bukit Lawang pricing come from costs that were never hidden, only unmentioned. The package price on this site covers guiding, jungle meals, camp setup, and permit handling. Everything below sits outside it and is worth budgeting before you arrive.",
+          "The one charge worth checking with any operator is the Gunung Leuser National Park entry permit. It is handled inside the package price here, but some cheaper quotes exclude it and collect it at the trailhead."
+        ],
+        table: {
+          caption: "Costs outside the trek package price",
+          columns: ["Item", "Typical cost", "Notes"],
+          rows: [
+            ["Gunung Leuser park permit", "Included here", "Ask any operator whether it is inside or collected separately"],
+            ["Airport or Medan transfer", "About 45 to 75 EUR per car", "Biggest single extra for most travelers"],
+            ["Guesthouse before and after", "About 10 to 35 EUR per night", "Budget one buffer night on each side"],
+            ["Tips for guide and camp crew", "Your choice", "Common practice, never demanded"],
+            ["Travel insurance covering trekking", "Varies", "Confirm jungle trekking is not excluded"],
+            ["Village spending and laundry", "Small, cash only", "Card payment is rare in the village"]
+          ]
+        },
+        callout: "Compare quotes on what is inside the price, not the headline number. A cheaper trek that excludes permits, meals, or camp equipment usually costs more once the trailhead extras are added.",
+        bullets: [
+          "Permit handling and jungle meals are inside the listed price.",
+          "Transport, accommodation, and insurance are not.",
+          "Bring Indonesian rupiah; village card payment is limited.",
+          "No surcharge is collected at the trailhead on these packages."
+        ]
+      },
+      {
         title: "Deposit and booking notes",
         paragraphs: [
           "The booking form can calculate a 30% PayPal deposit from the selected package price and group size. For now, guests can send that deposit manually to the PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
@@ -526,8 +583,8 @@ const informationBlogPosts: BlogPost[] = [
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
     tags: ["Bukit Lawang trek comparison", "1 day vs 3 day trek", "orangutan trekking Sumatra"],
-    primaryCtaHref: "/treks",
-    primaryCtaLabel: "Compare trek details",
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare all Sumatra orangutan tours",
     relatedSlugs: [
       "sumatra-orangutan-trekking-cost-price-guide-2026",
       "3-day-bukit-lawang-jungle-trek-itinerary",
@@ -677,11 +734,16 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "How to get from Kualanamu International Airport or Medan city to Bukit Lawang by private car, shared transport, public bus, and train connections.",
     date: "2026-06-09",
-    dateModified: "2026-06-28",
-    readingTime: "6 min read",
+    dateModified: "2026-09-17",
+    readingTime: "8 min read",
     image: "/images/blog-transport.webp",
     imageAlt: "River and village view near Bukit Lawang in North Sumatra",
-    tags: ["Medan Airport to Bukit Lawang", "Kualanamu transport", "Bukit Lawang transfer"],
+    tags: [
+      "Medan Airport to Bukit Lawang",
+      "Kualanamu to Bukit Lawang taxi cost",
+      "shared van to Bukit Lawang",
+      "Bukit Lawang transfer"
+    ],
     primaryCtaHref: "/booking",
     primaryCtaLabel: "Ask about transport with your trek",
     relatedSlugs: [
@@ -731,6 +793,32 @@ const informationBlogPosts: BlogPost[] = [
         paragraphs: [
           "Public transport is the cheapest but least convenient option. You may need to connect through Medan or Binjai, wait for buses, and then take a short local ride or walk at the Bukit Lawang end.",
           "If your flight lands late in the day, public transport can become stressful. In that case, either book a private transfer or sleep in Medan and travel the next morning."
+        ]
+      },
+      {
+        title: "How much does transport from Medan to Bukit Lawang cost?",
+        paragraphs: [
+          "Road transport is the single biggest cost that sits outside a trek package price. A private car from Kualanamu International Airport (airport code KNO) to Bukit Lawang is the most common choice for international arrivals, and it is usually quoted as a flat price for the whole car rather than per person.",
+          "Prices move with fuel, tolls, season, and pickup time. Treat the figures below as planning ranges and confirm the exact quote with your guide before arrival. Night pickups and same-day requests typically sit at the higher end."
+        ],
+        table: {
+          caption: "Planning ranges for the road from Medan or Kualanamu to Bukit Lawang",
+          columns: ["Route and mode", "Typical travel time", "Planning range"],
+          rows: [
+            ["Kualanamu airport (KNO) to Bukit Lawang, private car", "4 to 5 hours", "About 55 to 75 EUR per car"],
+            ["Medan city to Bukit Lawang, private car", "3.5 to 4.5 hours", "About 45 to 65 EUR per car"],
+            ["Kualanamu or Medan to Bukit Lawang, shared van", "5 to 6 hours", "About 10 to 18 EUR per person"],
+            ["Medan to Binjai to Bukit Lawang, public bus", "5 to 7 hours", "About 3 to 6 EUR per person"],
+            ["Airport train to Medan city, then onward transport", "30 to 45 minutes to the city", "About 6 EUR for the train leg"]
+          ]
+        },
+        callout: "A private car is quoted per vehicle, so it gets cheaper per head as your group grows. For two or more people it often lands close to shared-van pricing with none of the waiting.",
+        bullets: [
+          "Private car price is per vehicle, not per person.",
+          "Shared vans depend on other passengers, so departure time is rarely fixed.",
+          "Public buses are cheapest but add transfers in Medan or Binjai.",
+          "Confirm whether tolls, parking, and waiting time are inside the quote.",
+          "Carry Indonesian rupiah; drivers rarely accept cards."
         ]
       },
       {
@@ -797,18 +885,37 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Aktuelle Orientierung zu Preisen, Inklusivleistungen und Zusatzkosten für Orang-Utan-Trekking in Bukit Lawang.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 Min. Lesezeit",
+    dateModified: "2026-09-17",
+    readingTime: "7 Min. Lesezeit",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggruppe im Regenwald von Bukit Lawang",
-    tags: ["Orang-Utan Trekking Kosten", "Bukit Lawang Preise", "Sumatra 2026"],
+    tags: ["Orang-Utan Trekking Kosten", "Bukit Lawang Preise", "Sumatra 2026", "versteckte Kosten Bukit Lawang"],
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Preisüberblick 2026",
         paragraphs: [
-          "Die aktuellen Paketpreise auf dieser Website reichen von 55 EUR pro Person für einen 4-Stunden-Trek bis 320 EUR pro Person für einen 5-Tage-Trek. Private Eco-Jungle-Pakete starten bei 280 EUR pro Person."
+          "Die aktuellen Paketpreise auf dieser Website reichen von 55 EUR pro Person für einen 4-Stunden-Trek bis 320 EUR pro Person für einen 5-Tage-Trek. Private Eco-Jungle-Pakete starten bei 280 EUR pro Person.",
+          "Bestätige Inklusivleistungen, Guide-Verfügbarkeit, Permit-Organisation, Transport, Unterkunft und Flussbedingungen immer vor der Anzahlung."
         ],
+        table: {
+          caption: "Trekkingpreise für Bukit Lawang 2026",
+          columns: ["Paket", "Dauer", "Preis"],
+          rows: [
+            ["Dschungeltrek", "4 Stunden", "55 EUR pro Person"],
+            ["Dschungeltrek", "1 Tag", "70 EUR pro Person"],
+            ["Dschungeltrek", "2 Tage / 1 Nacht", "120 EUR pro Person"],
+            ["Dschungeltrek", "3 Tage / 2 Nächte", "170 EUR pro Person"],
+            ["Dschungeltrek", "4 Tage / 3 Nächte", "250 EUR pro Person"],
+            ["Dschungeltrek", "5 Tage / 4 Nächte", "320 EUR pro Person"],
+            ["Privates Eco-Jungle-Paket", "3 Tage", "280 EUR pro Person"],
+            ["Privates Eco-Jungle-Paket", "4 Tage", "335 EUR pro Person"],
+            ["Privates Eco-Jungle-Paket", "5 Tage", "385 EUR pro Person"],
+            ["Fledermaushöhle", "Kurze Aktivität", "30 EUR pro Person"],
+            ["Dorftour", "Kurze Aktivität", "30 EUR pro Person"]
+          ]
+        },
+        callout: "Für die meisten Reisenden bietet der 2- oder 3-Tage-Trek das beste Verhältnis, weil Mahlzeiten, Guiding, Camp-Logistik und die Rückkehr über den Fluss Teil des Erlebnisses werden.",
         bullets: [
           "4 Stunden: 55 EUR pro Person.",
           "1 Tag: 70 EUR pro Person.",
@@ -821,6 +928,32 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Was oft enthalten ist",
         paragraphs: [
           "Bei Mehrtagestouren sind normalerweise Guide, einfache Dschungelmahlzeiten, Camp-Setup und Permit-Organisation Teil des Pakets. Transport, Unterkunft vor und nach dem Trek, Trinkgeld und persönliche Versicherung solltest du separat einplanen."
+        ]
+      },
+      {
+        title: "Versteckte Kosten und was wirklich dahintersteckt",
+        paragraphs: [
+          "Die meisten Beschwerden über Preise in Bukit Lawang betreffen Kosten, die nie versteckt waren, sondern nur nicht erwähnt wurden. Der Paketpreis auf dieser Seite deckt Guiding, Dschungelmahlzeiten, Camp-Setup und Permit-Organisation ab. Alles unten liegt außerhalb.",
+          "Prüfe bei jedem Anbieter besonders das Permit für den Gunung-Leuser-Nationalpark. Hier ist es im Paketpreis enthalten, bei günstigeren Angeboten wird es manchmal erst am Startpunkt kassiert."
+        ],
+        table: {
+          caption: "Kosten außerhalb des Paketpreises",
+          columns: ["Posten", "Typische Kosten", "Hinweis"],
+          rows: [
+            ["Permit Gunung-Leuser-Nationalpark", "Hier enthalten", "Bei jedem Anbieter nachfragen, ob inklusive oder separat"],
+            ["Transfer ab Flughafen oder Medan", "Etwa 45 bis 75 EUR pro Fahrzeug", "Größter Einzelposten für die meisten Reisenden"],
+            ["Unterkunft vor und nach dem Trek", "Etwa 10 bis 35 EUR pro Nacht", "Je eine Puffernacht einplanen"],
+            ["Trinkgeld für Guide und Camp-Team", "Freiwillig", "Üblich, wird aber nie eingefordert"],
+            ["Reiseversicherung mit Trekking-Deckung", "Unterschiedlich", "Prüfen, ob Dschungeltrekking ausgeschlossen ist"],
+            ["Dorfausgaben und Wäsche", "Klein, nur bar", "Kartenzahlung ist im Dorf selten"]
+          ]
+        },
+        callout: "Vergleiche Angebote nach dem Leistungsumfang, nicht nach der Schlagzeile. Ein billigerer Trek ohne Permit, Mahlzeiten oder Camp-Ausrüstung wird am Startpunkt meist teurer.",
+        bullets: [
+          "Permit-Organisation und Dschungelmahlzeiten sind im Preis enthalten.",
+          "Transport, Unterkunft und Versicherung nicht.",
+          "Bargeld in Rupiah mitnehmen, Kartenzahlung im Dorf ist begrenzt.",
+          "Am Startpunkt wird bei diesen Paketen kein Zuschlag kassiert."
         ]
       },
       {
@@ -876,8 +1009,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Private Transfers, geteilte Fahrten und öffentliche Verkehrsmittel von Kualanamu oder Medan nach Bukit Lawang.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "4 Min. Lesezeit",
+    dateModified: "2026-09-17",
+    readingTime: "6 Min. Lesezeit",
     image: "/images/blog-transport.webp",
     imageAlt: "Flussblick in Bukit Lawang",
     tags: ["Medan nach Bukit Lawang", "Kualanamu Transfer", "Sumatra Transport"],
@@ -897,6 +1030,31 @@ const translatedInformationBlogPosts: BlogPost[] = [
           "Geteilter Transfer: günstiger, aber abhängig von Zeitplan und anderen Gästen.",
           "Public Transport: billig, aber mit Umstiegen über Medan oder Binjai.",
           "Bei später Ankunft: privat fahren oder eine Nacht in Medan einplanen."
+        ]
+      },
+      {
+        title: "Was kostet der Transfer von Medan nach Bukit Lawang?",
+        paragraphs: [
+          "Die Straßenfahrt ist der größte Kostenpunkt außerhalb des Trekking-Pakets. Ein Privatwagen ab Flughafen Kualanamu (KNO) wird pro Fahrzeug abgerechnet, nicht pro Person, und lohnt sich damit ab zwei Personen.",
+          "Die Preise schwanken mit Sprit, Maut, Saison und Abholzeit. Nutze die Werte als Planungsrahmen und lass dir das genaue Angebot vor der Anreise bestätigen. Nachtabholungen liegen am oberen Ende."
+        ],
+        table: {
+          caption: "Planungsrahmen für die Strecke Medan oder Kualanamu nach Bukit Lawang",
+          columns: ["Strecke und Variante", "Fahrzeit", "Planungsrahmen"],
+          rows: [
+            ["Flughafen Kualanamu (KNO) nach Bukit Lawang, Privatwagen", "4 bis 5 Stunden", "Etwa 55 bis 75 EUR pro Fahrzeug"],
+            ["Medan Stadt nach Bukit Lawang, Privatwagen", "3,5 bis 4,5 Stunden", "Etwa 45 bis 65 EUR pro Fahrzeug"],
+            ["Kualanamu oder Medan nach Bukit Lawang, Sammelbus", "5 bis 6 Stunden", "Etwa 10 bis 18 EUR pro Person"],
+            ["Medan über Binjai nach Bukit Lawang, öffentlicher Bus", "5 bis 7 Stunden", "Etwa 3 bis 6 EUR pro Person"]
+          ]
+        },
+        callout: "Der Privatwagen wird pro Fahrzeug berechnet. Zu zweit liegt er oft nahe am Sammeltransport, ohne die Wartezeit.",
+        bullets: [
+          "Privatwagen: Preis pro Fahrzeug, nicht pro Person.",
+          "Sammeltransport: Abfahrtszeit hängt von anderen Gästen ab.",
+          "Öffentlicher Bus: am günstigsten, mit Umstiegen in Medan oder Binjai.",
+          "Kläre, ob Maut, Parken und Wartezeit im Preis enthalten sind.",
+          "Bargeld in Rupiah mitnehmen, Fahrer akzeptieren selten Karten."
         ]
       },
       {
@@ -956,18 +1114,37 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Guide 2026 des prix de trek à Bukit Lawang, inclusions habituelles, frais extras et acompte.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min de lecture",
+    dateModified: "2026-09-17",
+    readingTime: "7 min de lecture",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Groupe de trek dans la forêt de Sumatra",
-    tags: ["prix trek orang-outan", "Bukit Lawang prix", "Sumatra 2026"],
+    tags: ["prix trek orang-outan", "Bukit Lawang prix", "Sumatra 2026", "frais cachés Bukit Lawang"],
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Prix 2026",
         paragraphs: [
-          "Les prix actuels affichés sur ce site vont de 55 EUR par personne pour un trek de 4 heures à 320 EUR par personne pour un trek de 5 jours. Les forfaits privés commencent à 280 EUR par personne."
+          "Les prix actuels affichés sur ce site vont de 55 EUR par personne pour un trek de 4 heures à 320 EUR par personne pour un trek de 5 jours. Les forfaits privés commencent à 280 EUR par personne.",
+          "Confirme toujours les inclusions, le guide, l’organisation des permis, le transport, l’hébergement et l’état de la rivière avant de verser l’acompte."
         ],
+        table: {
+          caption: "Prix des treks à Bukit Lawang en 2026",
+          columns: ["Forfait", "Durée", "Prix"],
+          rows: [
+            ["Trek jungle", "4 heures", "55 EUR par personne"],
+            ["Trek jungle", "1 jour", "70 EUR par personne"],
+            ["Trek jungle", "2 jours / 1 nuit", "120 EUR par personne"],
+            ["Trek jungle", "3 jours / 2 nuits", "170 EUR par personne"],
+            ["Trek jungle", "4 jours / 3 nuits", "250 EUR par personne"],
+            ["Trek jungle", "5 jours / 4 nuits", "320 EUR par personne"],
+            ["Forfait privé eco jungle", "3 jours", "280 EUR par personne"],
+            ["Forfait privé eco jungle", "4 jours", "335 EUR par personne"],
+            ["Forfait privé eco jungle", "5 jours", "385 EUR par personne"],
+            ["Bat Cave", "Activité courte", "30 EUR par personne"],
+            ["Village Tour", "Activité courte", "30 EUR par personne"]
+          ]
+        },
+        callout: "Pour la plupart des voyageurs, le trek de 2 ou 3 jours offre le meilleur rapport qualité-prix: les repas, le guidage, la logistique du camp et le retour par la rivière font partie de l’expérience.",
         bullets: [
           "4 heures: 55 EUR par personne.",
           "1 jour: 70 EUR par personne.",
@@ -980,6 +1157,32 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Ce qui est souvent inclus",
         paragraphs: [
           "Les treks avec nuit incluent généralement le guide, les repas simples dans la jungle, le camp et l'organisation des permis. Prévois à part le transport, l'hébergement avant ou après, les pourboires et l'assurance personnelle."
+        ]
+      },
+      {
+        title: "Frais cachés et ce qu’ils sont vraiment",
+        paragraphs: [
+          "La plupart des mauvaises surprises de budget à Bukit Lawang concernent des frais qui n’étaient pas cachés, mais simplement jamais annoncés. Le prix du forfait sur ce site couvre le guidage, les repas en jungle, le camp et l’organisation des permis. Tout ce qui suit reste en dehors.",
+          "Le point à vérifier en priorité chez n’importe quel prestataire est le permis du parc national de Gunung Leuser. Ici il est inclus dans le prix du forfait, alors que certaines offres moins chères le font payer au départ du sentier."
+        ],
+        table: {
+          caption: "Coûts en dehors du prix du forfait",
+          columns: ["Poste", "Coût habituel", "Remarque"],
+          rows: [
+            ["Permis du parc national de Gunung Leuser", "Inclus ici", "Demande à chaque prestataire si le permis est inclus ou en supplément"],
+            ["Transfert depuis l’aéroport ou Medan", "Environ 45 à 75 EUR par véhicule", "Le plus gros poste pour la plupart des voyageurs"],
+            ["Hébergement avant et après le trek", "Environ 10 à 35 EUR par nuit", "Prévois une nuit tampon de chaque côté"],
+            ["Pourboire guide et équipe du camp", "Libre", "Courant, mais jamais exigé"],
+            ["Assurance voyage couvrant le trek", "Variable", "Vérifie que le trekking en jungle n’est pas exclu"],
+            ["Dépenses au village et blanchisserie", "Petit, en espèces", "La carte bancaire est rarement acceptée au village"]
+          ]
+        },
+        callout: "Compare les offres sur ce qui est inclus, pas sur le prix affiché. Un trek moins cher sans permis, sans repas ni matériel de camp coûte souvent plus cher une fois sur le sentier.",
+        bullets: [
+          "L’organisation des permis et les repas en jungle sont compris dans le prix.",
+          "Le transport, l’hébergement et l’assurance ne le sont pas.",
+          "Prévois des espèces en roupies, les paiements par carte sont limités au village.",
+          "Aucun supplément n’est collecté au départ du sentier sur ces forfaits."
         ]
       },
       {
@@ -1035,8 +1238,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Options de transport depuis Kualanamu ou Medan vers Bukit Lawang: voiture privée, transport partagé, bus et connexions.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "4 min de lecture",
+    dateModified: "2026-09-17",
+    readingTime: "6 min de lecture",
     image: "/images/blog-transport.webp",
     imageAlt: "Vue de rivière à Bukit Lawang",
     tags: ["Medan Bukit Lawang", "transport Kualanamu", "transfert Sumatra"],
@@ -1056,6 +1259,31 @@ const translatedInformationBlogPosts: BlogPost[] = [
           "Transport partagé: possible si tes horaires sont flexibles.",
           "Bus public: économique, mais avec changements via Medan ou Binjai.",
           "Arrivée tardive: dormir à Medan ou réserver un transfert direct."
+        ]
+      },
+      {
+        title: "Combien coûte le transport de Medan à Bukit Lawang ?",
+        paragraphs: [
+          "La route est le poste de dépense le plus important en dehors du prix du trek. Une voiture privée depuis l'aéroport de Kualanamu (KNO) se facture par véhicule et non par personne, ce qui la rend intéressante dès deux voyageurs.",
+          "Les tarifs varient selon le carburant, les péages, la saison et l'heure de prise en charge. Utilise ces montants comme repères et fais confirmer le prix exact avant l'arrivée. Les transferts de nuit se situent en haut de la fourchette."
+        ],
+        table: {
+          caption: "Fourchettes de prix pour la route Medan ou Kualanamu vers Bukit Lawang",
+          columns: ["Trajet et mode", "Durée", "Fourchette de prix"],
+          rows: [
+            ["Aéroport Kualanamu (KNO) vers Bukit Lawang, voiture privée", "4 à 5 heures", "Environ 55 à 75 EUR par véhicule"],
+            ["Medan centre vers Bukit Lawang, voiture privée", "3,5 à 4,5 heures", "Environ 45 à 65 EUR par véhicule"],
+            ["Kualanamu ou Medan vers Bukit Lawang, minibus partagé", "5 à 6 heures", "Environ 10 à 18 EUR par personne"],
+            ["Medan via Binjai vers Bukit Lawang, bus public", "5 à 7 heures", "Environ 3 à 6 EUR par personne"]
+          ]
+        },
+        callout: "La voiture privée se paie par véhicule. À deux, elle revient souvent au niveau du transport partagé, sans l'attente.",
+        bullets: [
+          "Voiture privée : prix par véhicule, pas par personne.",
+          "Transport partagé : l'heure de départ dépend des autres passagers.",
+          "Bus public : le moins cher, avec des changements à Medan ou Binjai.",
+          "Vérifie si péages, parking et temps d'attente sont inclus.",
+          "Prévois des roupies en espèces, les chauffeurs acceptent rarement la carte."
         ]
       },
       {
@@ -1115,18 +1343,37 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Overzicht van Bukit Lawang trekprijzen, inbegrepen onderdelen, extra kosten en aanbetaling in 2026.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min leestijd",
+    dateModified: "2026-09-17",
+    readingTime: "7 min leestijd",
     image: "/images/stock/activity-11.webp",
     imageAlt: "Trekkinggroep in het regenwoud van Sumatra",
-    tags: ["orang-oetan trekking kosten", "Bukit Lawang prijzen", "Sumatra 2026"],
+    tags: ["orang-oetan trekking kosten", "Bukit Lawang prijzen", "Sumatra 2026", "verborgen kosten Bukit Lawang"],
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
         title: "Prijsindicatie 2026",
         paragraphs: [
-          "De actuele pakketprijzen op deze site lopen van 55 EUR per persoon voor een trek van 4 uur tot 320 EUR per persoon voor een trek van 5 dagen. Privépakketten starten bij 280 EUR per persoon."
+          "De actuele pakketprijzen op deze site lopen van 55 EUR per persoon voor een trek van 4 uur tot 320 EUR per persoon voor een trek van 5 dagen. Privépakketten starten bij 280 EUR per persoon.",
+          "Bevestig altijd wat er inbegrepen is, wie de gids is, hoe de permit geregeld wordt en hoe transport, accommodatie en de rivierstand zitten voordat je de aanbetaling doet."
         ],
+        table: {
+          caption: "Trekprijzen Bukit Lawang 2026",
+          columns: ["Pakket", "Duur", "Prijs"],
+          rows: [
+            ["Jungletrek", "4 uur", "55 EUR per persoon"],
+            ["Jungletrek", "1 dag", "70 EUR per persoon"],
+            ["Jungletrek", "2 dagen / 1 nacht", "120 EUR per persoon"],
+            ["Jungletrek", "3 dagen / 2 nachten", "170 EUR per persoon"],
+            ["Jungletrek", "4 dagen / 3 nachten", "250 EUR per persoon"],
+            ["Jungletrek", "5 dagen / 4 nachten", "320 EUR per persoon"],
+            ["Privé eco jungle pakket", "3 dagen", "280 EUR per persoon"],
+            ["Privé eco jungle pakket", "4 dagen", "335 EUR per persoon"],
+            ["Privé eco jungle pakket", "5 dagen", "385 EUR per persoon"],
+            ["Bat Cave", "Korte activiteit", "30 EUR per persoon"],
+            ["Village Tour", "Korte activiteit", "30 EUR per persoon"]
+          ]
+        },
+        callout: "Voor de meeste reizigers geeft de trek van 2 of 3 dagen de beste prijs-kwaliteitverhouding, omdat maaltijden, begeleiding, kamplogistiek en de terugweg over de rivier onderdeel van de ervaring worden.",
         bullets: [
           "4 uur: 55 EUR per persoon.",
           "1 dag: 70 EUR per persoon.",
@@ -1139,6 +1386,32 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Wat meestal inbegrepen is",
         paragraphs: [
           "Bij meerdaagse treks zijn gids, eenvoudige junglemaaltijden, kampopzet en permit-organisatie meestal onderdeel van het pakket. Transport, accommodatie, fooi en persoonlijke verzekering plan je apart."
+        ]
+      },
+      {
+        title: "Verborgen kosten en wat ze echt zijn",
+        paragraphs: [
+          "De meeste budgetverrassingen in Bukit Lawang gaan over kosten die niet verborgen waren, maar simpelweg nooit genoemd zijn. De pakketprijs op deze site dekt begeleiding, junglemaaltijden, kampopzet en permit-organisatie. Alles hieronder valt daarbuiten.",
+          "Controleer bij elke aanbieder vooral de permit voor Nationaal Park Gunung Leuser. Hier zit die in de pakketprijs, terwijl goedkopere aanbiedingen hem soms pas bij het startpunt innen."
+        ],
+        table: {
+          caption: "Kosten buiten de pakketprijs",
+          columns: ["Onderdeel", "Gebruikelijke kosten", "Opmerking"],
+          rows: [
+            ["Permit Nationaal Park Gunung Leuser", "Hier inbegrepen", "Vraag bij elke aanbieder of de permit inbegrepen of extra is"],
+            ["Transfer vanaf luchthaven of Medan", "Ongeveer 45 tot 75 EUR per voertuig", "De grootste post voor de meeste reizigers"],
+            ["Accommodatie voor en na de trek", "Ongeveer 10 tot 35 EUR per nacht", "Plan aan beide kanten een buffernacht in"],
+            ["Fooi voor gids en kampteam", "Vrijwillig", "Gebruikelijk, maar wordt nooit geeist"],
+            ["Reisverzekering die trekking dekt", "Wisselend", "Controleer of jungletrekking is uitgesloten"],
+            ["Uitgaven in het dorp en wasservice", "Klein, alleen contant", "Pinnen is in het dorp beperkt"]
+          ]
+        },
+        callout: "Vergelijk aanbiedingen op wat erin zit, niet op de kopprijs. Een goedkopere trek zonder permit, maaltijden of kampuitrusting wordt bij het startpunt meestal alsnog duurder.",
+        bullets: [
+          "Permit-organisatie en junglemaaltijden zitten in de prijs.",
+          "Transport, accommodatie en verzekering niet.",
+          "Neem contant geld in roepia mee, pinnen is in het dorp beperkt.",
+          "Bij deze pakketten wordt bij het startpunt niets extra geind."
         ]
       },
       {
@@ -1194,8 +1467,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Praktische opties van Kualanamu of Medan naar Bukit Lawang: privéauto, gedeeld vervoer, bus en overstappen.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "4 min leestijd",
+    dateModified: "2026-09-17",
+    readingTime: "6 min leestijd",
     image: "/images/blog-transport.webp",
     imageAlt: "Rivierzicht in Bukit Lawang",
     tags: ["Medan naar Bukit Lawang", "Kualanamu transfer", "Sumatra vervoer"],
@@ -1215,6 +1488,31 @@ const translatedInformationBlogPosts: BlogPost[] = [
           "Gedeeld vervoer: mogelijk als je flexibel bent.",
           "Openbaar vervoer: goedkoop, maar met overstappen via Medan of Binjai.",
           "Late aankomst: slaap in Medan of boek direct transport."
+        ]
+      },
+      {
+        title: "Wat kost vervoer van Medan naar Bukit Lawang?",
+        paragraphs: [
+          "De rit over de weg is de grootste kostenpost buiten de trekkingprijs. Een privéauto vanaf luchthaven Kualanamu (KNO) wordt per auto afgerekend en niet per persoon, dus vanaf twee personen wordt het snel interessant.",
+          "Prijzen schommelen met brandstof, tol, seizoen en ophaaltijd. Gebruik deze bedragen als richtlijn en laat de exacte prijs vooraf bevestigen. Avondritten zitten aan de bovenkant."
+        ],
+        table: {
+          caption: "Richtprijzen voor de route Medan of Kualanamu naar Bukit Lawang",
+          columns: ["Route en vervoer", "Reistijd", "Richtprijs"],
+          rows: [
+            ["Luchthaven Kualanamu (KNO) naar Bukit Lawang, privéauto", "4 tot 5 uur", "Ongeveer 55 tot 75 EUR per auto"],
+            ["Medan stad naar Bukit Lawang, privéauto", "3,5 tot 4,5 uur", "Ongeveer 45 tot 65 EUR per auto"],
+            ["Kualanamu of Medan naar Bukit Lawang, gedeeld busje", "5 tot 6 uur", "Ongeveer 10 tot 18 EUR per persoon"],
+            ["Medan via Binjai naar Bukit Lawang, openbare bus", "5 tot 7 uur", "Ongeveer 3 tot 6 EUR per persoon"]
+          ]
+        },
+        callout: "Een privéauto reken je per voertuig af. Met zijn tweeën zit je vaak dicht bij de prijs van gedeeld vervoer, zonder het wachten.",
+        bullets: [
+          "Privéauto: prijs per auto, niet per persoon.",
+          "Gedeeld vervoer: vertrektijd hangt af van andere passagiers.",
+          "Openbare bus: goedkoopst, met overstappen via Medan of Binjai.",
+          "Vraag of tol, parkeren en wachttijd in de prijs zitten.",
+          "Neem contant geld in roepia mee, chauffeurs accepteren zelden kaart."
         ]
       },
       {
@@ -1499,14 +1797,20 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "best-time-to-visit-bukit-lawang-from-europe",
-    title: "Best Time to Visit Bukit Lawang for Orangutans",
+    title: "Best Time to Visit Bukit Lawang to See Orangutans",
     description:
-      "Bukit Lawang is a year-round orangutan trekking destination. Compare rain, river levels, drier months, holidays, trek length, and booking timing.",
+      "Month-by-month weather and wildlife guide for Bukit Lawang: rainfall, river levels, trail conditions, rafting, crowds, and the best months to trek.",
     date: "2026-05-29",
-    readingTime: "6 min read",
+    dateModified: "2026-09-17",
+    readingTime: "9 min read",
     image: "/images/blog-best-time.webp",
     imageAlt: "Orangutan in the green rainforest canopy of Bukit Lawang",
-    tags: ["best time", "Europe to Sumatra", "Bukit Lawang travel"],
+    tags: [
+      "best time to see orangutans in Sumatra",
+      "best time to visit Bukit Lawang",
+      "Bukit Lawang weather by month",
+      "Europe to Sumatra"
+    ],
     sections: [
       {
         title: "Bukit Lawang is a year-round rainforest destination",
@@ -1514,6 +1818,45 @@ export const blogPosts: BlogPost[] = [
           "The best time to visit Bukit Lawang for orangutan trekking is the month that fits your travel dates, fitness, and tolerance for tropical rain. The rainforest is open year-round, and orangutan sightings should never be treated as guaranteed.",
           "There is no single perfect month for every traveler. Bukit Lawang is humid and tropical throughout the year, and rain can happen in any season. The better question is how much flexibility you want and how comfortable you are with mud, heat, and changing river conditions.",
           "For many European guests, the best itinerary includes one buffer night before the trek and one after it. That reduces stress if flights, road transfers, or weather slow the journey."
+        ]
+      },
+      {
+        title: "Month-by-month weather and trekking conditions",
+        paragraphs: [
+          "North Sumatra has no true dry season, only wetter and drier stretches. Rain usually arrives as heavy afternoon or evening downpours rather than all-day drizzle, so most trekking mornings stay walkable year-round.",
+          "Use the table as a planning shortcut, not a forecast. River level, mud, and leech activity track recent rainfall more closely than the calendar month."
+        ],
+        table: {
+          caption: "Bukit Lawang trekking conditions by month",
+          columns: ["Months", "Rainfall pattern", "What it means on the trail"],
+          rows: [
+            ["January to February", "Wet, tail of the rainy season", "Green forest, muddy descents, high river, rafting often cancelled"],
+            ["March to April", "Easing rain", "Good balance of quiet trails and active wildlife, fewer visitors"],
+            ["May to July", "Driest stretch", "Firmest trails, most reliable tube rafting, peak European booking season"],
+            ["August to September", "Drier with short showers", "Strong trekking conditions, busiest months in the village"],
+            ["October to November", "Rain returning", "Humid and lush, muddier trails, flexible dates recommended"],
+            ["December", "Wettest month", "Heaviest rain and highest river, best for travelers who do not mind mud"]
+          ]
+        },
+        callout: "If firm trails and tube rafting matter most, aim for May to September. If you want quieter trails and lower prices on flights and rooms, March, April, and October are the strongest value.",
+        bullets: [
+          "Driest and most reliable: May to September.",
+          "Quietest with good conditions: March, April, October.",
+          "Wettest: November to February, still fully trekkable.",
+          "Orangutan sightings do not follow a season; they follow fruiting trees and luck."
+        ]
+      },
+      {
+        title: "Does the season change your chance of seeing orangutans?",
+        paragraphs: [
+          "Not in the way most travelers expect. Orangutans in Gunung Leuser move toward fruiting trees, and fruiting is patchy across the year rather than tied to one tourist season. Guides read fresh nests and feeding signs on the day, which matters far more than the month you booked.",
+          "Trek length has a bigger effect than season. A 2-day or 3-day trek covers more forest and more hours in habitat than a 4-hour walk, so it simply gives more chances. No ethical operator can guarantee a sighting in any month."
+        ],
+        bullets: [
+          "Longer trek, more forest hours, more chances.",
+          "Early morning starts are consistently better than midday.",
+          "Fruiting trees drive movement more than rainfall does.",
+          "Sightings are never guaranteed, in any season."
         ]
       },
       {
@@ -1580,47 +1923,6 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Instead of asking only whether orangutans are guaranteed, ask how the trek handles distance, food, camp waste, river safety, and local staffing. Those answers reveal the quality of the experience.",
           "A responsible trek may feel slower, but that slower pace is exactly what protects the forest experience visitors came to see."
-        ]
-      }
-    ]
-  },
-  {
-    slug: "how-to-get-to-bukit-lawang-from-medan",
-    title: "How to Get to Bukit Lawang from Medan",
-    description:
-      "Transport options from Medan and Kuala Namu International Airport to Bukit Lawang, with timing tips for European arrivals.",
-    date: "2026-05-29",
-    readingTime: "5 min read",
-    image: "/images/blog-transport.webp",
-    imageAlt: "River view near Bukit Lawang village in North Sumatra",
-    tags: ["Medan to Bukit Lawang", "North Sumatra travel", "transport"],
-    sections: [
-      {
-        title: "Start with Medan or Kuala Namu",
-        paragraphs: [
-          "Most visitors reach Bukit Lawang through Medan or Kuala Namu International Airport. From there, the trip continues by road into North Sumatra's plantation, village, and forest-edge landscapes.",
-          "After a long-haul journey from Europe, it is usually better to avoid a same-day trek. Plan time to recover, withdraw cash, check your bag, and sleep before entering the forest."
-        ]
-      },
-      {
-        title: "Private transfer",
-        paragraphs: [
-          "A private car is the simplest option, especially for couples, families, late arrivals, or anyone carrying trekking luggage. It costs more than public transport, but it reduces waiting time and makes the first day easier."
-        ]
-      },
-      {
-        title: "Shared or public transport",
-        paragraphs: [
-          "Shared transport and public bus routes can be cheaper, but they take more patience. Expect transfers, waiting, and less predictable arrival times. If you choose this option, keep your schedule flexible and avoid booking a trek too close to arrival."
-        ]
-      },
-      {
-        title: "Arrival tips",
-        bullets: [
-          "Tell your guide your arrival date, flight time, and accommodation name.",
-          "Carry cash because village card payment options can be limited.",
-          "Keep rain protection available for bags and documents.",
-          "Choose an overnight in Bukit Lawang before a multi-day trek."
         ]
       }
     ]

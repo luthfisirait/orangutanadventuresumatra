@@ -29,8 +29,10 @@ function blogLastModified(post: (typeof blogPosts)[number]) {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPageLastModified = asLastModified("2026-06-09");
+  // Meta titles, descriptions, and schema for the localized home routes were rewritten on this date.
+  const metaRewriteLastModified = asLastModified("2026-09-17");
   const seoReleaseLastModified = asLastModified("2026-07-21");
-  const landingPageLastModified = asLastModified("2026-08-14");
+  const landingPageLastModified = asLastModified("2026-09-17");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );
@@ -38,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/booking", lastModified: legacyPageLastModified, priority: 0.88 },
     { path: "/treks", lastModified: legacyPageLastModified, priority: 0.84 },
     { path: "/payment-and-deposit", lastModified: legacyPageLastModified, priority: 0.62 },
-    { path: "/essential-information", lastModified: legacyPageLastModified, priority: 0.82 },
+    { path: "/essential-information", lastModified: metaRewriteLastModified, priority: 0.82 },
     { path: "/privacy", lastModified: legacyPageLastModified, priority: 0.35 }
   ];
   const blogIndexLastModified =
@@ -47,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
-      lastModified: seoReleaseLastModified,
+      lastModified: metaRewriteLastModified,
       changeFrequency: "weekly",
       priority: 1,
       alternates: {
@@ -56,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...locales.filter((locale) => locale !== defaultLocale).map((locale) => ({
       url: locale === "en" ? siteUrl : `${siteUrl}/${locale}`,
-      lastModified: seoReleaseLastModified,
+      lastModified: metaRewriteLastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
       alternates: {

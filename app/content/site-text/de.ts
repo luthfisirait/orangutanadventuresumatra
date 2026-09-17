@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const de = {
-  metaTitle: "Orang-Utan Trekking Sumatra | Bukit Lawang Guide",
+  metaTitle: "Orang-Utan Trekking Sumatra | Bukit Lawang Dschungeltouren",
   metaDescription:
-    "Buche ethische Orang-Utan-Treks in Bukit Lawang: lokaler Guide, 4 Stunden bis 5 Tage, Flusscamps, Rafting, Transporthilfe und WhatsApp.",
+    "Ethisches Orang-Utan Trekking in Bukit Lawang mit lokalem Guide. 1 bis 5 Tage Dschungel-Abenteuer im Gunung Leuser Nationalpark. Feste Preise, WhatsApp-Buchung.",
   nav: { treks: "Treks", experience: "Erlebnis", guides: "Guide", faq: "FAQ", contact: "Kontakt" },
   hero: {
     eyebrow: "Ethisches Trekking im Gunung-Leuser-Nationalpark",

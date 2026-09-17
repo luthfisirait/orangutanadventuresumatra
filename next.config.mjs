@@ -26,6 +26,12 @@ const nextConfig = {
         permanent: true
       },
       {
+        // Merged into the fuller transport guide to stop the two posts splitting the same query.
+        source: "/blog/how-to-get-to-bukit-lawang-from-medan",
+        destination: "/blog/medan-airport-to-bukit-lawang-transport-options",
+        permanent: true
+      },
+      {
         source: "/en",
         destination: "/",
         permanent: true

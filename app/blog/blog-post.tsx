@@ -213,6 +213,10 @@ export function BlogPostView({ post }: { post: BlogPost }) {
       ]
     : [
         { href: localizedHome, label: copy.bukitLawang },
+        // The tour comparison and 3-day pages are English-only, but every locale has a label for
+        // them. Linking out beats leaving Tier-1 EU readers with no route to a commercial page.
+        { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },
+        { href: "/3-day-bukit-lawang-orangutan-trek", label: copy.threeDay },
         { href: blogIndexPath(locale), label: copy.blog },
         { href: "/booking", label: copy.booking }
       ];
