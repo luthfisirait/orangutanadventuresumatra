@@ -7,7 +7,7 @@ export const nl = {
   nav: { treks: "Treks", experience: "Beleving", guides: "Gids", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Ethisch trekking in Gunung Leuser National Park",
-    title: "Orangutan Adventure Sumatra",
+    title: "Orang-oetan trekking in Bukit Lawang, Sumatra",
     description:
       "Begeleide jungle-avonturen vanuit Bukit Lawang met een lokale gids, respectvolle ontmoetingen met wilde dieren, rivierkampen, vers jungle-eten en tube rafting terug naar het dorp.",
     primary: "Treks bekijken",
@@ -47,7 +47,7 @@ export const nl = {
     ethics: "Verantwoord trekking",
     ethicsSubTitle: "De mooiste orang-oetan ontmoeting blijft wild.",
     gallery: "Galerij",
-    gallerySub: "Inheemse wilde dieren, orang-oetans in het bladerdak, bladapen en rustige momenten in het regenwoud.",
+    gallerySub: "Wilde dieren in het bladerdak, lokale gidsen, momenten met gasten en de riviertocht door Bukit Lawang.",
     guides: "Je lokale gids",
     guidesSub: "Maak kennis met Syaipul Ardiansyah, geboren in Bukit Lawang en junglegids sinds 2015.",
     faq: "FAQ",

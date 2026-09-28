@@ -31,6 +31,7 @@ export type PublicReview = {
   author: string;
   id: string;
   rating: number;
+  publishedAt: string | null;
   profilePhotoUrl: string | null;
   relativeTime: string;
   source: "google";
@@ -79,6 +80,15 @@ function truncateText(value: string) {
   return `${slice.slice(0, lastSpace > 220 ? lastSpace : maxLength).trim()}...`;
 }
 
+function publishedAtFromTimestamp(timestamp?: number) {
+  if (typeof timestamp !== "number" || !Number.isFinite(timestamp) || timestamp <= 0) {
+    return null;
+  }
+
+  const publishedAt = new Date(timestamp * 1000);
+  return Number.isNaN(publishedAt.getTime()) ? null : publishedAt.toISOString();
+}
+
 function normalizeReviews(reviews: GooglePlaceReview[] = []) {
   const displayLimit = readPositiveInt("GOOGLE_PLACES_REVIEW_DISPLAY_LIMIT", DEFAULT_DISPLAY_LIMIT, 5);
   const minTextLength = readPositiveInt("GOOGLE_PLACES_REVIEW_MIN_TEXT_LENGTH", DEFAULT_MIN_TEXT_LENGTH, 160);
@@ -95,6 +105,7 @@ function normalizeReviews(reviews: GooglePlaceReview[] = []) {
         author,
         id: `${author}-${review.time ?? index}`,
         rating,
+        publishedAt: publishedAtFromTimestamp(review.time),
         profilePhotoUrl,
         relativeTime,
         source: "google",

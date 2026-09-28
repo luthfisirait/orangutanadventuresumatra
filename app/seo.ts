@@ -73,6 +73,7 @@ const localeKeywords: Record<Locale, string[]> = {
     "private Dschungeltour Bukit Lawang"
   ],
   fr: [
+    "aventure éducative avec les orangs-outans à Sumatra",
     "trek orang-outan Sumatra",
     "trek orang outan Sumatra",
     "trek orang-outan Bukit Lawang",

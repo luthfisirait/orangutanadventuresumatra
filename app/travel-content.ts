@@ -354,11 +354,11 @@ const informationBlogPosts: BlogPost[] = [
   {
     slug: "bukit-lawang-vs-tanjung-puting-orangutans",
     locale: "en",
-    title: "Bukit Lawang vs Tanjung Puting: Where to See Orangutans?",
+    title: "Bukit Lawang vs Tanjung Puting: Which Is Better?",
     description:
-      "A practical comparison of Sumatra jungle trekking and Borneo klotok river trips for travelers choosing where to see orangutans in Indonesia.",
+      "Compare Bukit Lawang trekking with Tanjung Puting klotok trips by Medan access, comfort, wildlife ethics, and travel style.",
     date: "2026-06-09",
-    dateModified: "2026-06-28",
+    dateModified: "2026-09-26",
     readingTime: "7 min read",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orangutan resting in the rainforest canopy",
@@ -1077,6 +1077,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-outan dans la canopée",
     tags: ["Bukit Lawang", "Tanjung Puting", "orang-outan Indonésie"],
+    primaryCtaHref: "/fr#treks",
+    primaryCtaLabel: "Voir les treks à Bukit Lawang",
     translationKey: "bukit-lawang-vs-tanjung-puting",
     sections: [
       {
@@ -1119,6 +1121,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-11.webp",
     imageAlt: "Groupe de trek dans la forêt de Sumatra",
     tags: ["prix trek orang-outan", "Bukit Lawang prix", "Sumatra 2026", "frais cachés Bukit Lawang"],
+    primaryCtaHref: "/fr#treks",
+    primaryCtaLabel: "Voir les treks à Bukit Lawang",
     translationKey: "sumatra-orangutan-trekking-cost-2026",
     sections: [
       {
@@ -1205,6 +1209,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/stock/activity-05.webp",
     imageAlt: "Voyageuse sur un chemin vert à Bukit Lawang",
     tags: ["sécurité Bukit Lawang", "voyage solo", "femmes Sumatra"],
+    primaryCtaHref: "/fr#treks",
+    primaryCtaLabel: "Voir les treks à Bukit Lawang",
     translationKey: "bukit-lawang-safety-solo-female",
     sections: [
       {
@@ -1243,6 +1249,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     image: "/images/blog-transport.webp",
     imageAlt: "Vue de rivière à Bukit Lawang",
     tags: ["Medan Bukit Lawang", "transport Kualanamu", "transfert Sumatra"],
+    primaryCtaHref: "/fr#treks",
+    primaryCtaLabel: "Voir les treks à Bukit Lawang",
     translationKey: "medan-airport-to-bukit-lawang-transport",
     sections: [
       {
@@ -1586,14 +1594,22 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "2-week-sumatra-itinerary-europe-travelers",
-    title: "The Ultimate 2-Week North Sumatra Itinerary: Bukit Lawang, Lake Toba, and Berastagi",
+    title: "North Sumatra 2-Week Itinerary: Bukit Lawang to Lake Toba",
     description:
-      "A complete travel guide for European visitors looking to explore the best of North Sumatra, from orangutan trekking to volcanic lakes.",
+      "Plan two weeks from Bukit Lawang and Berastagi to Lake Toba, with realistic travel days, a 3-day jungle trek, and a relaxed route from Medan.",
     date: "2026-05-30",
+    dateModified: "2026-09-26",
     readingTime: "8 min read",
     image: "/images/stock/activity-10.webp",
     imageAlt: "Stunning landscape view of Lake Toba in North Sumatra",
     tags: ["Sumatra Itinerary", "Lake Toba", "Berastagi", "Bukit Lawang travel", "European travelers"],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare Bukit Lawang trek options",
+    relatedSlugs: [
+      "medan-airport-to-bukit-lawang-transport-options",
+      "3-day-bukit-lawang-jungle-trek-itinerary",
+      "best-time-to-visit-bukit-lawang-from-europe"
+    ],
     sections: [
       {
         title: "Why 2 weeks is the perfect amount of time",
@@ -1694,11 +1710,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "3-day-bukit-lawang-jungle-trek-itinerary",
-    title: "3-Day Bukit Lawang Itinerary: Day-by-Day Jungle Trek",
+    title: "3-Day Bukit Lawang Trek Itinerary: Camps, Wildlife & Rafting",
     description:
-      "Follow a day-by-day 3-day Bukit Lawang jungle trek itinerary with two camps, meals, wildlife rules, river return, fitness notes, and route expectations.",
+      "See a realistic 3-day Bukit Lawang trek itinerary with two river camps, wildlife ethics, trail conditions, meals, and rafting when conditions are safe.",
     date: "2026-05-29",
-    dateModified: "2026-07-21",
+    dateModified: "2026-09-26",
     readingTime: "7 min read",
     image: "/images/stock/activity-07.webp",
     imageAlt: "Rainforest trekking trail near Bukit Lawang",

@@ -3,7 +3,7 @@
 **Date**: 17 September 2026  
 **Property**: `sc-domain:orangutanadventuresumatra.com`  
 **Data Freshness**: Through 14 September 2026 (queried via Google Search Console MCP Server)  
-**Implementation Source**: Local Next.js 14 project (`c:\Users\luthf\orangutanadventuresumatra`)  
+**Implementation Source**: Local Next.js 15 project (`c:\Users\luthf\orangutanadventuresumatra`)  
 
 ---
 
@@ -116,7 +116,7 @@ The GSC MCP `detect_quick_wins` analysis highlighted 7 primary opportunities cur
 | `aventure éducative...` | `/fr` | 8.63 | 40 | 0 | 0.00% | Optimize `/fr` meta title & snippet to address ethical/educational trek intent. |
 | `sumatra orangutan trekking` | `/sumatra-orangutan-tour` | 15.20 | 25 | 0 | 0.00% | Add dedicated section detailing Leuser trail intensity and guide ratios. |
 | `sumatra orangutan treks` | `/sumatra-orangutan-tour` | 29.70 | 18 | 1 | 5.56% | Expand comparison table with 1-day, 2-day, 3-day, and 5-day package pricing. |
-| `bukit lawang orangutan tour`| `/bukit-lawang-orangutan-trekking` | 8.33 | 3 | 0 | 0.00% | Strengthen local Bukit Lawang entity signals and village departure details. |
+| `bukit lawang orangutan tour`| `/` | 8.33 | 3 | 0 | 0.00% | Strengthen homepage Bukit Lawang entity signals; the retired landing URL now redirects here. |
 | `best orangutan tours` | `/sumatra-orangutan-tour` | 13.50 | 4 | 0 | 0.00% | Include direct comparison callout vs other Indonesian tour operators. |
 
 ---
@@ -125,21 +125,20 @@ The GSC MCP `detect_quick_wins` analysis highlighted 7 primary opportunities cur
 
 ### Priority 0: Cannibalization Resolution & Silo Re-alignment
 1. **Homepage Re-titling**:
-   - *Current*: `Orangutan Adventure Sumatra | Bukit Lawang Trekking`
-   - *Proposed*: `Orangutan Adventure Sumatra | Ethical Rainforest Trekking Bukit Lawang`
+   - *Implemented*: `Orangutan Adventure Sumatra | Ethical Bukit Lawang Trekking`
 2. **Landing Page Enhancement (`/sumatra-orangutan-tour`)**:
-   - *Current Meta Title*: `Sumatra Orangutan Tours | Bukit Lawang Guide`
-   - *Optimized Meta Title*: `Sumatra Orangutan Tours (2026 Guide) – Ethical Trekking & Pricing`
-   - *Meta Description*: `Compare 2026 Sumatra orangutan tours in Bukit Lawang. Licensed local guides, ethical wildlife encounters, jungle river camps, and transparent EUR rates. Book via WhatsApp.`
+   - *Implemented Meta Title*: `Sumatra Orangutan Tours: Trek Options & 2026 Prices`
+   - *Implemented Meta Description*: `Compare Sumatra orangutan tours from Bukit Lawang. See 4-hour to 5-day treks, ethical wildlife rules, camps, rafting, and clear EUR prices.`
 3. **Internal Linking Links**:
    - In `app/home-content.tsx`, link the phrase *"Sumatra orangutan tours"* directly to `/sumatra-orangutan-tour`.
    - Ensure all blog posts link to `/sumatra-orangutan-tour` using commercial anchor variants.
 
 ### Priority 1: International Snippet Optimization (French & German)
 1. **French Optimization (`/fr`)**:
-   - Update `app/content/site-text/fr.ts`:
-     - *Meta Title*: `Trek Orang-outan Sumatra à Bukit Lawang | Guide Local Éthique`
-     - *Meta Description*: `Vivez une aventure éducative et éthique avec les orang-outans à Sumatra. Treks de 1 à 5 jours dans le parc Gunung Leuser, bivouac et rafting. Réservation directe.`
+   - Implemented in `app/content/site-text/fr.ts` as a 28-day CTR experiment:
+     - *Meta Title*: `Aventure éducative avec les orangs-outans à Sumatra`
+     - *Meta Description*: `Vivez une aventure éducative avec les orangs-outans à Sumatra depuis Bukit Lawang: guide local, treks éthiques de 1 à 5 jours, bivouac et rafting.`
+   - Retain only if `/fr` CTR improves without reducing total French impressions or clicks after a complete post-indexing window.
 2. **German Optimization (`/de`)**:
    - Update `app/content/site-text/de.ts`:
      - *Meta Title*: `Orang-Utan Trekking Sumatra | Bukit Lawang Dschungeltouren`
@@ -148,9 +147,9 @@ The GSC MCP `detect_quick_wins` analysis highlighted 7 primary opportunities cur
 ### Priority 2: Structured Data (Schema.org) Deployment
 Deploy modern JSON-LD schemas across key landing pages and blog articles:
 1. **`TouristTrip` / `Trip` Schema on `/sumatra-orangutan-tour`**:
-   - Define `touristType`, `itinerary`, `touristType`, `offers` (currency EUR), and `provider` (Local Guide Syaipul).
+   - Define `touristType`, `itinerary`, `offers` (currency EUR), and `provider` (Local Guide Syaipul).
 2. **`FAQPage` Schema**:
-   - Embed FAQs directly into JSON-LD on `/sumatra-orangutan-tour`, `/essential-information`, and key blog posts to earn expanded SERP snippets (FAQ accordions in Google).
+   - Keep visible FAQs and JSON-LD synchronized on `/sumatra-orangutan-tour`, `/essential-information`, and key blog posts. Use this for semantic clarity; Google now limits FAQ rich results mainly to authoritative government and health sites.
 3. **`BreadcrumbList` Schema**:
    - Reinforce site hierarchy across all `/blog/[slug]` and localized routes.
 
@@ -167,45 +166,53 @@ Produce and publish 3 high-impact guides to address search queries already loggi
 
 ## 6. 90-Day Execution Roadmap (September – December 2026)
 
+**Implementation status audited: 29 September 2026**
+
+- `[x] Code` means the repository implementation is present and verified locally.
+- `[ ] Deploy` means the implementation is awaiting production verification.
+- `[ ] Index` means Google has not yet confirmed recrawl/indexing of the deployed version.
+- `[ ] Measure` means a complete comparison window has not elapsed.
+- `[ ] External` means the action must be completed or verified in Google Search Console, Bing, Google Business Profile, GA4, or another third-party account.
+- `[ ] Partial` means supporting implementation exists, but the full planned scope is not complete.
+
 ```mermaid
 gantt
     title 90-Day SEO Execution Plan
     dateFormat  YYYY-MM-DD
-    section Phase 1: Quick Wins & Fixes
-    Cannibalization Resolution & Meta Rewrite     :active, p1_1, 2026-09-18, 10d
-    French & German SERP Snippet Optimization     :active, p1_2, 2026-09-20, 8d
-    Sitemap Refresh & GSC Submission              :p1_3, 2026-09-25, 4d
-    section Phase 2: Schema & Architecture
-    TouristTrip & FAQPage JSON-LD Schemas         :p2_1, 2026-09-28, 12d
-    Contextual Internal Linking Mesh              :p2_2, 2026-10-05, 10d
-    section Phase 3: Content Production
-    Medan to Bukit Lawang Transport Pillar        :p3_1, 2026-10-12, 14d
-    Best Season / Weather Guide                   :p3_2, 2026-10-22, 14d
-    Pricing Transparency Breakdown                :p3_3, 2026-11-05, 14d
-    section Phase 4: Review & Scaling
-    Post-update GSC Audit & Ranking Inspection    :p4_1, 2026-11-20, 20d
+    section Repository implementation
+    Cannibalization and snippet updates           :done, p1_1, 2026-09-18, 10d
+    Schema internal links and content upgrades    :done, p2_1, 2026-09-20, 9d
+    ISR and localized on-page corrections         :done, p2_2, 2026-09-29, 1d
+    section Deployment and indexing
+    Production deploy and sitemap resubmission    :p3_1, 2026-09-29, 3d
+    GSC URL inspection and recrawl verification   :p3_2, after p3_1, 7d
+    section Measurement
+    Initial 28-day CTR and ranking comparison     :p4_1, after p3_2, 28d
+    Strategic GSC review                          :p4_2, 2026-11-20, 20d
 ```
 
 ### Sprint 1: Days 1 – 14 (Immediate Traffic & CTR Boost)
-- [ ] Fix keyword cannibalization between `/` and `/sumatra-orangutan-tour`.
-- [ ] Implement rewritten meta titles & descriptions for English, French, and German routes.
-- [ ] Update internal link anchor texts in homepage and layout.
-- [ ] Re-submit updated XML sitemap to Google Search Console via MCP `submit_sitemap`.
+- [x] **Code:** Fix keyword cannibalization between `/` and `/sumatra-orangutan-tour`.
+- [x] **Code:** Implement rewritten meta titles, descriptions, and localized H1s for English, French, German, and Dutch routes.
+- [x] **Code:** Update internal link anchor texts in homepage and layout.
+- [ ] **Deploy:** Publish the repository changes and verify ISR/cache headers on Vercel.
+- [ ] **External:** Re-submit the updated XML sitemap to Google Search Console and record the submission date.
 
 ### Sprint 2: Days 15 – 30 (Rich Snippets & Internal Authority)
-- [ ] Implement `TouristTrip` and `FAQPage` JSON-LD components in Next.js.
-- [ ] Link top informational blog posts directly to relevant tour package checkout/WhatsApp CTAs.
-- [ ] Verify indexing status of `/sumatra-orangutan-tour` and `/fr` via MCP `index_inspect`.
+- [x] **Code:** Implement `TouristTrip`, `FAQPage`, breadcrumb, aggregate rating, and dated review JSON-LD in Next.js.
+- [x] **Code:** Link top informational blog posts directly to relevant tour package checkout/WhatsApp CTAs.
+- [ ] **Index:** Verify indexing status of `/`, `/sumatra-orangutan-tour`, and `/fr` in Google Search Console.
 
 ### Sprint 3: Days 31 – 60 (High-Intent Content Publishing)
-- [ ] Publish the comprehensive Medan Airport to Bukit Lawang Transport Guide.
-- [ ] Publish the Seasonality & Weather Guide (`Best Time to See Orangutans`).
-- [ ] Translate high-performing logistics articles into Dutch, French, and German.
+- [x] Publish the comprehensive Medan Airport to Bukit Lawang Transport Guide.
+- [x] Publish the Seasonality & Weather Guide (`Best Time to See Orangutans`).
+- [x] Translate the Medan Airport transport guide into Dutch, French, and German.
+- [ ] **Partial:** Translate newer high-intent English guides such as best time, packing, and the 3-day itinerary after GSC identifies the strongest candidates.
 
 ### Sprint 4: Days 61 – 90 (Conversion & Scaling)
-- [ ] Review desktop ranking trajectory; optimize desktop Core Web Vitals if needed.
-- [ ] Run follow-up GSC MCP analytics comparison (targeting 150+ monthly clicks).
-- [ ] Analyze WhatsApp inquiry conversion rate from organic landing pages.
+- [ ] **Measure:** Review desktop ranking trajectory and run a measured Core Web Vitals/cache audit after deployment.
+- [ ] **Measure:** Run the first 28-day comparison after indexing, then the strategic GSC review after 20 November 2026 (target: 150+ monthly clicks).
+- [ ] **External:** Analyze the implemented GA4 WhatsApp events by organic landing page after enough conversion data is available.
 
 ---
 
@@ -215,7 +222,7 @@ gantt
 | :--- | :---: | :---: | :--- |
 | **Monthly Organic Clicks** | 81 clicks / 28 days | **160+ clicks / 28 days** | +100% growth driven by Page 1 rankings for tour terms & higher CTR. |
 | **Monthly Impressions** | 1,797 / 28 days | **3,500+ / 28 days** | Unlocking high-volume terms (`sumatra orangutan tours`, transport queries). |
-| **Average Organic CTR** | 4.51% | **>6.0%** | Rich snippets (FAQ accordions) + persuasive meta descriptions. |
+| **Average Organic CTR** | 4.51% | **>6.0%** | Better query-to-page alignment, localized titles, and persuasive meta descriptions. |
 | **Tier-1 Market Share** | ~20% of clicks (UK, NL, EU) | **>35% of clicks** | Capturing high-margin European and UK direct booking inquiries. |
 | **Commercial Query Rank** | Position 13.6 (`sumatra tours`) | **Top 5 on Google** | Cannibalization resolution + dedicated topic cluster authority. |
 

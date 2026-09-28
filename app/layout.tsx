@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo_Narrow, Source_Sans_3 } from "next/font/google";
-import { headers } from "next/headers";
 import Script from "next/script";
 import { CookieConsent } from "./components/cookie-consent";
 import "./globals.css";
-import { defaultLocale, isLocale, metadataForLocale } from "./seo";
+import { defaultLocale, metadataForLocale } from "./seo";
 
 export const metadata: Metadata = metadataForLocale(defaultLocale, "/");
 const googleAnalyticsId = "G-4FZR3D7T1H";
@@ -24,13 +23,22 @@ type RootLayoutProps = Readonly<{
   children: React.ReactNode;
 }>;
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const requestHeaders = await headers();
-  const localeHeader = requestHeaders.get("x-oas-locale");
-  const locale = localeHeader && isLocale(localeHeader) ? localeHeader : defaultLocale;
-
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={defaultLocale} suppressHydrationWarning>
+      <head>
+        <script
+          id="set-document-language"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (() => {
+                const locale = window.location.pathname.split('/')[1];
+                document.documentElement.lang = /^(de|fr|nl)$/.test(locale) ? locale : '${defaultLocale}';
+              })();
+            `
+          }}
+        />
+      </head>
       <body className={`${displayFont.variable} ${bodyFont.variable}`}>
         <Script
           id="google-consent-init"

@@ -48,7 +48,7 @@ export const en = {
     ethics: "Responsible trekking",
     ethicsSubTitle: "The best orangutan encounter is still a wild one.",
     gallery: "Gallery",
-    gallerySub: "Endemic wildlife, orangutans in the canopy, leaf monkeys, and quiet rainforest moments.",
+    gallerySub: "Wildlife in the canopy, local guides, guest moments, and the river journey through Bukit Lawang.",
     guides: "Your local guide",
     guidesSub: "Meet Syaipul Ardiansyah, born in Bukit Lawang and guiding rainforest treks since 2015.",
     faq: "FAQ",

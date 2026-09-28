@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const publicPageCache = "public, s-maxage=86400, stale-while-revalidate=604800";
-const cacheHeader = { key: "Cache-Control", value: publicPageCache };
-
 const nextConfig = {
   outputFileTracingRoot: process.cwd(),
   images: {
@@ -57,39 +54,27 @@ const nextConfig = {
       "/privacy",
       "/gdpr"
     ];
-    const localizedBlogSources = [
-      "/de/blog",
-      "/de/blog/:slug*",
-      "/fr/blog",
-      "/fr/blog/:slug*",
-      "/nl/blog",
-      "/nl/blog/:slug*"
-    ];
 
     return [
       ...englishPublicPageSources.map((source) => ({
         source,
-        headers: [{ key: "Content-Language", value: "en" }, cacheHeader]
-      })),
-      ...localizedBlogSources.map((source) => ({
-        source,
-        headers: [cacheHeader]
+        headers: [{ key: "Content-Language", value: "en" }]
       })),
       {
         source: "/",
-        headers: [{ key: "Content-Language", value: "en" }, cacheHeader]
+        headers: [{ key: "Content-Language", value: "en" }]
       },
       {
         source: "/de",
-        headers: [{ key: "Content-Language", value: "de" }, cacheHeader]
+        headers: [{ key: "Content-Language", value: "de" }]
       },
       {
         source: "/fr",
-        headers: [{ key: "Content-Language", value: "fr" }, cacheHeader]
+        headers: [{ key: "Content-Language", value: "fr" }]
       },
       {
         source: "/nl",
-        headers: [{ key: "Content-Language", value: "nl" }, cacheHeader]
+        headers: [{ key: "Content-Language", value: "nl" }]
       }
     ];
   }

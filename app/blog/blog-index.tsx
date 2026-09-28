@@ -137,7 +137,7 @@ export function BlogIndexView({ locale }: { locale: Locale }) {
   };
 
   return (
-    <main className="resource-main">
+    <main className="resource-main" lang={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

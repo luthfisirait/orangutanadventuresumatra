@@ -192,6 +192,7 @@ type GoogleReview = {
   author: string;
   id: string;
   rating: number;
+  publishedAt: string | null;
   profilePhotoUrl: string | null;
   relativeTime: string;
   source: "google";
@@ -245,6 +246,8 @@ function ReviewAvatar({
   return (
     <span className="testimonial-avatar" aria-hidden={profilePhotoUrl ? undefined : "true"}>
       {profilePhotoUrl && !broken ? (
+        // Google profile images use rotating remote hosts, so a native image keeps the fallback reliable.
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           className="testimonial-avatar-image"
           src={profilePhotoUrl}
@@ -486,6 +489,7 @@ export function HomeContent({
           name: review.author
         },
         reviewBody: review.text,
+        ...(review.publishedAt ? { datePublished: review.publishedAt } : {}),
         reviewRating: {
           "@type": "Rating",
           ratingValue: review.rating,
@@ -595,7 +599,7 @@ export function HomeContent({
         }
       ]
     };
-  }, [currentUrl, language, t, googleReviews, googleMapsUrl]);
+  }, [currentUrl, language, t, googleReviews]);
 
   useEffect(() => {
     if (routedLanguage) {
@@ -604,14 +608,7 @@ export function HomeContent({
       return;
     }
 
-    const stored = window.localStorage.getItem("oas-locale");
-    const browserLocale = navigator.language.slice(0, 2).toLowerCase() as Locale;
-    const nextLocale = locales.includes(stored as Locale)
-      ? (stored as Locale)
-      : locales.includes(browserLocale)
-        ? browserLocale
-        : "en";
-    setLanguage(nextLocale);
+    setLanguage("en");
   }, [initialLanguage, routedLanguage]);
 
   useEffect(() => {
@@ -634,7 +631,7 @@ export function HomeContent({
   };
 
   return (
-    <main>
+    <main lang={language}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -810,12 +807,12 @@ export function HomeContent({
         <section className="intent-links-section" aria-labelledby="trip-pathways-heading">
           <div className="section-heading wide-heading">
             <span className="section-kicker">Plan by trip type</span>
-            <h2 id="trip-pathways-heading">Choose the page that matches your Sumatra orangutan trip.</h2>
+            <h2 id="trip-pathways-heading">Choose the page that matches your time and travel style.</h2>
           </div>
           <div className="intent-link-grid">
             <Link className="intent-link-card" href="/sumatra-orangutan-tour">
               <span>Sumatra orangutan tours</span>
-              <strong>Plan an orangutan trip in Sumatra and compare Bukit Lawang jungle packages.</strong>
+              <strong>Compare Bukit Lawang routes by duration, camp nights, effort, and price.</strong>
               <ArrowRight size={18} />
             </Link>
             <Link className="intent-link-card" href="/treks">
@@ -860,10 +857,9 @@ export function HomeContent({
           <h2>{t.headings.packagesSub}</h2>
           {language === "en" ? (
             <p className="section-lede">
-              Comparing routes before you pick a date? Explore our{" "}
-              <Link href="/sumatra-orangutan-tour">Sumatra orangutan tours</Link> for a full breakdown of
-              every <Link href="/sumatra-orangutan-tour">Sumatra orangutan trekking</Link> package, or read
-              the day-by-day{" "}
+              Need more detail before choosing a date? Use the{" "}
+              <Link href="/sumatra-orangutan-tour">full route and price comparison</Link>, or read the
+              day-by-day{" "}
               <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang orangutan trek</Link>.
             </p>
           ) : null}
@@ -1043,12 +1039,21 @@ export function HomeContent({
           <h2>{t.headings.gallerySub}</h2>
         </div>
         <div className="gallery-grid">
-          {galleryItems.map((item, index) => (
+          {galleryItems.map((item) => (
             <figure
               key={item.src}
-              className={index === 0 || index === 4 ? "feature" : ""}
+              className={item.layout === "standard" ? undefined : item.layout}
             >
-              <Image src={item.src} alt={item.alt} fill sizes="(max-width: 900px) 50vw, 25vw" />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes={
+                  item.layout === "standard"
+                    ? "(max-width: 1060px) 50vw, 25vw"
+                    : "(max-width: 1060px) 100vw, 50vw"
+                }
+              />
             </figure>
           ))}
         </div>
@@ -1125,7 +1130,7 @@ export function HomeContent({
                   <Star key={idx} size={16} fill="currentColor" />
                 ))}
               </div>
-              <p>"{testimonial.text}"</p>
+              <p>&ldquo;{testimonial.text}&rdquo;</p>
               <div className="testimonial-author">
                 <ReviewAvatar name={testimonial.author} profilePhotoUrl={testimonial.profilePhotoUrl} />
                 <div className="testimonial-author-copy">
@@ -1181,10 +1186,10 @@ export function HomeContent({
           ))}
         </div>
         <div className="resource-links">
-          <a className="secondary-button dark" href="/essential-information">
+          <Link className="secondary-button dark" href="/essential-information">
             {t.blog.essentialInfo}
             <ArrowRight size={18} />
-          </a>
+          </Link>
           <Link className="secondary-button dark" href={blogIndexPath(language)}>
             {t.blog.allArticles}
             <ArrowRight size={18} />
@@ -1237,7 +1242,7 @@ export function HomeContent({
         <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
         <nav className="footer-links" aria-label="Footer navigation">
-          <a href="/essential-information">{t.footerLinks.essentialInfo}</a>
+          <Link href="/essential-information">{t.footerLinks.essentialInfo}</Link>
           <TrackedLink
             href="/booking"
             eventName="booking_cta_click"
@@ -1246,7 +1251,7 @@ export function HomeContent({
             {t.footerLinks.booking}
           </TrackedLink>
           <Link href={blogIndexPath(language)}>{t.footerLinks.blog}</Link>
-          <a href="/privacy">{t.footerLinks.privacy}</a>
+          <Link href="/privacy">{t.footerLinks.privacy}</Link>
         </nav>
         <nav className="footer-contact-links" aria-label="Contact and social links">
           <a className="footer-icon-link" href={`mailto:${contactEmail}`} aria-label={t.footerLinks.email} title={t.footerLinks.email}>

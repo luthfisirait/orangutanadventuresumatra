@@ -29,7 +29,7 @@ function ReviewCard({ review }: { review: PublicReview }) {
   return (
     <figure className="review-snippet-card">
       <ReviewStars rating={review.rating} />
-      <blockquote>"{review.text}"</blockquote>
+      <blockquote>&ldquo;{review.text}&rdquo;</blockquote>
       <figcaption>
         <strong>{review.author}</strong>
         <span>{review.relativeTime}</span>

@@ -1,5 +1,7 @@
 // Self-check for the September 2026 GSC SEO implementation.
 // Run: npm run build && npm run start, then: node scripts/seo-check.mjs
+import { readFile } from "node:fs/promises";
+
 const BASE = process.env.SEO_CHECK_BASE ?? "http://localhost:3000";
 
 const get = async (path) => {
@@ -17,11 +19,46 @@ const assert = (cond, msg) => {
 
 // Cannibalization fix: the homepage must pass exact-match anchor equity to the tour page.
 const home = await get("/");
-assert(home.includes("Sumatra orangutan tours</a>"), "homepage missing exact-match anchor");
+assert(
+  home.includes('href="/sumatra-orangutan-tour"><span>Sumatra orangutan tours</span>'),
+  "homepage missing exact-match anchor"
+);
 assert(home.includes("Ethical Bukit Lawang Trekking"), "homepage title not rewritten");
+assert(home.includes('<html lang="en"'), "root homepage is not explicitly English");
+assert(!home.includes("Aventure éducative avec les orangs-outans"), "root homepage leaked French content");
+assert(home.includes('id="set-document-language"'), "document language bootstrap is not rendered");
+const homeGraph = jsonLd(home)[0]?.["@graph"] ?? [];
+const business = homeGraph.find((node) => {
+  const type = node["@type"];
+  return type === "TravelAgency" || (Array.isArray(type) && type.includes("TravelAgency"));
+});
+if (business?.review?.length) {
+  assert(
+    business.review.every((review) => typeof review.datePublished === "string"),
+    "rendered Review schema is missing datePublished"
+  );
+}
+const homeSource = await readFile(new URL("../app/home-content.tsx", import.meta.url), "utf8");
+assert(!homeSource.includes("navigator.language"), "root homepage still auto-selects browser language");
+assert(homeSource.includes("datePublished: review.publishedAt"), "review schema is missing datePublished");
+const layoutSource = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
+assert(!layoutSource.includes('from "next/headers"'), "root layout still forces dynamic rendering");
+assert(layoutSource.includes('id="set-document-language"'), "document language bootstrap is missing");
 
 // TouristTrip + FAQ schema with numeric EUR prices on the canonical tour page.
 const tour = await get("/sumatra-orangutan-tour");
+assert(
+  tour.includes("Sumatra Orangutan Tours: Trek Options &amp; 2026 Prices"),
+  "tour page title not aligned with the GSC query"
+);
+assert(
+  tour.includes("Compare Sumatra Orangutan Tours and Trekking Packages"),
+  "tour page H1 not aligned with the GSC query"
+);
+assert(
+  (tour.match(/href="\/sumatra-orangutan-tour"[^>]*>Tours &amp; prices/g) ?? []).length >= 2,
+  "header and footer do not link to the tour landing page"
+);
 const graph = jsonLd(tour)[0]["@graph"];
 const trips = graph.find((n) => n["@type"] === "ItemList").itemListElement;
 assert(trips.length >= 6, `expected >=6 TouristTrip nodes, got ${trips.length}`);
@@ -34,8 +71,13 @@ assert(graph.some((n) => n["@type"] === "FAQPage"), "tour page missing FAQPage")
 assert(graph.some((n) => n["@type"] === "BreadcrumbList"), "tour page missing BreadcrumbList");
 
 // Localized snippets must reach the rendered HTML, not just the source files.
-assert((await get("/fr")).includes("aventure éducative"), "FR meta description not rendered");
-assert((await get("/de")).includes("Feste Preise"), "DE meta description not rendered");
+const frenchHome = await get("/fr");
+assert(frenchHome.includes("Aventure éducative avec les orangs-outans"), "FR title or H1 not rendered");
+assert(frenchHome.includes('<main lang="fr"'), "FR main content is missing its language attribute");
+const germanHome = await get("/de");
+assert(germanHome.includes("Feste Preise"), "DE meta description not rendered");
+assert(germanHome.includes("Orang-Utan Trekking in Bukit Lawang, Sumatra"), "DE H1 not localized");
+assert((await get("/nl")).includes("Orang-oetan trekking in Bukit Lawang, Sumatra"), "NL H1 not localized");
 
 // FAQ schema on the planning page must match the visible FAQ.
 const essential = jsonLd(await get("/essential-information"))[0]["@graph"];
@@ -71,8 +113,17 @@ const merged = await fetch(`${BASE}/blog/how-to-get-to-bukit-lawang-from-medan`,
 });
 assert(merged.status === 308 || merged.status === 301, `merged post returned ${merged.status}`);
 
+const legacyFrenchPost = await fetch(`${BASE}/blog/fr-prix-trek-orang-outan-sumatra-2026`, {
+  redirect: "manual",
+});
+assert(legacyFrenchPost.status === 301, `legacy French post returned ${legacyFrenchPost.status}`);
+assert(
+  legacyFrenchPost.headers.get("location")?.endsWith("/fr/blog/prix-trek-orang-outan-sumatra-2026"),
+  "legacy French post redirects to the wrong URL"
+);
+
 const sitemap = await get("/sitemap.xml");
-assert(sitemap.includes("2026-09-17"), "sitemap lastmod not bumped");
+assert(sitemap.includes("2026-09-29"), "sitemap lastmod not bumped");
 assert(
   !sitemap.includes("how-to-get-to-bukit-lawang-from-medan"),
   "merged post still listed in sitemap"

@@ -42,7 +42,6 @@ content = content.replace(
 
 // 3. Update Headings with Testimonials
 const insertTestimonialsHeading = (lang, title, sub) => {
-  const target = `contactSub: "`;
   const regex = new RegExp(`(contactSub:\\s*".*?")`, 'g');
   let matchCount = 0;
   content = content.replace(regex, (match) => {

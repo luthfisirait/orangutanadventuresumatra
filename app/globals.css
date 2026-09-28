@@ -993,6 +993,10 @@ img {
   grid-row: span 2;
 }
 
+.gallery-grid .wide {
+  grid-column: span 2;
+}
+
 .guides-section {
   padding-top: 30px;
 }
@@ -2495,7 +2499,8 @@ footer .footer-contact-links {
     grid-auto-rows: 230px;
   }
 
-  .gallery-grid .feature {
+  .gallery-grid .feature,
+  .gallery-grid .wide {
     grid-column: auto;
     grid-row: auto;
   }
@@ -4272,7 +4277,8 @@ footer {
     grid-auto-rows: 190px;
   }
 
-  .gallery-grid .feature {
+  .gallery-grid .feature,
+  .gallery-grid .wide {
     grid-column: span 2;
   }
 

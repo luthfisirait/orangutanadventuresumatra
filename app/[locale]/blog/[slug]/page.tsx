@@ -5,8 +5,7 @@ import {
   blogPostLocale,
   blogPostPath,
   blogPostRouteSlug,
-  getBlogPost,
-  localizedBlogLocales
+  getBlogPost
 } from "../../../blog/blog-routing";
 import { isLocale } from "../../../seo";
 import { blogPosts } from "../../../travel-content";

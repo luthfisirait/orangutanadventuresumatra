@@ -47,19 +47,61 @@ export const guideBase: Array<{ id: GuideId; image: string; fallbackImage?: stri
   { id: "syaipul", image: "/images/guide-syaipul.webp", fallbackImage: activityImage(6) }
 ];
 
-export const galleryItems = [
-  { src: wildlifeImage(2), alt: "Orangutan peeking through the Bukit Lawang canopy" },
-  { src: wildlifeImage(1), alt: "Leaf monkey in the rainforest canopy" },
-  { src: wildlifeImage(3), alt: "Orangutan moving through the upper canopy" },
-  { src: wildlifeImage(6), alt: "Leaf monkey resting among the trees" },
-  { src: wildlifeImage(9), alt: "Two orangutans hanging in the rainforest canopy" },
-  { src: wildlifeImage(7), alt: "Orangutan on a tree trunk" },
-  { src: wildlifeImage(8), alt: "Close-up orangutan portrait in Bukit Lawang" },
-  { src: wildlifeImage(11), alt: "Young orangutan peeking from behind a trunk" },
-  { src: wildlifeImage(12), alt: "Two leaf monkeys on rainforest branches" },
-  { src: wildlifeImage(13), alt: "Orangutan with long orange fur in the canopy" },
-  { src: wildlifeImage(15), alt: "Baby orangutan in the trees" },
-  { src: wildlifeImage(4), alt: "Orangutan hidden in dense rainforest foliage" }
+export const galleryItems: Array<{
+  src: string;
+  alt: string;
+  layout: "feature" | "standard" | "wide";
+}> = [
+  {
+    src: wildlifeImage(2),
+    alt: "Orangutan peeking through the Bukit Lawang canopy",
+    layout: "feature"
+  },
+  {
+    src: wildlifeImage(1),
+    alt: "Leaf monkey in the rainforest canopy",
+    layout: "standard"
+  },
+  {
+    src: wildlifeImage(3),
+    alt: "Orangutan moving through the upper canopy",
+    layout: "standard"
+  },
+  {
+    src: "/images/guests/team-and-guests-bukit-lawang.webp",
+    alt: "Local Bukit Lawang guides gathered with guests",
+    layout: "wide"
+  },
+  {
+    src: "/images/guests/guests-by-bahorok-river.webp",
+    alt: "Guests and local guides beside the river in Bukit Lawang",
+    layout: "wide"
+  },
+  {
+    src: wildlifeImage(9),
+    alt: "Two orangutans hanging in the rainforest canopy",
+    layout: "standard"
+  },
+  {
+    src: wildlifeImage(7),
+    alt: "Orangutan on a tree trunk",
+    layout: "standard"
+  },
+  {
+    src: "/images/guests/guest-moment-bukit-lawang.webp",
+    alt: "Guests sharing a joyful moment with the local trekking team",
+    layout: "wide"
+  },
+  {
+    src: wildlifeImage(8),
+    alt: "Close-up orangutan portrait in Bukit Lawang",
+    layout: "standard"
+  },
+  {
+    src: wildlifeImage(11),
+    alt: "Young orangutan peeking from behind a trunk",
+    layout: "standard"
+  }
 ];
 
 // Shared shape for every localized site-text block. Each locale lives in its

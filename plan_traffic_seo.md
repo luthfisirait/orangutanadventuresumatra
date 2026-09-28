@@ -1,6 +1,6 @@
 # Traffic & SEO Growth Plan — Orangutan Adventure Sumatra
 
-_Last updated: 6 July 2026_
+_Last updated: 29 September 2026_
 
 This plan is tailored to the actual codebase (Next.js 15 App Router, multilingual EN/DE/FR/NL, deployed at `https://orangutanadventuresumatra.com`). It separates what is already done well from concrete, prioritized growth actions. The goal is more qualified organic traffic and more direct bookings (bypassing OTA commissions of 20–30%).
 
@@ -17,13 +17,13 @@ The technical SEO foundation is genuinely above average for this niche:
 - **Internationalization**: 4 locales with `hreflang`/`languageAlternates` and `x-default` (`app/seo.ts`), locale-specific keywords and OpenGraph locales.
 - **Metadata discipline**: canonical URLs, OpenGraph, Twitter cards, robots directives with `max-image-preview:large` (`metadataForLocale`).
 - **Sitemap & robots** (`app/sitemap.ts`, `app/robots.ts`) with sensible priorities and explicit allow-listing of AI crawlers (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, etc.).
-- **Content depth**: ~21 blog posts (4 EN core guides + 12 translated DE/FR/NL + more EN posts), 3 dedicated SEO landing pages, trek detail pages.
-- **Performance basics**: WebP images, `next/image`, `revalidate` ISR (86400s), GA4 with Consent Mode v2 (GDPR-compliant).
+- **Content depth**: ~21 blog posts (4 EN core guides + 12 translated DE/FR/NL + more EN posts), 2 active dedicated SEO landing pages, and trek detail pages.
+- **Performance basics**: WebP/AVIF images, `next/image`, request-independent root rendering, `revalidate` ISR (86400s), and GA4 with Consent Mode v2. Production cache behavior must be re-verified after deployment.
 
 ### Gaps & opportunities (what this plan attacks)
 1. **Off-page / authority is the biggest lever.** Travel blogs (bucketlistly, endlessdistances, nomadandinlove) and direct competitors (sumatra-orangutan-explore.com, discover-sumatra.com) outrank a booking site on informational queries mainly through backlinks and age. You have little visible link acquisition strategy.
-2. **Google Business Profile / local pack** is not referenced anywhere in the repo. For "Bukit Lawang guide / tour" searches, the local pack + Google Maps is high-intent traffic you may be missing.
-3. **Review schema is aggregate-only.** Individual `Review` items and review acquisition flow (Google + on-site) would strengthen trust signals and rich results.
+2. **Google Business Profile / local pack remains an external growth task.** The GBP and Maps URLs are now connected to the site entity schema, but profile completeness, categories, photos, posts, and NAP consistency still require account-level verification.
+3. **Review markup is implemented, but review acquisition is the real lever.** `AggregateRating` and individual dated `Review` nodes support entity understanding; Google normally does not award self-serving `LocalBusiness` review-star rich results.
 4. **GEO (AI search) is allowed but not optimized.** Crawlers can access you, but content isn't fully structured for citation (definition-led answers, stats, comparison tables).
 5. **Keyword coverage has gaps** around high-intent long-tail and comparison/cost queries that bloggers currently own.
 6. **Internal linking** between blog → landing → booking could be more systematic (topic clusters).
@@ -42,11 +42,12 @@ This is a very small dataset, so treat it as a baseline, not a verdict. It is st
 
 **What this changes:** prioritize measurement and distribution before publishing many more posts. The site already has useful content; the bigger gap is getting Google Search Console query data, tracking all booking/WhatsApp CTAs, building local visibility, and earning links/citations so existing pages can rank.
 
-### Live technical spot-check (7 Jul 2026)
+### Live technical spot-check (28 Sep 2026)
 - `robots.txt` returns 200, references `sitemap.xml`, and allows major AI crawlers.
-- `sitemap.xml` returns 200 with 49 URLs; 20 entries include language alternates.
-- Key money pages (`/`, `/booking`, `/sumatra-orangutan-tour`, `/bukit-lawang-orangutan-trekking`, `/3-day-bukit-lawang-orangutan-trek`) return 200, have self-canonicals, one H1, index/follow robots metadata, and JSON-LD.
-- Minor SERP polish: `/booking`, `/bukit-lawang-orangutan-trekking`, and `/3-day-bukit-lawang-orangutan-trek` have titles/descriptions near or above common visible-length limits. Not critical, but worth tightening after tracking is fixed.
+- `sitemap.xml` returns 200 with 50 canonical URLs; all sampled sitemap URLs return 200.
+- Key money pages (`/`, `/booking`, `/sumatra-orangutan-tour`, `/3-day-bukit-lawang-orangutan-trek`, `/treks`) have self-canonicals, one H1, index/follow robots metadata, and JSON-LD.
+- The retired `/bukit-lawang-orangutan-trekking` URL permanently redirects to `/` and must not be used as an active internal-link or keyword target.
+- The latest repository changes still require deployment, sitemap resubmission, and indexing verification.
 
 ---
 
@@ -56,7 +57,7 @@ This is a very small dataset, so treat it as a baseline, not a verdict. It is st
 |----------|-----------|--------|--------|
 | P0 | Google Business Profile + local SEO | High | Low |
 | P0 | Search Console + GA4 conversion events setup | High | Low |
-| P0 | Review acquisition + `Review` schema | High | Med |
+| P0 | Google review acquisition workflow | High | Low |
 | P1 | Topic-cluster content expansion (cost, safety, comparison, itinerary) | High | Med |
 | P1 | Backlink / digital PR campaign | High | High |
 | P1 | GEO / AI-citation optimization | Med-High | Med |
@@ -86,7 +87,7 @@ You cannot improve what you don't track.
 
 ### 3.3 Reviews & trust (P0/P1)
 - **Active review acquisition**: ask every guest post-trek for a Google review (QR card, WhatsApp follow-up message with direct review link).
-- **Extend schema**: add individual `Review` objects (author, rating, reviewBody, datePublished) to the `LocalBusiness` graph, sourced from your existing `getGoogleReviewsData()` pipeline (`app/google-reviews.ts`). You already compute `AggregateRating`; surface a few real reviews as `Review` nodes for richer eligibility.
+- **Keep schema accurate**: individual `Review` objects now include author, rating, review body, and `datePublished`, sourced from `getGoogleReviewsData()` (`app/google-reviews.ts`). Treat this as entity context, not a promise of Google review-star rich results for a self-controlled `LocalBusiness` page.
 - **Display reviews prominently** on landing pages and the booking page to lift conversion.
 
 ### 3.4 Content & topical authority (P1)
@@ -125,12 +126,13 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 - **Keep robots access open** to GPTBot/ClaudeBot/PerplexityBot (already configured in `app/robots.ts`).
 
 ### 3.7 Internal linking & site architecture (P2)
-- Build deliberate clusters: each blog post should link to the most relevant landing page (`/sumatra-orangutan-tour`, `/bukit-lawang-orangutan-trekking`, `/3-day-bukit-lawang-orangutan-trek`) and the `/booking` page with descriptive anchor text.
+- Build deliberate clusters: each blog post should link to the most relevant active landing page (`/sumatra-orangutan-tour`, `/3-day-bukit-lawang-orangutan-trek`, or `/treks`) and the `/booking` page with descriptive anchor text.
 - Landing pages should cross-link to supporting blog posts ("Read the full cost guide", "See the 3-day itinerary").
 - Ensure every money page (booking, treks, landing pages) is reachable within 2 clicks from the homepage.
 - Add a "related posts" block driven by tags (the blog already has tags) for crawl depth and dwell time.
 
 ### 3.8 Technical & Core Web Vitals (P2)
+- After deployment, confirm HTML pages use Vercel ISR/CDN caching rather than `private, no-cache, no-store`; verify `Age` increases and `X-Vercel-Cache` reaches `HIT` on repeat requests.
 - Run Lighthouse/PageSpeed on home, a landing page, and a blog post for mobile. Confirm LCP < 2.5s, INP < 200ms, CLS < 0.1.
 - Audit image sizes: hero images use `priority` + `fill` — confirm `sizes` are accurate and serve appropriately scaled WebP/AVIF.
 - Verify the GA4/gtag scripts (in `app/layout.tsx`) don't block rendering; `afterInteractive` is correct — keep consent-gated loading.
@@ -146,27 +148,37 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 
 ## 4. 90-day roadmap
 
+**Implementation status audited: 29 September 2026**
+
+- `[x] Code` means the repository implementation is present and verified locally.
+- `[ ] Deploy` means the code is complete but not yet verified on production.
+- `[ ] Index` means deployment is complete but Google recrawl/indexing is not yet verified.
+- `[ ] Measure` means a full post-deployment comparison window has not elapsed.
+- `[ ] External` requires access to a third-party account or an offline business process.
+- `[ ] Partial` has supporting work in place but still has remaining scope.
+
 ### Month 1 — Foundations & measurement
-- [ ] Verify Google Search Console + Bing Webmaster Tools; submit sitemap.
-- [ ] Set up GA4 conversion events (WhatsApp click, booking submit, deposit start).
-- [ ] Claim & fully optimize Google Business Profile; fix NAP consistency.
-- [ ] Add `sameAs` + `Review` nodes to `LocalBusiness` schema.
-- [ ] Launch post-trek review-request workflow.
-- [ ] Baseline report: current impressions/clicks/positions per locale.
+- [x] **External:** Bing Webmaster Tools is connected and its 50-URL sitemap was accepted on 26 September 2026; meaningful query data is still accumulating.
+- [x] **Code:** Set up GA4 conversion events (WhatsApp click, booking submit, and PayPal deposit start/success).
+- [ ] **External:** Claim and fully optimize Google Business Profile; verify NAP consistency against the website schema.
+- [x] **Code:** Add `sameAs`, `AggregateRating`, and dated visible Google `Review` nodes to the `LocalBusiness` schema when Places data is available.
+- [ ] **Deploy:** Publish the ISR, localized H1, review-date, sitemap, and snippet changes and verify production output.
+- [ ] **External:** Launch the post-trek Google review-request workflow.
+- [x] **External:** Establish the GSC baseline report for impressions, clicks, CTR, positions, countries, devices, and priority queries.
 
 ### Month 2 — Content & on-page
-- [ ] Publish/upgrade 3–4 high-intent EN posts (cost table, best time, Medan logistics, trek-length decision guide).
-- [ ] Add comparison & price tables; rewrite intros to be definition-led for snippets/AI.
-- [ ] Implement systematic internal linking (clusters → landing → booking).
-- [ ] Expand FAQ schema on the 3 landing pages.
-- [ ] Core Web Vitals audit + image fixes.
+- [x] Publish or upgrade the high-intent English cost, best-time, Medan logistics, and trek-length decision guides.
+- [x] Add comparison and price tables plus direct, answer-led article introductions.
+- [x] Implement systematic internal linking from blog clusters to tour landing pages and booking CTAs.
+- [x] Expand FAQ schema on the active SEO landing pages and essential-information page. The older third landing-page reference was retired during URL consolidation.
+- [ ] **Measure:** Run mobile Core Web Vitals and cache-response audits after the production deployment has stabilized.
 
 ### Month 3 — Authority & scale
-- [ ] Backlink/digital-PR outreach: 10–15 targeted pitches (eco-travel blogs, conservation orgs, roundups).
-- [ ] Reclaim unlinked brand mentions.
-- [ ] Translate top-performing new EN posts into DE/FR/NL.
-- [ ] Review GSC data; double down on queries ranking positions 5–15 (striking distance).
-- [ ] Iterate landing-page copy based on conversion data.
+- [ ] **External:** Run backlink/digital-PR outreach with 10–15 targeted pitches.
+- [ ] **External:** Reclaim unlinked brand and guide-name mentions.
+- [ ] **Partial:** Core comparison, cost, safety, and Medan transport clusters are translated; newer English guides still need performance-led DE/FR/NL prioritization.
+- [ ] **Measure:** Review post-update GSC data and double down on queries ranking in positions 5–15.
+- [ ] **Measure:** Iterate landing-page copy after enough GA4 conversion data has accumulated.
 
 ---
 
@@ -183,11 +195,12 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 ---
 
 ## 6. Quick wins to do first (this week)
-1. Verify Search Console + Bing, submit sitemap.
-2. Claim/optimize Google Business Profile.
-3. Finish GA4 conversion tracking on every WhatsApp + booking CTA, especially homepage nav/hero/contact/footer/floating WhatsApp links.
-4. Start asking every guest for a Google review.
-5. Add a price table + definition-led intro to the existing cost guide post.
+1. **Deploy:** Publish the current SEO/ISR changes, then submit the refreshed sitemap and inspect `/`, `/fr`, and `/sumatra-orangutan-tour` in GSC.
+2. **External:** Claim and optimize Google Business Profile.
+3. **Done:** Bing Webmaster Tools is connected and the sitemap was accepted; allow time for crawl and query reports to populate.
+4. **Done:** GA4 conversion tracking covers WhatsApp, booking, and PayPal deposit actions across the main conversion surfaces.
+5. **External:** Start asking every guest for a Google review using a consistent post-trek message and direct review link.
+6. **Done:** The cost guide includes price/context tables and a direct answer-led introduction.
 
 ---
 

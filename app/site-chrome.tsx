@@ -17,7 +17,7 @@ import {
 
 const footerLinks = [
   { href: "/booking", key: "booking" },
-  { href: "/treks", key: "treks" },
+  { href: "/sumatra-orangutan-tour", key: "treks" },
   { href: "/essential-information", key: "essential" },
   { href: "/payment-and-deposit", key: "payment" },
   { href: "/blog", key: "blog" },
@@ -33,7 +33,7 @@ const footerContactLinks = [
 
 const headerLinks = [
   { href: "/booking", key: "booking" },
-  { href: "/#treks", key: "treks" },
+  { href: "/sumatra-orangutan-tour", key: "treks" },
   { href: "/essential-information", key: "essential" },
   { href: "/blog", key: "blog" },
   { href: "/privacy", key: "privacy" }
@@ -42,7 +42,7 @@ const headerLinks = [
 const chromeCopy = {
   en: {
     booking: "Booking",
-    treks: "Treks",
+    treks: "Tours & prices",
     essential: "Essential information",
     payment: "Payment and deposit",
     blog: "Blog",
@@ -95,7 +95,7 @@ function localizedHref(locale: Locale, href: string) {
     return `/${locale}`;
   }
 
-  if (href === "/#treks") {
+  if (href === "/sumatra-orangutan-tour") {
     return `/${locale}#treks`;
   }
 

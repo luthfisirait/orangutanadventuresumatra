@@ -302,7 +302,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
   };
 
   return (
-    <main className="resource-main">
+    <main className="resource-main" lang={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

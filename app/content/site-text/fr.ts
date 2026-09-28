@@ -1,15 +1,15 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Trek Orang-outan Sumatra à Bukit Lawang | Guide Local Éthique",
+  metaTitle: "Aventure éducative avec les orangs-outans à Sumatra",
   metaDescription:
-    "Vivez une aventure éducative et éthique avec les orang-outans à Sumatra. Treks de 1 à 5 jours dans le parc Gunung Leuser, bivouac et rafting. Réservation directe.",
+    "Vivez une aventure éducative avec les orangs-outans à Sumatra depuis Bukit Lawang: guide local, treks éthiques de 1 à 5 jours, bivouac et rafting.",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
-    eyebrow: "Trekking éthique dans le parc national de Gunung Leuser",
-    title: "Trek orang-outan à Bukit Lawang",
+    eyebrow: "Aventure éducative et éthique à Bukit Lawang",
+    title: "Aventure éducative avec les orangs-outans à Sumatra",
     description:
-      "Trek orang-outan à Sumatra depuis Bukit Lawang avec un guide local, des rencontres responsables avec la faune, des camps au bord de la rivière, de la nourriture fraîche et un retour possible en tube rafting.",
+      "Découvrez la forêt de Bukit Lawang avec un guide local, des rencontres responsables avec la faune, des camps au bord de la rivière et un retour possible en tube rafting.",
     primary: "Découvrir les treks",
     secondary: "WhatsApp",
     stats: [
@@ -26,9 +26,9 @@ export const fr = {
   ],
   intro: {
     kicker: "Pourquoi ce trek",
-    title: "Aventure moderne, racines locales et respect profond de la forêt.",
+    title: "Comprendre la forêt tout en respectant les orangs-outans.",
     paragraphs: [
-      "Orangutan Adventure Sumatra organise des treks éthiques dans la jungle autour de Bukit Lawang, porte d’entrée du parc national de Gunung Leuser. L’expérience s’adresse aux voyageurs qui veulent une vraie journée en forêt tropicale sans transformer la faune en spectacle.",
+      "Cette aventure éducative avec les orangs-outans à Sumatra part de Bukit Lawang, porte d’entrée du parc national de Gunung Leuser. Elle s’adresse aux voyageurs qui veulent comprendre la forêt tropicale sans transformer la faune en spectacle.",
       "Choisis entre des promenades courtes, des treks classiques avec nuit, des forfaits privés exclusifs, des visites de Bat Cave et des tours de village. Syaipul gère le rythme, l’itinéraire, les repas, le campement et le retour par la rivière quand il est inclus.",
       "Cette page répond aux recherches fréquentes comme trek orang-outan Sumatra, trek jungle Bukit Lawang, circuit orang-outan éthique et voyage responsable dans le parc national de Gunung Leuser."
     ],
@@ -48,7 +48,7 @@ export const fr = {
     ethics: "Trekking responsable",
     ethicsSubTitle: "La plus belle rencontre avec un orang-outan reste sauvage.",
     gallery: "Galerie",
-    gallerySub: "Faune endémique, orangs-outans dans la canopée, singes à feuilles et moments calmes de la forêt.",
+    gallerySub: "Faune dans la canopée, guides locaux, moments partagés avec nos voyageurs et trajet sur la rivière à Bukit Lawang.",
     guides: "Ton guide local",
     guidesSub: "Découvre Syaipul Ardiansyah, né à Bukit Lawang et guide en forêt tropicale depuis 2015.",
     faq: "FAQ",

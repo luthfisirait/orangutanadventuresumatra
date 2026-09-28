@@ -58,13 +58,13 @@ const landingPages: Record<string, LandingPage> = {
   sumatraOrangutanTour: {
     slug: "sumatra-orangutan-tour",
     title: "Sumatra Orangutan Tour",
-    metaTitle: "Sumatra Orangutan Tours (2026 Guide) – Ethical Trekking & Pricing",
+    metaTitle: "Sumatra Orangutan Tours: Trek Options & 2026 Prices",
     metaDescription:
-      "Compare 2026 Sumatra orangutan tours in Bukit Lawang. Licensed local guides, ethical wildlife encounters, jungle river camps, and transparent EUR rates. Book via WhatsApp.",
-    heroKicker: "Choose your rainforest route",
-    heroTitle: "Sumatra Orangutan Tours",
+      "Compare Sumatra orangutan tours from Bukit Lawang. See 4-hour to 5-day treks, ethical wildlife rules, camps, rafting, and clear EUR prices.",
+    heroKicker: "Compare routes and prices",
+    heroTitle: "Compare Sumatra Orangutan Tours and Trekking Packages",
     heroDescription:
-      "Compare Bukit Lawang orangutan treks by time, effort, camp nights, and price, then ask a local guide which route fits your dates.",
+      "Choose the right Bukit Lawang trek by duration, trail effort, camp nights, and price, then ask a local guide to confirm the best fit for your dates.",
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
     highlights: [
@@ -100,10 +100,10 @@ const landingPages: Record<string, LandingPage> = {
     },
     sections: [
       {
-        title: "Start with the time you have",
+        title: "Choose by duration, effort, camp nights, and price",
         paragraphs: [
-          "Most trips start in Bukit Lawang, on the edge of Gunung Leuser National Park. Choose by how much forest time you want, whether you want to sleep at a river camp, and how private you want the pace to be.",
-          "The guide team handles route planning, meals, camp setup, permits, and practical questions about transport from Medan or Kuala Namu."
+          "Choose a 4-hour or 1-day route for a shorter forest visit, a 2-day or 3-day trek for river camp nights, or a 4-day or 5-day route for more sustained hiking. The comparison below shows the published EUR price for each option.",
+          "Most tours start in Bukit Lawang on the edge of Gunung Leuser National Park. The guide team confirms trail difficulty, meals, camp setup, permits, rafting conditions, and practical transport questions before payment."
         ],
         bullets: [
           "Short treks for limited time",
@@ -199,7 +199,7 @@ const landingPages: Record<string, LandingPage> = {
       }
     ],
     relatedLinks: [
-      { href: "/", label: "Bukit Lawang orangutan trekking" },
+      { href: "/", label: "Meet the local Bukit Lawang guide" },
       { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
       { href: "/blog/sumatra-orangutan-trekking-cost-price-guide-2026", label: "Sumatra orangutan trekking cost guide" },
       { href: "/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek", label: "Compare 1-day, 2-day and 3-day treks" },

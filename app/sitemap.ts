@@ -29,10 +29,10 @@ function blogLastModified(post: (typeof blogPosts)[number]) {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPageLastModified = asLastModified("2026-06-09");
-  // Meta titles, descriptions, and schema for the localized home routes were rewritten on this date.
-  const metaRewriteLastModified = asLastModified("2026-09-17");
+  // Localized titles, H1s, language signals, and review schema were updated on this date.
+  const metaRewriteLastModified = asLastModified("2026-09-29");
   const seoReleaseLastModified = asLastModified("2026-07-21");
-  const landingPageLastModified = asLastModified("2026-09-17");
+  const landingPageLastModified = asLastModified("2026-09-26");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );

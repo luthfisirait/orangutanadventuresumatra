@@ -31,14 +31,7 @@ export function middleware(request: NextRequest) {
   }
 
   const locale = matchedLocale.slice(1);
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-oas-locale", locale);
-
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders
-    }
-  });
+  const response = NextResponse.next();
 
   response.headers.set("Content-Language", locale);
 

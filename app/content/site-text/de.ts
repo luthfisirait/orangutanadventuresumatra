@@ -7,7 +7,7 @@ export const de = {
   nav: { treks: "Treks", experience: "Erlebnis", guides: "Guide", faq: "FAQ", contact: "Kontakt" },
   hero: {
     eyebrow: "Ethisches Trekking im Gunung-Leuser-Nationalpark",
-    title: "Orangutan Adventure Sumatra",
+    title: "Orang-Utan Trekking in Bukit Lawang, Sumatra",
     description:
       "Geführte Dschungelabenteuer ab Bukit Lawang mit einem lokalen Guide, respektvollen Wildtierbegegnungen, Flusscamps, frischem Dschungelessen und Tube-Rafting zurück ins Dorf.",
     primary: "Treks entdecken",
@@ -47,7 +47,7 @@ export const de = {
     ethics: "Verantwortungsvolles Trekking",
     ethicsSubTitle: "Die beste Orang-Utan-Begegnung bleibt immer eine wilde.",
     gallery: "Galerie",
-    gallerySub: "Endemische Wildtiere, Orang-Utans im Blätterdach, Blattaffen und ruhige Regenwaldmomente.",
+    gallerySub: "Wildtiere im Blätterdach, lokale Guides, gemeinsame Momente mit Gästen und die Flussfahrt durch Bukit Lawang.",
     guides: "Dein lokaler Guide",
     guidesSub: "Lerne Syaipul Ardiansyah kennen, geboren in Bukit Lawang und seit 2015 als Regenwald-Guide unterwegs.",
     faq: "FAQ",
