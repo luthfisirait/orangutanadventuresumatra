@@ -579,6 +579,7 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Compare 1-day, 2-day, and 3-day Bukit Lawang orangutan treks by time, price, fitness, camp life, wildlife watching, and river return.",
     date: "2026-07-06",
+    dateModified: "2026-09-29",
     readingTime: "7 min read",
     image: "/images/package-activity-hero.webp",
     imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
@@ -597,6 +598,10 @@ const informationBlogPosts: BlogPost[] = [
           "Choose a 1-day Bukit Lawang trek if you want one strong rainforest day without sleeping in the jungle. Choose a 2-day trek if you want a first overnight camp. Choose a 3-day trek if you want the best balance of wildlife watching, camp rhythm, and river return.",
           "For most first-time visitors with enough time, the 3-day Bukit Lawang orangutan trek is the strongest choice because the trip has time to slow down after the first wildlife encounters."
         ],
+        callout:
+          "Planning tip: Not sure which option matches your arrival flight or fitness level? Compare all inclusions and current rates on our [Sumatra orangutan tours page](/sumatra-orangutan-tour), read the full [3-day jungle trek itinerary](/3-day-bukit-lawang-orangutan-trek), or message guide Syaipul directly on WhatsApp (+62 853 6240 5752) to check open dates.",
+
+
         table: {
           caption: "Best trek length by traveler need",
           columns: ["Trek length", "Best for", "Tradeoff"],
@@ -635,7 +640,8 @@ const informationBlogPosts: BlogPost[] = [
         bullets: [
           "Two nights in simple jungle camps.",
           "Better rhythm for wildlife watching and forest learning.",
-          "Often includes a tube rafting return when river conditions are safe."
+          "Often includes a tube rafting return when river conditions are safe.",
+          "Explore the detailed day-by-day camp breakdown on our [3-day Bukit Lawang trek itinerary page](/3-day-bukit-lawang-orangutan-trek)."
         ]
       },
       {
@@ -652,6 +658,14 @@ const informationBlogPosts: BlogPost[] = [
           {
             q: "Which trek is best for families?",
             a: "Many families prefer a private 2-day or private 3-day flow because the guide can adjust pace and breaks around the group."
+          },
+          {
+            q: "How far in advance should I book?",
+            a: "Gunung Leuser National Park maintains guide-to-guest quotas to protect wildlife. During peak travel periods (July-August and December-January), camps fill up fast. We recommend contacting us 2 to 4 weeks ahead via our [booking page](/booking) or directly on WhatsApp."
+          },
+          {
+            q: "Can I bundle private airport transport from Medan?",
+            a: "Yes. Many guests bundle their trek with private air-conditioned transport directly from Medan Kualanamu Airport (KNO). You can request this directly when sending your dates on our [booking page](/booking)."
           }
         ]
       }
@@ -664,7 +678,7 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Safety guide for Bukit Lawang solo and female travelers: guides, transport, jungle trekking, rivers, arrivals, private treks, and practical precautions.",
     date: "2026-06-09",
-    dateModified: "2026-06-28",
+    dateModified: "2026-09-29",
     readingTime: "7 min read",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Traveler walking through a green Bukit Lawang village path",
@@ -672,6 +686,7 @@ const informationBlogPosts: BlogPost[] = [
     primaryCtaHref: "/booking",
     primaryCtaLabel: "Ask about a clear private trek",
     relatedSlugs: [
+      "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
       "ethical-orangutan-trekking-conservation-local-community",
       "what-to-pack-for-bukit-lawang-jungle-trek",
       "medan-airport-to-bukit-lawang-transport-options"
@@ -684,13 +699,17 @@ const informationBlogPosts: BlogPost[] = [
           "Bukit Lawang is generally safe for solo female travelers who book a reputable guide, arrive with a clear plan, and treat the jungle, river, and late-night transport with normal caution.",
           "It is a well-established travel village and many solo travelers, couples, families, and backpackers visit without problems. That does not mean you should treat it as risk-free. It is a small jungle gateway with uneven paths, river currents, humid trails, limited lighting in places, and variable transport standards.",
           "The safest trips usually come from boring decisions made early: book a reputable guide, arrive before dark when possible, keep enough cash, carry a flashlight, share your plans with someone, and be clear about your comfort level before entering the forest."
-        ]
+        ],
+        callout:
+          "Solo traveler advice: You do not need to join an unpredictable large group if you prefer dedicated attention. We arrange small-group and private guided treks with certified local guides and secure riverside camps. Explore our verified [Sumatra orangutan tours](/sumatra-orangutan-tour) or message Syaipul directly on WhatsApp (+62 853 6240 5752) with any questions before deciding."
+
       },
       {
         title: "For solo and female travelers",
         paragraphs: [
           "Solo and female travelers should be selective about guides and transport. Ask who will guide the trek, whether there will be other guests, where the group sleeps, how the camp is arranged, and how many staff will be present on overnight trips.",
-          "If you prefer not to join a mixed group, ask for a private trek. Private guiding costs more, but it gives more control over pace, route, sleeping arrangements, and communication."
+          "If you prefer not to join a mixed group, ask for a private trek. Private guiding costs more, but it gives more control over pace, route, sleeping arrangements, and communication.",
+          "If you are deciding which trek duration fits your schedule and physical comfort, read our [1-day vs 2-day vs 3-day trek comparison](/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek) or request a private trek via our [booking page](/booking)."
         ],
         bullets: [
           "Book through a business with clear contact details and public reviews.",

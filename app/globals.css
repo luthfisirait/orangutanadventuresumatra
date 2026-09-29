@@ -2119,6 +2119,40 @@ footer .footer-contact-links {
   line-height: 1.7;
 }
 
+.article-callout {
+  margin: 28px 0;
+  padding: 18px 22px;
+  border-left: 4px solid var(--forest);
+  border-radius: 0 8px 8px 0;
+  background: rgba(14, 107, 118, 0.08);
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.inline-article-link {
+  color: var(--forest);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 150ms ease;
+}
+
+.inline-article-link:hover {
+  color: var(--river);
+}
+
+.whatsapp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whatsapp-cta-btn:hover {
+  border-color: #25d366 !important;
+  color: #128c7e !important;
+}
+
 .related-section {
   padding-top: 42px;
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, Clock3 } from "lucide-react";
+import { ArrowRight, Check, Clock3, MessageCircle } from "lucide-react";
 import { TrackedLink } from "../components/tracked-link";
 import { StaticFooter, StaticHeader } from "../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../seo";
@@ -9,6 +9,7 @@ import type { Locale } from "../site-content";
 import {
   blogPosts,
   instagramUrl,
+  whatsappNumber,
   type BlogPost
 } from "../travel-content";
 import {
@@ -40,6 +41,8 @@ const blogCopy = {
     ctaTitle: "Ready to compare trek options?",
     ctaText:
       "Use the booking pages to choose a route, confirm transport from Medan, and send your dates before paying a deposit.",
+    whatsappCta: "Chat on WhatsApp",
+    whatsappMessage: 'Hi Orangutan Adventure Sumatra, I was reading your guide "{title}" and would like to ask about trek availability.',
     moreKicker: "More travel guides",
     moreTitle: "Plan the next step of your Bukit Lawang trip",
     blog: "Blog"
@@ -58,6 +61,8 @@ const blogCopy = {
     ctaTitle: "Möchtest du Trek-Optionen vergleichen?",
     ctaText:
       "Wähle eine Route, kläre den Transfer ab Medan und sende deine Reisedaten, bevor du eine Anzahlung leistest.",
+    whatsappCta: "Auf WhatsApp fragen",
+    whatsappMessage: 'Hallo Orangutan Adventure Sumatra, ich habe Ihren Reiseführer "{title}" gelesen und möchte nach der Verfügbarkeit fragen.',
     moreKicker: "Weitere Reiseführer",
     moreTitle: "Plane den nächsten Schritt deiner Bukit-Lawang-Reise",
     blog: "Reiseblog"
@@ -76,6 +81,8 @@ const blogCopy = {
     ctaTitle: "Prêt à comparer les treks ?",
     ctaText:
       "Choisissez un itinéraire, confirmez le transport depuis Medan et envoyez vos dates avant de verser un acompte.",
+    whatsappCta: "Discuter sur WhatsApp",
+    whatsappMessage: 'Bonjour Orangutan Adventure Sumatra, je lisais votre guide "{title}" et j\'aimerais me renseigner sur les disponibilités.',
     moreKicker: "Autres guides de voyage",
     moreTitle: "Préparez la prochaine étape de votre voyage à Bukit Lawang",
     blog: "Guide de voyage"
@@ -94,11 +101,58 @@ const blogCopy = {
     ctaTitle: "Klaar om trekopties te vergelijken?",
     ctaText:
       "Kies een route, bespreek vervoer vanaf Medan en stuur je reisdata voordat je een aanbetaling doet.",
+    whatsappCta: "Vraag via WhatsApp",
+    whatsappMessage: 'Hallo Orangutan Adventure Sumatra, ik las jullie gids "{title}" en wil graag informeren naar beschikbaarheid.',
     moreKicker: "Meer reisgidsen",
     moreTitle: "Plan de volgende stap van je reis naar Bukit Lawang",
     blog: "Reisgids"
   }
 } satisfies Record<Locale, Record<string, string>>;
+
+function renderFormattedText(text: string) {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  if (!linkRegex.test(text)) {
+    return text;
+  }
+
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    if (href.startsWith("/")) {
+      parts.push(
+        <Link key={`${href}-${match.index}`} href={href} className="inline-article-link">
+          {label}
+        </Link>
+      );
+    } else {
+      parts.push(
+        <a
+          key={`${href}-${match.index}`}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-article-link"
+        >
+          {label}
+        </a>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return <>{parts}</>;
+}
 
 export function getPostModifiedDate(post: BlogPost) {
   return post.dateModified ?? post.date;
@@ -374,8 +428,8 @@ export function BlogPostView({ post }: { post: BlogPost }) {
             {post.sections.map((section) => (
               <section key={section.title}>
                 <h2>{section.title}</h2>
-                {section.paragraphs?.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                {section.paragraphs?.map((paragraph, pIdx) => (
+                  <p key={`${section.title}-p-${pIdx}`}>{renderFormattedText(paragraph)}</p>
                 ))}
                 {section.table ? (
                   <div className="article-table-wrap">
@@ -402,13 +456,15 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                     </table>
                   </div>
                 ) : null}
-                {section.callout ? <p className="article-callout">{section.callout}</p> : null}
+                {section.callout ? (
+                  <p className="article-callout">{renderFormattedText(section.callout)}</p>
+                ) : null}
                 {section.bullets ? (
                   <ul>
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>
+                    {section.bullets.map((bullet, bIdx) => (
+                      <li key={`${section.title}-b-${bIdx}`}>
                         <Check size={17} />
-                        {bullet}
+                        {renderFormattedText(bullet)}
                       </li>
                     ))}
                   </ul>
@@ -421,7 +477,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                           {item.q}
                           <ArrowRight size={18} />
                         </summary>
-                        <p>{item.a}</p>
+                        <p>{renderFormattedText(item.a)}</p>
                       </details>
                     ))}
                   </div>
@@ -440,6 +496,19 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                 >
                   {primaryCtaLabel}
                   <ArrowRight size={18} />
+                </TrackedLink>
+                <TrackedLink
+                  className="secondary-button dark whatsapp-cta-btn"
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                    copy.whatsappMessage.replace("{title}", post.title)
+                  )}`}
+                  eventName="whatsapp_click"
+                  eventParams={{ blog_post: post.slug, locale, source: "blog_article_whatsapp" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle size={18} />
+                  <span>{copy.whatsappCta}</span>
                 </TrackedLink>
                 {isEnglish ? (
                   <TrackedLink

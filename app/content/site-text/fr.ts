@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Aventure éducative avec les orangs-outans à Sumatra",
+  metaTitle: "Aventure éducative avec les orangs-outans à Sumatra | Trek Éthique Bukit Lawang",
   metaDescription:
-    "Vivez une aventure éducative avec les orangs-outans à Sumatra depuis Bukit Lawang: guide local, treks éthiques de 1 à 5 jours, bivouac et rafting.",
+    "Aventure éducative avec les orangs-outans à Sumatra (Bukit Lawang). Guide local certifié, trek éthique 1 à 5 jours sans nourrissage, bivouac en rivière et rafting. Tarifs clairs.",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Aventure éducative et éthique à Bukit Lawang",
