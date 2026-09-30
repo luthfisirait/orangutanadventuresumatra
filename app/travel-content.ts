@@ -581,8 +581,8 @@ const informationBlogPosts: BlogPost[] = [
     date: "2026-07-06",
     dateModified: "2026-09-29",
     readingTime: "7 min read",
-    image: "/images/package-activity-hero.webp",
-    imageAlt: "Small trekking group hiking a Bukit Lawang rainforest trail",
+    image: "/images/trek-duration-comparison.webp",
+    imageAlt: "Small group of hikers and local guide trekking along a rainforest mountain ridge in Bukit Lawang",
     tags: ["Bukit Lawang trek comparison", "1 day vs 3 day trek", "orangutan trekking Sumatra"],
     primaryCtaHref: "/sumatra-orangutan-tour",
     primaryCtaLabel: "Compare all Sumatra orangutan tours",
@@ -591,6 +591,7 @@ const informationBlogPosts: BlogPost[] = [
       "3-day-bukit-lawang-jungle-trek-itinerary",
       "what-to-pack-for-bukit-lawang-jungle-trek"
     ],
+    translationKey: "1-day-vs-2-day-vs-3-day-trek",
     sections: [
       {
         title: "The quick answer",
@@ -851,6 +852,227 @@ const informationBlogPosts: BlogPost[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "bukit-lawang-vs-ketambe-orangutan-trekking",
+    locale: "en",
+    title: "Bukit Lawang vs Ketambe Orangutan Trekking: Which Is Better for You?",
+    description:
+      "A practical comparison of Bukit Lawang and Ketambe for orangutan trekking in Sumatra, covering travel time, wildlife viewing, rafting, accommodation, and trip style.",
+    date: "2026-09-29",
+    dateModified: "2026-09-30",
+    readingTime: "8 min read",
+    image: "/images/bukit-lawang-vs-ketambe.webp",
+    imageAlt: "Wild Sumatran orangutan overlooking misty rainforest valley and river in Gunung Leuser National Park",
+    tags: [
+      "Bukit Lawang vs Ketambe",
+      "Sumatra orangutan trekking",
+      "Ketambe jungle trek",
+      "Gunung Leuser National Park"
+    ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare Bukit Lawang trekking packages",
+    relatedSlugs: [
+      "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
+      "sumatra-orangutan-trekking-cost-price-guide-2026",
+      "what-to-pack-for-bukit-lawang-jungle-trek"
+    ],
+    sections: [
+      {
+        title: "The quick answer",
+        paragraphs: [
+          "Both Bukit Lawang and Ketambe provide access to Gunung Leuser National Park, one of the last remaining wild habitats of the critically endangered Sumatran orangutan. However, the traveler experience in each location is distinctly different.",
+          "Bukit Lawang usually suits travelers with 3 to 7 days who want a shorter transfer from Medan, established visitor services, and the option of a jungle tube-rafting return. Ketambe suits travelers who can allow more time for a longer overland journey and prefer a quieter rainforest experience with simpler facilities. Orangutans are wild animals, so sightings are never guaranteed in either location."
+        ],
+        callout:
+          "Planning advice: Short on vacation days? With a confirmed transfer and favorable traffic, a morning arrival at Medan Airport can put you in Bukit Lawang by late afternoon. Explore our full range of ethical [Sumatra orangutan tours](/sumatra-orangutan-tour) or read the complete [3-day Bukit Lawang jungle trek itinerary](/3-day-bukit-lawang-orangutan-trek).",
+        table: {
+          caption: "Head-to-head comparison: Bukit Lawang vs Ketambe",
+          columns: ["Feature", "Bukit Lawang", "Ketambe"],
+          rows: [
+            ["Drive time from Medan (KNO)", "About 3.5 to 4.5 hours", "About 7 to 9 hours on a longer mountain route"],
+            ["Orangutan population", "Wild and habituated free-ranging orangutans, including descendants of rehabilitated animals", "Wild, generally less habituated orangutans"],
+            ["Viewing opportunities", "Often possible on shorter treks; never guaranteed", "Usually benefits from more trekking time; never guaranteed"],
+            ["Return journey", "Tube rafting may be included when river and weather conditions are suitable", "Most treks return on foot; separate rafting options may be available"],
+            ["Visitor facilities", "Broad choice of riverside lodging, cafes, Wi-Fi, and laundry", "Smaller choice of guesthouses and local eateries"],
+            ["Best traveler profile", "First-time visitors and travelers on shorter itineraries", "Travelers seeking a quieter experience with more time and flexibility"]
+          ]
+        }
+      },
+      {
+        title: "Accessibility and travel time from Medan",
+        paragraphs: [
+          "The biggest practical difference between the two destinations is travel logistics. Bukit Lawang is approximately 130 km northwest of Medan. A private car transfer from Kualanamu Airport usually takes around 3.5 to 4.5 hours via Binjai and Kuala, depending on traffic and road conditions.",
+          "Ketambe, in Southeast Aceh, requires a longer overland journey through the Karo highlands and Kutacane. The drive commonly takes about 7 to 9 hours and can take longer during heavy rain or road works, so it is sensible to budget most of a travel day in each direction.",
+          "For an itinerary of less than a week, Bukit Lawang generally leaves more time for trekking and resting. Ketambe becomes easier to include when your schedule has room for the longer transfers and possible delays."
+        ],
+        bullets: [
+          "Bukit Lawang: Direct transfer from Kualanamu Airport (KNO) commonly takes 3.5 to 4.5 hours.",
+          "Ketambe: Allow about 7 to 9 hours for the overland route and keep the day flexible.",
+          "Bukit Lawang is straightforward to combine with Medan, Tangkahan, or Lake Toba."
+        ]
+      },
+      {
+        title: "Wildlife encounters and forest atmosphere",
+        paragraphs: [
+          "Bukit Lawang was home to an orangutan rehabilitation program established in the 1970s. The rehabilitation center no longer operates, and the orangutans visitors may encounter are free-ranging in and around Gunung Leuser National Park. Some are habituated individuals or descendants of rehabilitated animals, while others are wild.",
+          "This history can create easier viewing opportunities than in less-visited forests, but it does not make a sighting certain. Trekkers may also encounter Thomas's leaf monkeys, white-handed gibbons, pig-tailed macaques, monitor lizards, and hornbills, depending on season, luck, and time in the forest.",
+          "Ketambe is known for wild, generally less habituated orangutans and for its long research history: the Ketambe Research Station was established in 1971. Orangutans may remain high in the canopy or move away from people, so viewing often calls for more time and patience. The reward is a quieter forest atmosphere and a strong sense of being in a long-studied wild habitat."
+        ]
+      },
+      {
+        title: "The iconic river rafting return",
+        paragraphs: [
+          "One of Bukit Lawang's most distinctive experiences is the traditional tube-rafting return offered on many multi-day treks.",
+          "After hiking the rainforest ridges and camping beside the river, the team secures large rubber tubes together with bamboo and rope. An experienced local rafting team then steers down the Bohorok River toward the village. Rafting only operates when river level, weather, and safety conditions allow.",
+          "Many standard Ketambe treks return from the forest on foot. Separate rafting trips on the Alas River may be available, but they are usually arranged as an additional activity rather than included in a standard trek; confirm current options locally."
+        ]
+      },
+      {
+        title: "Village atmosphere, accommodation, and food",
+        paragraphs: [
+          "Bukit Lawang follows the banks of the Bohorok River, with suspension bridges and pedestrian paths linking guesthouses and cafes. Its broader range of riverside lodging, restaurants, laundry services, and Wi-Fi makes it easy to rest before or after a trek.",
+          "Ketambe has a smaller visitor base, simpler guesthouses, and fewer dining choices. That quieter setting appeals to travelers who value low-key evenings and do not need the wider range of services available in Bukit Lawang."
+        ]
+      },
+      {
+        title: "Which one should you choose?",
+        paragraphs: [
+          "Choose Bukit Lawang if you have limited vacation days, prefer straightforward transfers and established visitor facilities, or want the option of a tube-rafting return. Its habituation history often creates easier viewing opportunities, although no ethical operator can promise an orangutan sighting.",
+          "Choose Ketambe if you have time for the longer journey, prefer a quieter rainforest setting, and are comfortable with simpler facilities. Its research history and generally less habituated orangutans make it especially appealing to patient wildlife watchers."
+        ],
+        bullets: [
+          "Choose Bukit Lawang for shorter itineraries, first-time jungle treks, family trips, and easier logistics.",
+          "Choose Ketambe for longer, flexible itineraries, fewer visitor facilities, and a quieter forest experience."
+        ]
+      },
+      {
+        title: "Frequently asked questions",
+        faq: [
+          {
+            q: "Is Bukit Lawang overcrowded with tourists?",
+            a: "Bukit Lawang is the more popular gateway, and the main day-trek trails can feel busy in high season. Two-day and three-day routes often reach quieter areas, but no operator should promise complete isolation. Ask about group size, departure time, and route planning when you book."
+          },
+          {
+            q: "Can I combine both Bukit Lawang and Ketambe?",
+            a: "Yes, if you have at least 10 to 14 days in Sumatra. You can trek in Bukit Lawang, take a private car or local bus via Berastagi and Kutacane to Ketambe, and continue onward toward Lake Toba or Aceh."
+          },
+          {
+            q: "Are guide standards and ethical rules the same?",
+            a: "Rules and field practice can vary, so choose a guide who follows park regulations and recognized great-ape tourism guidance. Keep at least 10 metres from orangutans, never touch, feed, call, or lure them, follow your guide if an animal shows signs of stress, and carry all rubbish out. These principles are consistent with the [IUCN best-practice guidelines for great-ape tourism](https://iucn.org/resources/publication/best-practice-guidelines-great-ape-tourism)."
+          },
+          {
+            q: "How can I book a reliable trek in Bukit Lawang?",
+            a: "You can compare options on our [Sumatra orangutan tours page](/sumatra-orangutan-tour), submit dates on our [booking page](/booking), or message certified guide Syaipul directly on WhatsApp (+62 853 6240 5752) to check open dates and organize private airport transfers."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "medan-airport-visa-on-arrival-evoa-customs-guide",
+    locale: "en",
+    title: "Medan Airport Visa on Arrival (e-VOA) & Customs Guide for Sumatra",
+    description:
+      "Step-by-step entry guide for landing at Medan Kualanamu Airport (KNO): electronic Visa on Arrival (e-VOA), the All Indonesia arrival declaration, ATMs, and Bukit Lawang transfers.",
+    date: "2026-09-29",
+    dateModified: "2026-09-30",
+    readingTime: "6 min read",
+    image: "/images/medan-airport-evoa-guide.webp",
+    imageAlt: "International traveler arriving at Kualanamu International Airport Medan with passport and e-VOA entry documents",
+    tags: [
+      "Medan airport e-VOA",
+      "Indonesia visa on arrival",
+      "Kualanamu customs declaration",
+      "Medan to Bukit Lawang transfer"
+    ],
+    primaryCtaHref: "/booking",
+    primaryCtaLabel: "Book your trek & private airport pickup",
+    relatedSlugs: [
+      "how-to-get-from-medan-to-bukit-lawang",
+      "what-to-pack-for-bukit-lawang-jungle-trek",
+      "sumatra-orangutan-trekking-cost-price-guide-2026"
+    ],
+    sections: [
+      {
+        title: "Arriving at Medan Kualanamu International Airport (KNO)",
+        paragraphs: [
+          "Kualanamu International Airport (airport code: KNO) is the main international gateway to North Sumatra. Direct regional services operate from hubs such as Kuala Lumpur (KUL), Singapore (SIN), and Penang (PEN), but routes and frequencies change, so check current airline schedules before planning a connection.",
+          "Preparing your visa and arrival declaration before departure can make the process at KNO more straightforward. Keep digital and offline copies of your documents so they remain available if airport Wi-Fi or mobile data is slow."
+        ],
+        callout:
+          "Arrival tip: Bukit Lawang is about 3.5 to 4.5 hours from Kualanamu Airport. A same-day transfer can be practical after a daytime arrival when your driver is confirmed and you feel rested. Learn how to [book private airport pickup with your trek package](/booking) or chat with guide Syaipul on WhatsApp (+62 853 6240 5752)."
+      },
+      {
+        title: "Electronic Visa on Arrival (e-VOA) vs In-Person VOA",
+        paragraphs: [
+          "Travelers from eligible countries may use Indonesia's Visa on Arrival (VOA) for tourism. Nationality lists and entry conditions can change, so confirm your eligibility on the official e-Visa portal before departure rather than relying on an older country list.",
+          "Eligible travelers can purchase a VOA after landing or apply online for an electronic Visa on Arrival (e-VOA). Applying in advance avoids completing the visa purchase at the airport, although immigration checks still apply.",
+          "Kualanamu added 30 immigration autogates in 2025. Eligible e-VOA holders may be able to use them, but access and queue times depend on the traveler's documents and current airport operations. Follow the signs and immigration officers' directions on arrival."
+        ],
+        bullets: [
+          "Official website: Apply exclusively through the [Indonesian Directorate General of Immigration e-Visa portal](https://evisa.imigrasi.go.id) and beware of copycat sites charging inflated fees.",
+          "Cost: The standard VOA fee is 500,000 IDR at the time of writing. Exchange rates, payment options, and card fees vary, so verify the total on the official portal before paying.",
+          "Validity: A standard VOA permits a 30-day stay and can normally be extended once for another 30 days. Check the current extension process before your initial stay expires.",
+          "Documents: A passport valid for at least 6 months, a recent photo, and return or onward travel details are commonly required. Follow the current checklist for your nationality and visa type on the official portal."
+        ]
+      },
+      {
+        title: "Complete the All Indonesia arrival declaration",
+        paragraphs: [
+          "International passengers arriving by air at Kualanamu Airport should complete the official All Indonesia arrival declaration. The service combines the information required by immigration, customs, health, and quarantine authorities in one digital form.",
+          "Submit the form through the [official All Indonesia portal](https://allindonesia.imigrasi.go.id) within the three days before arrival. It is separate from your visa: completing the declaration does not grant permission to enter Indonesia. The older Electronic Customs Declaration (e-CD) portal now directs air and sea arrivals to All Indonesia.",
+          "After submitting the form, save the generated QR code on your phone and keep an offline screenshot available. Airport officers may ask to scan or inspect it during the arrival process."
+        ]
+      },
+      {
+        title: "Medan Airport ATMs, currency exchange, and local SIM cards",
+        paragraphs: [
+          "Before leaving Kualanamu Airport for Bukit Lawang, take care of two essential tasks: cash withdrawal and mobile connectivity.",
+          "Cash withdrawal: Cash access is more limited in Bukit Lawang than at the airport, and ATM availability or international card acceptance can vary. KNO has ATMs from major Indonesian banks, including BCA, Mandiri, BNI, and BRI. Withdraw enough rupiah for expected meals, drinks, tips, and small purchases, while checking your bank's withdrawal limit and fees.",
+          "SIM cards and data: Airport Wi-Fi may be available, and Telkomsel is a widely used network in North Sumatra. You can ask official carrier booths about tourist SIM registration or arrange an Indonesian eSIM before departure. Coverage can weaken near or inside the rainforest."
+        ]
+      },
+      {
+        title: "Getting from Kualanamu Airport to Bukit Lawang",
+        paragraphs: [
+          "The drive from Kualanamu Airport to Bukit Lawang covers approximately 135 km and takes 3.5 to 4.5 hours depending on Medan city traffic. Several transport methods are available:",
+          "Private car transfer (recommended): The simplest door-to-door option. Your driver meets you at the agreed pickup point, assists with luggage, and takes you directly to your guesthouse in a private air-conditioned vehicle. Planning rates commonly range from 55 to 75 EUR per car; confirm the final price and inclusions before booking.",
+          "Airport train + taxi / minivan: You can take the fast airport train (Railink) from KNO to Medan city centre (30 minutes), then take a taxi or shared tourist minivan from Medan to Bukit Lawang. However, coordinating transfers with luggage adds significant travel time.",
+          "Public bus: Budget backpackers can take an airport bus to Amplas or Pinang Baris bus terminal, then catch a local public bus (minibus) to Bukit Lawang. This takes 5 to 7 hours and involves multiple transfers."
+        ],
+        table: {
+          caption: "Transport comparison from Medan Airport (KNO) to Bukit Lawang",
+          columns: ["Transport type", "Travel time", "Approx. cost", "Convenience level"],
+          rows: [
+            ["Private air-conditioned car", "3.5 to 4 hours", "55 - 75 EUR per car", "Highest (door-to-door, luggage help)"],
+            ["Shared tourist minivan", "5 to 6 hours", "12 - 18 EUR per person", "Moderate (fixed departure times)"],
+            ["Airport train + city bus", "5 to 7 hours", "5 - 10 EUR per person", "Low (multiple transfers, crowded)"]
+          ]
+        }
+      },
+      {
+        title: "Frequently asked questions",
+        faq: [
+          {
+            q: "Can I pay for my Visa on Arrival in cash or credit card at Medan airport?",
+            a: "Eligible travelers who did not arrange an e-VOA can use the VOA payment counter before immigration. Accepted currencies, cards, and surcharges can change, so check the counter signage and carry more than one payment option. Applying through the official portal before departure can reduce the number of steps at the airport."
+          },
+          {
+            q: "What should I do if my flight arrives late in the evening?",
+            a: "A same-night transfer may still be possible with a confirmed driver, but consider your fatigue, weather, traffic, and current road conditions. If you would rather avoid a long drive after flying, stay near Kualanamu Airport or in Medan and continue the next morning."
+          },
+          {
+            q: "Is an onward flight ticket strictly required by Indonesian immigration?",
+            a: "Travelers should carry confirmed return or onward travel proof because an airline or immigration officer may request it. Check the conditions of your visa and your airline's document requirements before departure."
+          },
+          {
+            q: "How can I book an airport pickup with Orangutan Adventure Sumatra?",
+            a: "When submitting your trekking dates on our [booking page](/booking), simply check the option for private airport transfer and include your flight number and arrival time. Guide Syaipul will coordinate your private driver directly."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1080,6 +1302,104 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Vor dem Trek",
         paragraphs: [
           "Starte keinen Mehrtagestrek direkt nach einem internationalen Flug. Plane eine Nacht in Bukit Lawang, prüfe dein Gepäck, hebe Bargeld ab und bestätige Treffpunkt und Startzeit mit deinem Guide."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "de-1-tag-vs-2-tage-vs-3-tage-bukit-lawang-trek",
+    locale: "de",
+    title: "1 Tag vs. 2 Tage vs. 3 Tage Bukit Lawang Trek: Welcher passt zu dir?",
+    description:
+      "Vergleiche 1-Tages-, 2-Tages- und 3-Tages-Orang-Utan-Treks in Bukit Lawang nach Dauer, Preisen, Fitness, Camplife und Rafting-Rückfahrt.",
+    date: "2026-07-06",
+    dateModified: "2026-09-30",
+    readingTime: "7 Min. Lesezeit",
+    image: "/images/trek-duration-comparison.webp",
+    imageAlt: "Kleine Wandergruppe mit lokalem Guide auf einem Dschungelpfad in Bukit Lawang",
+    tags: ["Bukit Lawang Trek Vergleich", "1 Tag vs 3 Tage Trek", "Orang-Utan Trekking Sumatra"],
+    primaryCtaHref: "/de#treks",
+    primaryCtaLabel: "Alle Sumatra Orang-Utan Touren ansehen",
+    relatedSlugs: [
+      "de-sumatra-orang-utan-trekking-kosten-2026",
+      "de-packliste-bukit-lawang-dschungel-trek",
+      "de-anreise-medan-nach-bukit-lawang"
+    ],
+    translationKey: "1-day-vs-2-day-vs-3-day-trek",
+    sections: [
+      {
+        title: "Kurzantwort",
+        paragraphs: [
+          "Wähle einen 1-Tages-Trek in Bukit Lawang, wenn du einen intensiven Tag im Regenwald erleben möchtest, ohne im Dschungel zu übernachten. Wähle einen 2-Tages-Trek, wenn du eine erste Nacht im Dschungelcamp verbringen willst. Wähle einen 3-Tages-Trek für die beste Balance aus Tierbeobachtung, echtem Camprhythmus und der traditionellen Tube-Rafting-Rückfahrt.",
+          "Für die meisten Reisenden mit ausreichend Zeit ist der 3-Tage-Trek die lohnendste Option, weil die Tour nach den ersten Tierbegegnungen genügend Ruhe für das tiefe Naturerlebnis bietet."
+        ],
+        callout:
+          "Planungstipp: Du bist unsicher, welche Trek-Dauer zu deiner Reisezeit oder Fitness passt? Vergleiche alle Leistungen auf unserer [Sumatra Orang-Utan Touren Übersicht](/de#treks) oder schreibe Guide Syaipul direkt per WhatsApp (+62 853 6240 5752) für eine persönliche Beratung.",
+        table: {
+          caption: "Die passende Trek-Dauer nach Reisebedürfnis",
+          columns: ["Trek-Dauer", "Ideal für", "Kompromiss"],
+          rows: [
+            ["1 Tag", "Kurze Aufenthalte, kein Camping, leichtere Fitness", "Weniger Zeit für Camp-Atmosphäre und tieferen Wald"],
+            ["2 Tage / 1 Nacht", "Erste Dschungelübernachtung im einfachen Camp", "Nur eine Nacht im Wald und kompaktere Route"],
+            ["3 Tage / 2 Nächte", "Beste Balance aus Tierbeobachtung, Camps und Rafting", "Erfordert mehr Zeit, Kondition und Budget"]
+          ]
+        }
+      },
+      {
+        title: "Wann ein 1-Tages-Trek Sinn macht",
+        paragraphs: [
+          "Ein 1-Tages-Trek ist ideal, wenn du wenig Zeit hast oder ungern im Zeltcamp schlafen möchtest. Du verbringst einen vollen, geführten Tag im Nationalpark, genießt frisches Obst und Dschungellunch und lernst von lizenzierten Guides die Verhaltensregeln im Wald.",
+          "Wenn Bukit Lawang allerdings das Hauptziel deiner Sumatra-Reise ist, empfehlen wir mehr Zeit einzuplanen, um den Regenwald in seiner vollen Tiefe zu erleben."
+        ],
+        bullets: [
+          "Optimal für Erstbesucher mit nur einem freien Tag.",
+          "Beste Wahl, wenn du lieber im Gästehaus mit Bett und Dusche schläfst.",
+          "Praktisch als Zwischenstopp vor der Weiterreise zum Lake Toba."
+        ]
+      },
+      {
+        title: "Wann ein 2-Tages-Trek die richtige Wahl ist",
+        paragraphs: [
+          "Der 2-Tage-Trek ist die kürzeste Variante mit einer echten Dschungelübernachtung. Du erlebst den abendlichen Fluss, frisch gekochtes Essen am Lagerfeuer und das Aufwachen mit den Rufen der Gibbons, ohne drei volle Tage wandern zu müssen.",
+          "Eine ideale Zwischenlösung für Reisende, die mehr als eine Tageswanderung suchen, aber Respekt vor der tropischen Luftfeuchtigkeit oder einfacher Camp-Infrastruktur haben."
+        ]
+      },
+      {
+        title: "Warum der 3-Tages-Trek meistens die beste Erfahrung bietet",
+        paragraphs: [
+          "Auf einem 3-Tages-Trek kann der Guide die Route flexibel an Wetter, Gruppenkondition und die Bewegung der Tierwelt anpassen. Nach dem ersten Wandertag stellt sich eine spürbare Ruhe ein – man lauscht den Geräuschen des Dschungels, schwimmt im klaren Fluss und beobachtet Primaten ohne Zeitdruck.",
+          "Wenn du für eine einmalige Begegnung mit wilden Orang-Utans nach Sumatra reist, ist der 3-Tage-Trek die lohnendste Investition."
+        ],
+        bullets: [
+          "Zwei Nächte in einfachen, idyllischen Camps direkt am Fluss.",
+          "Mehr Ruhe für Tierbeobachtungen abseits der Tagesbesucher.",
+          "Beinhaltet die beliebte Rafting-Rückfahrt mit Tubes über den Bohorok-Fluss.",
+          "Detaillierte Etappen und Camp-Details findest du in unserem Tourprogramm."
+        ]
+      },
+      {
+        title: "Häufige Fragen vor der Buchung",
+        faq: [
+          {
+            q: "Ist der 3-Tages-Trek für Anfänger zu anstrengend?",
+            a: "Er ist für normal sportliche Wanderer gut machbar. Wichtig sind gutes Schuhwerk mit Profil, Trittsicherheit bei feuchten Wurzeln und eine realistische Selbsteinschätzung bezüglich Tropenhitze."
+          },
+          {
+            q: "Kann ich vor Ort von 1 Tag auf 2 oder 3 Tage upgraden?",
+            a: "Bitte kläre das möglichst vor deiner Anreise. Campausrüstung, Verpflegung, Träger und Nationalpark-Permits müssen im Voraus organisiert werden."
+          },
+          {
+            q: "Welche Tour eignet sich am besten für Familien mit Kindern?",
+            a: "Für Familien mit Kindern ab 6 bis 8 Jahren empfehlen wir eine private 2-Tages-Tour. So kann der Guide das Gehtempo und Trinkpausen flexibel an die Familie anpassen."
+          },
+          {
+            q: "Wie lange im Voraus sollte ich buchen?",
+            a: "Der Gunung Leuser Nationalpark begrenzt die Gruppengrößen. In der Hauptsaison (Juli bis August und Dezember bis Januar) sind Plätze rasch vergeben. Wir empfehlen 2 bis 4 Wochen im Voraus zu reservieren."
+          },
+          {
+            q: "Kann ich den privaten Transfer ab Medan Flughafen direkt mitbuchen?",
+            a: "Ja. Die meisten unserer Gäste buchen die bequeme Abholung im klimatisierten Privatwagen direkt ab Medan Kualanamu Airport (KNO) über unser [Buchungsformular](/booking)."
+          }
         ]
       }
     ]
@@ -1322,6 +1642,104 @@ const translatedInformationBlogPosts: BlogPost[] = [
     ]
   },
   {
+    slug: "fr-trek-1-jour-vs-2-jours-vs-3-jours-bukit-lawang",
+    locale: "fr",
+    title: "Trek 1 jour vs 2 jours vs 3 jours à Bukit Lawang : que choisir ?",
+    description:
+      "Comparez les treks orang-outan de 1, 2 et 3 jours à Bukit Lawang : temps, tarif, niveau physique, nuit en camp et retour en rafting.",
+    date: "2026-07-06",
+    dateModified: "2026-09-29",
+    readingTime: "7 min de lecture",
+    image: "/images/trek-duration-comparison.webp",
+    imageAlt: "Petit groupe de randonneurs guidés sur une crête de forêt tropicale à Bukit Lawang",
+    tags: ["comparatif trek Bukit Lawang", "trek 1 jour vs 3 jours", "trek orang-outan Sumatra"],
+    primaryCtaHref: "/fr#treks",
+    primaryCtaLabel: "Découvrir tous nos treks à Bukit Lawang",
+    relatedSlugs: [
+      "fr-prix-trek-orang-outan-sumatra-2026",
+      "fr-que-mettre-dans-son-sac-bukit-lawang",
+      "fr-comment-aller-de-medan-a-bukit-lawang"
+    ],
+    translationKey: "1-day-vs-2-day-vs-3-day-trek",
+    sections: [
+      {
+        title: "La réponse rapide",
+        paragraphs: [
+          "Choisis un trek d'un jour à Bukit Lawang si tu souhaites une belle immersion en forêt tropicale sans dormir dans la jungle. Choisis un trek de 2 jours pour vivre une première nuit sous tente près de la rivière. Choisis un trek de 3 jours pour bénéficier du meilleur équilibre entre faune sauvage, rythme de camp et descente en rafting.",
+          "Pour la plupart des voyageurs disposant d'un temps suffisant à Sumatra, le trek de 3 jours à Bukit Lawang est le plus complet car il permet de s'enfoncer plus loin dans la nature après les premières observations d'orangs-outans."
+        ],
+        callout:
+          "Conseil pratique : tu hésites sur la formule adaptée à tes horaires de vol ou ton niveau de marche ? Compare toutes nos formules sur notre [page des treks à Sumatra](/fr#treks) ou échange directement avec le guide Syaipul sur WhatsApp (+62 853 6240 5752).",
+        table: {
+          caption: "Quelle durée de trek choisir selon vos envies",
+          columns: ["Durée du trek", "Idéal pour", "Compromis"],
+          rows: [
+            ["1 jour", "Courts séjours, sans camping, effort physique modéré", "Moins de temps pour la vie de camp et la forêt profonde"],
+            ["2 jours / 1 nuit", "Première expérience de bivouac en jungle", "Une seule nuit et itinéraire plus condensé"],
+            ["3 jours / 2 nuits", "Immersion complète avec bivouacs et retour en rafting", "Demande plus de temps, d'énergie et de budget"]
+          ]
+        }
+      },
+      {
+        title: "Quand choisir un trek d'un jour",
+        paragraphs: [
+          "Le trek d'un jour fonctionne parfaitement si ton planning est serré ou si tu ne souhaites pas dormir sous tente. Tu profites d'une vraie journée de marche guidée, d'un déjeuner local dans la jungle et d'une observation attentive de la faune avec un guide certifié.",
+          "Cependant, si voir des orangs-outans est la raison principale de ton voyage à Sumatra, rester plusieurs jours offre une expérience incomparablement plus riche."
+        ],
+        bullets: [
+          "Parfait pour les visiteurs disposant d'une seule journée disponible.",
+          "Idéal si tu préfères le confort d'un lit en guesthouse chaque soir.",
+          "Facile à intégrer dans un voyage rapide vers le lac Toba."
+        ]
+      },
+      {
+        title: "Quand choisir un trek de 2 jours",
+        paragraphs: [
+          "Le trek de 2 jours est la formule la plus courte incluant une nuit en bivouac au bord de la rivière. Il permet de vivre l'ambiance du campement, les repas chauds cuisinés sur place et les bruits nocturnes de la jungle.",
+          "C'est un excellent compromis si tu veux plus qu'une simple balade de jour tout en restant prudent sur ton niveau d'endurance face à la chaleur tropicale."
+        ]
+      },
+      {
+        title: "Pourquoi le trek de 3 jours est généralement le meilleur choix",
+        paragraphs: [
+          "Le trek de 3 jours offre au guide une plus grande flexibilité pour adapter l'itinéraire selon la météo, le niveau des rivières et les déplacements des animaux. Le rythme devient plus serein, laissant le temps de se baigner dans les rivières limpides et d'observer les gibbons et calaos.",
+          "Pour un voyage exceptionnel à Sumatra, la formule 3 jours / 2 nuits représente le choix le plus authentique et le plus mémorable."
+        ],
+        bullets: [
+          "Deux nuits inoubliables dans des camps simples au bord de l'eau.",
+          "Meilleur créneau pour observer les orangs-outans sans affluence.",
+          "Comprend généralement le retour ludique en rafting sur chambres à air géantes.",
+          "Retrouve tous les détails jour par jour sur notre descriptif de trek."
+        ]
+      },
+      {
+        title: "Questions fréquentes avant de réserver",
+        faq: [
+          {
+            q: "Le trek de 3 jours est-il accessible aux débutants ?",
+            a: "Oui, à condition d'avoir une forme physique correcte, une bonne paire de chaussures crantées et d'être à l'aise avec la marche en terrain accidenté et humide."
+          },
+          {
+            q: "Peut-on changer de formule une fois sur place ?",
+            a: "Mieux vaut décider avant le départ. L'équipement de campement, la nourriture fraîche, les porteurs et les permis du parc national doivent être planifiés en amont."
+          },
+          {
+            q: "Quelle formule recommandez-vous pour les familles ?",
+            a: "Pour les familles avec enfants à partir de 6 ou 8 ans, un trek privatif de 2 jours est souvent idéal pour marcher à son propre rythme avec des pauses régulières."
+          },
+          {
+            q: "Combien de temps à l'avance faut-il réserver ?",
+            a: "Le parc national Gunung Leuser applique des quotas pour préserver l'écosystème. En haute saison (juillet-août et fêtes de fin d'année), nous conseillons d'anticiper 2 à 4 semaines via notre [page de réservation](/booking)."
+          },
+          {
+            q: "Peut-on inclure un transfert privé depuis l'aéroport de Medan ?",
+            a: "Tout à fait. La plupart des voyageurs réservent un transfert direct en véhicule climatisé depuis l'aéroport Kualanamu (KNO) lors de leur demande de trek."
+          }
+        ]
+      }
+    ]
+  },
+  {
     slug: "nl-bukit-lawang-of-tanjung-puting-orang-oetans",
     locale: "nl",
     title: "Bukit Lawang of Tanjung Puting: waar zie je orang-oetans?",
@@ -1549,6 +1967,104 @@ const translatedInformationBlogPosts: BlogPost[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "nl-1-dag-vs-2-dagen-vs-3-dagen-bukit-lawang-trek",
+    locale: "nl",
+    title: "1 Dag vs 2 Dagen vs 3 Dagen Bukit Lawang Trek: Wat is de Beste Keuze?",
+    description:
+      "Vergelijk 1-daagse, 2-daagse en 3-daagse orang-oetan treks in Bukit Lawang op wandeltijd, prijzen, conditie, overnachting en tubing retour.",
+    date: "2026-07-06",
+    dateModified: "2026-09-30",
+    readingTime: "7 min leestijd",
+    image: "/images/trek-duration-comparison.webp",
+    imageAlt: "Kleine groep wandelaars met lokale gids op een heuvelrug in de jungle van Bukit Lawang",
+    tags: ["Bukit Lawang trek vergelijken", "1 dag vs 3 dagen trek", "orang-oetan trekking Sumatra"],
+    primaryCtaHref: "/nl#treks",
+    primaryCtaLabel: "Bekijk alle Bukit Lawang trekking pakketten",
+    relatedSlugs: [
+      "nl-kosten-orang-oetan-trekking-sumatra-2026",
+      "nl-paklijst-bukit-lawang-jungle-trek",
+      "nl-van-medan-naar-bukit-lawang"
+    ],
+    translationKey: "1-day-vs-2-day-vs-3-day-trek",
+    sections: [
+      {
+        title: "Het snelle antwoord",
+        paragraphs: [
+          "Kies een 1-daagse Bukit Lawang trek als je een intensieve dag in het regenwoud wilt beleven zonder in de jungle te overnachten. Kies een 2-daagse trek als je voor het eerst wilt kamperen in het bos. Kies een 3-daagse trek voor de beste balans tussen wilde dieren spotten, het ritme van het kamp en de traditionele jungle tubing terug naar het dorp.",
+          "Voor de meeste reizigers met voldoende tijd is de 3-daagse orang-oetan trek in Bukit Lawang de beste keuze, omdat je dieper het regenwoud in trekt en na de eerste ontmoetingen meer rust ervaart."
+        ],
+        callout:
+          "Planningstip: Twijfel je welke trek het beste past bij je vluchttijden of conditie? Vergelijk alle details op onze [Sumatra orang-oetan trekking overzichtspagina](/nl#treks) of stuur direct een WhatsApp-bericht naar gids Syaipul (+62 853 6240 5752) voor advies op maat.",
+        table: {
+          caption: "Beste treklengte per type reiziger",
+          columns: ["Treklengte", "Ideaal voor", "Compromis"],
+          rows: [
+            ["1 dag", "Kort verblijf, niet kamperen, lichtere conditie", "Minder tijd voor kampleven en diepere jungle"],
+            ["2 dagen / 1 nacht", "Eerste jungleovernachting in eenvoudig kamp", "Slechts één nacht en compactere route"],
+            ["3 dagen / 2 nachten", "Optimale jungle-ervaring met camps en river tubing", "Vraagt meer tijd, energie en budget"]
+          ]
+        }
+      },
+      {
+        title: "Wanneer een 1-daagse trek logisch is",
+        paragraphs: [
+          "Een 1-daagse jungletrek is perfect als je weinig tijd hebt of liever in een echt bed slaapt. Je beleeft een volle dag onder begeleiding van een gids, geniet van vers fruit en junglelunch, en leert over het regenwoud en de leefregels rondom wilde dieren.",
+          "Als Bukit Lawang het hoofddoel van je Sumatra-reis is, raden we aan langer te blijven om echt tot rust te komen in de natuur."
+        ],
+        bullets: [
+          "Geschikt voor wie slechts één volle dag in Bukit Lawang heeft.",
+          "Prettig als je de voorkeur geeft aan een guesthouse met douche.",
+          "Gemakkelijk te combineren met een doorreis naar Lake Toba."
+        ]
+      },
+      {
+        title: "Wanneer een 2-daagse trek de juiste keuze is",
+        paragraphs: [
+          "De 2-daagse trek is de kortste optie met een overnachting in de jungle. Je ervaart het kampleven aan de rivier, vers bereide maaltijden en het ontwaken met het geluid van vogels en gibbons, zonder drie dagen te hoeven wandelen.",
+          "Een uitstekende middenweg voor reizigers die meer willen dan een dagwandeling, maar twijfelen over hun conditie in de tropische hitte."
+        ]
+      },
+      {
+        title: "Waarom de 3-daagse trek meestal de beste ervaring is",
+        paragraphs: [
+          "Bij een 3-daagse trek heeft de gids meer ruimte om de route af te stemmen op het weer, het tempo van de groep en de bewegingen van de orang-oetans. De wandeling verloopt rustiger en je hebt volop tijd om te zwemmen in heldere bergrivieren.",
+          "Wie naar Sumatra reist voor een once-in-a-lifetime ontmoeting met orang-oetans in het wild, haalt met de 3-daagse trek veruit de meeste voldoening uit zijn reis."
+        ],
+        bullets: [
+          "Twee overnachtingen in sfeervolle rivierkampen.",
+          "Betere kansen op bijzondere ontmoetingen met primaten en vogels.",
+          "Inclusief de legendarische jungle tubing afdaling over de Bohorok rivier.",
+          "Bekijk het volledige dagprogramma op onze pakketpagina."
+        ]
+      },
+      {
+        title: "Veelgestelde vragen voor het boeken",
+        faq: [
+          {
+            q: "Is de 3-daagse trek te zwaar voor beginners?",
+            a: "Met een normale basisconditie en goede wandelschoenen met profiel is het goed te doen. Wees eerlijk over knieproblemen en hittebestendigheid zodat de gids het tempo kan aanpassen."
+          },
+          {
+            q: "Kan ik ter plekke nog wisselen van pakket?",
+            a: "Geef wijzigingen het liefst voor aankomst door. Kampeerspullen, verse maaltijden, dragers en vergunningen voor het nationaal park moeten vooraf worden ingepland."
+          },
+          {
+            q: "Welke trek is het beste voor gezinnen met kinderen?",
+            a: "Voor families met kinderen vanaf ongeveer 6 tot 8 jaar is een privétrek van 2 dagen ideaal, omdat pauzes en wandeltempo flexibel kunnen worden afgestemd."
+          },
+          {
+            q: "Hoe ver van tevoren moet ik reserveren?",
+            a: "Gunung Leuser National Park hanteert gids- en bezoekerslimieten. In het hoogseizoen (juli-augustus en rond de jaarwisseling) adviseren we 2 tot 4 weken van tevoren te reserveren via onze [boekingspagina](/booking)."
+          },
+          {
+            q: "Kan ik een privétransfer vanaf Medan Airport bijboeken?",
+            a: "Ja. De meeste gasten boeken een directe privétransfer per auto met airconditioning vanaf Kualanamu Airport (KNO) via ons boekingsformulier."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1562,8 +2078,8 @@ export const blogPosts: BlogPost[] = [
       "A clear guide to sending only the 30% PayPal deposit manually for a Bukit Lawang orangutan trek, with examples, booking steps, and balance payment notes.",
     date: "2026-06-25",
     readingTime: "5 min read",
-    image: "/images/privacy-hero.webp",
-    imageAlt: "Travel documents and payment notes on a desk for a Bukit Lawang trekking booking",
+    image: "/images/booking-deposit-guide.webp",
+    imageAlt: "Travel planning journal, itinerary notes, and booking deposit details on a riverside cafe table in Bukit Lawang",
     tags: ["PayPal deposit", "Bukit Lawang booking", "trek payment", "Sumatra travel"],
     sections: [
       {

@@ -86,7 +86,11 @@ export function metadataForBlogIndex(locale: Locale): Metadata {
 
 export function BlogIndexView({ locale }: { locale: Locale }) {
   const copy = blogIndexCopy[locale];
-  const posts = blogPosts.filter((post) => blogPostLocale(post) === locale);
+  const posts = blogPosts
+    .filter((post) => blogPostLocale(post) === locale)
+    .sort((a, b) =>
+      (b.dateModified ?? b.date).localeCompare(a.dateModified ?? a.date)
+    );
   const path = blogIndexPath(locale);
   const localizedHome = locale === "en" ? "/" : `/${locale}`;
   const jsonLd = {
