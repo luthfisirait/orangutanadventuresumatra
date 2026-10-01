@@ -4,6 +4,8 @@ out/
 dist/
 .npm-cache/
 .playwright-mcp/
+.playwright-cli/
+output/
 .env*
 !.env.example
 npm-debug.log*
@@ -12,4 +14,7 @@ yarn-error.log*
 pnpm-debug.log*
 .next-dev-*.log
 .next-start-*.log
+.codex-devserver*.log
+.codex-temp-*
 .eslintcache
+*.tsbuildinfo
