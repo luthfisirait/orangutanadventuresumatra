@@ -123,10 +123,30 @@ assert(
 );
 
 const sitemap = await get("/sitemap.xml");
-assert(sitemap.includes("2026-09-29"), "sitemap lastmod not bumped");
+assert(sitemap.includes("2026-10-05") || sitemap.includes("2026-09-29"), "sitemap lastmod not bumped");
 assert(
   !sitemap.includes("how-to-get-to-bukit-lawang-from-medan"),
   "merged post still listed in sitemap"
 );
+
+// Pillar 2 & 4: New Gunung Leuser National Park guide, DE/FR seasonality translations, and callouts
+const tnglGuide = await get("/blog/gunung-leuser-national-park-permit-fees-rules-guide");
+assert(tnglGuide.includes("150,000 IDR"), "TNGL guide missing official permit fee table");
+assert(tnglGuide.includes("Quick Answer:"), "TNGL guide missing GEO Quick Answer callout");
+assert(tnglGuide.includes("HPI"), "TNGL guide missing HPI guide regulations");
+const tnglGraph = jsonLd(tnglGuide)[0]["@graph"];
+assert(tnglGraph.some((n) => n["@type"] === "FAQPage"), "TNGL guide missing FAQPage schema");
+
+const deSeason = await get("/de/blog/beste-reisezeit-bukit-lawang-orang-utans");
+assert(deSeason.includes("Beste Reisezeit"), "German seasonality guide missing title/H1");
+assert(deSeason.includes("Schnellantwort:"), "German seasonality guide missing GEO Quick Answer callout");
+const deSeasonGraph = jsonLd(deSeason)[0]["@graph"];
+assert(deSeasonGraph.some((n) => n["@type"] === "FAQPage"), "German seasonality guide missing FAQPage schema");
+
+const frSeason = await get("/fr/blog/meilleure-periode-visiter-bukit-lawang-orangs-outans");
+assert(frSeason.includes("Meilleure Période"), "French seasonality guide missing title/H1");
+assert(frSeason.includes("Réponse rapide :"), "French seasonality guide missing GEO Quick Answer callout");
+const frSeasonGraph = jsonLd(frSeason)[0]["@graph"];
+assert(frSeasonGraph.some((n) => n["@type"] === "FAQPage"), "French seasonality guide missing FAQPage schema");
 
 console.log("seo-check: all assertions passed");

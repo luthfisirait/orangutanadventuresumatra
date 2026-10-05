@@ -8,9 +8,9 @@ import { bookingWhatsappUrl } from "../travel-content";
 import { siteText, trekBase, type TrekId } from "../site-content";
 import { trekDetailHref } from "../trek-details";
 
-const pageTitle = `Trek details | ${siteName}`;
+const pageTitle = `Bukit Lawang Trek Packages: Options, Prices & Itineraries | ${siteName}`;
 const pageDescription =
-  "Compare Bukit Lawang trek details before you book. Each package page shows duration, level, inclusions, itinerary notes, what to bring, and booking links.";
+  "Compare all official Bukit Lawang orangutan trek packages. Review duration, trail intensity, river campsites, tube rafting returns, and EUR prices per person.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

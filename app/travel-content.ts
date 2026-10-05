@@ -2065,6 +2065,185 @@ const translatedInformationBlogPosts: BlogPost[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "de-beste-reisezeit-bukit-lawang-orang-utans",
+    locale: "de",
+    title: "Beste Reisezeit für Bukit Lawang: Wann sieht man Orang-Utans?",
+    description:
+      "Monatlicher Wetter- und Wildtier-Guide für Bukit Lawang: Regenzeit, Trockenzeit, Flussstände, Rafting und die besten Reisemonate für Sumatra.",
+    date: "2026-05-29",
+    dateModified: "2026-10-05",
+    readingTime: "8 Min. Lesezeit",
+    image: "/images/blog-best-time.webp",
+    imageAlt: "Orang-Utan im grünen Regenwald von Bukit Lawang",
+    tags: [
+      "beste Reisezeit Bukit Lawang",
+      "Orang-Utan Trekking Sumatra",
+      "Bukit Lawang Wetter",
+      "Sumatra Reisezeit"
+    ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Touren & Termine anfragen",
+    relatedSlugs: [
+      "de-sumatra-orang-utan-trekking-kosten-2026",
+      "de-1-tag-vs-2-tage-vs-3-tage-bukit-lawang-trek",
+      "de-medan-flughafen-nach-bukit-lawang-transport"
+    ],
+    translationKey: "best-time-to-visit-bukit-lawang",
+    sections: [
+      {
+        title: "Bukit Lawang ist ein ganzjähriges Regenwald-Reiseziel",
+        paragraphs: [
+          "Die beste Reisezeit für Orang-Utan-Trekking in Bukit Lawang hängt vor allem von deinen persönlichen Reiseterminen, deiner Fitness und deiner Toleranz für tropischen Regen ab. Der Nationalpark ist das ganze Jahr über geöffnet, und Sichtungen von wilden Orang-Utans sind zu jeder Jahreszeit möglich.",
+          "Es gibt keinen einzelnen perfekten Monat. In Nord-Sumatra ist es ganzjährig tropisch warm und feucht. Kurze tropische Schauer gehören zum Ökosystem des Regenwaldes dazu."
+        ],
+        callout:
+          "Schnellantwort: Die Monate Mai bis September gelten als beste Reisezeit für trockenere Pfade und zuverlässiges Tube-Rafting. März, April und Oktober bieten hervorragende Trekking-Bedingungen mit weniger Besuchern. Wilde Orang-Utans sieht man das ganze Jahr über."
+      },
+      {
+        title: "Monatliche Wetter- und Trekkingbedingungen im Überblick",
+        paragraphs: [
+          "In Nord-Sumatra gibt es keine strikte Trockenzeit, sondern feuchtere und trockenere Phasen. Tropenregen fällt meist als kräftiger Schauer am späten Nachmittag oder Abend, sodass Vormittage fast immer trocken für Wanderungen bleiben.",
+          "Nutze diese Übersicht zur Reiseplanung:"
+        ],
+        table: {
+          caption: "Trekking-Bedingungen in Bukit Lawang nach Monaten",
+          columns: ["Monate", "Niederschlag & Wetter", "Bedingungen auf dem Dschungelpfad"],
+          rows: [
+            ["Januar bis Februar", "Ausläufer der Regenzeit", "Üppig grüner Wald, rutschige Abstiege, hohe Flussstände"],
+            ["März bis April", "Nachlassender Regen", "Hervorragende Balance: ruhige Pfade und aktive Tierwelt"],
+            ["Mai bis Juli", "Trockenste Phase", "Beste Bodenhaftung, verlässliches Tube-Rafting, beliebte Reisezeit"],
+            ["August bis September", "Trocken mit kurzen Schauern", "Sehr gute Bedingungen, Hauptreisezeit in Europa"],
+            ["Oktober bis November", "Zunehmender Regen", "Feuchter, dichter Wald, flexiblere Zeitplanung empfohlen"],
+            ["Dezember", "Feuchtester Monat", "Kräftige Schauer, Flüsse gut gefüllt, für abenteuerlustige Wanderer"]
+          ]
+        },
+        bullets: [
+          "Trockenste Monate mit stabilen Pfaden: Mai bis September.",
+          "Ruhig und sehr angenehm: März, April und Oktober.",
+          "Regenreicher, aber voll begehbar: November bis Februar.",
+          "Orang-Utan-Sichtungen hängen nicht von der Saison ab, sondern von Futterbäumen und Guide-Erfahrung."
+        ]
+      },
+      {
+        title: "Verändern die Jahreszeiten die Chance, Orang-Utans zu sehen?",
+        paragraphs: [
+          "Nein, nicht so wie viele vermuten. Orang-Utans im Gunung-Leuser-Nationalpark wandern dorthin, wo im Urwald Früchte reifen. Diese Fruchtzyklen verteilen sich über das gesamte Jahr.",
+          "Viel entscheidender als der Kalendermonat ist die Länge deines Treks: Ein 2- oder 3-Tage-Trek führt tiefer in den Primärwald und erhöht die Beobachtungszeit im natürlichen Lebensraum signifikant."
+        ]
+      },
+      {
+        title: "Häufige Fragen zur Reisezeit (FAQ)",
+        faq: [
+          {
+            q: "In welchem Monat sieht man die meisten Orang-Utans in Bukit Lawang?",
+            a: "Orang-Utans leben wild im Nationalpark und können das ganze Jahr über beobachtet werden. Die Sichtungschancen sind im Januar genauso real wie im Juli."
+          },
+          {
+            q: "Regnet es in der Regenzeit den ganzen Tag?",
+            a: "Nein. Typischer Tropenregen in Sumatra dauert meist 1 bis 2 Stunden am späten Nachmittag. Die Trekking-Vormittage sind fast immer sonnig oder leicht bewölkt."
+          },
+          {
+            q: "Findet das Tube-Rafting auch bei Regen statt?",
+            a: "Solange der Flusspegel im sicheren Bereich liegt, findet das traditionelle Rafting auf Gummireifen statt. Bei Hochwasser nach Starkregen entscheidet der Guide stets im Sinne der Sicherheit."
+          },
+          {
+            q: "Wann sollte man für den Sommer buchen?",
+            a: "Für die europäischen Sommerferien im Juli und August empfehlen wir eine Buchung etwa 3 bis 6 Wochen im Voraus, da die Nationalpark-Quoten begrenzt sind."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "fr-meilleure-periode-visiter-bukit-lawang-orangs-outans",
+    locale: "fr",
+    title: "Meilleure Période pour Visiter Bukit Lawang et Voir les Orangs-Outans",
+    description:
+      "Guide météo et faune mois par mois à Bukit Lawang : saison des pluies, saison sèche, niveau des rivières, rafting et conseils pour votre trek à Sumatra.",
+    date: "2026-05-29",
+    dateModified: "2026-10-05",
+    readingTime: "8 min de lecture",
+    image: "/images/blog-best-time.webp",
+    imageAlt: "Orang-outan dans la canopée de Bukit Lawang à Sumatra",
+    tags: [
+      "meilleure période Bukit Lawang",
+      "quand partir Sumatra",
+      "météo Bukit Lawang",
+      "trek orang-outan saison"
+    ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Consulter les circuits et disponibilités",
+    relatedSlugs: [
+      "fr-prix-trek-orang-outan-sumatra-2026",
+      "fr-trek-1-jour-vs-2-jours-vs-3-jours-bukit-lawang",
+      "fr-aeroport-medan-bukit-lawang-transport"
+    ],
+    translationKey: "best-time-to-visit-bukit-lawang",
+    sections: [
+      {
+        title: "Bukit Lawang : une destination accessible toute l'année",
+        paragraphs: [
+          "La meilleure période pour un trek avec les orangs-outans à Bukit Lawang dépend avant tout de vos dates de vacances, de votre condition physique et de votre confort face au climat tropical. Le parc national est ouvert toute l'année et les rencontres avec la faune sauvage sont possibles en toute saison.",
+          "Il n'existe pas de mois parfait unique : le nord de Sumatra bénéficie d'un climat tropical humide constant, et de courtes averses font partie intégrante de la vie de la forêt tropicale."
+        ],
+        callout:
+          "Réponse rapide : De mai à septembre est la période la plus favorable pour des sentiers secs et un retour en tube rafting optimal. Mars, avril et octobre offrent un équilibre idéal avec moins d'affluence. Les orangs-outans sauvages s'observent toute l'année."
+      },
+      {
+        title: "Conditions météo et sentiers mois par mois",
+        paragraphs: [
+          "Sumatra ne connaît pas de saison sèche absolue, mais des périodes plus ou moins arrosées. Les averses tropicales tombent généralement en fin d'après-midi ou en soirée sous forme d'orages courts, laissant les matinées dégagées pour la marche."
+        ],
+        table: {
+          caption: "Conditions de trek à Bukit Lawang selon les mois",
+          columns: ["Mois", "Précipitations", "Conditions sur les sentiers"],
+          rows: [
+            ["Janvier à Février", "Fin de la saison humide", "Forêt luxuriante, descentes glissantes, rivière haute"],
+            ["Mars à Avril", "Pluies modérées", "Très bon compromis : sentiers calmes et faune très active"],
+            ["Mai à Juillet", "Période la plus sèche", "Sentiers fermes, tube rafting idéal, haute saison européenne"],
+            ["Août à Septembre", "Temps sec et courtes averses", "Excellentes conditions, période la plus animée"],
+            ["Octobre à Novembre", "Retour des pluies", "Forêt très verte et humide, flexibilité conseillée"],
+            ["Décembre", "Mois le plus humide", "Fortes pluies, rivière puissante, réservé aux marcheurs tout-terrain"]
+          ]
+        },
+        bullets: [
+          "Période la plus sèche et sentiers stables : Mai à Septembre.",
+          "Calme avec d'excellentes conditions : Mars, Avril et Octobre.",
+          "Plus humide mais tout à fait praticable : Novembre à Février.",
+          "Les observations d'orangs-outans dépendent des arbres fruitiers, pas de la météo."
+        ]
+      },
+      {
+        title: "La saison influe-t-elle sur les chances d'observer les orangs-outans ?",
+        paragraphs: [
+          "Non, pas de manière décisive. Les orangs-outans du parc national de Gunung Leuser se déplacent au gré des fructifications naturelles de la jungle, qui s'échelonnent sur l'ensemble des douze mois de l'année.",
+          "La durée de votre trek a un impact bien plus fort que le mois choisi : un trek de 2 ou 3 jours permet de s'enfoncer plus profondément dans la forêt primaire et multiplie les opportunités de rencontre dans le calme."
+        ]
+      },
+      {
+        title: "Questions fréquentes sur la météo et la saison (FAQ)",
+        faq: [
+          {
+            q: "Quel est le meilleur mois pour voir les orangs-outans à Bukit Lawang ?",
+            a: "Les orangs-outans sauvages peuvent être observés en toute saison. Les chances de rencontre sont aussi élevées en janvier ou mars qu'en plein mois de juillet."
+          },
+          {
+            q: "Pleut-il toute la journée pendant la saison des pluies à Sumatra ?",
+            a: "Non. La pluie tropicale prend la forme d'averses intenses d'une ou deux heures en fin de journée. Les matinées sont presque systématiquement favorables à la randonnée."
+          },
+          {
+            q: "Le rafting en bouée est-il maintenu en cas de pluie ?",
+            a: "Oui, tant que le débit de la rivière Bahorok reste sécuritaire. En cas de crue soudaine, votre guide privilégiera toujours le retour à pied pour votre sécurité."
+          },
+          {
+            q: "Quand faut-il réserver pour l'été ?",
+            a: "Pour juillet et août, nous conseillons de réserver vos dates 3 à 6 semaines à l'avance via WhatsApp ou notre formulaire en ligne, les quotas de guides étant strictement régulés."
+          }
+        ]
+      }
+    ]
   }
 ];
 
@@ -2299,17 +2478,22 @@ export const blogPosts: BlogPost[] = [
     description:
       "A focused packing list for Sumatra orangutan trekking: shoes, rain gear, dry bags, money, health items, and what to leave at the guesthouse.",
     date: "2026-05-29",
+    dateModified: "2026-10-05",
     readingTime: "6 min read",
     image: "/images/stock/activity-03.webp",
     imageAlt: "Guest walking through dense green rainforest in North Sumatra",
     tags: ["packing list", "Sumatra travel", "jungle trekking"],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare Bukit Lawang treks",
     sections: [
       {
         title: "Pack light and practical",
         paragraphs: [
           "Bukit Lawang trekking is humid, green, and often muddy. The best packing strategy is simple: keep your main luggage at the guesthouse and carry only what you need for the forest.",
           "European travelers often arrive with large backpacks after a long flight. Before the trek, repack into a small day bag or dry bag so climbs, river edges, and muddy descents stay manageable."
-        ]
+        ],
+        callout:
+          "Quick Checklist: Pack lightweight quick-dry clothing, trail shoes with deep rubber grip, a waterproof dry bag (15-20L) for the river tubing return, high-DEET mosquito repellent, personal blister care, a headlamp, and cash in Indonesian Rupiah. Large suitcases should stay stored at your guesthouse."
       },
       {
         title: "Clothing and footwear",
@@ -2343,6 +2527,27 @@ export const blogPosts: BlogPost[] = [
           "Cash is still useful in Bukit Lawang. Bring Indonesian rupiah for village expenses, tips, snacks, and small purchases. Keep passport and bank cards protected from rain and river splashes.",
           "If you are joining a multi-day trek, ask where your main luggage will be stored and what you should carry into the forest."
         ]
+      },
+      {
+        title: "Frequently asked packing questions",
+        faq: [
+          {
+            q: "Do I need leech socks for trekking in Bukit Lawang?",
+            a: "Leech socks can be helpful during wetter months (October to February), but standard long socks pulled over quick-dry trousers with mosquito spray usually suffice on established trails."
+          },
+          {
+            q: "Where can I store my big backpack during the trek?",
+            a: "All reputable guesthouses and tour operators in Bukit Lawang provide secure, locked luggage storage for your main backpack or suitcase free of charge while you are in the jungle."
+          },
+          {
+            q: "Are hiking boots or trail running shoes better?",
+            a: "Trail running shoes with deep rubber lugs dry much faster than heavy leather hiking boots after tropical showers and river crossings, making them the preferred choice for most guides and trekkers."
+          },
+          {
+            q: "Do I need a waterproof dry bag?",
+            a: "Yes. A 10L to 20L dry bag is essential to protect your phone, camera, passport, and dry camp clothes, especially during the traditional tube-rafting return down the Bahorok River."
+          }
+        ]
       }
     ]
   },
@@ -2352,7 +2557,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Month-by-month weather and wildlife guide for Bukit Lawang: rainfall, river levels, trail conditions, rafting, crowds, and the best months to trek.",
     date: "2026-05-29",
-    dateModified: "2026-09-17",
+    dateModified: "2026-10-05",
     readingTime: "9 min read",
     image: "/images/blog-best-time.webp",
     imageAlt: "Orangutan in the green rainforest canopy of Bukit Lawang",
@@ -2362,6 +2567,9 @@ export const blogPosts: BlogPost[] = [
       "Bukit Lawang weather by month",
       "Europe to Sumatra"
     ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare Bukit Lawang treks",
+    translationKey: "best-time-to-visit-bukit-lawang",
     sections: [
       {
         title: "Bukit Lawang is a year-round rainforest destination",
@@ -2369,7 +2577,9 @@ export const blogPosts: BlogPost[] = [
           "The best time to visit Bukit Lawang for orangutan trekking is the month that fits your travel dates, fitness, and tolerance for tropical rain. The rainforest is open year-round, and orangutan sightings should never be treated as guaranteed.",
           "There is no single perfect month for every traveler. Bukit Lawang is humid and tropical throughout the year, and rain can happen in any season. The better question is how much flexibility you want and how comfortable you are with mud, heat, and changing river conditions.",
           "For many European guests, the best itinerary includes one buffer night before the trek and one after it. That reduces stress if flights, road transfers, or weather slow the journey."
-        ]
+        ],
+        callout:
+          "Quick Answer: May to September is the driest and most popular period for Bukit Lawang orangutan trekking, offering firm trails and reliable tube rafting. March, April, and October provide pleasant conditions with fewer crowds. Orangutan sightings occur year-round."
       },
       {
         title: "Month-by-month weather and trekking conditions",
@@ -2431,6 +2641,27 @@ export const blogPosts: BlogPost[] = [
           "Three nights in the area gives space for a 2-day trek plus recovery.",
           "Four or five nights works better for a 3-day trek, village time, and a less rushed transfer."
         ]
+      },
+      {
+        title: "Seasonality & weather FAQ",
+        faq: [
+          {
+            q: "When is the best month to see orangutans in Bukit Lawang?",
+            a: "Orangutans can be seen year-round in Gunung Leuser National Park because sightings depend on fruiting trees rather than weather seasons. However, May to September offers the most comfortable trail conditions."
+          },
+          {
+            q: "Does it rain all day during the rainy season in Sumatra?",
+            a: "No. Tropical rain in North Sumatra usually falls as intense afternoon or late evening downpours lasting 1 to 2 hours, meaning mornings are almost always clear for hiking."
+          },
+          {
+            q: "Can jungle treks be cancelled due to heavy rain?",
+            a: "Treks proceed in rain with proper ponchos, but river tube rafting may be temporarily delayed or replaced with walking if river water levels exceed safety margins."
+          },
+          {
+            q: "Is Bukit Lawang crowded during peak European summer holidays?",
+            a: "July and August are the busiest months. To ensure a private pace and secure your preferred riverside camp, booking 3 to 6 weeks in advance is highly recommended."
+          }
+        ]
       }
     ]
   },
@@ -2474,6 +2705,109 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           "Instead of asking only whether orangutans are guaranteed, ask how the trek handles distance, food, camp waste, river safety, and local staffing. Those answers reveal the quality of the experience.",
           "A responsible trek may feel slower, but that slower pace is exactly what protects the forest experience visitors came to see."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "gunung-leuser-national-park-permit-fees-rules-guide",
+    locale: "en",
+    title: "Gunung Leuser National Park: Permit Fees, Rules & Guide Regulations (2026 Guide)",
+    description:
+      "Official 2026 guide to Gunung Leuser National Park entrance permits, TNGL fees, certified HPI guide rules, ethical wildlife distances, and ranger checkpoints.",
+    date: "2026-10-05",
+    dateModified: "2026-10-05",
+    readingTime: "8 min read",
+    image: "/images/blog-conservation.webp",
+    imageAlt: "Gunung Leuser National Park rainforest trailhead and ranger checkpoint near Bukit Lawang",
+    tags: [
+      "Gunung Leuser entrance fee",
+      "Bukit Lawang national park permit",
+      "ethical trekking Sumatra",
+      "Gunung Leuser National Park rules",
+      "HPI guide regulations"
+    ],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Compare licensed jungle treks",
+    relatedSlugs: [
+      "sumatra-orangutan-trekking-cost-price-guide-2026",
+      "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
+      "what-to-pack-for-bukit-lawang-jungle-trek"
+    ],
+    sections: [
+      {
+        title: "Official 2026 permit snapshot & entrance requirements",
+        paragraphs: [
+          "Gunung Leuser National Park (Taman Nasional Gunung Leuser or TNGL) is a UNESCO World Heritage site protecting one of the last remaining rainforest habitats for the critically endangered Sumatran orangutan (Pongo abelii). To protect this fragile ecosystem, the Indonesian Ministry of Environment and Forestry (KLHK) enforces mandatory entry permits and guide ratios.",
+          "Every visitor entering the park from Bukit Lawang must hold a valid park permit and be accompanied by a licensed local guide registered with the Indonesian Tour Guide Association (HPI - Himpunan Pramuwisata Indonesia)."
+        ],
+        callout:
+          "Quick Answer: Official Gunung Leuser National Park entry permits cost 150,000 IDR per person per day on weekdays (approx. 9 EUR) and 225,000 IDR on Sundays and Indonesian public holidays (approx. 13.50 EUR). When booking a package with Orangutan Adventure Sumatra, all official permits, camera registrations, and checkpoint taxes are handled and included in your total price.",
+        table: {
+          caption: "Official Gunung Leuser National Park entrance fees and rates for 2026",
+          columns: ["Permit / Fee Type", "Official Rate (IDR)", "Approximate EUR", "Regulations"],
+          rows: [
+            ["International Visitor Entry (Weekday)", "150,000 IDR / day", "~9 EUR", "Required for all non-Indonesian passport holders"],
+            ["International Visitor Entry (Weekend/Holiday)", "225,000 IDR / day", "~13.50 EUR", "Applies to Sundays and gazetted Indonesian national holidays"],
+            ["Domestic Visitor Entry", "5,000 - 7,500 IDR / day", "~0.50 EUR", "Applicable with Indonesian KTP / residency card"],
+            ["Jungle Camping Fee", "5,000 IDR / night", "~0.30 EUR", "Per person per night at designated Bahorok river camps"],
+            ["Licensed HPI Guide & Assistant", "Included in standard packages", "Fixed rate", "Mandatory legal accompaniment for all jungle entry"]
+          ]
+        }
+      },
+      {
+        title: "Why licensed HPI guides are legally mandatory",
+        paragraphs: [
+          "Independent solo trekking without a registered local guide is strictly prohibited in Gunung Leuser National Park. The rainforest terrain is mountainous, dense, and crisscrossed by animal paths where unguided hikers can easily lose orientation.",
+          "Certified HPI guides undergo rigorous training in rainforest navigation, emergency jungle first aid, wildlife behavior interpretation, and rescue procedures. Furthermore, authorized local guides collaborate daily with park rangers to monitor orangutan health and report unauthorized activity."
+        ],
+        bullets: [
+          "Legal compliance: Rangers at the trailhead checkpoint verify guide license badges before entry.",
+          "Wildlife safety: Trained guides know which wild individuals to avoid and how to react if an orangutan approaches.",
+          "Search & rescue: Communication networks link guides with resort rangers along the Bahorok River valley.",
+          "Local community support: Guiding fees support sustainable livelihoods for local villagers rather than illegal logging."
+        ]
+      },
+      {
+        title: "The 5 golden ethical rules for wild orangutan trekking",
+        paragraphs: [
+          "Bukit Lawang is famous for its semi-wild and wild orangutans. Because orangutans share approximately 97% of their DNA with humans, they are exceptionally vulnerable to human pathogens like respiratory viruses and skin infections. Adhering to ethical rules ensures their survival.",
+          "Every traveler must abide by the five core conservation rules established by the national park authorities:"
+        ],
+        bullets: [
+          "Rule 1 - Never feed the wildlife: Feeding orangutans causes dependency, digestive illness, aggressive behavior toward tourists, and loss of natural foraging instincts.",
+          "Rule 2 - Maintain a 7 to 10-meter distance: Never block an animal's path or approach mothers with infants. Let the wildlife choose where to move.",
+          "Rule 3 - No touching or physical contact: Touching wild primates can transmit fatal human diseases and provokes unpredictable defensive reactions.",
+          "Rule 4 - Pack out all waste: Do not leave food wrappers, fruit peels, or plastic in the rainforest. Everything carried in must be carried out.",
+          "Rule 5 - Respect group size limits: Legitimate tours maintain a strict guest-to-guide ratio (maximum 6 to 7 guests per licensed team) to prevent forest crowding."
+        ]
+      },
+      {
+        title: "Trailhead checkpoints, river camps, and tube rafting safety",
+        paragraphs: [
+          "Before entering the national park trails, your guide registers your group at the official TNGL checkpoint in Bukit Lawang. For overnight treks (2-day, 3-day, and 5-day expeditions), camping is only permitted at designated clearing sites along the Bahorok River.",
+          "The traditional return by tube rafting (jungler rafting) is also regulated. Tubes are linked together by trained local skippers with safety ropes, and life jackets are provided. If heavy rainfall causes river levels to surge, licensed guides will postpone the launch or walk guests back along safe valley paths."
+        ]
+      },
+      {
+        title: "Gunung Leuser National Park rules & permits FAQ",
+        faq: [
+          {
+            q: "Do I need to buy my Gunung Leuser park permit in advance?",
+            a: "No. All official national park permits, conservation taxes, and ranger station registrations are processed by Orangutan Adventure Sumatra and included directly in your package price."
+          },
+          {
+            q: "Can I enter Gunung Leuser National Park without a guide?",
+            a: "No. Solo or unguided entry into Gunung Leuser National Park is strictly illegal under Indonesian forestry law to protect hiker safety and prevent wildlife poaching."
+          },
+          {
+            q: "What should I do if an orangutan approaches me on the trail?",
+            a: "Remain calm, do not run or scream, avoid direct eye contact, and listen carefully to your guide. Slowly back away while keeping your hands visible and your backpack securely closed."
+          },
+          {
+            q: "Is flash photography allowed during orangutan treks?",
+            a: "No. Flash photography and camera drones are strictly prohibited in Gunung Leuser National Park as they startle primates and disrupt their natural tree-canopy behavior."
+          }
         ]
       }
     ]

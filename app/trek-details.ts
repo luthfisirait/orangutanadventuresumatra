@@ -61,7 +61,7 @@ function buildDetail(
     id,
     slug,
     title,
-    metaTitle: `${title} | Trek details | ${siteName}`,
+    metaTitle: `${title} - Bukit Lawang Jungle Trek | ${siteName}`,
     metaDescription: input.heroDescription,
     heroKicker: input.heroKicker,
     heroTitle: input.heroTitle ?? title,

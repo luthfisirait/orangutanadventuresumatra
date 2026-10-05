@@ -87,8 +87,52 @@ const featuredHomeBlogSlugs = [
   "bukit-lawang-vs-tanjung-puting-orangutans",
   "sumatra-orangutan-trekking-cost-price-guide-2026",
   "1-day-vs-2-day-vs-3-day-bukit-lawang-trek",
-  "is-bukit-lawang-safe-solo-female-travelers"
+  "is-bukit-lawang-safe-solo-female-travelers",
+  "medan-airport-to-bukit-lawang-transport-options"
 ] as const;
+
+const intentSectionCopy = {
+  en: {
+    kicker: "Plan by trip type",
+    heading: "Choose the page that matches your time and travel style.",
+    toursTitle: "Sumatra orangutan tours",
+    toursDesc: "Compare Bukit Lawang routes by duration, camp nights, effort, and price.",
+    compareTitle: "Compare Bukit Lawang trek packages",
+    compareDesc: "Review prices, duration, fitness, camp nights, and the best fit for your trip.",
+    threeDayTitle: "3-day Bukit Lawang orangutan trek",
+    threeDayDesc: "See the camp flow, river return, and booking notes."
+  },
+  de: {
+    kicker: "Reise nach Typ planen",
+    heading: "Wähle die Seite, die zu deiner Zeit und deinem Reisestil passt.",
+    toursTitle: "Sumatra Orang-Utan Touren",
+    toursDesc: "Vergleiche Bukit Lawang Routen nach Dauer, Camp-Nächten, Anstrengung und Preisen.",
+    compareTitle: "Bukit Lawang Trekking-Pakete vergleichen",
+    compareDesc: "Preise, Fitnesslevel, Fluss-Camps und den besten Trek für deine Reise im Überblick.",
+    threeDayTitle: "3-Tage-Orang-Utan-Trek in Bukit Lawang",
+    threeDayDesc: "Erfahre alles über Camp-Ablauf, Rafting-Rückkehr und Buchungshinweise."
+  },
+  fr: {
+    kicker: "Planifier selon votre style de voyage",
+    heading: "Choisissez la formule qui correspond à votre temps et à vos envies.",
+    toursTitle: "Circuits orang-outan à Sumatra",
+    toursDesc: "Comparez les itinéraires de Bukit Lawang par durée, nuits en camp, effort et prix.",
+    compareTitle: "Comparer les forfaits de trek à Bukit Lawang",
+    compareDesc: "Consultez les tarifs, la condition physique requise et le trek idéal pour votre séjour.",
+    threeDayTitle: "Trek orang-outan de 3 jours à Bukit Lawang",
+    threeDayDesc: "Découvrez le bivouac en rivière, le retour en tube rafting et les modalités de réservation."
+  },
+  nl: {
+    kicker: "Plan op reistype",
+    heading: "Kies de pagina die past bij jouw beschikbare tijd en reisstijl.",
+    toursTitle: "Orang-oetan tours op Sumatra",
+    toursDesc: "Vergelijk Bukit Lawang routes op duur, nachten in de jungle, zwaarte en prijs.",
+    compareTitle: "Vergelijk Bukit Lawang trekkingspakketten",
+    compareDesc: "Bekijk prijzen, conditie, riviercamps en de beste optie voor jouw reis.",
+    threeDayTitle: "3-daagse orang-oetan trek in Bukit Lawang",
+    threeDayDesc: "Ontdek de jungle-overnachtingen, terugkeer per tube-rafting en praktische tips."
+  }
+} as const;
 
 const brandTitle = (
   <>
@@ -648,6 +692,12 @@ export function HomeContent({
               {t.nav[item.key]}
             </a>
           ))}
+          <Link href={blogIndexPath(language)}>
+            {t.footerLinks.blog}
+          </Link>
+          <Link href="/essential-information">
+            {t.footerLinks.essentialInfo}
+          </Link>
         </nav>
         <div className="header-actions">
           <label className="language-picker" aria-label="Language selector">
@@ -711,6 +761,12 @@ export function HomeContent({
             {t.nav[item.key]}
           </a>
         ))}
+        <Link href={blogIndexPath(language)} onClick={() => setMobileMenuOpen(false)}>
+          {t.footerLinks.blog}
+        </Link>
+        <Link href="/essential-information" onClick={() => setMobileMenuOpen(false)}>
+          {t.footerLinks.essentialInfo}
+        </Link>
         <TrackedLink
           className="mobile-drawer-cta"
           href={whatsappUrl}
@@ -803,31 +859,34 @@ export function HomeContent({
         </div>
       </section>
 
-      {language === "en" ? (
+      {(() => {
+        const intentCopy = intentSectionCopy[language];
+        return (
         <section className="intent-links-section" aria-labelledby="trip-pathways-heading">
           <div className="section-heading wide-heading">
-            <span className="section-kicker">Plan by trip type</span>
-            <h2 id="trip-pathways-heading">Choose the page that matches your time and travel style.</h2>
+            <span className="section-kicker">{intentCopy.kicker}</span>
+            <h2 id="trip-pathways-heading">{intentCopy.heading}</h2>
           </div>
           <div className="intent-link-grid">
             <Link className="intent-link-card" href="/sumatra-orangutan-tour">
-              <span>Sumatra orangutan tours</span>
-              <strong>Compare Bukit Lawang routes by duration, camp nights, effort, and price.</strong>
+              <span>{intentCopy.toursTitle}</span>
+              <strong>{intentCopy.toursDesc}</strong>
               <ArrowRight size={18} />
             </Link>
             <Link className="intent-link-card" href="/treks">
-              <span>Compare Bukit Lawang trek packages</span>
-              <strong>Review prices, duration, fitness, camp nights, and the best fit for your trip.</strong>
+              <span>{intentCopy.compareTitle}</span>
+              <strong>{intentCopy.compareDesc}</strong>
               <ArrowRight size={18} />
             </Link>
             <Link className="intent-link-card" href="/3-day-bukit-lawang-orangutan-trek">
-              <span>3-day Bukit Lawang orangutan trek</span>
-              <strong>See the camp flow, river return, and booking notes.</strong>
+              <span>{intentCopy.threeDayTitle}</span>
+              <strong>{intentCopy.threeDayDesc}</strong>
               <ArrowRight size={18} />
             </Link>
           </div>
         </section>
-      ) : null}
+        );
+      })()}
 
       <section className="section intro-section">
         <div className="section-heading">
@@ -855,14 +914,34 @@ export function HomeContent({
         <div className="section-heading wide-heading">
           <span className="section-kicker">{t.headings.packages}</span>
           <h2>{t.headings.packagesSub}</h2>
-          {language === "en" ? (
-            <p className="section-lede">
-              Need more detail before choosing a date? Use the{" "}
-              <Link href="/sumatra-orangutan-tour">full route and price comparison</Link>, or read the
-              day-by-day{" "}
-              <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang orangutan trek</Link>.
-            </p>
-          ) : null}
+          <p className="section-lede">
+            {language === "de" ? (
+              <>
+                Benötigst du weitere Details vor der Terminauswahl? Nutze unseren{" "}
+                <Link href="/sumatra-orangutan-tour">vollständigen Routen- und Preisvergleich</Link> oder lies den Tagesablauf für den{" "}
+                <Link href="/3-day-bukit-lawang-orangutan-trek">3-Tage-Orang-Utan-Trek in Bukit Lawang</Link>.
+              </>
+            ) : language === "fr" ? (
+              <>
+                Besoin de plus de détails avant de choisir vos dates ? Consultez notre{" "}
+                <Link href="/sumatra-orangutan-tour">comparatif complet des circuits et tarifs</Link>, ou découvrez l&apos;itinéraire détaillé du{" "}
+                <Link href="/3-day-bukit-lawang-orangutan-trek">trek de 3 jours à Bukit Lawang</Link>.
+              </>
+            ) : language === "nl" ? (
+              <>
+                Meer details nodig voor je boekt? Bekijk onze{" "}
+                <Link href="/sumatra-orangutan-tour">volledige route- en prijsvergelijking</Link>, of lees het dag-tot-dag overzicht van de{" "}
+                <Link href="/3-day-bukit-lawang-orangutan-trek">3-daagse Bukit Lawang orang-oetan trek</Link>.
+              </>
+            ) : (
+              <>
+                Need more detail before choosing a date? Use the{" "}
+                <Link href="/sumatra-orangutan-tour">full route and price comparison</Link>, or read the
+                day-by-day{" "}
+                <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang orangutan trek</Link>.
+              </>
+            )}
+          </p>
         </div>
 
         <div className="category-tabs" role="group" aria-label="Trek categories">

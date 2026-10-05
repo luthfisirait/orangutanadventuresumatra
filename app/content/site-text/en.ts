@@ -30,7 +30,7 @@ export const en = {
     paragraphs: [
       "Orangutan Adventure Sumatra runs ethical jungle trekking around Bukit Lawang, a gateway to Gunung Leuser National Park. The experience is built for travelers who want a real rainforest day without turning wildlife into a performance.",
       "Choose from short walks, classic overnight treks, exclusive private packages, Bat Cave visits, and Village Tours. Syaipul handles pacing, route choices, meals, camp setup, and the return by river when included.",
-      "Travelers often search for this area as Bukit Lawang or Bukitlawang, and for wildlife trips as orangutan or orang utan trekking. All refer to the same North Sumatra rainforest gateway."
+      "Whether you are planning a single-day rainforest walk or an overnight expedition deep into Gunung Leuser National Park, our small-group and private treks focus on wild orangutan sightings without feeding or human disturbance."
     ],
     promises: [
       "Local Indonesian guide",
