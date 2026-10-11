@@ -418,10 +418,12 @@ const informationBlogPosts: BlogPost[] = [
       },
       {
         title: "Which one should you choose?",
+        callout:
+          "Planning a Sumatra trip? Compare verified local packages on our [Sumatra orangutan tours page](/sumatra-orangutan-tour), read the full [3-day Bukit Lawang jungle trek itinerary](/3-day-bukit-lawang-orangutan-trek), or message guide Syaipul directly on WhatsApp (+62 853 6240 5752) to check open dates.",
         bullets: [
-          "Choose Bukit Lawang for an affordable, active, local-guided Sumatra trek.",
+          "Choose Bukit Lawang for an affordable, active, local-guided Sumatra trek (explore our [1-day to 5-day trek packages](/sumatra-orangutan-tour)).",
           "Choose Tanjung Puting for a dedicated Borneo river safari with klotok boat logistics.",
-          "Choose Bukit Lawang if you have 3 to 5 nights in North Sumatra and want trekking to be the main activity.",
+          "Choose Bukit Lawang if you have 3 to 5 nights in North Sumatra and want trekking to be the main activity — our [3-day rainforest trek](/3-day-bukit-lawang-orangutan-trek) is the most popular balanced route.",
           "Choose Tanjung Puting if you are comfortable adding domestic flights and want the boat experience to be part of the trip.",
           "If you have two or three weeks in Indonesia, visiting both gives two very different orangutan habitats and travel styles."
         ]
@@ -1301,7 +1303,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Vor dem Trek",
         paragraphs: [
-          "Starte keinen Mehrtagestrek direkt nach einem internationalen Flug. Plane eine Nacht in Bukit Lawang, prüfe dein Gepäck, hebe Bargeld ab und bestätige Treffpunkt und Startzeit mit deinem Guide."
+          "Starte keinen Mehrtagestrek direkt nach einem internationalen Flug. Plane eine Nacht in Bukit Lawang, prüfe dein Gepäck, hebe Bargeld ab und bestätige Treffpunkt und Startzeit mit deinem Guide. Um einen privaten Transfer mit einer geführten Dschungeltour zu kombinieren, sieh dir unsere [Sumatra Orang-Utan Touren](/sumatra-orangutan-tour) an oder kontaktiere Syaipul direkt per WhatsApp (+62 853 6240 5752)."
         ]
       }
     ]
@@ -1444,7 +1446,9 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Éthique",
         paragraphs: [
           "Dans les deux destinations, il faut garder ses distances, ne pas nourrir les animaux et ne jamais toucher les orangs-outans. Un bon guide ne force pas une rencontre."
-        ]
+        ],
+        callout:
+          "Conseil aux voyageurs : Envie de découvrir les orangs-outans de Sumatra dans leur habitat naturel ? Découvrez nos [forfaits de trek de 1 à 5 jours à Bukit Lawang](/fr#treks) ou discutez directement avec notre guide local Syaipul sur WhatsApp (+62 853 6240 5752) pour poser vos questions."
       }
     ]
   },
@@ -1636,7 +1640,7 @@ const translatedInformationBlogPosts: BlogPost[] = [
       {
         title: "Avant le trek",
         paragraphs: [
-          "Évite de commencer un trek jungle le jour même d'un vol international. Une nuit à Bukit Lawang rend le départ plus calme et plus sûr."
+          "Évite de commencer un trek jungle le jour même d'un vol international. Une nuit à Bukit Lawang rend le départ plus calme et plus sûr. Pour organiser votre transfert privé depuis l'aéroport de Medan (KNO) combiné avec votre trek, consultez nos [forfaits de trek à Bukit Lawang](/fr#treks) ou écrivez directement à Syaipul sur WhatsApp (+62 853 6240 5752)."
         ]
       }
     ]
@@ -2424,50 +2428,94 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "3-day-bukit-lawang-jungle-trek-itinerary",
-    title: "3-Day Bukit Lawang Trek Itinerary: Camps, Wildlife & Rafting",
+    title: "3-Day Bukit Lawang Jungle Trekking Itinerary: Camps & Rafting",
     description:
-      "See a realistic 3-day Bukit Lawang trek itinerary with two river camps, wildlife ethics, trail conditions, meals, and rafting when conditions are safe.",
+      "Realistic 3-day Bukit Lawang jungle trekking itinerary: 2 river camps, wild orangutan tracking, meals, fitness tips, and tube rafting back to the village.",
     date: "2026-05-29",
-    dateModified: "2026-09-26",
-    readingTime: "7 min read",
+    dateModified: "2026-10-07",
+    readingTime: "8 min read",
     image: "/images/stock/activity-07.webp",
     imageAlt: "Rainforest trekking trail near Bukit Lawang",
-    tags: ["3-day Bukit Lawang orangutan trek", "Bukit Lawang", "orangutan trekking"],
+    tags: [
+      "Bukit Lawang jungle trekking",
+      "3-day Bukit Lawang orangutan trek",
+      "Sumatra jungle tour",
+      "Gunung Leuser itinerary"
+    ],
     primaryCtaHref: "/3-day-bukit-lawang-orangutan-trek",
     primaryCtaLabel: "See the 3-day trek booking page",
     sections: [
       {
         title: "What this 3-day Bukit Lawang itinerary covers",
         paragraphs: [
-          "A 3-day Bukit Lawang orangutan trek usually includes two jungle nights, river camp life, slower wildlife watching, and a river return when conditions are safe.",
-          "It is often the best balance for travelers from Europe. It is long enough to feel the rhythm of the rainforest, sleep beside the river, and move beyond the busiest trails, but short enough to fit into a two-week Indonesia itinerary.",
-          "The route is not a fixed performance. Weather, group fitness, wildlife movement, and national park guidance all influence the final plan. A good guide explains this before the trek so expectations stay realistic."
-        ]
+          "A 3-day Bukit Lawang orangutan trek usually includes two jungle nights, river camp life, slower wildlife watching, and an exhilarating river return when conditions are safe.",
+          "It is often the best balance for travelers from Europe and across the globe. It is long enough to feel the rhythm of the rainforest, sleep beside the river, and move beyond the busiest trails, but short enough to fit easily into a two-week Indonesia itinerary.",
+          "The route is not a fixed performance. Weather, group fitness, wildlife movement, and national park guidance all influence the final plan. A good licensed guide explains this before the trek so expectations stay realistic."
+        ],
+        table: {
+          caption: "3-Day Bukit Lawang jungle trekking day-by-day overview",
+          columns: ["Day", "Trail Activity & Focus", "Distance & Terrain", "Overnight Base"],
+          rows: [
+            ["Day 1", "Trailhead departure, first orangutan tracking, jungle fruit & lunch", "5-6 hours moderate forest walk, humid climbs", "Riverside Camp 1 (shelter & mats)"],
+            ["Day 2", "Deeper Gunung Leuser trails, gibbons & fauna, camp cooking & relaxation", "5-6 hours steep & quiet jungle trails", "Riverside Camp 2 (river swimming & dinner)"],
+            ["Day 3", "Morning river walk, optional short trek, traditional tube rafting return", "2-3 hours light walk + 45-min rafting", "Return to Bukit Lawang village"]
+          ]
+        }
       },
       {
         title: "Day 1: village edge to first camp",
         paragraphs: [
-          "The first morning usually starts in Bukit Lawang around breakfast time. After checking footwear, water, and day bags, the guide leads the group into the forest at a slow pace. The goal is not to rush distance, but to read the canopy, listen for movement, and keep the group safe.",
-          "Lunch and fruit are normally eaten inside the forest. By late afternoon, the group reaches a basic riverside camp where the guide team prepares dinner and sets up the sleeping area."
+          "The first morning starts in Bukit Lawang around breakfast time (typically 8:30 AM). After checking footwear, water, and day bags, your certified guide leads the group into Gunung Leuser National Park at a measured pace. The goal is not to rush distance, but to read the canopy, listen for movement, and keep the group safe.",
+          "Lunch and tropical fresh fruit (watermelon, pineapple, bananas, passion fruit) are eaten inside the forest canopy. By late afternoon, the group reaches a basic riverside camp where the camp crew prepares a warm dinner and sets up the sleeping area."
         ]
       },
       {
         title: "Day 2: deeper forest and camp life",
         paragraphs: [
-          "The second day is where many guests feel the difference between a short trek and a multi-day package. Trails can become quieter, steeper, and muddier. There is more time to learn about forest plants, insects, gibbons, Thomas leaf monkeys, macaques, and the wider ecosystem around orangutan habitat.",
-          "Camp life is simple. Expect river washing, fresh food, tea or coffee, and a night soundtrack of water, insects, and forest movement."
+          "The second day is where many guests feel the true difference between a short day walk and a multi-day jungle trek. Trails become quieter, steeper, and muddier, leading away from day-tripper paths. There is more time to spot wild fauna such as Thomas leaf monkeys, white-handed gibbons, pig-tailed macaques, and diverse rainforest flora.",
+          "Camp life is wonderfully grounded. Expect refreshing river washing, freshly cooked Indonesian jungle curries, hot tea or coffee, and an evening soundtrack of flowing water, cicadas, and forest sounds."
         ]
       },
       {
         title: "Day 3: final walk and tube rafting return",
         paragraphs: [
-          "The final morning is usually shorter. Depending on conditions, the group may walk again, visit a river spot, or return by traditional tube rafting toward Bukit Lawang. Rafting should always depend on river level and safety judgment.",
-          "The best way to book is to share your dates, group size, fitness level, and accommodation needs in advance. That gives the guide room to plan a route that fits your group rather than forcing one rigid schedule."
+          "The final morning begins with jungle pancakes or eggs and hot coffee beside the river. Depending on trail conditions and group energy, the group may take a short morning trek or relax by the river before packing up.",
+          "The highlight of day 3 is the traditional tube rafting return down the Bohorok River back to Bukit Lawang village. Guided by trained river captains, large connected rubber tubes navigate gentle rapids, offering a fun and scenic journey straight to your guesthouse."
         ],
+        callout:
+          "Ready to reserve your trek? Check full details and rates on our dedicated [3-day Bukit Lawang orangutan trek package page](/3-day-bukit-lawang-orangutan-trek), compare with other durations on our [Sumatra orangutan tours page](/sumatra-orangutan-tour), or message local guide Syaipul directly on WhatsApp (+62 853 6240 5752) to check open dates and camp spots.",
         bullets: [
-          "Best for active first-time visitors",
-          "Usually includes two simple jungle nights",
-          "Ask about current park permits and rafting conditions before confirming"
+          "Best balanced duration for first-time multi-day hikers",
+          "Includes two scenic nights in riverside jungle camps",
+          "Includes full meals, fresh fruit, national park permits, and tube rafting return"
+        ]
+      },
+      {
+        title: "Trail terrain, humidity, and fitness required",
+        paragraphs: [
+          "Bukit Lawang jungle trekking takes place in a tropical rainforest. Expect temperatures between 26°C and 32°C with high humidity. Trails involve natural roots, muddy inclines, and occasional steep descents where you will hold onto vines and trees for stability.",
+          "You do not need to be an ultra-marathoner, but regular walking fitness and comfortable hiking shoes with deep rubber grip are strongly recommended. Guides always adjust the hiking pace to ensure the safety of every participant."
+        ]
+      },
+      {
+        title: "Frequently asked questions about the 3-day trek",
+        faq: [
+          {
+            q: "Is the 3-day Bukit Lawang trek suitable for beginners?",
+            a: "Yes, provided you have reasonable everyday fitness and are comfortable walking 5 to 6 hours daily in tropical humidity. The guides take frequent fruit and rest breaks."
+          },
+          {
+            q: "Where do we sleep during the trek?",
+            a: "You sleep in riverside campsites sheltered under waterproof tarp roofs. Guides provide foam mattresses, sleeping bags or sheets, and mosquito nets."
+          },
+          {
+            q: "Are park permits and meals included in the 3-day package?",
+            a: "Yes. All official Gunung Leuser National Park permits, guide fees, 2 breakfasts, 3 jungle lunches, 2 hot dinners, unlimited drinking water, and the tube rafting return are included in the published package price."
+          },
+          {
+            q: "What happens if river water levels are too high for tube rafting?",
+            a: "Guest safety is strictly prioritized. If heavy rainfall makes the river unsafe, our guide team will escort the group safely back via an overland rainforest trail instead."
+          }
         ]
       }
     ]

@@ -123,7 +123,7 @@ assert(
 );
 
 const sitemap = await get("/sitemap.xml");
-assert(sitemap.includes("2026-10-05") || sitemap.includes("2026-09-29"), "sitemap lastmod not bumped");
+assert(sitemap.includes("2026-10-11") || sitemap.includes("2026-10-05") || sitemap.includes("2026-09-29"), "sitemap lastmod not bumped");
 assert(
   !sitemap.includes("how-to-get-to-bukit-lawang-from-medan"),
   "merged post still listed in sitemap"

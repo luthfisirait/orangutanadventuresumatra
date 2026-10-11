@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Trek Orang-Outan à Sumatra | Aventure Éducative & Éthique à Bukit Lawang",
+  metaTitle: "Aventure Éducative & Trek Orang-Outan Sumatra | Bukit Lawang dès 55€",
   metaDescription:
-    "Trek éthique avec les orangs-outans à Sumatra (Bukit Lawang). Guide local certifié Syaipul, circuits 1 à 5 jours sans nourrissage, bivouac en rivière et retour en rafting. Tarifs clairs en EUR.",
+    "Aventure éducative & éthique avec les orangs-outans à Sumatra (Bukit Lawang). Treks 1 à 5 jours, bivouac, rafting et guide local certifié dès 55€. Contact direct !",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Aventure éducative et éthique à Bukit Lawang",
@@ -89,8 +89,8 @@ export const fr = {
   },
   faq: [
     {
-      q: "Verra-t-on forcément des orangs-outans ?",
-      a: "Aucune observation ne peut être garantie. Les treks passent dans des zones où des orangs-outans semi-sauvages et sauvages sont souvent vus, surtout près de l’ancienne zone d’alimentation, mais les animaux se déplacent librement."
+      q: "Verra-t-on forcément des orangs-outans lors de cette aventure ?",
+      a: "Aucune observation ne peut être garantie car la faune vit en totale liberté. Cette aventure éducative et éthique dans le Gunung Leuser traverse des zones où les orangs-outans sont souvent observés, sans aucun nourrissage artificiel et dans le respect absolu de leur habitat."
     },
     {
       q: "Que faut-il emporter pour Bukit Lawang ?",

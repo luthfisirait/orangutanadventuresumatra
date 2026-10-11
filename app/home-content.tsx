@@ -917,28 +917,28 @@ export function HomeContent({
           <p className="section-lede">
             {language === "de" ? (
               <>
-                Benötigst du weitere Details vor der Terminauswahl? Nutze unseren{" "}
-                <Link href="/sumatra-orangutan-tour">vollständigen Routen- und Preisvergleich</Link> oder lies den Tagesablauf für den{" "}
+                Benötigst du weitere Details vor der Terminauswahl? Vergleiche alle{" "}
+                <Link href="/sumatra-orangutan-tour">Sumatra Orang-Utan Touren &amp; Preise</Link> oder lies den Tagesablauf für den{" "}
                 <Link href="/3-day-bukit-lawang-orangutan-trek">3-Tage-Orang-Utan-Trek in Bukit Lawang</Link>.
               </>
             ) : language === "fr" ? (
               <>
-                Besoin de plus de détails avant de choisir vos dates ? Consultez notre{" "}
-                <Link href="/sumatra-orangutan-tour">comparatif complet des circuits et tarifs</Link>, ou découvrez l&apos;itinéraire détaillé du{" "}
+                Besoin de plus de détails avant de choisir vos dates ? Comparez nos{" "}
+                <Link href="/sumatra-orangutan-tour">circuits et tarifs des tours orang-outan à Sumatra</Link>, ou découvrez l&apos;itinéraire détaillé du{" "}
                 <Link href="/3-day-bukit-lawang-orangutan-trek">trek de 3 jours à Bukit Lawang</Link>.
               </>
             ) : language === "nl" ? (
               <>
-                Meer details nodig voor je boekt? Bekijk onze{" "}
-                <Link href="/sumatra-orangutan-tour">volledige route- en prijsvergelijking</Link>, of lees het dag-tot-dag overzicht van de{" "}
+                Meer details nodig voor je boekt? Vergelijk alle{" "}
+                <Link href="/sumatra-orangutan-tour">Sumatra orang-oetan tours &amp; prijzen</Link>, of lees het dag-tot-dag overzicht van de{" "}
                 <Link href="/3-day-bukit-lawang-orangutan-trek">3-daagse Bukit Lawang orang-oetan trek</Link>.
               </>
             ) : (
               <>
-                Need more detail before choosing a date? Use the{" "}
-                <Link href="/sumatra-orangutan-tour">full route and price comparison</Link>, or read the
+                Need more detail before choosing a date? Compare our full range of{" "}
+                <Link href="/sumatra-orangutan-tour">Sumatra orangutan tours &amp; prices</Link>, or read the
                 day-by-day{" "}
-                <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang orangutan trek</Link>.
+                <Link href="/3-day-bukit-lawang-orangutan-trek">3-day Bukit Lawang jungle trek itinerary</Link>.
               </>
             )}
           </p>
