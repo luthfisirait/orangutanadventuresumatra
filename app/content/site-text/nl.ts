@@ -102,6 +102,10 @@ export const nl = {
     {
       q: "Waar is het ontmoetingspunt?",
       a: "De treks starten in Bukit Lawang, Noord-Sumatra, Indonesië. Syaipul helpt ook met transport en accommodatie."
+    },
+    {
+      q: "Hebben bosbranden (Karhutla) of nevel invloed op het trekken in Bukit Lawang?",
+      a: "Bukit Lawang en het Gunung Leuser Nationaal Park bestaan uit primair tropisch regenwoud en bergachtig terrein. Dit ecosysteem is van nature vochtig en verschilt sterk van de drooggelegde veenmoerassen waar branden op Sumatra meestal ontstaan. Zelfs als er tijdens aanhoudende droogte regionale nevel overdrijft, blijft de lucht onder het bladerdak van het regenwoud fris en gaan de treks veilig door."
     }
   ],
   contact: {

@@ -217,6 +217,10 @@ export const essentialInformation = {
     {
       q: "What food is available on multi-day treks?",
       a: "Jungle meals are simple and fresh: fruit, rice, vegetables, eggs, noodles, fish or chicken, tea, and coffee. Tell your guide early if you need vegetarian, vegan, halal, gluten-free, or allergy-aware meals."
+    },
+    {
+      q: "Do forest fires (Karhutla) or seasonal haze affect trekking in Bukit Lawang?",
+      a: "Bukit Lawang and Gunung Leuser National Park consist of primary tropical rainforest and steep, mineral-rich mountain terrain, which are naturally humid and very different from the drained peat swamps where fires typically happen in Sumatra. While regional haze can occasionally drift during prolonged El Niño dry spells, air under the rainforest canopy remains fresh and treks operate safely as usual. We actively monitor official conditions to ensure guest safety."
     }
   ]
 } as const;
@@ -1075,7 +1079,118 @@ const informationBlogPosts: BlogPost[] = [
         ]
       }
     ]
-  }
+  },
+  {
+    slug: "sumatra-forest-fires-karhutla-orangutans",
+    locale: "en",
+    title: "Rainforest Under Threat: Forest Fires (Karhutla), Peatlands, and Sumatra’s Orangutans",
+    description:
+      "An investigative look into Sumatra's peatland fires, their threat to critically endangered orangutans in the Leuser Ecosystem, and how ethical ecotourism creates a frontline buffer against illegal clearing.",
+    date: "2026-07-02",
+    dateModified: "2026-10-14",
+    readingTime: "9 min read",
+    image: "/images/sumatra-forest-fires-orangutan-threat.jpg",
+    imageAlt: "Wild Sumatran orangutan in the Gunung Leuser rainforest canopy looking toward distant peatland smoke and haze",
+    tags: ["Karhutla", "Sumatra Forest Fires", "Orangutan Conservation", "Leuser Ecosystem", "Peatland Protection"],
+    primaryCtaHref: "/sumatra-orangutan-tour",
+    primaryCtaLabel: "Support ethical conservation treks",
+    relatedSlugs: [
+      "ethical-orangutan-trekking-conservation-local-community",
+      "best-time-to-visit-bukit-lawang-from-europe",
+      "3-day-bukit-lawang-jungle-trek-itinerary"
+    ],
+    translationKey: "sumatra-forest-fires-karhutla-orangutans",
+    sections: [
+      {
+        title: "Understanding 'Karhutla': Fire, Peat, and Human Pressure",
+        paragraphs: [
+          "In Indonesia, the acronym 'Karhutla' stands for Kebakaran Hutan dan Lahan—forest and land fires. For decades, satellite monitors and international environmental reporting by Mongabay and Reuters have tracked seasonal fire spikes across Sumatra during dry spells and El Niño climate cycles.",
+          "However, there is a fundamental ecological distinction that every traveler and nature advocate must understand: pristine primary tropical rainforests, such as the mineral-soil jungles of Gunung Leuser National Park around Bukit Lawang, do not naturally burn. They are dense, multi-canopy ecosystems with extremely high humidity and year-round moisture.",
+          "The catastrophic fires that make global headlines occur almost exclusively in drained peat swamp forests and converted agricultural frontiers—particularly in the lowland coastal basins of South Sumatra, Riau, and the western peat swamps of Aceh."
+        ],
+        table: {
+          caption: "Comparing Sumatra forest ecosystems and fire vulnerability",
+          columns: ["Feature", "Gunung Leuser (Bukit Lawang)", "Drained Peat Swamps (Tripa / Singkil / Riau)"],
+          rows: [
+            ["Ecosystem type", "Primary montane & lowland rainforest", "Peat swamp forest & converted agricultural land"],
+            ["Soil composition", "Mineral soil & deep root networks", "Layers of dead organic plant matter up to 10m deep"],
+            ["Fire behavior", "Naturally fire-resistant; extremely rare", "Deep subterranean smoldering; nearly impossible to douse"],
+            ["Primary threat", "Border encroachment & poaching", "Artificial drainage canals & slash-and-burn clearing"],
+            ["Orangutan impact", "Core sanctuary with continuous canopy", "Habitat fragmentation, starvation, and displacement"]
+          ]
+        }
+      },
+      {
+        title: "Why Peatland Fires are an Ecological Catastrophe",
+        paragraphs: [
+          "Tropical peatlands are Earth's most efficient terrestrial carbon sinks. Over millennia, layers of dead vegetation accumulated in waterlogged conditions, locking away billions of tons of carbon. When agricultural interests dig deep canals to dry out these swamps for monoculture estates, the peat dries into combustible organic fuel.",
+          "When an illegal fire is ignited on dried peat, the blaze moves underground. Surface flames might appear extinguished, yet meters below the soil, smoldering heat can travel for weeks, releasing choking PM2.5 particulate matter and greenhouse gases on a staggering scale.",
+          "The Leuser Ecosystem contains three vital coastal peat swamps: Tripa, Kluet, and Rawa Singkil. Known to biologists as 'the Orangutan Capital of the World,' these lowlands historically supported the densest wild populations of the Critically Endangered Sumatran orangutan (Pongo abelii)."
+        ],
+        bullets: [
+          "Loss of canopy highways: Orangutans are strictly arboreal. When tree canopies burn or collapse, their movement corridors vanish.",
+          "Starvation and malnutrition: Intense heat and smoke destroy wild fig trees, lianas, and fruiting cycles that orangutans rely upon.",
+          "Toxic smoke inhalation: Like humans, primates suffer acute respiratory infections (ISPA), eye damage, and lethargy from persistent PM2.5 haze.",
+          "Human-wildlife conflict: Displaced, starving orangutans are forced into community oil palm and rubber farms, drastically raising the risk of poaching and retaliatory capture."
+        ]
+      },
+      {
+        title: "Regional Haze: What Travelers Need to Know",
+        paragraphs: [
+          "European travelers planning a trek in North Sumatra often worry whether regional haze will disrupt their journey. Indonesia's meteorological agency (BMKG) and disaster agency (BNPB) monitor fire hotspots closely, deploying cloud-seeding aircraft and ground firefighting units (Manggala Agni) during peak dry months (typically July to October).",
+          "Because Bukit Lawang sits nestled directly against the foothills of the Barisan mountain range and within intact rainforest, local air quality under the jungle canopy remains remarkably fresh. The mountain topography and daily forest transpiration create a localized microclimate that insulates the valley from the heavy industrial haze seen in distant lowland cities like Palembang or Pekanbaru."
+        ],
+        bullets: [
+          "Normal operations: Jungle trekking and wildlife viewing in Bukit Lawang continue safely year-round.",
+          "Packing tips: Bring high-filtration masks (such as N95 / FFP2) for transit days through major provincial airports or during road transfers if regional smoke is reported.",
+          "Transparent communication: Our team monitors real-time air quality index (AQI) reports and national park advisories daily."
+        ]
+      },
+      {
+        title: "How Ethical Ecotourism Acts as an Anti-Fire Shield",
+        paragraphs: [
+          "The root cause of agricultural burning is economic desperation. When rural communities living along the fringes of the national park lack sustainable livelihoods, selling land to speculative plantation developers or clearing plots with cheap fires becomes a survival temptation.",
+          "Ethical ecotourism reverses this economic incentive completely. In Bukit Lawang, former rubber tappers, plantation workers, and even former illegal loggers now earn dignified, steady incomes as professional guides, rangers, cooks, and porters.",
+          "When a local family's prosperity depends directly on foreign travelers coming to see healthy wild orangutans in a thriving forest, every villager becomes an active guardian of the tree canopy. The standing rainforest is recognized as infinitely more valuable alive than cleared."
+        ],
+        callout:
+          "Every official permit and trek package directly supports local ranger stations, community fire alert groups (Masyarakat Peduli Api), and boundary monitoring along the Gunung Leuser National Park."
+      },
+      {
+        title: "How Conscientious Travelers Can Help",
+        paragraphs: [
+          "Responsible travel goes far beyond minimizing plastic waste on the trail. By making conscious decisions before and during your journey to Sumatra, you directly fortify rainforest defense."
+        ],
+        bullets: [
+          "Choose certified, local-first guide teams who respect wildlife buffer distances and national park permit laws.",
+          "Never support operators who feed, call, or bait wild orangutans for tourist selfies.",
+          "Support grassroots conservation organizations on the ground in Sumatra, such as the Orangutan Information Centre (OIC) and Forum Konservasi Leuser (FKL), who restore drained peat canals and reforest degraded buffer zones.",
+          "Share verified knowledge about Sumatra's peatlands and advocate for zero-deforestation supply chains back home in Europe."
+        ]
+      },
+      {
+        title: "Frequently Asked Questions",
+        faq: [
+          {
+            q: "Is Bukit Lawang currently safe from forest fires?",
+            a: "Yes. Bukit Lawang is located in an intact, primary rainforest ecosystem surrounded by mountains. Fires in Sumatra occur predominantly in distant lowland drained peatlands. Treks in Bukit Lawang operate safely with fresh air under the forest canopy."
+          },
+          {
+            q: "What months have the highest risk of regional haze in Sumatra?",
+            a: "The dry season between July and October, especially during El Niño years, sees the highest regional hotspot counts. However, morning mountain breezes and afternoon rain showers in Gunung Leuser consistently cleanse the local air."
+          },
+          {
+            q: "How does my trek fee help prevent forest fires?",
+            a: "Trek fees include official Gunung Leuser National Park entrance permits and provide fair livelihoods for local guides and villagers. This creates an economic alternative to agricultural land clearing and funds border surveillance against encroachment."
+          },
+          {
+            q: "Where do displaced orangutans go when fires occur?",
+            a: "Conservation groups like OIC and government rescue teams tranquilize and translocate displaced orangutans from fire-damaged edges into protected, contiguous sanctuaries within the Leuser Ecosystem."
+          }
+        ]
+      }
+    ]
+  },
 ];
 
 const translatedInformationBlogPosts: BlogPost[] = [
@@ -2248,7 +2363,226 @@ const translatedInformationBlogPosts: BlogPost[] = [
         ]
       }
     ]
-  }
+  },
+  {
+    slug: "de-sumatra-waldbrand-karhutla-orang-utan-schutz",
+    locale: "de",
+    title: "Regenwald in Gefahr: Waldbrände (Karhutla), Torfmoore und Sumatras Orang-Utans",
+    description:
+      "Eine fundierte Analyse der Wald- und Torfbrände auf Sumatra, ihrer Bedrohung für bedrohte Orang-Utans im Leuser-Ökosystem und wie nachhaltiger Ökotourismus Waldschutz stärkt.",
+    date: "2026-07-02",
+    dateModified: "2026-10-14",
+    readingTime: "9 Min. Lesezeit",
+    image: "/images/sumatra-forest-fires-orangutan-threat.jpg",
+    imageAlt: "Wilder Sumatra-Orang-Utan im Blätterdach von Gunung Leuser mit Blick auf fernen Rauch und Dunst",
+    tags: ["Karhutla", "Waldbrände Sumatra", "Orang-Utan Schutz", "Leuser Ökosystem", "Torfmoorschutz"],
+    translationKey: "sumatra-forest-fires-karhutla-orangutans",
+    sections: [
+      {
+        title: "Was bedeutet 'Karhutla'? Ursachen und Fakten",
+        paragraphs: [
+          "In Indonesien steht das Akronym 'Karhutla' für Kebakaran Hutan dan Lahan – Wald- und Landbrände. Insbesondere während längerer Dürreperioden und El-Niño-Zyklen berichten internationale Medien wie Mongabay und Reuters über Brandherde auf Sumatra.",
+          "Wichtig für Reisende zu verstehen: Primärer tropischer Regenwald, wie die Berge des Gunung Leuser Nationalparks rund um Bukit Lawang, brennt von Natur aus nicht. Diese dichten Wälder auf mineralischen Böden besitzen ein feuchtes Mikroklima und ganzjährig hohe Luftfeuchtigkeit.",
+          "Die verheerenden Brände entstehen fast ausschließlich in künstlich entwässerten Torfmooren und gerodeten Agrarflächen in tiefer gelegenen Regionen wie Riau, Süd-Sumatra und den Küstensümpfen von Aceh."
+        ],
+        bullets: [
+          "Bukit Lawang: Intakter Bergregenwald, natürlicher Hitzeschutz, feuchte Kronendächer.",
+          "Torfmoore (z.B. Tripa, Singkil): Trockengelegte Torfböden entzünden sich unterirdisch und sind extrem schwer zu löschen.",
+          "Ursachen: Illegale Brandrodung für Palmöl- und Holzplantagen sowie Dürreperioden."
+        ]
+      },
+      {
+        title: "Auswirkungen auf die bedrohten Orang-Utans",
+        paragraphs: [
+          "Das Leuser-Ökosystem ist das weltweit letzte Refugium, in dem Orang-Utans, Tiger, Elefanten und Nashörner gemeinsam in freier Wildbahn leben. Küstengebiete wie Tripa und Rawa Singkil beherbergen historisch die höchste Dichte an Sumatra-Orang-Utans (Pongo abelii).",
+          "Wenn Torfbrände ausbrechen, verlieren die Tiere ihre Baumkronen-Korridore, leiden an Futterknappheit durch verbrannte Fruchtbäume und sind giftigem Feinstaub (PM2.5) ausgesetzt. Viele Tiere werden an Waldränder getrieben, wo Konflikte mit Plantagenbesitzern drohen."
+        ]
+      },
+      {
+        title: "Was bedeutet das für Reisende in Bukit Lawang?",
+        paragraphs: [
+          "Reisende aus Deutschland, Österreich und der Schweiz fragen sich oft, ob Rauchdunst (Haze) ihr Trekking gefährdet. In Bukit Lawang sorgt die Lage am Fuß des Barisan-Gebirges für saubere, frische Dschungelluft unter dem dichten Blätterdach.",
+          "Unsere Guides beobachten die Wetterberichte der Behörden (BMKG) und Nationalpark-Meldungen täglich. Treks finden ganzjährig sicher und geschützt statt."
+        ],
+        bullets: [
+          "Trekking-Betrieb: Normal und sicher das ganze Jahr über.",
+          "Reisegepäck: Bei Transitfahrten über Großstädte wie Medan oder Palembang empfiehlt sich eine FFP2-Maske für unterwegs.",
+          "Luftqualität: Im Wald von Bukit Lawang bleibt die Luft frisch und sauerstoffreich."
+        ]
+      },
+      {
+        title: "Wie ethischer Ökotourismus den Wald schützt",
+        paragraphs: [
+          "Brandrodung entsteht häufig aus wirtschaftlicher Not. Wenn Menschen in den Dörfern am Nationalpark keine Einkommensperspektive haben, greifen manche auf billige Brandrodung zurück.",
+          "Ein verantwortungsvoller Tourismus kehrt diesen Trend um: Ehemalige Holzfäller arbeiten heute als zertifizierte Guides, Parkwächter, Köche und Träger in Bukit Lawang. Ein lebendiger, gesunder Regenwald sichert den Familien ein verlässliches Einkommen – der Wald ist lebend viel wertvoller als abgebrannt."
+        ],
+        callout: "Mit deiner Trekking-Gebühr finanzierst du offizielle Nationalpark-Permits, die Patrouillen gegen Wilderei und Brandpräventionsteams (Masyarakat Peduli Api) unterstützen."
+      },
+      {
+        title: "Häufig gestellte Fragen (FAQ)",
+        faq: [
+          {
+            q: "Ist Bukit Lawang von den Waldbränden betroffen?",
+            a: "Nein. Bukit Lawang liegt in einem feuchten, bergigen Primärwald. Die Brände treten in weit entfernten, entwässerten Torfgebieten im Tiefland auf. Das Trekking in Bukit Lawang findet sicher bei klarer Waldluft statt."
+          },
+          {
+            q: "In welchen Monaten ist das Dunst-Risiko in Sumatra am höchsten?",
+            a: "Die trockensten Monate liegen meist zwischen Juli und Oktober. Dennoch reinigen regelmäßige Regenschauer und Gebirgswinde die Luft in Gunung Leuser zuverlässig."
+          },
+          {
+            q: "Wie hilft mein Trekking-Besuch dem Wald?",
+            a: "Dein Besuch schafft lokale Arbeitsplätze und beweist der Dorfgemeinschaft, dass Waldschutz und Wildtiere die nachhaltigste Lebensgrundlage darstellen."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "fr-incendies-foret-sumatra-karhutla-orangs-outans",
+    locale: "fr",
+    title: "Forêt tropicale en danger : Incendies (Karhutla), tourbières et orangs-outans de Sumatra",
+    description:
+      "Une enquête approfondie sur les incendies de tourbières à Sumatra, la menace pour les orangs-outans du Leuser et la façon dont l'écotourisme éthique protège la canopée.",
+    date: "2026-07-02",
+    dateModified: "2026-10-14",
+    readingTime: "9 min de lecture",
+    image: "/images/sumatra-forest-fires-orangutan-threat.jpg",
+    imageAlt: "Orang-outan sauvage de Sumatra dans la canopée du Gunung Leuser observant une brume lointaine d'incendies de tourbières",
+    tags: ["Karhutla", "Incendies Sumatra", "Conservation orangs-outans", "Écosystème Leuser", "Tourbières"],
+    translationKey: "sumatra-forest-fires-karhutla-orangutans",
+    sections: [
+      {
+        title: "Comprendre le phénomène 'Karhutla'",
+        paragraphs: [
+          "En Indonésie, le terme 'Karhutla' désigne les incendies de forêts et de terres agricoles. Lors des périodes de sécheresse accrue et des épisodes El Niño, les satellites et les agences internationales (Mongabay, Reuters) relaient des pics de chaleur et de foyers de feu à Sumatra.",
+          "Une distinction écologique majeure s'impose : les forêts primaires tropicales intactes, telles que celles du parc national de Gunung Leuser à Bukit Lawang, ne brûlent pas spontanément. Ces forêts denses sur sols minéraux conservent un taux d'humidité élevé toute l'année.",
+          "Les incendies dévastateurs se produisent quasi exclusivement dans les tourbières asséchées par des canaux artificiels et sur les fronts de déforestation agricole des basses terres (Riau, Sud-Sumatra, tourbières de l'ouest d'Aceh)."
+        ],
+        bullets: [
+          "Bukit Lawang : Forêt pluviale primaire préservée, canopée dense, barrière naturelle contre le feu.",
+          "Tourbières côtières (Tripa, Singkil) : La tourbe asséchée s'embrase en sous-sol sur plusieurs mètres de profondeur.",
+          "Causes majeures : Canalisations industrielles, brûlis illégal à bas coût et sécheresse climatique."
+        ]
+      },
+      {
+        title: "Menace directe sur les orangs-outans de Sumatra",
+        paragraphs: [
+          "L'écosystème de Leuser est le dernier endroit sur Terre où cohabitent en liberté orangs-outans, tigres, éléphants et rhinocéros de Sumatra. Les marécages de tourbe de Tripa et Singkil abritent historiquement la plus forte densité d'orangs-outans au kilomètre carré.",
+          "Lors des feux, les orangs-outans perdent leurs voies de déplacement dans la canopée, manquent de nourriture suite à la destruction des figuiers sauvages et souffrent d'infections respiratoires dues aux particules toxiques PM2.5. Poussés hors de la forêt, ils se retrouvent vulnérables au braconnage."
+        ]
+      },
+      {
+        title: "Quelles conséquences pour les voyageurs à Bukit Lawang ?",
+        paragraphs: [
+          "Les voyageurs francophones planifiant un trek s'inquiètent parfois de la brume de fumée ('haze'). Protégé par les contreforts de la chaîne Barisan, le village de Bukit Lawang bénéficie d'un microclimat montagnard où l'air sous la forêt tropicale reste très pur.",
+          "Notre équipe suit en permanence les alertes météorologiques de l'agence BMKG et les consignes du parc national. Les treks se déroulent en toute sérénité."
+        ],
+        bullets: [
+          "Circuits de trek : Totalement opérationnels et sécurisés toute l'année.",
+          "Précaution de voyage : Prévoir un masque de protection (type FFP2) pour les étapes de transit dans les grandes villes ou aéroports si un épisode de brume régionale est signalé.",
+          "Fraîcheur de la canopée : La transpiration naturelle des grands arbres maintient une atmosphère saine dans la jungle."
+        ]
+      },
+      {
+        title: "L'écotourisme communautaire : un bouclier anti-déforestation",
+        paragraphs: [
+          "L'utilisation du brûlis s'explique souvent par l'absence d'alternatives économiques pour les riverains de la forêt. L'écotourisme éthique change radicalement cette donne.",
+          "À Bukit Lawang, d'anciens bûcherons et ouvriers agricoles exercent aujourd'hui comme guides officiels, rangers, cuisiniers et porteurs. Lorsqu'une communauté tire un revenu digne et durable de la forêt vivante, chaque habitant devient un défenseur acharné de la canopée."
+        ],
+        callout: "Chaque permis officiel finance directement les patrouilles de gardes forestiers et les brigades villageoises de surveillance des feux (Masyarakat Peduli Api)."
+      },
+      {
+        title: "Questions fréquentes",
+        faq: [
+          {
+            q: "Bukit Lawang est-il menacé par les incendies de forêt ?",
+            a: "Non. Bukit Lawang se trouve dans une forêt de montagne humide et protégée. Les incendies surviennent dans des tourbières dégradées très éloignées. Les treks ont lieu dans un air parfaitement sain."
+          },
+          {
+            q: "Quelle est la période de l'année la plus exposée à la brume régionale ?",
+            a: "La saison sèche entre juillet et octobre connaît un risque plus élevé à l'échelle de l'île, mais les brises matinales et les pluies d'après-midi du Leuser nettoient continuellement l'atmosphère locale."
+          },
+          {
+            q: "Comment mon trek contribue-t-il à la protection contre les feux ?",
+            a: "En payant les droits d'entrée officiels du parc national et en rémunérant équitablement l'équipe locale, vous soutenez une économie qui protège la forêt au lieu de la défricher."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "nl-bosbranden-sumatra-karhutla-orang-oetan-behoud",
+    locale: "nl",
+    title: "Regenwoud in gevaar: Bosbranden (Karhutla), veengebieden en Sumatra's orang-oetans",
+    description:
+      "Een diepgaande analyse van de veen- en bosbranden op Sumatra, de impact op ernstig bedreigde orang-oetans in het Leuser Ecosysteem en hoe ethisch ecotoerisme helpt het bos te beschermen.",
+    date: "2026-07-02",
+    dateModified: "2026-10-14",
+    readingTime: "9 min. leestijd",
+    image: "/images/sumatra-forest-fires-orangutan-threat.jpg",
+    imageAlt: "Wilde Sumatraanse orang-oetan in het bladerdak van Gunung Leuser die uitkijkt over verre rook en nevel van veenbranden",
+    tags: ["Karhutla", "Bosbranden Sumatra", "Orang-oetan behoud", "Leuser Ecosysteem", "Veengebieden"],
+    translationKey: "sumatra-forest-fires-karhutla-orangutans",
+    sections: [
+      {
+        title: "Wat is 'Karhutla'? Oorzaken en feiten",
+        paragraphs: [
+          "In Indonesië staat het acroniem 'Karhutla' voor Kebakaran Hutan dan Lahan – bos- en landbranden. Tijdens aanhoudende droogteperiodes en El Niño-jaren registreren satellieten en organisaties als Mongabay en Reuters regelmatig brandhaarden op Sumatra.",
+          "Belangrijk voor reizigers: Ongerept primair tropisch regenwoud, zoals in het Gunung Leuser Nationaal Park rond Bukit Lawang, vat van nature niet zomaar vlam. Deze wouden op minerale bodems kennen een hoge luchtvochtigheid en een vochtig microklimaat dat brand voorkomt.",
+          "De verwoestende branden ontstaan vrijwel uitsluitend in kunstmatig drooggelegde veenmoerassen en ontboste landbouwzones in laaggelegen gebieden zoals Riau, Zuid-Sumatra en de kustmoerassen van Atjeh."
+        ],
+        bullets: [
+          "Bukit Lawang: Primair bergregenwoud, weelderig bladerdak, van nature brandbestendig.",
+          "Veengebieden (Tripa, Singkil): Drooggelegd veen vat ondergronds vlam en blijft wekenlang smeulen.",
+          "Oorzaken: Illegale ontginning met vuur voor plantages en extreme droogte."
+        ]
+      },
+      {
+        title: "Bedreiging voor de ernstig bedreigde orang-oetans",
+        paragraphs: [
+          "Het Leuser Ecosysteem is de laatste plek op aarde waar orang-oetans, tijgers, olifanten en neushoorns nog samen in het wild leven. Veenmoerassen zoals Tripa en Rawa Singkil herbergen van oudsher de hoogste dichtheid aan Sumatraanse orang-oetans (Pongo abelii).",
+          "Wanneer veenbranden woeden, verdwijnen de bomen die orang-oetans nodig hebben om zich te verplaatsen. Ook verbranden vruchtdragende bomen, waardoor voedselgebrek ontstaat, en lijden de dieren aan ademhalingsproblemen door giftige rook (PM2.5)."
+        ]
+      },
+      {
+        title: "Wat betekent dit voor reizigers in Bukit Lawang?",
+        paragraphs: [
+          "Veel reizigers uit Nederland en België vragen zich af of rooknevel ('haze') invloed heeft op hun trekking. Door de ligging aan de voet van het Barisan-gebergte blijft de luchtkwaliteit onder het dichte bladerdak in Bukit Lawang uitstekend en fris.",
+          "Ons team volgt dagelijks de rapporten van de meteorologische dienst (BMKG) en parkautoriteiten. De trekkings vinden het hele jaar door veilig doorgang."
+        ],
+        bullets: [
+          "Treks: Volledig operationeel en veilig gedurende het hele jaar.",
+          "Reisadvies: Neem een hoogwaardig mondmasker (FFP2) mee voor reisdagen via grote steden of vliegvelden als er regionale rookoverlast wordt gemeld.",
+          "Frisse berglucht: De dichte vegetatie in Bukit Lawang fungeert als een natuurlijke luchtzuiveraar."
+        ]
+      },
+      {
+        title: "Ecotoerisme als beschermend schild",
+        paragraphs: [
+          "Platbranden gebeurt vaak uit gebrek aan alternatieve inkomstenbronnen in dorpen rond het park. Verantwoord ecotoerisme biedt een krachtige tegenhanger.",
+          "In Bukit Lawang werken voormalige houthakkers nu als erkende gidsen, dragers, koks en natuurbeheerders. Een levend regenwoud levert de lokale gemeenschap op lange termijn veel meer welvaart op dan gekapt of verbrand land."
+        ],
+        callout: "De officiële vergunningen die bij je trek zijn inbegrepen, ondersteunen boswachterspatrouilles en lokale brandwachtgroepen (Masyarakat Peduli Api)."
+      },
+      {
+        title: "Veelgestelde vragen (FAQ)",
+        faq: [
+          {
+            q: "Heeft Bukit Lawang last van bosbranden?",
+            a: "Nee. Bukit Lawang ligt in een vochtig, bergachtig primair regenwoud. De branden vinden plaats in ver afgelegen laaggelegen veengebieden. De lucht in Bukit Lawang is fris en helder."
+          },
+          {
+            q: "Welke maanden hebben het hoogste risico op regionale nevel?",
+            a: "De droge periode tussen juli en oktober kent de meeste branden op het eiland, maar bergwinden en dagelijkse buien in Leuser zorgen lokaal voor schone lucht."
+          },
+          {
+            q: "Hoe draagt mijn bezoek bij aan de bescherming van het woud?",
+            a: "Door te kiezen voor een officiële gids steun je lokale werkgelegenheid en maak je natuurbehoud de meest waardevolle economische keuze voor de dorpsgemeenschap."
+          }
+        ]
+      }
+    ]
+  },
 ];
 
 export const blogPosts: BlogPost[] = [

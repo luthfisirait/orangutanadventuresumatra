@@ -103,6 +103,10 @@ export const fr = {
     {
       q: "Où est le point de rendez-vous ?",
       a: "Les treks commencent à Bukit Lawang, dans le nord de Sumatra, en Indonésie. Syaipul peut aussi aider pour le transport et l’hébergement."
+    },
+    {
+      q: "Les incendies de forêt (Karhutla) ou la brume de fumée affectent-ils les treks à Bukit Lawang ?",
+      a: "Bukit Lawang et le parc national de Gunung Leuser sont composés de forêt tropicale primaire et de reliefs montagneux naturellement humides, très distincts des tourbières asséchées où surviennent habituellement les incendies à Sumatra. Même lors des épisodes de sécheresse prolongée où une légère brume régionale peut dériver, l'air sous la canopée reste frais et les treks se déroulent en toute sécurité."
     }
   ],
   contact: {

@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1600" width="600" height="1600">
+  <defs>
+    <linearGradient id="bgGradVert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#071b14"/>
+      <stop offset="35%" stop-color="#0b3524"/>
+      <stop offset="70%" stop-color="#071b14"/>
+      <stop offset="100%" stop-color="#05140e"/>
+    </linearGradient>
+    <linearGradient id="fur" x1="46" y1="35" x2="193" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f4a742"/>
+      <stop offset="0.58" stop-color="#d2642f"/>
+      <stop offset="1" stop-color="#a94524"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="52" y1="55" x2="198" y2="169" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a8bd42"/>
+      <stop offset="1" stop-color="#1d5a40"/>
+    </linearGradient>
+    <linearGradient id="river" x1="27" y1="187" x2="226" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c7882"/>
+      <stop offset="1" stop-color="#123c2c"/>
+    </linearGradient>
+    <filter id="shadowVert" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="1600" fill="url(#bgGradVert)"/>
+
+  <!-- Border & Grommet Points -->
+  <rect x="20" y="20" width="560" height="1560" fill="none" stroke="#d2642f" stroke-width="3" rx="12" stroke-opacity="0.7"/>
+  <rect x="28" y="28" width="544" height="1544" fill="none" stroke="#ffb51b" stroke-width="1" rx="8" stroke-opacity="0.3"/>
+
+  <!-- 4 Corner Eyelets for X-Banner Frame -->
+  <g fill="#a0a0a0" stroke="#333" stroke-width="2">
+    <circle cx="35" cy="35" r="12"/>
+    <circle cx="35" cy="35" r="6" fill="#071b14"/>
+    <circle cx="565" cy="35" r="12"/>
+    <circle cx="565" cy="35" r="6" fill="#071b14"/>
+    <circle cx="35" cy="1565" r="12"/>
+    <circle cx="35" cy="1565" r="6" fill="#071b14"/>
+    <circle cx="565" cy="1565" r="12"/>
+    <circle cx="565" cy="1565" r="6" fill="#071b14"/>
+  </g>
+
+  <!-- Header Badge -->
+  <g transform="translate(300, 100)">
+    <rect x="-180" y="0" width="360" height="38" rx="8" fill="#17613d" stroke="#d8ff3e" stroke-width="1.5"/>
+    <text x="0" y="25" fill="#d8ff3e" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="800" text-anchor="middle" letter-spacing="3">BUKIT LAWANG • SUMATRA</text>
+  </g>
+
+  <!-- Brand Title -->
+  <g transform="translate(300, 180)">
+    <text x="0" y="20" fill="#ffffff" font-family="'Impact', Arial Black, sans-serif" font-size="46" text-anchor="middle" letter-spacing="2">ORANGUTAN</text>
+    <text x="0" y="70" fill="#ffffff" font-family="'Impact', Arial Black, sans-serif" font-size="46" text-anchor="middle" letter-spacing="2">ADVENTURE</text>
+    <text x="0" y="125" fill="#ffb51b" font-family="'Impact', Arial Black, sans-serif" font-size="52" text-anchor="middle" letter-spacing="3">SUMATRA</text>
+  </g>
+
+  <!-- Big Central Logo Mark -->
+  <g transform="translate(170, 340)" filter="url(#shadowVert)">
+    <circle cx="130" cy="130" r="130" fill="#071b14" stroke="#ffb51b" stroke-width="5"/>
+    <circle cx="130" cy="130" r="120" fill="none" stroke="#d2642f" stroke-width="2" stroke-dasharray="6 4"/>
+    <g transform="translate(-6, -6) scale(1)">
+      <g fill="none" stroke="#d2642f" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="136" cy="136" r="124" stroke-width="8"/>
+        <path d="M58 74c28-28 70-41 110-27 31 11 55 37 65 68" stroke-width="8"/>
+        <path d="M35 188c42 42 111 49 160 15 19-13 34-31 43-52" stroke-width="8"/>
+      </g>
+      <g transform="translate(32 30)">
+        <path fill="url(#leaf)" d="M22 74c34-48 86-63 137-46-31 4-58 17-80 39-20 20-33 44-39 71-12-18-18-39-18-64Z"/>
+        <path fill="#123c2c" d="M33 170c39 18 83 21 122 7 35-12 62-36 79-67-7 47-35 82-78 100-44 19-94 13-123-40Z" opacity=".9"/>
+        <path fill="url(#river)" d="M17 186c34 22 76 29 118 20 37-8 66-27 87-51 0 28-17 52-48 69-47 24-112 11-157-38Z"/>
+        <path fill="url(#fur)" d="M54 123c0-47 36-85 85-85 45 0 78 32 78 75 0 30-17 55-42 69-9 6-14 14-15 24l-2 22H91l-2-27c-1-9-7-18-15-24-13-10-20-30-20-54Z"/>
+        <path fill="#fff5df" d="M91 113c10-19 27-29 48-29 23 0 40 11 49 30 7 15 4 33-8 46-10 11-24 17-41 17-18 0-33-6-42-18-11-13-13-31-6-46Z"/>
+        <path fill="#d2642f" d="M99 120c10-16 23-24 40-24 18 0 31 8 40 24-10-6-23-9-40-9-16 0-29 3-40 9Z"/>
+        <path fill="#72351f" d="M110 129c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14Zm31 0c0-8 6-14 14-14s14 6 14 14-6 14-14 14-14-6-14-14Z"/>
+        <path fill="#fff5df" d="M118 125a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm31 0a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/>
+        <path fill="#72351f" d="M132 145c4-5 10-7 17-7s13 2 17 7c-5 4-10 6-17 6s-12-2-17-6Z"/>
+        <path fill="none" stroke="#72351f" stroke-linecap="round" stroke-width="6" d="M111 163c18 12 49 12 68-1"/>
+        <path fill="#a94524" d="M63 87c-20 21-27 55-16 83-19-20-24-57-13-87 7-19 20-36 38-47-5 14-8 31-9 51Zm157-9c24 24 31 64 17 94 23-21 30-64 16-98-9-23-27-41-51-50 10 16 16 33 18 54Z" opacity=".82"/>
+        <path fill="none" stroke="#fff5df" stroke-linecap="round" stroke-width="7" d="M84 70c21-17 48-23 74-16M74 91c21-14 48-19 74-12M72 196c25 18 59 25 92 17"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Tagline Banner -->
+  <g transform="translate(300, 660)">
+    <text x="0" y="0" fill="#d8ff3e" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="700" text-anchor="middle" letter-spacing="1">ETHICAL JUNGLE EXPEDITIONS</text>
+    <line x1="-150" y1="15" x2="150" y2="15" stroke="#ffb51b" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Service List Cards -->
+  <g transform="translate(60, 720)">
+    <!-- Service 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="480" height="85" rx="12" fill="#0b3524" stroke="#ffb51b" stroke-width="1.5"/>
+      <circle cx="50" cy="42" r="24" fill="#ffb51b"/>
+      <text x="50" y="50" fill="#071b14" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">1</text>
+      <text x="95" y="38" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="24" letter-spacing="1">1 TO 5 DAYS JUNGLE TREKKING</text>
+      <text x="95" y="64" fill="#edf1e7" font-family="'Segoe UI', sans-serif" font-size="16">Gunung Leuser National Park</text>
+    </g>
+
+    <!-- Service 2 -->
+    <g transform="translate(0, 105)">
+      <rect width="480" height="85" rx="12" fill="#0b3524" stroke="#ffb51b" stroke-width="1.5"/>
+      <circle cx="50" cy="42" r="24" fill="#ffb51b"/>
+      <text x="50" y="50" fill="#071b14" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">2</text>
+      <text x="95" y="38" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="24" letter-spacing="1">WILD ORANGUTAN ENCOUNTERS</text>
+      <text x="95" y="64" fill="#edf1e7" font-family="'Segoe UI', sans-serif" font-size="16">Respectful &amp; Ethical Wildlife Watching</text>
+    </g>
+
+    <!-- Service 3 -->
+    <g transform="translate(0, 210)">
+      <rect width="480" height="85" rx="12" fill="#0b3524" stroke="#ffb51b" stroke-width="1.5"/>
+      <circle cx="50" cy="42" r="24" fill="#ffb51b"/>
+      <text x="50" y="50" fill="#071b14" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">3</text>
+      <text x="95" y="38" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="24" letter-spacing="1">CERTIFIED LOCAL GUIDES</text>
+      <text x="95" y="64" fill="#edf1e7" font-family="'Segoe UI', sans-serif" font-size="16">Experienced, Licensed &amp; English Speaking</text>
+    </g>
+
+    <!-- Service 4 -->
+    <g transform="translate(0, 315)">
+      <rect width="480" height="85" rx="12" fill="#0b3524" stroke="#ffb51b" stroke-width="1.5"/>
+      <circle cx="50" cy="42" r="24" fill="#ffb51b"/>
+      <text x="50" y="50" fill="#071b14" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="900" text-anchor="middle">4</text>
+      <text x="95" y="38" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="24" letter-spacing="1">TRADITIONAL RIVER TUBING</text>
+      <text x="95" y="64" fill="#edf1e7" font-family="'Segoe UI', sans-serif" font-size="16">Jungle River Rafting Return Journey</text>
+    </g>
+  </g>
+
+  <!-- Bottom Contact Container -->
+  <g transform="translate(45, 1190)" filter="url(#shadowVert)">
+    <rect width="510" height="340" rx="16" fill="#071b14" stroke="#d2642f" stroke-width="3"/>
+
+    <!-- WhatsApp Row -->
+    <g transform="translate(30, 35)">
+      <circle cx="32" cy="32" r="28" fill="#25D366"/>
+      <path d="M23 18c-1-2-3-2-4-2s-3 1-4 2c-3 3-3 8 2 14 6 7 12 7 15 4 1-1 2-2 2-4s-1-3-3-4l-3-1c-1 0-2 0-2 1l-1 2c-1 0-3-1-5-3s-3-4-3-5l2-1c1-1 1-2 1-3z" fill="#ffffff"/>
+      <text x="75" y="24" fill="#88c999" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">WHATSAPP BOOKING</text>
+      <text x="75" y="52" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="30" letter-spacing="1">+62 853 6240 5752</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="30" y1="125" x2="480" y2="125" stroke="#1d5a40" stroke-width="1.5"/>
+
+    <!-- Website Row -->
+    <g transform="translate(30, 150)">
+      <circle cx="32" cy="32" r="28" fill="#0e6b76"/>
+      <circle cx="32" cy="32" r="16" fill="none" stroke="#fff" stroke-width="2.5"/>
+      <ellipse cx="32" cy="32" rx="8" ry="16" fill="none" stroke="#fff" stroke-width="2"/>
+      <line x1="16" y1="32" x2="48" y2="32" stroke="#fff" stroke-width="2"/>
+      <text x="75" y="24" fill="#80cbd4" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">OFFICIAL WEBSITE</text>
+      <text x="75" y="52" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="23" letter-spacing="0.5">orangutanadventuresumatra.com</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="30" y1="240" x2="480" y2="240" stroke="#1d5a40" stroke-width="1.5"/>
+
+    <!-- Instagram Row -->
+    <g transform="translate(30, 260)">
+      <circle cx="32" cy="32" r="28" fill="#d2642f"/>
+      <path d="M32 18c-6 0-10 4-10 10 0 8 10 18 10 18s10-10 10-18c0-6-4-10-10-10zm0 13c-2 0-3-1-3-3s1-3 3-3 3 1 3 3-1 3-3 3z" fill="#ffffff"/>
+      <text x="75" y="22" fill="#ffb51b" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700">INSTAGRAM</text>
+      <text x="75" y="50" fill="#ffffff" font-family="'Impact', Arial, sans-serif" font-size="24" letter-spacing="1">@orangutanadventuresumatra</text>
+    </g>
+  </g>
+</svg>

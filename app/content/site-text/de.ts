@@ -102,6 +102,10 @@ export const de = {
     {
       q: "Wo ist der Treffpunkt?",
       a: "Die Treks starten in Bukit Lawang, Nord-Sumatra, Indonesien. Syaipul hilft auch bei Transport und Unterkunft."
+    },
+    {
+      q: "Beeinflussen Waldbrände (Karhutla) oder Rauchdunst das Trekking in Bukit Lawang?",
+      a: "Bukit Lawang und der Gunung Leuser Nationalpark bestehen aus primärem tropischem Regenwald und feuchtem Bergland. Dieses Ökosystem ist naturbedingt feucht und unterscheidet sich grundlegend von den trockengelegten Torfmooren, in denen Brände in Sumatra meist entstehen. Selbst wenn bei starker Trockenheit regionaler Dunst auftreten kann, bleibt die Luft unter dem dichten Blätterdach des Regenwalds frisch und Treks finden sicher statt."
     }
   ],
   contact: {

@@ -149,7 +149,7 @@ export type LocaleContent = {
   ethics: { kicker: string; title: string; text: string };
   guideRole: string;
   guides: Record<GuideId, { name: string; text: string }>;
-  faq: [ { q: string; a: string }, { q: string; a: string }, { q: string; a: string }, { q: string; a: string } ];
+  faq: Array<{ q: string; a: string }>;
   contact: { kicker: string; title: string; text: string; bookingLabel: string; whatsappLabel: string; emailLabel: string };
   blog: { kicker: string; heading: string; readArticle: string; essentialInfo: string; allArticles: string };
   footerLinks: { essentialInfo: string; booking: string; blog: string; privacy: string; email: string; whatsapp: string; instagram: string; maps: string };

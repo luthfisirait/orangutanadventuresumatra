@@ -103,6 +103,10 @@ export const en = {
     {
       q: "Where is the meeting point?",
       a: "Treks start from Bukit Lawang, North Sumatra, Indonesia. Syaipul can also help arrange transportation and accommodation."
+    },
+    {
+      q: "Do forest fires (Karhutla) or seasonal haze affect trekking in Bukit Lawang?",
+      a: "Bukit Lawang and the Gunung Leuser National Park consist of primary tropical rainforest and steep, mineral-rich mountain terrain, which are naturally humid and very different from the drained peat swamps where fires typically happen in Sumatra. While regional haze can occasionally drift during prolonged El Niño dry spells, air under the rainforest canopy remains fresh and treks operate safely as usual. We actively monitor official conditions to ensure guest safety."
     }
   ],
   contact: {
