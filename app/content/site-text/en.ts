@@ -98,7 +98,7 @@ export const en = {
     },
     {
       q: "How does payment work?",
-      a: "The booking form shows a 30% PayPal deposit for the package total. For now, guests can send the deposit manually to the PayPal email shown on the form. The remaining balance can be paid in cash when you meet the team, or 2 days before departure after email confirmation."
+      a: "The booking form displays a 30% PayPal deposit for the package total. Guests can send the deposit directly to the official PayPal email shown on the form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after email confirmation."
     },
     {
       q: "Where is the meeting point?",
@@ -119,7 +119,7 @@ export const en = {
   },
   blog: {
     kicker: "Travel blog",
-    heading: "Travel guides for European travelers planning Bukit Lawang",
+    heading: "Essential travel guides for planning your Bukit Lawang trek",
     readArticle: "Read article",
     essentialInfo: "Essential information",
     allArticles: "All blog articles"

@@ -81,7 +81,7 @@ export const impactVision = {
   kicker: "Conservation vision",
   title: "Travel should leave real value in the forest and the village",
   text:
-    "The vision behind selected OrangutanAdventureSumatra packages is to reserve part of travel income for rainforest conservation support and community benefit around Bukit Lawang. The goal is practical: keep skilled local people employed, reduce pressure on the forest, and help guests understand why ethical wildlife rules matter.",
+    "Every Orangutan Adventure Sumatra package directly contributes to rainforest conservation support and local community livelihoods around Bukit Lawang. The goal is practical: sustain skilled local guides, protect wildlife habitat, and ensure ethical rules are respected on every trek.",
   pillars: [
     {
       title: "Forest care",
@@ -92,8 +92,8 @@ export const impactVision = {
       text: "Packages prioritize local guides, cooks, drivers, accommodation partners, and village services where possible."
     },
     {
-      title: "Transparent choices",
-      text: "Guests can ask which current packages include conservation or community allocation before confirming a booking."
+      title: "Direct commitment",
+      text: "Every booking directly funds Gunung Leuser National Park conservation fees, fair guide wages, and community-led rainforest protection."
     }
   ]
 } as const;
@@ -101,7 +101,7 @@ export const impactVision = {
 export const essentialInformation = {
   title: "Essential Information for Bukit Lawang Jungle Trekking",
   description:
-    "Practical packing, safety, transport, money, food, and responsible trekking notes for European travelers planning an orangutan trek in Bukit Lawang, North Sumatra.",
+    "Practical packing, safety, transport, money, food, and responsible trekking notes for travelers planning an orangutan trek in Bukit Lawang, North Sumatra.",
   image: "/images/essential-information-hero.webp",
   imageAlt: "Trekking boots and packing essentials laid out for a Bukit Lawang jungle trip",
   intro:
@@ -179,7 +179,7 @@ export const essentialInformation = {
     {
       title: "Deposits, payments, and cancellation",
       paragraphs: [
-        "The booking form can calculate a 30% PayPal deposit from your selected package and group size. For now, guests can send the deposit manually to the PayPal email shown on the form.",
+        "The booking form calculates a 30% PayPal deposit from your selected package and group size. Guests send the deposit directly to the official PayPal email shown on the form.",
         "After payment, send the PayPal reference by WhatsApp or include it in your booking notes. The remaining balance is handled separately after the trip details are confirmed.",
         "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
         "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
@@ -572,7 +572,7 @@ const informationBlogPosts: BlogPost[] = [
       {
         title: "Deposit and booking notes",
         paragraphs: [
-          "The booking form can calculate a 30% PayPal deposit from the selected package price and group size. For now, guests can send that deposit manually to the PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
+          "The booking form calculates a 30% PayPal deposit from the selected package price and group size. Guests send that deposit directly to the official PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
           "Do not compare only the cheapest headline price. Ask what is included, who guides the trek, how wildlife rules are handled, where you sleep, what happens if river levels are unsafe, and whether the team can support transport or accommodation."
         ]
       }

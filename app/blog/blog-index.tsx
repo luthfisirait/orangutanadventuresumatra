@@ -19,7 +19,7 @@ const blogIndexCopy = {
     description:
       "Bukit Lawang travel guides for orangutan trekking, transport, packing, safety, costs, best time to visit, and ethical jungle tours.",
     kicker: "Travel blog",
-    heading: "Bukit Lawang travel guides for European travelers",
+    heading: "Essential Bukit Lawang travel guides",
     read: "Read article"
   },
   de: {
@@ -27,7 +27,7 @@ const blogIndexCopy = {
     description:
       "Reiseführer für Bukit Lawang mit Orang-Utan-Trekking, Transport, Sicherheit, Kosten und ethischen Dschungeltouren.",
     kicker: "Reiseblog",
-    heading: "Bukit Lawang Reiseführer für deutschsprachige Reisende",
+    heading: "Praktische Reiseführer für Bukit Lawang",
     read: "Artikel lesen"
   },
   fr: {
@@ -35,7 +35,7 @@ const blogIndexCopy = {
     description:
       "Guides pratiques sur Bukit Lawang : trek orang-outan, transport, sécurité, prix et tourisme responsable dans la jungle.",
     kicker: "Guide de voyage",
-    heading: "Guides de Bukit Lawang pour les voyageurs francophones",
+    heading: "Guides essentiels pour votre séjour à Bukit Lawang",
     read: "Lire l'article"
   },
   nl: {
@@ -43,7 +43,7 @@ const blogIndexCopy = {
     description:
       "Praktische Bukit Lawang reisgidsen over orang-oetan trekking, vervoer, veiligheid, prijzen en verantwoord jungletoerisme.",
     kicker: "Reisgids",
-    heading: "Bukit Lawang reisgidsen voor Nederlandstalige reizigers",
+    heading: "Essentiële Bukit Lawang reisgidsen",
     read: "Lees artikel"
   }
 } satisfies Record<Locale, Record<string, string>>;

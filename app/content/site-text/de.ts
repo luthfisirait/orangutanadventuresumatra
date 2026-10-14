@@ -97,7 +97,7 @@ export const de = {
     },
     {
       q: "Wie läuft die Zahlung ab?",
-      a: "Das Buchungsformular zeigt eine PayPal-Anzahlung von 30% des Paketpreises. Zurzeit koennen Gaeste die Anzahlung manuell an die PayPal-E-Mail im Formular senden. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestaetigung."
+      a: "Das Buchungsformular weist eine PayPal-Anzahlung von 30% des Paketpreises aus. Gäste senden die Anzahlung direkt an die offizielle PayPal-E-Mail im Formular. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestätigung."
     },
     {
       q: "Wo ist der Treffpunkt?",
@@ -118,7 +118,7 @@ export const de = {
   },
   blog: {
     kicker: "Reiseblog",
-    heading: "Reiseführer für europäische Reisende, die Bukit Lawang planen",
+    heading: "Praktische Reiseführer für deine Bukit Lawang Dschungeltour",
     readArticle: "Artikel lesen",
     essentialInfo: "Wichtige Informationen",
     allArticles: "Alle Blogartikel"

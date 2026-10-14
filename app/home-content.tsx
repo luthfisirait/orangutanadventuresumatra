@@ -199,22 +199,68 @@ const localizedImpactVision: Partial<Record<Locale, ImpactContent>> = {
     kicker: "Vision conservation",
     title: "Le voyage doit créer une vraie valeur pour la forêt et le village",
     text:
-      "L'objectif de certains forfaits OrangutanAdventureSumatra est de réserver une partie des revenus du voyage au soutien de la conservation et aux bénéfices locaux autour de Bukit Lawang. L'approche est pratique: garder des guides qualifiés au travail, réduire la pression sur la forêt et aider les voyageurs à comprendre les règles d'un trek responsable.",
+      "Chaque formule Orangutan Adventure Sumatra contribue directement au soutien de la conservation et aux moyens de subsistance locaux autour de Bukit Lawang. Notre approche est concrète : maintenir des guides locaux qualifiés, préserver l'habitat des orangs-outans et sensibiliser chaque voyageur aux règles d'un trek responsable.",
     pillars: [
       {
         title: "Protection de la forêt",
         text:
-          "Soutien à des actions locales orientées conservation, guidage à faible impact et explications avant d'entrer dans l'habitat des orangs-outans."
+          "Soutien aux actions locales de conservation, guidage éthique à faible impact et respect strict des distances avec la faune sauvage."
       },
       {
         title: "Revenus locaux",
         text:
-          "Les forfaits privilégient autant que possible les guides, cuisiniers, chauffeurs, hébergements et services du village."
+          "Les forfaits rémunèrent équitablement les guides certifiés, cuisiniers, chauffeurs, hébergements familiaux et commerces du village."
       },
       {
-        title: "Choix transparents",
+        title: "Engagement direct",
         text:
-          "Les voyageurs peuvent demander quels forfaits incluent actuellement une allocation pour la conservation ou la communauté avant de confirmer."
+          "Chaque réservation finance directement les droits d'entrée et de conservation du parc national de Gunung Leuser ainsi que les patrouilles villageoises."
+      }
+    ]
+  },
+  de: {
+    kicker: "Naturschutz-Vision",
+    title: "Reisen soll echten Wert für den Wald und die Dorfgemeinschaft schaffen",
+    text:
+      "Jede Tour von Orangutan Adventure Sumatra unterstützt direkt den Schutz des Regenwaldes und das Einkommen der lokalen Gemeinschaft in Bukit Lawang. Unser Ziel ist praxisnah: erfahrene einheimische Guides fair entlohnen, den Druck auf den Urwald verringern und ethischen Wildtierschutz aktiv leben.",
+    pillars: [
+      {
+        title: "Waldschutz",
+        text:
+          "Unterstützung lokaler Schutzmaßnahmen, umweltschonendes Guiding und konsequente Einhaltung der Verhaltensregeln im Lebensraum der Orang-Utans."
+      },
+      {
+        title: "Lokale Existenzen",
+        text:
+          "Alle Touren sichern faire Einkommen für ortsansässige Guides, Köche, Fahrer, familiäre Gästehäuser und Dienstleistungen im Dorf."
+      },
+      {
+        title: "Verlässliches Engagement",
+        text:
+          "Jede Buchung beinhaltet direkt die offiziellen Nationalpark-Permits für Gunung Leuser und unterstützt lokale Dorf-Patrouillen zum Waldschutz."
+      }
+    ]
+  },
+  nl: {
+    kicker: "Natuurbehoud-visie",
+    title: "Reisen moet echte waarde achterlaten in het woud en het dorp",
+    text:
+      "Elke tour van Orangutan Adventure Sumatra draagt direct bij aan het behoud van het regenwoud en het levensonderhoud van de lokale gemeenschap rond Bukit Lawang. Onze inzet is concreet: bekwame lokale gidsen van een eerlijk inkomen voorzien, de druk op het bos verminderen en ethisch toerisme waarborgen.",
+    pillars: [
+      {
+        title: "Bosbescherming",
+        text:
+          "Steun voor lokale natuurbescherming, low-impact begeleiding en duidelijke gedragsregels vóór het betreden van het orang-oetan leefgebied."
+      },
+      {
+        title: "Lokaal inkomen",
+        text:
+          "Onze arrangementen geven voorrang aan lokale gidsen, koks, chauffeurs, familiepensions en ambachtelijke dorpsdiensten."
+      },
+      {
+        title: "Directe toewijding",
+        text:
+          "Elke boeking draagt direct bij aan officiële vergunningen voor Gunung Leuser National Park en dorpspatrouilles tegen illegale ontbossing."
       }
     ]
   }
@@ -269,12 +315,18 @@ function hasGoogleReviewSignal(data: GoogleReviewsResponse | null | undefined) {
 }
 
 function initialsForName(name: string) {
-  return name
+  const words = name
     .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase() ?? "")
-    .join("") || "G";
+    .map((part) => part.replace(/[^a-zA-Z0-9]/g, ""))
+    .filter(Boolean);
+
+  if (words.length >= 2) {
+    return (words[0][0] + words[1][0]).toUpperCase();
+  }
+  if (words.length === 1) {
+    return words[0].slice(0, 2).toUpperCase();
+  }
+  return "G";
 }
 
 function ReviewAvatar({

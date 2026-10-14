@@ -97,7 +97,7 @@ export const nl = {
     },
     {
       q: "Hoe werkt de betaling?",
-      a: "Het boekingsformulier toont een PayPal-aanbetaling van 30% van het pakketbedrag. Voor nu kunnen gasten de aanbetaling handmatig sturen naar het PayPal-e-mailadres op het formulier. Het resterende bedrag kan contant worden betaald wanneer je het team ontmoet, of 2 dagen voor vertrek na bevestiging per e-mail."
+      a: "Het boekingsformulier berekent een PayPal-aanbetaling van 30% van het totale pakketbedrag. Gasten kunnen deze aanbetaling rechtstreeks overmaken naar het officiële PayPal-adres op het formulier. Het resterende bedrag kan contant worden voldaan bij aankomst in Bukit Lawang, of 2 dagen voor vertrek na bevestiging per e-mail."
     },
     {
       q: "Waar is het ontmoetingspunt?",
@@ -118,7 +118,7 @@ export const nl = {
   },
   blog: {
     kicker: "Reisblog",
-    heading: "Reisgidsen voor Europese reizigers die Bukit Lawang plannen",
+    heading: "Essentiële reisgidsen voor het plannen van je Bukit Lawang trek",
     readArticle: "Lees artikel",
     essentialInfo: "Essentiële informatie",
     allArticles: "Alle blogartikelen"

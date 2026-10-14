@@ -98,7 +98,7 @@ export const fr = {
     },
     {
       q: "Comment se passe le paiement ?",
-      a: "Le formulaire de reservation affiche un acompte PayPal de 30% du total du forfait. Pour l'instant, les voyageurs peuvent envoyer l'acompte manuellement a l'e-mail PayPal indique sur le formulaire. Le solde peut etre paye en especes lors de la rencontre avec l'equipe, ou 2 jours avant le depart apres confirmation par e-mail."
+      a: "Le formulaire de réservation calcule un acompte PayPal de 30% du montant du forfait. Les voyageurs transmettent cet acompte directement à l'adresse PayPal officielle indiquée sur le formulaire. Le solde peut être réglé en espèces lors de la rencontre avec l'équipe à Bukit Lawang, ou 2 jours avant le départ après confirmation par e-mail."
     },
     {
       q: "Où est le point de rendez-vous ?",
@@ -119,7 +119,7 @@ export const fr = {
   },
   blog: {
     kicker: "Blog voyage",
-    heading: "Guides de voyage pour les voyageurs européens qui planifient Bukit Lawang",
+    heading: "Guides essentiels pour planifier votre trek à Bukit Lawang",
     readArticle: "Lire l'article",
     essentialInfo: "Informations essentielles",
     allArticles: "Tous les articles"
