@@ -6,7 +6,7 @@ import { Instagram, Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { trackEvent } from "./analytics";
 import { siteName } from "./seo";
-import { type Locale } from "./site-content";
+import { locales, localeNames, type Locale } from "./site-content";
 import {
   bookingWhatsappUrl,
   brandInstagramHandle,
@@ -83,6 +83,28 @@ const chromeCopy = {
     menu: "Menu",
     closeMenu: "Navigatie sluiten",
     location: "Bukit Lawang, Noord-Sumatra, Indonesië"
+  },
+  zh: {
+    booking: "预订",
+    treks: "徒步路线与价格",
+    essential: "必备出行信息",
+    payment: "支付与定金说明",
+    blog: "旅行博客",
+    privacy: "隐私政策",
+    menu: "菜单",
+    closeMenu: "关闭导航菜单",
+    location: "印度尼西亚北苏门答腊武吉拉旺"
+  },
+  id: {
+    booking: "Pemesanan",
+    treks: "Paket & Harga",
+    essential: "Informasi Penting",
+    payment: "Pembayaran & Deposit",
+    blog: "Blog Perjalanan",
+    privacy: "Kebijakan Privasi",
+    menu: "Menu",
+    closeMenu: "Tutup menu navigasi",
+    location: "Bukit Lawang, Sumatra Utara, Indonesia"
   }
 } satisfies Record<Locale, Record<string, string>>;
 
@@ -103,7 +125,41 @@ function localizedHref(locale: Locale, href: string) {
     return `/${locale}/blog`;
   }
 
+  if (href === "/booking") {
+    return `/${locale}/booking`;
+  }
+
+  if (href === "/treks") {
+    return `/${locale}/treks`;
+  }
+
+  if (href.startsWith("/treks/")) {
+    return `/${locale}${href}`;
+  }
+
+  if (href === "/essential-information") {
+    return `/${locale}/essential-information`;
+  }
+
   return href;
+}
+
+function switchLocalePath(currentPath: string, currentLocale: Locale, targetLocale: Locale): string {
+  if (targetLocale === currentLocale) {
+    return currentPath;
+  }
+
+  const normalized = currentPath.replace(/^\/(?:de|fr|nl|zh|id)(?=\/|$)/, "") || "/";
+
+  if (targetLocale === "en") {
+    return normalized;
+  }
+
+  if (normalized === "/") {
+    return `/${targetLocale}`;
+  }
+
+  return `/${targetLocale}${normalized}`;
 }
 
 type SiteChromeProps = {
@@ -116,6 +172,12 @@ export function StaticHeader({ locale = "en" }: SiteChromeProps) {
 
   const trackHeaderWhatsapp = () => {
     trackEvent("whatsapp_click", { locale, source: "site_header" });
+  };
+
+  const handleLanguageChange = (nextLocale: Locale) => {
+    window.localStorage.setItem("oas-locale", nextLocale);
+    const targetPath = switchLocalePath(window.location.pathname, locale, nextLocale);
+    window.location.assign(`${targetPath}${window.location.search}${window.location.hash}`);
   };
 
   useEffect(() => {
@@ -160,6 +222,20 @@ export function StaticHeader({ locale = "en" }: SiteChromeProps) {
         ))}
       </nav>
       <div className="header-actions">
+        <label className="language-picker" aria-label="Language selector">
+          <span className="sr-only">Language</span>
+          <select
+            value={locale}
+            onChange={(event) => handleLanguageChange(event.target.value as Locale)}
+            aria-label="Language"
+          >
+            {locales.map((loc) => (
+              <option key={loc} value={loc}>
+                {localeNames[loc]}
+              </option>
+            ))}
+          </select>
+        </label>
         <a
           className="nav-cta"
           href={bookingWhatsappUrl}
@@ -196,6 +272,25 @@ export function StaticHeader({ locale = "en" }: SiteChromeProps) {
         aria-label="Mobile navigation"
         aria-hidden={!mobileMenuOpen}
       >
+        <div style={{ padding: "0.5rem 1rem" }}>
+          <label className="language-picker" aria-label="Language selector">
+            <span className="sr-only">Language</span>
+            <select
+              value={locale}
+              onChange={(event) => {
+                handleLanguageChange(event.target.value as Locale);
+                setMobileMenuOpen(false);
+              }}
+              aria-label="Language"
+            >
+              {locales.map((loc) => (
+                <option key={loc} value={loc}>
+                  {localeNames[loc]}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
         {headerLinks.map((link) => (
           <Link
             key={link.href}

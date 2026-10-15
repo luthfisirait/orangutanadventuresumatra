@@ -45,6 +45,22 @@ const blogIndexCopy = {
     kicker: "Reisgids",
     heading: "Essentiële Bukit Lawang reisgidsen",
     read: "Lees artikel"
+  },
+  zh: {
+    title: "武吉拉旺旅行攻略 | 红毛猩猩生态徒步指南",
+    description:
+      "最实用的武吉拉旺旅行攻略：红毛猩猩徒步路线、交通指南、行李装备清单、安全须知、费用预算与最佳旅行季节。",
+    kicker: "旅行攻略",
+    heading: "武吉拉旺红毛猩猩探险核心指南",
+    read: "阅读全文"
+  },
+  id: {
+    title: "Blog Perjalanan Bukit Lawang | Trekking Orangutan Sumatra",
+    description:
+      "Panduan perjalanan Bukit Lawang lengkap untuk trekking orangutan, transportasi dari Medan, perlengkapan bawaan, keamanan, estimasi biaya, dan waktu terbaik berkunjung.",
+    kicker: "Blog perjalanan",
+    heading: "Panduan esensial liburan & trekking di Bukit Lawang",
+    read: "Baca artikel"
   }
 } satisfies Record<Locale, Record<string, string>>;
 

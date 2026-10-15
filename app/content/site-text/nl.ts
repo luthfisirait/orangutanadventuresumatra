@@ -29,7 +29,8 @@ export const nl = {
     title: "Moderne avontuurstijl, lokale wortels en serieus respect voor het bos.",
     paragraphs: [
       "Orangutan Adventure Sumatra organiseert ethische jungletreks rond Bukit Lawang, de toegangspoort tot Gunung Leuser National Park. De ervaring is gemaakt voor reizigers die een echte dag in het regenwoud willen zonder wilde dieren tot show te maken.",
-      "Kies uit korte wandelingen, klassieke meerdaagse treks, exclusieve privé-pakketten, Bat Cave-bezoeken en Village Tours. Syaipul regelt tempo, route, maaltijden, het kamp en de terugkeer via de rivier wanneer dat is inbegrepen."
+      "Kies uit korte wandelingen, klassieke meerdaagse treks, exclusieve privé-pakketten, Bat Cave-bezoeken en Village Tours. Syaipul regelt tempo, route, maaltijden, het kamp en de terugkeer via de rivier wanneer dat is inbegrepen.",
+      "Of je nu kiest voor een eendaagse wandeling of een meerdaagse expeditie diep in het Gunung Leuser National Park: onze kleinschalige en privétreks richten zich op het spotten van wilde orang-oetans in hun natuurlijke habitat, zonder voeren of menselijke verstoring."
     ],
     promises: [
       "Lokale Indonesische gids",

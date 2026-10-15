@@ -2,8 +2,10 @@ import { en } from "./content/site-text/en";
 import { de } from "./content/site-text/de";
 import { fr } from "./content/site-text/fr";
 import { nl } from "./content/site-text/nl";
+import { zh } from "./content/site-text/zh";
+import { id } from "./content/site-text/id";
 
-export const locales = ["en", "de", "fr", "nl"] as const;
+export const locales = ["en", "de", "fr", "nl", "zh", "id"] as const;
 
 export type Locale = (typeof locales)[number];
 export type TrekId = "4h" | "1d" | "2d" | "3d" | "4d" | "5d" | "p3d" | "p4d" | "p5d" | "batcave" | "village";
@@ -19,7 +21,90 @@ export const localeNames: Record<Locale, string> = {
   en: "English",
   de: "Deutsch",
   fr: "Français",
-  nl: "Nederlands"
+  nl: "Nederlands",
+  zh: "中文",
+  id: "Bahasa Indonesia"
+};
+
+export const trekMetaLocalized: Record<Locale, Record<TrekId, { duration: string; intensity: string }>> = {
+  en: {
+    "4h": { duration: "4 hours", intensity: "Low" },
+    "1d": { duration: "7-8 hours", intensity: "Medium" },
+    "2d": { duration: "2 days / 1 night", intensity: "Medium" },
+    "3d": { duration: "3 days / 2 nights", intensity: "Medium / High" },
+    "4d": { duration: "4 days / 3 nights", intensity: "High" },
+    "5d": { duration: "5 days / 4 nights", intensity: "High" },
+    "p3d": { duration: "3 days / 2 nights", intensity: "Medium" },
+    "p4d": { duration: "4 days / 3 nights", intensity: "Medium / High" },
+    "p5d": { duration: "5 days / 4 nights", intensity: "Medium / High" },
+    "batcave": { duration: "Half day", intensity: "Cave walk" },
+    "village": { duration: "Half day", intensity: "Becak or bicycle" }
+  },
+  de: {
+    "4h": { duration: "4 Stunden", intensity: "Leicht" },
+    "1d": { duration: "7–8 Stunden", intensity: "Mittel" },
+    "2d": { duration: "2 Tage / 1 Nacht", intensity: "Mittel" },
+    "3d": { duration: "3 Tage / 2 Nächte", intensity: "Mittel / Anspruchsvoll" },
+    "4d": { duration: "4 Tage / 3 Nächte", intensity: "Anspruchsvoll" },
+    "5d": { duration: "5 Tage / 4 Nächte", intensity: "Anspruchsvoll" },
+    "p3d": { duration: "3 Tage / 2 Nächte", intensity: "Mittel" },
+    "p4d": { duration: "4 Tage / 3 Nächte", intensity: "Mittel / Anspruchsvoll" },
+    "p5d": { duration: "5 Tage / 4 Nächte", intensity: "Mittel / Anspruchsvoll" },
+    "batcave": { duration: "Halber Tag", intensity: "Höhlenwanderung" },
+    "village": { duration: "Halber Tag", intensity: "Becak oder Fahrrad" }
+  },
+  fr: {
+    "4h": { duration: "4 heures", intensity: "Facile" },
+    "1d": { duration: "7 à 8 heures", intensity: "Modéré" },
+    "2d": { duration: "2 jours / 1 nuit", intensity: "Modéré" },
+    "3d": { duration: "3 jours / 2 nuits", intensity: "Modéré / Soutenu" },
+    "4d": { duration: "4 jours / 3 nuits", intensity: "Soutenu" },
+    "5d": { duration: "5 jours / 4 nuits", intensity: "Soutenu" },
+    "p3d": { duration: "3 jours / 2 nuits", intensity: "Modéré" },
+    "p4d": { duration: "4 jours / 3 nuits", intensity: "Modéré / Soutenu" },
+    "p5d": { duration: "5 jours / 4 nuits", intensity: "Modéré / Soutenu" },
+    "batcave": { duration: "Demi-journée", intensity: "Marche en grotte" },
+    "village": { duration: "Demi-journée", intensity: "En becak ou à vélo" }
+  },
+  nl: {
+    "4h": { duration: "4 uur", intensity: "Licht" },
+    "1d": { duration: "7–8 uur", intensity: "Gemiddeld" },
+    "2d": { duration: "2 dagen / 1 nacht", intensity: "Gemiddeld" },
+    "3d": { duration: "3 dagen / 2 nachten", intensity: "Gemiddeld / Zwaar" },
+    "4d": { duration: "4 dagen / 3 nachten", intensity: "Zwaar" },
+    "5d": { duration: "5 dagen / 4 nachten", intensity: "Zwaar" },
+    "p3d": { duration: "3 dagen / 2 nachten", intensity: "Gemiddeld" },
+    "p4d": { duration: "4 dagen / 3 nachten", intensity: "Gemiddeld / Zwaar" },
+    "p5d": { duration: "5 dagen / 4 nachten", intensity: "Gemiddeld / Zwaar" },
+    "batcave": { duration: "Halve dag", intensity: "Grotwandeling" },
+    "village": { duration: "Halve dag", intensity: "Per becak of fiets" }
+  },
+  zh: {
+    "4h": { duration: "4小时", intensity: "轻松" },
+    "1d": { duration: "7–8小时", intensity: "中等" },
+    "2d": { duration: "2天1夜", intensity: "中等" },
+    "3d": { duration: "3天2夜", intensity: "中等/挑战" },
+    "4d": { duration: "4天3夜", intensity: "高难度" },
+    "5d": { duration: "5天4夜", intensity: "高难度" },
+    "p3d": { duration: "3天2夜", intensity: "中等" },
+    "p4d": { duration: "4天3夜", intensity: "中等/挑战" },
+    "p5d": { duration: "5天4夜", intensity: "中等/挑战" },
+    "batcave": { duration: "半天", intensity: "洞穴探索" },
+    "village": { duration: "半天", intensity: "三轮车或骑行" }
+  },
+  id: {
+    "4h": { duration: "4 jam", intensity: "Ringan" },
+    "1d": { duration: "7–8 jam", intensity: "Sedang" },
+    "2d": { duration: "2 hari / 1 malam", intensity: "Sedang" },
+    "3d": { duration: "3 hari / 2 malam", intensity: "Sedang / Menantang" },
+    "4d": { duration: "4 hari / 3 malam", intensity: "Menantang" },
+    "5d": { duration: "5 hari / 4 malam", intensity: "Menantang" },
+    "p3d": { duration: "3 hari / 2 malam", intensity: "Sedang" },
+    "p4d": { duration: "4 hari / 3 malam", intensity: "Sedang / Menantang" },
+    "p5d": { duration: "5 hari / 4 malam", intensity: "Sedang / Menantang" },
+    "batcave": { duration: "Setengah hari", intensity: "Jalan susur gua" },
+    "village": { duration: "Setengah hari", intensity: "Becak atau sepeda" }
+  }
 };
 
 export const trekBase: Array<{
@@ -159,4 +244,4 @@ export type LocaleContent = {
   testimonialsData: Array<{ text: string; author: string; location: string }>;
 };
 
-export const siteText = { en, de, fr, nl } satisfies Record<Locale, LocaleContent>;
+export const siteText = { en, de, fr, nl, zh, id } satisfies Record<Locale, LocaleContent>;

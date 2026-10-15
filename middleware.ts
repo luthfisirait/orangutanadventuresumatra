@@ -1,12 +1,12 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const localePaths = ["/de", "/fr", "/nl"];
+const localePaths = ["/de", "/fr", "/nl", "/zh", "/id"];
 
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
-  const legacyLocalizedBlog = pathname.match(/^\/blog\/(de|fr|nl)-(.+)$/);
+  const legacyLocalizedBlog = pathname.match(/^\/blog\/(de|fr|nl|zh|id)-(.+)$/);
 
   if (legacyLocalizedBlog) {
     const [, locale, slug] = legacyLocalizedBlog;
@@ -48,6 +48,10 @@ export const config = {
     "/fr",
     "/fr/:path*",
     "/nl",
-    "/nl/:path*"
+    "/nl/:path*",
+    "/zh",
+    "/zh/:path*",
+    "/id",
+    "/id/:path*"
   ]
 };

@@ -41,6 +41,7 @@ import {
   locales,
   siteText,
   trekBase,
+  trekMetaLocalized,
   type GuideId,
   type Locale,
   type TrekId
@@ -131,6 +132,26 @@ const intentSectionCopy = {
     compareDesc: "Bekijk prijzen, conditie, riviercamps en de beste optie voor jouw reis.",
     threeDayTitle: "3-daagse orang-oetan trek in Bukit Lawang",
     threeDayDesc: "Ontdek de jungle-overnachtingen, terugkeer per tube-rafting en praktische tips."
+  },
+  zh: {
+    kicker: "按出行需求规划",
+    heading: "选择符合您旅行时间与风格的专属页面。",
+    toursTitle: "苏门答腊红毛猩猩徒步",
+    toursDesc: "按行程天数、露营晚数、体力消耗及预算对比武吉拉旺徒步路线。",
+    compareTitle: "武吉拉旺徒步套餐对比",
+    compareDesc: "详细查看价格、耗时、体能要求、河畔露营点及最适合您的方案。",
+    threeDayTitle: "3天2夜武吉拉旺红毛猩猩徒步",
+    threeDayDesc: "查看营地安排、轮胎漂流返程及预订须知。"
+  },
+  id: {
+    kicker: "Rencanakan sesuai gaya perjalanan",
+    heading: "Pilih halaman yang paling sesuai dengan waktu dan preferensi liburan Anda.",
+    toursTitle: "Tur Orangutan Sumatra",
+    toursDesc: "Bandingkan rute Bukit Lawang berdasarkan durasi, malam berkemah, tingkat tantangan, dan harga.",
+    compareTitle: "Bandingkan Paket Trekking Bukit Lawang",
+    compareDesc: "Lihat rincian harga, tingkat kebugaran, kemah tepi sungai, dan pilihan terbaik untuk perjalanan Anda.",
+    threeDayTitle: "Trekking Orangutan 3 Hari Bukit Lawang",
+    threeDayDesc: "Pelajari alur kemah di alam liar, arung jeram ban, dan ketentuan pemesanan."
   }
 } as const;
 
@@ -190,6 +211,134 @@ const localizedPackageActivity: Partial<Record<Locale, PackageActivityContent>> 
       "Les observations d'orangs-outans sauvages ne sont jamais garanties et ne doivent jamais être forcées.",
       "Les repas sont simples et frais: fruits, riz, légumes, oeufs, poisson ou poulet, thé et café.",
       "Confirme les permis, le rafting, l'hébergement, le transport et les inclusions finales avant de payer un acompte."
+    ]
+  },
+  de: {
+    ...packageActivityOverview,
+    kicker: "Ablauf der Tour",
+    title: "Wie sich ein klassischer 3-Tage-Trek in Bukit Lawang anfühlt",
+    intro:
+      "Dieser Ablauf zeigt einen typischen 3-Tage-Orang-Utan-Trek: ruhige Tierbeobachtung, Mahlzeiten im Wald, Übernachtungen im Flusscamp und die traditionelle Rückkehr per Tube-Rafting. Die genaue Route richtet sich nach Wetter, Fitness der Gruppe, Wasserstand und Parkvorgaben.",
+    steps: [
+      {
+        label: "Tag 1",
+        title: "Start in Bukit Lawang, Orang-Utan-Lebensraum, erstes Camp",
+        text:
+          "Morgens triffst du deinen Guide, überprüfst Wasser und Schuhe und startest in gemütlichem Tempo in den Regenwald. Der erste Tag widmet sich respektvoller Tierbeobachtung, Pflanzenkunde, frischen Obstpausen, Mittagessen im Dschungel und der Ankunft im einfachen Flusscamp."
+      },
+      {
+        label: "Tag 2",
+        title: "Tiefer in den Urwald, Flusspausen, zweite Nacht",
+        text:
+          "Es geht weiter in ruhigere Dschungelabschnitte mit mehr Zeit für Thomas-Languren, Gibbons, Makaken, Vögel und Heilpflanzen. Freu dich auf moderate Anstiege, Regenwaldpfade, frisches Essen und ein zweites Camp am Fluss, wenn die Bedingungen passen."
+      },
+      {
+        label: "Tag 3",
+        title: "Morgenwanderung und Rückkehr per Tube-Rafting",
+        text:
+          "Nach dem Frühstück folgt eine kürzere Schlussetappe oder Entspannung am Flussufer, bevor es bei sicheren Wasserständen per traditionellem Tube-Rafting zurück nach Bukit Lawang geht."
+      }
+    ],
+    notes: [
+      "Sichtungen von wilden Orang-Utans sind nie garantiert und werden niemals erzwungen.",
+      "Das Essen ist frisch, einfach und für den Trail zubereitet: Obst, Reis, Gemüse, Eier, Fisch oder Hühnchen, Tee und Kaffee.",
+      "Prüfe aktuelle Nationalpark-Regeln, Rafting-Bedingungen, Unterkunft und Transfer vor der Anzahlung."
+    ]
+  },
+  nl: {
+    ...packageActivityOverview,
+    kicker: "Programmadetails",
+    title: "Hoe een klassieke 3-daagse Bukit Lawang trek eruitziet",
+    intro:
+      "Het onderstaande overzicht volgt een typische 3-daagse orang-oetan trekking: rustig wild spotten, maaltijden in het bos, kamperen aan de rivier en terugkeren per tube-rafting. De route kan variëren op basis van weer, conditie, rivierstand en parkrichtlijnen.",
+    steps: [
+      {
+        label: "Dag 1",
+        title: "Vertrek vanuit Bukit Lawang, orang-oetan leefgebied, eerste kamp",
+        text:
+          "Ontmoet 's ochtends je gids, controleer water en schoenen en wandel op rustig tempo het regenwoud in. De eerste dag staat in het teken van respectvol wild spotten, inheemse planten, fruitpauzes, lunch in de jungle en aankomst in een eenvoudig rivierkamp."
+      },
+      {
+        label: "Dag 2",
+        title: "Dieper het woud in, rivierpauzes, tweede overnachting",
+        text:
+          "Trek door naar rustigere delen van de jungle met extra tijd voor Thomas-bladapen, gibbons, makaken, vogels en jungle-geluiden. Verwacht lichte klimmetjes, bospaden, verse lunch en een tweede kamp aan het water als de omstandigheden het toelaten."
+      },
+      {
+        label: "Dag 3",
+        title: "Ochtendwandeling en traditionele tube-rafting terugkeer",
+        text:
+          "Wandel na het ontbijt een kortere slotroute of ontspan bij de rivier voordat je per traditionele tube-raft terugkeert naar Bukit Lawang, mits de rivierstand veilig is."
+      }
+    ],
+    notes: [
+      "Waarnemingen van wilde orang-oetans kunnen nooit worden gegarandeerd en worden nooit geforceerd.",
+      "Eten is eenvoudig, vers en voedzaam voor onderweg: fruit, rijst, groenten, eieren, vis of kip, thee en koffie.",
+      "Controleer vergunningen, rafting-omstandigheden, accommodatie en vervoer voorafgaand aan je aanbetaling."
+    ]
+  },
+  zh: {
+    ...packageActivityOverview,
+    kicker: "经典行程拆解",
+    title: "武吉拉旺经典3天2夜雨林徒步全程概览",
+    intro:
+      "这条路线呈现了经典的3天红毛猩猩徒步过程：安静观察野生动物、雨林新鲜野餐、伴着流水声夜宿河畔营地，并在水流安全时体验传统轮胎漂流下山。最终行程会根据天气、队员体能、河道水情及国家公园规定微调。",
+    steps: [
+      {
+        label: "第1天",
+        title: "武吉拉旺出发，步入红毛猩猩家园，抵达第一营地",
+        text:
+          "清晨与向导会合，检查随身水和登山鞋，以舒适的节奏进入热带雨林。首日重心在于礼貌观察野生动物、辨识奇特植物、享用鲜切热带水果与雨林午餐，傍晚抵达溪流旁的天然营地休整。"
+      },
+      {
+        label: "第2天",
+        title: "向原始雨林更深处探索，河畔休憩，第二夜露营",
+        text:
+          "深入人迹更稀少的密林区域，有充裕时间静候托马斯叶猴、长臂猿、黑叶猴和各类热带鸟类。途中包含轻度攀爬、穿越古老树根小径，并在水边营地享用现煮热腾腾的印尼传统晚餐。"
+      },
+      {
+        label: "第3天",
+        title: "清晨林间漫步与传统轮胎漂流欢畅回程",
+        text:
+          "早餐后进行短途漫步或在清澈溪水中放松戏水，随后在向导协助下坐上安全扎结的大型轮胎，顺着清凉急流一路漂流返回武吉拉旺村庄。"
+      }
+    ],
+    notes: [
+      "野生红毛猩猩是完全自由的林间生灵，严禁强行靠近或人为诱喂。",
+      "营地伙食新鲜地道且补充能量：丰富水果、米饭、蔬菜、鸡蛋、炒面、鱼/鸡肉、热茶与咖啡。",
+      "请在行前确认公园许可、漂流天气条件、住宿及接送机安排。"
+    ]
+  },
+  id: {
+    ...packageActivityOverview,
+    kicker: "Rincian aktivitas paket",
+    title: "Gambaran pengalaman trekking klasik 3 hari di Bukit Lawang",
+    intro:
+      "Uraian di bawah ini menggambarkan alur trekking orangutan 3 hari yang umum: mengamati satwa dengan tenang, santap lezat di tengah rimba, bermalam di tenda tepi sungai, dan arung jeram ban kembali ke desa jika kondisi sungai aman. Rute akhir selalu menyesuaikan cuaca, kebugaran kelompok, debit air sungai, dan arahan pihak taman nasional.",
+    steps: [
+      {
+        label: "Hari 1",
+        title: "Titik awal Bukit Lawang, habitat orangutan, kemah pertama",
+        text:
+          "Bertemu pemandu di pagi hari, memeriksa perbekalan air dan sepatu, lalu melangkah santai memasuki hutan hujan tropis. Hari pertama difokuskan pada pengamatan satwa yang bertanggung jawab, pengenalan tanaman rimba, jeda buah segar, makan siang di hutan, dan tiba di perkemahan sederhana tepi sungai."
+      },
+      {
+        label: "Hari 2",
+        title: "Menjelajah lebih dalam ke hutan primer, sungai jernih, malam kedua",
+        text:
+          "Rombongan bergerak menuju area hutan yang lebih sunyi dengan waktu lebih leluasa mengamati monyet kedih (Thomas leaf monkey), owa, makaka, burung hutan, dan aneka tanaman obat tradisional. Bersiaplah untuk tanjakan bertahap, jalur hutan alami, makan siang segar, dan kemah kedua di tepi air jika kondisi mendukung."
+      },
+      {
+        label: "Hari 3",
+        title: "Trekking pagi dan keseruan pulang arung jeram ban",
+        text:
+          "Setelah sarapan, nikmati trekking santai rute pendek atau bersantai menikmati segarnya sungai sebelum meluncur kembali menuju Bukit Lawang dengan arung jeram ban tradisional (jungle tube rafting)."
+      }
+    ],
+    notes: [
+      "Perjumpaan dengan orangutan liar tidak pernah dijamin dan tidak boleh dipaksakan.",
+      "Makanan disajikan segar, lezat, dan bernutrisi: aneka buah tropis, nasi, sayuran segar, telur, ayam atau ikan, teh dan kopi.",
+      "Konfirmasikan izin resmi taman nasional, kondisi arung jeram, akomodasi, dan transportasi sebelum membayar deposit."
     ]
   }
 };
@@ -263,6 +412,136 @@ const localizedImpactVision: Partial<Record<Locale, ImpactContent>> = {
           "Elke boeking draagt direct bij aan officiële vergunningen voor Gunung Leuser National Park en dorpspatrouilles tegen illegale ontbossing."
       }
     ]
+  },
+  zh: {
+    kicker: "环保生态愿景",
+    title: "每一次探险，都应为原始森林与本土村落带来长远价值",
+    text:
+      "Orangutan Adventure Sumatra 的每一份收益都直接用于雨林保护和武吉拉旺本地社区的生计改善。我们的行动坚实真诚：给予本地专业向导体面公平的收入，守护红毛猩猩原始栖息地，并向每一位旅行者践行生态旅行准则。",
+    pillars: [
+      {
+        title: "守护原始雨林",
+        text:
+          "支持当地巡山保护项目，推行零痕迹低干扰向导服务，与野生动物严格保持安全距离。"
+      },
+      {
+        title: "反哺本地社区",
+        text:
+          "所有行程优先保障本地持证向导、随队厨师、司机、家庭客栈与手工艺人的公平报酬。"
+      },
+      {
+        title: "持续生态回馈",
+        text:
+          "每笔预订均全额支付古农列尤择国家公园官方准入费，并资助村庄防盗伐公益巡逻队。"
+      }
+    ]
+  },
+  id: {
+    kicker: "Visi konservasi berkelanjutan",
+    title: "Setiap petualangan harus memberi nilai nyata bagi kelestarian hutan dan masyarakat desa",
+    text:
+      "Setiap paket perjalanan Orangutan Adventure Sumatra berkontribusi langsung pada upaya perlindungan hutan dan mata pencaharian warga lokal di sekitar Bukit Lawang. Komitmen kami nyata: memberdayakan pemandu lokal bersertifikat, menjaga habitat asli orangutan, dan mengedukasi setiap penjelajah tentang etika trekking yang bertanggung jawab.",
+    pillars: [
+      {
+        title: "Perlindungan Hutan Rimba",
+        text:
+          "Mendukung kegiatan konservasi lokal, memandu dengan dampak minimal bagi lingkungan, dan mematuhi jarak aman dengan satwa liar."
+      },
+      {
+        title: "Kesejahteraan Warga Lokal",
+        text:
+          "Seluruh paket memprioritaskan upah yang adil dan layak bagi pemandu bersertifikat, koki hutan, pengemudi mobil, dan penginapan keluarga di desa."
+      },
+      {
+        title: "Komitmen Langsung",
+        text:
+          "Setiap pemesanan langsung mendanai izin resmi Taman Nasional Gunung Leuser dan patroli perlindungan hutan masyarakat desa."
+      }
+    ]
+  }
+};
+
+const routeLabel: Record<Locale, string> = {
+  en: "Route",
+  de: "Route",
+  fr: "Circuit",
+  nl: "Route",
+  zh: "路线",
+  id: "Rute"
+};
+
+const testimonialCopy: Record<
+  Locale,
+  {
+    googleRating: string;
+    reviews: string;
+    readAll: string;
+    averageOnGoogle: string;
+    guestStories: string;
+    directReplies: string;
+    verifiedReview: string;
+    guestStory: string;
+  }
+> = {
+  en: {
+    googleRating: "Google rating from",
+    reviews: "reviews",
+    readAll: "Read all on Google",
+    averageOnGoogle: "average on Google from",
+    guestStories: "guest stories from recent travelers",
+    directReplies: "Direct replies from Bukit Lawang by WhatsApp and email",
+    verifiedReview: "Verified Google review",
+    guestStory: "Guest story"
+  },
+  de: {
+    googleRating: "Google-Bewertung basierend auf",
+    reviews: "Bewertungen",
+    readAll: "Alle auf Google lesen",
+    averageOnGoogle: "Durchschnitt auf Google aus",
+    guestStories: "Erfahrungsberichte von Reisenden",
+    directReplies: "Direkte Antworten aus Bukit Lawang per WhatsApp und E-Mail",
+    verifiedReview: "Verifizierte Google-Bewertung",
+    guestStory: "Gästeerfahrung"
+  },
+  fr: {
+    googleRating: "Note Google basée sur",
+    reviews: "avis",
+    readAll: "Lire tous les avis sur Google",
+    averageOnGoogle: "moyenne sur Google basée sur",
+    guestStories: "récits de voyageurs récents",
+    directReplies: "Réponses directes depuis Bukit Lawang par WhatsApp et e-mail",
+    verifiedReview: "Avis Google vérifié",
+    guestStory: "Témoignage voyageur"
+  },
+  nl: {
+    googleRating: "Google-score op basis van",
+    reviews: "beoordelingen",
+    readAll: "Lees alle reviews op Google",
+    averageOnGoogle: "gemiddelde op Google uit",
+    guestStories: "ervaringen van recente reizigers",
+    directReplies: "Directe reacties vanuit Bukit Lawang via WhatsApp en e-mail",
+    verifiedReview: "Geverifieerde Google-review",
+    guestStory: "Gastverhaal"
+  },
+  zh: {
+    googleRating: "Google 评分来自",
+    reviews: "条真实评价",
+    readAll: "在 Google 查看全部评价",
+    averageOnGoogle: "Google 综合评分来自",
+    guestStories: "位真实旅行者的亲历分享",
+    directReplies: "来自武吉拉旺向导团队的 WhatsApp 和邮件即时回复",
+    verifiedReview: "Google 认证好评",
+    guestStory: "旅行者真实故事"
+  },
+  id: {
+    googleRating: "Penilaian Google dari",
+    reviews: "ulasan",
+    readAll: "Baca semua di Google",
+    averageOnGoogle: "rata-rata di Google dari",
+    guestStories: "cerita pengalaman dari para penjelajah",
+    directReplies: "Tanggapan langsung dari tim Bukit Lawang via WhatsApp dan email",
+    verifiedReview: "Ulasan Google terverifikasi",
+    guestStory: "Pengalaman tamu"
   }
 };
 
@@ -479,11 +758,18 @@ export function HomeContent({
     () =>
       trekBase
         .filter((trek) => trek.category === activeCategory)
-        .map((trek) => ({
-          ...trek,
-          ...(t.treks[trek.id as TrekId] ?? t.treks["4h"])
-        })),
-    [activeCategory, t]
+        .map((trek) => {
+          const meta = trekMetaLocalized[language]?.[trek.id] ?? {
+            duration: trek.duration,
+            intensity: trek.intensity
+          };
+          return {
+            ...trek,
+            ...meta,
+            ...(t.treks[trek.id as TrekId] ?? t.treks["4h"])
+          };
+        }),
+    [activeCategory, language, t]
   );
 
   const guides = useMemo(
@@ -726,6 +1012,8 @@ export function HomeContent({
     window.location.assign(nextPath);
   };
 
+  const localizedPath = (path: string) => (language === "en" ? path : `/${language}${path}`);
+
   return (
     <main lang={language}>
       <script
@@ -747,7 +1035,7 @@ export function HomeContent({
           <Link href={blogIndexPath(language)}>
             {t.footerLinks.blog}
           </Link>
-          <Link href="/essential-information">
+          <Link href={localizedPath("/essential-information")}>
             {t.footerLinks.essentialInfo}
           </Link>
         </nav>
@@ -816,7 +1104,7 @@ export function HomeContent({
         <Link href={blogIndexPath(language)} onClick={() => setMobileMenuOpen(false)}>
           {t.footerLinks.blog}
         </Link>
-        <Link href="/essential-information" onClick={() => setMobileMenuOpen(false)}>
+        <Link href={localizedPath("/essential-information")} onClick={() => setMobileMenuOpen(false)}>
           {t.footerLinks.essentialInfo}
         </Link>
         <TrackedLink
@@ -925,7 +1213,7 @@ export function HomeContent({
               <strong>{intentCopy.toursDesc}</strong>
               <ArrowRight size={18} />
             </Link>
-            <Link className="intent-link-card" href="/treks">
+            <Link className="intent-link-card" href={localizedPath("/treks")}>
               <span>{intentCopy.compareTitle}</span>
               <strong>{intentCopy.compareDesc}</strong>
               <ArrowRight size={18} />
@@ -1012,7 +1300,7 @@ export function HomeContent({
 
         <div className="trek-grid" id="trek-results" aria-live="polite">
           {visibleTreks.map((trek, trekIndex) => {
-            const detailUrl = trekDetailHref(trek.id);
+            const detailUrl = trekDetailHref(trek.id, language);
 
             return (
             <article className="trek-card" key={trek.id}>
@@ -1025,7 +1313,7 @@ export function HomeContent({
                 />
               </div>
               <div className="trek-body">
-                <span className="trek-sequence" aria-hidden="true">Route {String(trekIndex + 1).padStart(2, "0")}</span>
+                <span className="trek-sequence" aria-hidden="true">{routeLabel[language]} {String(trekIndex + 1).padStart(2, "0")}</span>
                 <div className="trek-meta">
                   <span>
                     <Clock3 size={15} />
@@ -1047,7 +1335,7 @@ export function HomeContent({
                   ))}
                 </ul>
                 <Link className="card-link" href={detailUrl}>
-                  {language === "en" ? "View details" : language === "de" ? "Details ansehen" : language === "fr" ? "Voir les détails" : "Bekijk details"}
+                  {language === "en" ? "View details" : language === "de" ? "Details ansehen" : language === "fr" ? "Voir les détails" : language === "zh" ? "查看详情" : language === "id" ? "Lihat detail" : "Bekijk details"}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -1080,18 +1368,54 @@ export function HomeContent({
                 </article>
               ))}
             </div>
-            {language === "en" ? (
-              <div className="resource-links package-detail-links">
-                <Link className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
-                  See the 3-day trek page
-                  <ArrowRight size={18} />
-                </Link>
-                <Link className="secondary-button dark" href="/blog/3-day-bukit-lawang-jungle-trek-itinerary">
-                  Read the 3-day itinerary guide
-                  <ArrowRight size={18} />
-                </Link>
-              </div>
-            ) : null}
+            <div className="resource-links package-detail-links">
+              <Link
+                className="secondary-button dark"
+                href={language === "en" ? "/3-day-bukit-lawang-orangutan-trek" : `/${language}/treks/3-day-jungle-trek`}
+              >
+                {language === "de"
+                  ? "Zur 3-Tage-Trek-Seite"
+                  : language === "fr"
+                  ? "Voir la page du trek de 3 jours"
+                  : language === "nl"
+                  ? "Bekijk de 3-daagse trekpagina"
+                  : language === "zh"
+                  ? "查看3天2夜徒步详情"
+                  : language === "id"
+                  ? "Lihat rincian trek 3 hari"
+                  : "See the 3-day trek page"}
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                className="secondary-button dark"
+                href={
+                  language === "de"
+                    ? "/de/blog/1-tag-vs-2-tage-vs-3-tage-bukit-lawang-trek"
+                    : language === "fr"
+                    ? "/fr/blog/trek-1-jour-vs-2-jours-vs-3-jours-bukit-lawang"
+                    : language === "nl"
+                    ? "/nl/blog/1-dag-vs-2-dagen-vs-3-dagen-bukit-lawang-trek"
+                    : language === "zh"
+                    ? "/zh/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek"
+                    : language === "id"
+                    ? "/id/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek"
+                    : "/blog/3-day-bukit-lawang-jungle-trek-itinerary"
+                }
+              >
+                {language === "de"
+                  ? "Reiseführer & Ablauf lesen"
+                  : language === "fr"
+                  ? "Lire le guide de l'itinéraire"
+                  : language === "nl"
+                  ? "Lees de gids voor de route"
+                  : language === "zh"
+                  ? "阅读3日游攻略与行程安排"
+                  : language === "id"
+                  ? "Baca panduan rute 3 hari"
+                  : "Read the 3-day itinerary guide"}
+                <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="package-notes">
@@ -1227,10 +1551,10 @@ export function HomeContent({
             <p className="google-rating-summary">
               <Star size={18} fill="currentColor" />
               <span>
-                {googleReviews.averageRating.toFixed(1)} Google rating from {googleReviews.totalReviewCount} reviews
+                {googleReviews.averageRating.toFixed(1)} {testimonialCopy[language].googleRating} {googleReviews.totalReviewCount} {testimonialCopy[language].reviews}
               </span>
               <a href={googleReviews.sourceUrl} target="_blank" rel="noreferrer">
-                Read all on Google
+                {testimonialCopy[language].readAll}
               </a>
             </p>
           )}
@@ -1240,17 +1564,17 @@ export function HomeContent({
             <div>
               <Star size={18} fill="currentColor" />
               <span>
-                {googleReviews.averageRating.toFixed(1)} average on Google from {googleReviews.totalReviewCount} reviews
+                {googleReviews.averageRating.toFixed(1)} {testimonialCopy[language].averageOnGoogle} {googleReviews.totalReviewCount} {testimonialCopy[language].reviews}
               </span>
             </div>
           ) : null}
           <div>
             <HeartHandshake size={18} />
-            <span>{t.testimonialsData.length} guest stories from recent travelers</span>
+            <span>{t.testimonialsData.length} {testimonialCopy[language].guestStories}</span>
           </div>
           <div>
             <MessageCircle size={18} />
-            <span>Direct replies from Bukit Lawang by WhatsApp and email</span>
+            <span>{testimonialCopy[language].directReplies}</span>
           </div>
         </div>
         <div className="testimonials-grid">
@@ -1267,7 +1591,11 @@ export function HomeContent({
                 <div className="testimonial-author-copy">
                   <strong>{testimonial.author}</strong>
                   <span>{testimonial.meta}</span>
-                  {testimonial.source === "google" ? <small>Verified Google review</small> : <small>Guest story</small>}
+                  {testimonial.source === "google" ? (
+                    <small>{testimonialCopy[language].verifiedReview}</small>
+                  ) : (
+                    <small>{testimonialCopy[language].guestStory}</small>
+                  )}
                 </div>
               </div>
             </article>
@@ -1317,7 +1645,7 @@ export function HomeContent({
           ))}
         </div>
         <div className="resource-links">
-          <Link className="secondary-button dark" href="/essential-information">
+          <Link className="secondary-button dark" href={localizedPath("/essential-information")}>
             {t.blog.essentialInfo}
             <ArrowRight size={18} />
           </Link>
@@ -1339,7 +1667,7 @@ export function HomeContent({
           <div className="contact-actions">
             <TrackedLink
               className="primary-button"
-              href="/booking"
+              href={localizedPath("/booking")}
               eventName="booking_cta_click"
               eventParams={{ locale: language, source: "home_contact" }}
             >
@@ -1373,9 +1701,9 @@ export function HomeContent({
         <Image src="/images/logo.svg" alt={siteName} width={155} height={60} unoptimized />
         <p>{t.footer.location}</p>
         <nav className="footer-links" aria-label="Footer navigation">
-          <Link href="/essential-information">{t.footerLinks.essentialInfo}</Link>
+          <Link href={localizedPath("/essential-information")}>{t.footerLinks.essentialInfo}</Link>
           <TrackedLink
-            href="/booking"
+            href={localizedPath("/booking")}
             eventName="booking_cta_click"
             eventParams={{ locale: language, source: "home_footer" }}
           >

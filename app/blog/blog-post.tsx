@@ -23,7 +23,9 @@ const dateLocales: Record<Locale, string> = {
   en: "en-GB",
   de: "de-DE",
   fr: "fr-FR",
-  nl: "nl-NL"
+  nl: "nl-NL",
+  zh: "zh-CN",
+  id: "id-ID"
 };
 
 const blogCopy = {
@@ -106,6 +108,46 @@ const blogCopy = {
     moreKicker: "Meer reisgidsen",
     moreTitle: "Plan de volgende stap van je reis naar Bukit Lawang",
     blog: "Reisgids"
+  },
+  zh: {
+    heroKicker: "武吉拉旺旅行指南",
+    updated: "更新于",
+    reviewedBy: "专业审核：",
+    browseTreks: "浏览徒步详情",
+    planTitle: "规划您的徒步",
+    bukitLawang: "武吉拉旺红毛猩猩徒步",
+    sumatraTour: "苏门答腊红毛猩猩之旅",
+    threeDay: "3天武吉拉旺红毛猩猩徒步",
+    booking: "预订表格",
+    defaultPrimary: "打开预订表格",
+    ctaTitle: "准备好对比徒步路线了吗？",
+    ctaText:
+      "使用预订页面选择心仪路线，确认棉兰交通接送，并在支付定金前发送您的出行日期。",
+    whatsappCta: "在 WhatsApp 上咨询",
+    whatsappMessage: '您好 Orangutan Adventure Sumatra，我在阅读您的指南《{title}》，想咨询具体的徒步档期。',
+    moreKicker: "更多旅行指南",
+    moreTitle: "规划您武吉拉旺之行的下一步",
+    blog: "旅行博客"
+  },
+  id: {
+    heroKicker: "Panduan perjalanan Bukit Lawang",
+    updated: "Diperbarui",
+    reviewedBy: "Ditinjau oleh",
+    browseTreks: "Lihat rincian paket trek",
+    planTitle: "Rencanakan trek Anda",
+    bukitLawang: "Trekking orangutan Bukit Lawang",
+    sumatraTour: "Tur orangutan Sumatra",
+    threeDay: "Trek orangutan 3 hari Bukit Lawang",
+    booking: "Formulir pemesanan",
+    defaultPrimary: "Buka formulir pemesanan",
+    ctaTitle: "Siap membandingkan pilihan trek?",
+    ctaText:
+      "Gunakan halaman pemesanan untuk memilih rute terbaik, pastikan jemputan dari Medan, dan kirim tanggal perjalanan Anda sebelum membayar deposit.",
+    whatsappCta: "Tanya via WhatsApp",
+    whatsappMessage: 'Halo Orangutan Adventure Sumatra, saya membaca panduan "{title}" dan ingin bertanya tentang ketersediaan jadwal trek.',
+    moreKicker: "Panduan perjalanan lainnya",
+    moreTitle: "Rencanakan langkah berikutnya untuk liburan Anda di Bukit Lawang",
+    blog: "Blog Perjalanan"
   }
 } satisfies Record<Locale, Record<string, string>>;
 
@@ -251,7 +293,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
   const path = blogPostPath(post);
   const isEnglish = locale === "en";
   const localizedHome = locale === "en" ? "/" : `/${locale}`;
-  const primaryCtaHref = post.primaryCtaHref ?? "/booking";
+  const primaryCtaHref = post.primaryCtaHref ?? (locale === "en" ? "/booking" : `/${locale}/booking`);
   const primaryCtaLabel = post.primaryCtaLabel ?? copy.defaultPrimary;
   const secondaryCta = isEnglish
     ? primaryCtaHref === "/sumatra-orangutan-tour"
@@ -272,7 +314,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
         { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },
         { href: "/3-day-bukit-lawang-orangutan-trek", label: copy.threeDay },
         { href: blogIndexPath(locale), label: copy.blog },
-        { href: "/booking", label: copy.booking }
+        { href: `/${locale}/booking`, label: copy.booking }
       ];
   const jsonLd = {
     "@context": "https://schema.org",
@@ -409,7 +451,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
                 <span key={tag}>{tag}</span>
               ))}
             </div>
-            <Link className="primary-button" href="/treks">
+            <Link className="primary-button" href={locale === "en" ? "/treks" : `/${locale}/treks`}>
               <ArrowRight size={18} />
               {copy.browseTreks}
             </Link>

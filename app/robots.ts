@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/"
+        allow: "/",
+        disallow: ["/api/"]
       },
       {
         userAgent: [
@@ -19,7 +20,8 @@ export default function robots(): MetadataRoute.Robots {
           "Googlebot",
           "Bingbot"
         ],
-        allow: "/"
+        allow: "/",
+        disallow: ["/api/"]
       }
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

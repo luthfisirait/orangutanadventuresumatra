@@ -3,10 +3,10 @@
 import { Check, Mail, MessageCircle, ShieldCheck, Sparkles, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { trackEvent } from "../analytics";
-import { bookingPackages } from "./booking-data";
+import { getBookingPackages, type BookingPackage } from "./booking-data";
 import { calculateBookingPayment, depositRate, formatPaymentAmount } from "./pricing";
 import { whatsappNumber } from "../travel-content";
-import type { TrekId } from "../site-content";
+import type { Locale, TrekId } from "../site-content";
 
 type BookingFormState = {
   fullName: string;
@@ -25,6 +25,7 @@ type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
 type BookingFormProps = {
   initialPackageId?: string;
+  locale?: Locale;
 };
 
 type PayPalButtonsActions = {
@@ -72,15 +73,320 @@ declare global {
   }
 }
 
+const formText = {
+  en: {
+    requestKicker: "Booking request",
+    requestHeading: "Request availability for your trek",
+    requestDesc:
+      "Send your details here and we receive the request by email. We contact you to confirm availability before anything is booked.",
+    fullName: "Full name *",
+    country: "Country",
+    email: "Email address",
+    emailHelp: "Optional, but useful as a backup contact.",
+    whatsapp: "WhatsApp number *",
+    whatsappHelp: "Required. Include country code, e.g. +1 for USA.",
+    package: "Package *",
+    choosePackage: "Choose a trek or activity",
+    startDate: "Preferred start date *",
+    groupSize: "Group size *",
+    transport: "Transport help",
+    chooseOption: "Choose an option",
+    transportOptions: {
+      none: "No transport needed",
+      pickup: "Pickup from Medan / KNO",
+      deciding: "Still deciding"
+    },
+    accommodation: "Accommodation help",
+    accommodationOptions: {
+      booked: "Already booked",
+      help: "Need help finding a place",
+      notSure: "Not sure yet"
+    },
+    notes: "Notes",
+    notesPlaceholder: "Tell us about food needs, fitness level, timing, or any special request.",
+    payDeposit: "Pay 30% deposit",
+    depositSub: "Send only the deposit shown below. The remaining balance is handled after confirmation.",
+    packageTotal: "Package total",
+    depositDue: "Deposit due",
+    addGroupSize: "Add group size",
+    depositPercentage: "30% of total",
+    totalCalculation: (price: string) => `Total is calculated from ${price} x group size.`,
+    manualDepositTo: "Send the deposit manually to this PayPal email",
+    manualInstructions:
+      "Add your name, travel date, and package in the PayPal note. After payment, send the PayPal reference by WhatsApp or write it in the notes before submitting this form.",
+    openPaypal: "Open PayPal",
+    sendRequest: "Send request",
+    sending: "Sending...",
+    whatsappBtn: "WhatsApp",
+    noBookingConfirmed: "No booking is confirmed automatically. We check availability first, then reply with next steps.",
+    successMsg: "Thank you! Your booking request has been sent. We will review availability and contact you shortly.",
+    errorMsg: "There was a problem sending your request. Please try again or reach out on WhatsApp.",
+    requiredError: "Please complete the required booking fields first.",
+    invalidWhatsappError: "Please enter a valid WhatsApp number with country code, like +1 555 123 4567."
+  },
+  de: {
+    requestKicker: "Buchungsanfrage",
+    requestHeading: "Verfügbarkeit für Ihre Tour anfragen",
+    requestDesc:
+      "Senden Sie uns Ihre Reisedaten. Wir prüfen die Verfügbarkeit und melden uns umgehend bei Ihnen, bevor etwas fest gebucht wird.",
+    fullName: "Vollständiger Name *",
+    country: "Land",
+    email: "E-Mail-Adresse",
+    emailHelp: "Optional, aber empfehlenswert als Kontaktoption.",
+    whatsapp: "WhatsApp-Nummer *",
+    whatsappHelp: "Erforderlich. Bitte mit Ländervorwahl, z. B. +49 für Deutschland.",
+    package: "Paket *",
+    choosePackage: "Tour oder Aktivität auswählen",
+    startDate: "Gewünschtes Startdatum *",
+    groupSize: "Gruppengröße *",
+    transport: "Transfer-Bedarf",
+    chooseOption: "Bitte wählen",
+    transportOptions: {
+      none: "Kein Transfer benötigt",
+      pickup: "Abholung ab Medan / KNO",
+      deciding: "Noch unentschieden"
+    },
+    accommodation: "Unterkunftshilfe",
+    accommodationOptions: {
+      booked: "Bereits gebucht",
+      help: "Hilfe bei der Zimmersuche gewünscht",
+      notSure: "Noch nicht sicher"
+    },
+    notes: "Besondere Hinweise / Wünsche",
+    notesPlaceholder: "Besondere Ernährung, Fitnesslevel, Zeitplanung oder sonstige Wünsche...",
+    payDeposit: "30 % Anzahlung leisten",
+    depositSub: "Zahlen Sie vorab nur die unten angezeigte Anzahlung. Der Restbetrag wird nach Bestätigung beglichen.",
+    packageTotal: "Gesamtpreis Paket",
+    depositDue: "Fällige Anzahlung",
+    addGroupSize: "Gruppengröße angeben",
+    depositPercentage: "30 % des Gesamtpreises",
+    totalCalculation: (price: string) => `Gesamtpreis berechnet sich aus ${price} x Gruppengröße.`,
+    manualDepositTo: "Senden Sie die Anzahlung manuell an diese PayPal-E-Mail",
+    manualInstructions:
+      "Geben Sie Ihren Namen, Reisedatum und das gewählte Paket als Betreff an. Senden Sie die PayPal-Referenz per WhatsApp oder tragen Sie sie im Notizfeld ein.",
+    openPaypal: "PayPal öffnen",
+    sendRequest: "Anfrage absenden",
+    sending: "Wird gesendet...",
+    whatsappBtn: "WhatsApp",
+    noBookingConfirmed:
+      "Keine automatische Buchung. Wir prüfen die Verfügbarkeit persönlich und melden uns mit allen Details.",
+    successMsg: "Vielen Dank! Ihre Anfrage wurde versendet. Wir prüfen die Termine und melden uns in Kürze.",
+    errorMsg:
+      "Beim Versenden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per WhatsApp.",
+    requiredError: "Bitte füllen Sie alle mit * markierten Pflichtfelder aus.",
+    invalidWhatsappError: "Bitte geben Sie eine gültige WhatsApp-Nummer mit Ländervorwahl ein, z. B. +49 170 1234567."
+  },
+  fr: {
+    requestKicker: "Demande de réservation",
+    requestHeading: "Demander la disponibilité pour votre trek",
+    requestDesc:
+      "Transmettez-nous vos informations. Nous vérifions les disponibilités et vous recontactons avant toute confirmation définitive.",
+    fullName: "Nom complet *",
+    country: "Pays",
+    email: "Adresse e-mail",
+    emailHelp: "Facultatif, mais utile pour un contact de secours.",
+    whatsapp: "Numéro WhatsApp *",
+    whatsappHelp: "Obligatoire. Avec indicatif pays, ex. +33 pour la France.",
+    package: "Formule *",
+    choosePackage: "Sélectionnez un trek ou une activité",
+    startDate: "Date de départ souhaitée *",
+    groupSize: "Nombre de personnes *",
+    transport: "Besoin de transfert",
+    chooseOption: "Choisissez une option",
+    transportOptions: {
+      none: "Pas de transport nécessaire",
+      pickup: "Prise en charge Medan / Aéroport KNO",
+      deciding: "En cours de réflexion"
+    },
+    accommodation: "Aide hébergement",
+    accommodationOptions: {
+      booked: "Déjà réservé",
+      help: "Besoin d'aide pour trouver un logement",
+      notSure: "Pas encore sûr"
+    },
+    notes: "Remarques et demandes",
+    notesPlaceholder: "Régime alimentaire, niveau physique, horaires ou demandes spécifiques...",
+    payDeposit: "Régler l'acompte de 30 %",
+    depositSub: "Envoyez uniquement l'acompte indiqué ci-dessous. Le solde est réglé après confirmation.",
+    packageTotal: "Total formule",
+    depositDue: "Acompte à régler",
+    addGroupSize: "Préciser la taille du groupe",
+    depositPercentage: "30 % du total",
+    totalCalculation: (price: string) => `Le total est calculé à partir de ${price} x nombre de personnes.`,
+    manualDepositTo: "Envoyez l'acompte manuellement à cette adresse PayPal",
+    manualInstructions:
+      "Ajoutez votre nom, date et formule dans la note PayPal. Après paiement, transmettez la référence PayPal par WhatsApp ou indiquez-la dans vos notes.",
+    openPaypal: "Ouvrir PayPal",
+    sendRequest: "Envoyer la demande",
+    sending: "Envoi en cours...",
+    whatsappBtn: "WhatsApp",
+    noBookingConfirmed:
+      "Aucune réservation automatique. Nous vérifions la disponibilité et vous répondons avec les étapes suivantes.",
+    successMsg: "Merci ! Votre demande a été envoyée. Nous vérifions la disponibilité et vous répondons rapidement.",
+    errorMsg: "Un problème est survenu lors de l'envoi. Veuillez réessayer ou nous contacter sur WhatsApp.",
+    requiredError: "Veuillez remplir tous les champs obligatoires signalés par un astérisque (*).",
+    invalidWhatsappError: "Veuillez saisir un numéro WhatsApp valide avec indicatif pays, ex. +33 6 12 34 56 78."
+  },
+  nl: {
+    requestKicker: "Reserveringsaanvraag",
+    requestHeading: "Vraag beschikbaarheid aan voor uw trekking",
+    requestDesc:
+      "Stuur uw gegevens door. Wij controleren de beschikbaarheid en nemen persoonlijk contact op voordat er definitief geboekt wordt.",
+    fullName: "Volledige naam *",
+    country: "Land",
+    email: "E-mailadres",
+    emailHelp: "Optioneel, maar handig als reservecontact.",
+    whatsapp: "WhatsApp-nummer *",
+    whatsappHelp: "Verplicht. Inclusief landcode, bijv. +31 voor Nederland of +32 voor België.",
+    package: "Pakket *",
+    choosePackage: "Kies een trekking of activiteit",
+    startDate: "Gewenste startdatum *",
+    groupSize: "Aantal personen *",
+    transport: "Vervoer nodig",
+    chooseOption: "Kies een optie",
+    transportOptions: {
+      none: "Geen vervoer nodig",
+      pickup: "Ophalen in Medan / luchthaven KNO",
+      deciding: "Nog niet besloten"
+    },
+    accommodation: "Accommodatiehulp",
+    accommodationOptions: {
+      booked: "Al geboekt",
+      help: "Hulp nodig bij vinden van verblijf",
+      notSure: "Nog niet zeker"
+    },
+    notes: "Opmerkingen",
+    notesPlaceholder: "Dieetwensen, conditieniveau, tijden of speciale verzoeken...",
+    payDeposit: "Betaal 30% aanbetaling",
+    depositSub: "Maak alleen de onderstaande aanbetaling over. Het restantbedrag wordt na bevestiging afgehandeld.",
+    packageTotal: "Totaalbedrag pakket",
+    depositDue: "Verschuldigde aanbetaling",
+    addGroupSize: "Vul groepsgrootte in",
+    depositPercentage: "30% van het totaal",
+    totalCalculation: (price: string) => `Totaal wordt berekend als ${price} x aantal personen.`,
+    manualDepositTo: "Maak de aanbetaling handmatig over naar dit PayPal-adres",
+    manualInstructions:
+      "Vermeld uw naam, reisdatum en pakket in de PayPal-opmerking. Stuur na betaling de PayPal-referentie via WhatsApp of noteer deze in het formulier.",
+    openPaypal: "Open PayPal",
+    sendRequest: "Aanvraag versturen",
+    sending: "Versturen...",
+    whatsappBtn: "WhatsApp",
+    noBookingConfirmed:
+      "Er wordt niets automatisch definitief geboekt. We verifiëren eerst de planning en nemen snel contact op.",
+    successMsg: "Hartelijk dank! Uw aanvraag is verzonden. Wij controleren de beschikbaarheid en nemen snel contact met u op.",
+    errorMsg: "Er ging iets mis bij het versturen. Probeer het opnieuw of stuur een bericht via WhatsApp.",
+    requiredError: "Vul alstublieft alle verplichte velden met een * in.",
+    invalidWhatsappError: "Vul een geldig WhatsApp-nummer in met landcode, bijv. +31 6 12345678."
+  },
+  zh: {
+    requestKicker: "预订请求",
+    requestHeading: "查询雨林徒步档期与预订",
+    requestDesc:
+      "填写您的出行信息并发送，我们将直接收到邮件通知。在向导核实档期与许可前，不会产生任何扣费。",
+    fullName: "姓名 *",
+    country: "国籍 / 居住地",
+    email: "电子邮箱",
+    emailHelp: "选填，作为备用联系方式以便发送确认函。",
+    whatsapp: "WhatsApp 号码 *",
+    whatsappHelp: "必填。请包含国家区号，如中国大陆为 +86。",
+    package: "选择行程套餐 *",
+    choosePackage: "请选择徒步路线或体验活动",
+    startDate: "期望出发日期 *",
+    groupSize: "出行人数 *",
+    transport: "交通接送协助",
+    chooseOption: "请选择接送需求",
+    transportOptions: {
+      none: "无需接送（自行前往武吉拉旺）",
+      pickup: "需要从棉兰市区 / 瓜拉纳穆机场（KNO）接机",
+      deciding: "尚未确定"
+    },
+    accommodation: "客栈住宿协助",
+    accommodationOptions: {
+      booked: "已自行预订村庄客栈",
+      help: "需要协助推荐或预订武吉拉旺客栈",
+      notSure: "尚未确定"
+    },
+    notes: "特殊要求与备注",
+    notesPlaceholder: "请告知任何过敏或饮食禁忌、体能状况、航班时间或其他特别需求...",
+    payDeposit: "支付 30% 定金",
+    depositSub: "仅需预付下方显示的定金金额。余款将在行程确认后现场或出发前付清。",
+    packageTotal: "套餐总额",
+    depositDue: "应付定金",
+    addGroupSize: "请输入出行人数",
+    depositPercentage: "总额的 30%",
+    totalCalculation: (price: string) => `总额按 ${price} x 人数计算。`,
+    manualDepositTo: "请手动向该官方 PayPal 账户支付定金",
+    manualInstructions:
+      "请在 PayPal 转账备注中填写您的姓名、出行日期及套餐名称。转账后请通过 WhatsApp 发送交易号或直接填写在表单备注中。",
+    openPaypal: "打开 PayPal 转账",
+    sendRequest: "发送预订请求",
+    sending: "正在发送...",
+    whatsappBtn: "WhatsApp 咨询",
+    noBookingConfirmed:
+      "提交此表单不会自动扣款。我们将第一时间人工核实向导档期，并主动回复后续流程。",
+    successMsg: "非常感谢！您的预订请求已成功发送。我们将尽快核对档期并与您取得联系。",
+    errorMsg: "发送请求时出现问题，请重试或直接通过 WhatsApp 联系我们。",
+    requiredError: "请填写所有标有星号 (*) 的必填项。",
+    invalidWhatsappError: "请输入包含国家区号的有效 WhatsApp 号码，例如 +86 138 0000 0000。"
+  },
+  id: {
+    requestKicker: "Permintaan Pemesanan",
+    requestHeading: "Cek ketersediaan & reservasi tur Anda",
+    requestDesc:
+      "Kirimkan data perjalanan Anda di sini dan tim kami akan segera menerima email reservasi. Kami akan menghubungi Anda untuk memastikan ketersediaan sebelum pemesanan diproses.",
+    fullName: "Nama lengkap *",
+    country: "Negara asal / Domisili",
+    email: "Alamat email",
+    emailHelp: "Opsional, namun sangat berguna sebagai kontak cadangan dan pengiriman invoice.",
+    whatsapp: "Nomor WhatsApp *",
+    whatsappHelp: "Wajib diisi. Sertakan kode negara, contoh: +62 untuk Indonesia.",
+    package: "Pilihan Paket *",
+    choosePackage: "Pilih paket trekking atau aktivitas",
+    startDate: "Rencana tanggal mulai *",
+    groupSize: "Jumlah orang *",
+    transport: "Bantuan transportasi",
+    chooseOption: "Pilih opsi transportasi",
+    transportOptions: {
+      none: "Tidak perlu (datang sendiri ke Bukit Lawang)",
+      pickup: "Antar-jemput dari Medan / Bandara KNO",
+      deciding: "Masih mempertimbangkan"
+    },
+    accommodation: "Bantuan penginapan",
+    accommodationOptions: {
+      booked: "Sudah memesan penginapan sendiri",
+      help: "Butuh bantuan rekomendasi penginapan",
+      notSure: "Belum memutuskan"
+    },
+    notes: "Catatan khusus / Permintaan",
+    notesPlaceholder: "Beri tahu kami pantangan makanan, tingkat kebugaran, jadwal tiba, atau kebutuhan khusus...",
+    payDeposit: "Bayar deposit 30%",
+    depositSub: "Bayar hanya nilai deposit yang tertera di bawah. Sisa pembayaran dilunasi setelah jadwal dikonfirmasi.",
+    packageTotal: "Total harga paket",
+    depositDue: "Nilai deposit",
+    addGroupSize: "Masukkan jumlah orang",
+    depositPercentage: "30% dari total",
+    totalCalculation: (price: string) => `Total dihitung dari ${price} x jumlah orang.`,
+    manualDepositTo: "Kirim deposit secara manual ke rekening PayPal atau Bank resmi",
+    manualInstructions:
+      "Tuliskan nama Anda, tanggal perjalanan, dan paket pada catatan transfer. Setelah transfer, kirimkan bukti pembayaran via WhatsApp atau tulis nomor referensi pada catatan formulir.",
+    openPaypal: "Buka PayPal",
+    sendRequest: "Kirim formulir pemesanan",
+    sending: "Mengirim...",
+    whatsappBtn: "Hubungi via WhatsApp",
+    noBookingConfirmed:
+      "Tidak ada pemotongan otomatis. Kami memverifikasi ketersediaan jadwal pemandu terlebih dahulu sebelum konfirmasi.",
+    successMsg: "Terima kasih banyak! Permintaan pemesanan Anda telah terkirim. Tim kami akan segera memeriksa jadwal dan menghubungi Anda.",
+    errorMsg: "Terjadi kendala saat mengirim permintaan. Silakan coba lagi atau hubungi kami langsung via WhatsApp.",
+    requiredError: "Mohon lengkapi semua kolom yang bertanda bintang (*) terlebih dahulu.",
+    invalidWhatsappError: "Harap masukkan nomor WhatsApp yang valid beserta kode negara, contoh: +62 812 3456 7890."
+  }
+};
+
 const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "";
 const paypalCurrency = process.env.NEXT_PUBLIC_PAYPAL_CURRENCY || "EUR";
 const paypalEnvironment = process.env.NEXT_PUBLIC_PAYPAL_ENV === "live" ? "live" : "sandbox";
 const paypalManualEmail = process.env.NEXT_PUBLIC_PAYPAL_MANUAL_EMAIL || "Saipolvalley01@gmail.com";
 const paypalPaymentMode = process.env.NEXT_PUBLIC_PAYPAL_PAYMENT_MODE === "checkout" ? "checkout" : "manual";
-
-function isBookingPackageId(value: string | null): value is TrekId {
-  return bookingPackages.some((bookingPackage) => bookingPackage.id === value);
-}
 
 function looksLikeInternationalPhone(value: string) {
   const normalized = value.replace(/[^\d+]/g, "");
@@ -110,7 +416,7 @@ function groupSizeForAnalytics(value: string) {
   return Number.isInteger(parsed) && parsed > 0 ? parsed : undefined;
 }
 
-function buildMessage(form: BookingFormState, selectedPackage: (typeof bookingPackages)[number] | undefined) {
+function buildMessage(form: BookingFormState, selectedPackage: BookingPackage | undefined) {
   const lines = [
     "Hi Orangutan Adventure Sumatra, I would like to book a jungle trip.",
     "",
@@ -135,60 +441,59 @@ function buildMessage(form: BookingFormState, selectedPackage: (typeof bookingPa
   return lines.join("\n");
 }
 
-function getRequiredFormError(form: BookingFormState) {
+function getRequiredFormError(form: BookingFormState, errorMsg: string) {
   if (!form.fullName.trim() || !form.packageId || !form.startDate || !form.groupSize) {
-    return "Please complete the required booking fields first.";
-  }
-
-  if (!form.whatsapp.trim()) {
-    return "Please add your WhatsApp number with country code, like +1 555 123 4567.";
-  }
-
-  if (!looksLikeInternationalPhone(form.whatsapp)) {
-    return "Please use an international WhatsApp format, like +1 555 123 4567.";
+    return errorMsg;
   }
 
   return "";
 }
 
-export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
-  const selectedPackageFromQuery = isBookingPackageId(initialPackageId) ? initialPackageId : "";
+export function BookingForm({ initialPackageId, locale = "en" }: BookingFormProps) {
+  const t = formText[locale] ?? formText.en;
+  const packages = useMemo(() => getBookingPackages(locale), [locale]);
 
-  const [status, setStatus] = useState<SubmitStatus>("idle");
-  const [statusMessage, setStatusMessage] = useState("");
-  const [paypalScriptReady, setPaypalScriptReady] = useState(false);
-  const [paypalStatus, setPaypalStatus] = useState<SubmitStatus>("idle");
-  const [paypalMessage, setPaypalMessage] = useState("");
-  const [isReady, setIsReady] = useState(false);
-  const [formReadyAt, setFormReadyAt] = useState(0);
-  const [website, setWebsite] = useState("");
-  const paypalContainerRef = useRef<HTMLDivElement | null>(null);
-  const latestWebsiteRef = useRef(website);
-  const latestFormReadyAtRef = useRef(formReadyAt);
+  const initialPackage = useMemo(() => {
+    return packages.some((p) => p.id === initialPackageId) ? (initialPackageId as TrekId) : ("" as const);
+  }, [initialPackageId, packages]);
+
   const [form, setForm] = useState<BookingFormState>({
     fullName: "",
     email: "",
     whatsapp: "",
     country: "",
-    packageId: selectedPackageFromQuery,
+    packageId: initialPackage,
     startDate: "",
-    groupSize: "",
+    groupSize: "2",
     transport: "",
     accommodation: "",
     notes: ""
   });
 
+  const [website, setWebsite] = useState("");
+  const [formReadyAt, setFormReadyAt] = useState<number | null>(null);
+  const [isReady, setIsReady] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [paypalStatus, setPaypalStatus] = useState<SubmitStatus>("idle");
+  const [paypalMessage, setPaypalMessage] = useState("");
+  const [paypalScriptReady, setPaypalScriptReady] = useState(false);
+
+  const paypalContainerRef = useRef<HTMLDivElement | null>(null);
+  const latestFormRef = useRef(form);
   const selectedPackage = useMemo(
-    () => bookingPackages.find((bookingPackage) => bookingPackage.id === form.packageId),
-    [form.packageId]
+    () => packages.find((bookingPackage) => bookingPackage.id === form.packageId),
+    [form.packageId, packages]
   );
   const paymentSummary = useMemo(
     () => (selectedPackage ? calculateBookingPayment(selectedPackage, form.groupSize) : null),
     [form.groupSize, selectedPackage]
   );
-  const latestFormRef = useRef(form);
+
   const latestSelectedPackageRef = useRef(selectedPackage);
   const latestPaymentSummaryRef = useRef(paymentSummary);
+  const latestWebsiteRef = useRef(website);
+  const latestFormReadyAtRef = useRef(formReadyAt);
 
   useEffect(() => {
     latestFormRef.current = form;
@@ -231,222 +536,183 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       }));
     };
 
-  const submitBookingRequest = useCallback(async (
-    extraPayload: Record<string, string> = {},
-    successMessage = "Booking request sent. We will contact you soon to confirm availability."
-  ) => {
-    const currentForm = latestFormRef.current;
-    setStatus("submitting");
-    setStatusMessage("");
+  const submitBookingRequest = useCallback(
+    async (extraPayload: Record<string, string> = {}, successMessage = t.successMsg) => {
+      const currentForm = latestFormRef.current;
+      setStatus("submitting");
+      setStatusMessage("");
 
-    const response = await fetch("/api/booking", {
-      body: JSON.stringify({
-        ...currentForm,
-        ...extraPayload,
-        formAgeMs: latestFormReadyAtRef.current ? Date.now() - latestFormReadyAtRef.current : 0,
-        website: latestWebsiteRef.current
-      }),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    });
-    const data = (await response.json().catch(() => ({}))) as { error?: string };
+      const response = await fetch("/api/booking", {
+        body: JSON.stringify({
+          ...currentForm,
+          ...extraPayload,
+          formAgeMs: latestFormReadyAtRef.current ? Date.now() - latestFormReadyAtRef.current : 0,
+          website: latestWebsiteRef.current
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
 
-    if (!response.ok) {
-      throw new Error(data.error || "Could not send the booking request.");
-    }
+      const data = (await response.json()) as { error?: string; message?: string };
 
-    setStatus("success");
-    setStatusMessage(successMessage);
-    trackEvent("booking_submit_success", {
-      group_size: groupSizeForAnalytics(currentForm.groupSize),
-      package_id: currentForm.packageId,
-      source: extraPayload.paypalOrderId ? "paypal_deposit" : "booking_form"
-    });
-  }, []);
+      if (!response.ok) {
+        setStatus("error");
+        setStatusMessage(data.error || t.errorMsg);
+        return false;
+      }
+
+      setStatus("success");
+      setStatusMessage(data.message || successMessage);
+      trackEvent("booking_submit_success", {
+        group_size: groupSizeForAnalytics(currentForm.groupSize),
+        has_paypal_reference: Boolean(extraPayload.paypalOrderId || extraPayload.paypalCaptureId),
+        package_id: currentForm.packageId,
+        payment_mode: extraPayload.paypalStatus ? "checkout" : "request_only"
+      });
+      return true;
+    },
+    [t.errorMsg, t.successMsg]
+  );
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const requiredFormError = getRequiredFormError(form);
-
+    const requiredFormError = getRequiredFormError(form, t.requiredError);
     if (requiredFormError) {
       setStatus("error");
       setStatusMessage(requiredFormError);
       return;
     }
 
-    trackEvent("booking_submit", {
-      group_size: groupSizeForAnalytics(form.groupSize),
-      package_id: form.packageId,
-      package_name: selectedPackage?.title,
-      source: "booking_form"
-    });
-
-    try {
-      await submitBookingRequest();
-    } catch (error) {
+    if (form.whatsapp && !looksLikeInternationalPhone(form.whatsapp)) {
       setStatus("error");
-      setStatusMessage(
-        error instanceof Error
-          ? error.message
-          : "Could not send the booking request. Please try WhatsApp or try again later."
-      );
+      setStatusMessage(t.invalidWhatsappError);
+      return;
     }
+
+    await submitBookingRequest();
   };
 
   useEffect(() => {
-    if (paypalPaymentMode !== "checkout") {
+    if (paypalPaymentMode !== "checkout" || !paypalClientId) {
       return;
     }
 
-    if (!paypalClientId) {
-      return;
-    }
+    const scriptId = "paypal-sdk-script";
+    const existingScript = document.getElementById(scriptId) as HTMLScriptElement | null;
 
     if (window.paypal) {
       setPaypalScriptReady(true);
       return;
     }
 
-    const existingScript = document.querySelector<HTMLScriptElement>('script[data-oas-paypal-sdk="true"]');
-    let isMounted = true;
-
-    const handleReady = () => {
-      if (isMounted) {
-        setPaypalScriptReady(true);
-      }
-    };
-
-    const handleError = () => {
-      if (isMounted) {
-        setPaypalStatus("error");
-        setPaypalMessage(
-          `Could not load PayPal. Check the ${paypalEnvironment} Client ID, then restart or redeploy the site.`
-        );
-      }
-    };
-
     if (existingScript) {
-      existingScript.addEventListener("load", handleReady);
-      existingScript.addEventListener("error", handleError);
-
-      return () => {
-        isMounted = false;
-        existingScript.removeEventListener("load", handleReady);
-        existingScript.removeEventListener("error", handleError);
-      };
+      existingScript.addEventListener("load", () => setPaypalScriptReady(true), { once: true });
+      return;
     }
 
     const script = document.createElement("script");
-    script.async = true;
-    script.dataset.oasPaypalSdk = "true";
+    script.id = scriptId;
     script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(
       paypalClientId
-    )}&currency=${encodeURIComponent(paypalCurrency)}&intent=capture&components=buttons`;
-    script.addEventListener("load", handleReady);
-    script.addEventListener("error", handleError);
-    document.body.appendChild(script);
-
-    return () => {
-      isMounted = false;
-      script.removeEventListener("load", handleReady);
-      script.removeEventListener("error", handleError);
+    )}&currency=${encodeURIComponent(paypalCurrency)}&intent=capture`;
+    script.async = true;
+    script.onload = () => setPaypalScriptReady(true);
+    script.onerror = () => {
+      setPaypalStatus("error");
+      setPaypalMessage("Could not load PayPal checkout. Please send your request or use WhatsApp.");
     };
+    document.body.appendChild(script);
   }, []);
 
   useEffect(() => {
-    if (paypalPaymentMode !== "checkout") {
+    if (paypalPaymentMode !== "checkout" || !paypalScriptReady || !window.paypal || !paypalContainerRef.current) {
       return;
     }
 
     const container = paypalContainerRef.current;
-
-    if (!paypalScriptReady || !container || !window.paypal) {
-      return;
-    }
-
-    let isMounted = true;
     container.innerHTML = "";
+    let isMounted = true;
 
     const buttons = window.paypal.Buttons({
       createOrder: async () => {
         const currentForm = latestFormRef.current;
         const currentPackage = latestSelectedPackageRef.current;
         const currentPayment = latestPaymentSummaryRef.current;
-        const requiredFormError = getRequiredFormError(currentForm);
 
-        if (requiredFormError || !currentPackage || !currentPayment) {
-          throw new Error(requiredFormError || "Please choose a package and group size first.");
+        if (!currentPackage || !currentPayment) {
+          throw new Error("Choose a package and group size before starting PayPal checkout.");
+        }
+
+        const requiredFormError = getRequiredFormError(currentForm, t.requiredError);
+        if (requiredFormError) {
+          throw new Error(requiredFormError);
         }
 
         const response = await fetch("/api/paypal/create-order", {
           body: JSON.stringify({
-            fullName: currentForm.fullName,
-            groupSize: currentForm.groupSize,
-            packageId: currentForm.packageId,
-            startDate: currentForm.startDate
+            currency: currentPayment.currency,
+            depositAmount: currentPayment.depositAmount,
+            groupSize: currentPayment.groupSize,
+            packageId: currentPackage.id,
+            packageName: currentPackage.title,
+            totalAmount: currentPayment.totalAmount
           }),
           headers: {
             "Content-Type": "application/json"
           },
           method: "POST"
         });
-        const data = (await response.json().catch(() => ({}))) as PayPalCreateOrderResponse;
+
+        const data = (await response.json()) as PayPalCreateOrderResponse;
 
         if (!response.ok || !data.id) {
-          throw new Error(data.error || "Could not create the PayPal order.");
+          throw new Error(data.error || "Could not start PayPal payment.");
         }
 
         return data.id;
       },
       onApprove: async (data) => {
-        const currentForm = latestFormRef.current;
         const orderId = data.orderID;
+        const currentPayment = latestPaymentSummaryRef.current;
+        const depositLabel = currentPayment ? formatPaymentAmount(currentPayment.depositAmount) : "30% deposit";
 
         if (!orderId) {
-          throw new Error("PayPal did not return an order id.");
+          setPaypalStatus("error");
+          setPaypalMessage("PayPal returned no order ID. Please send the booking request directly.");
+          return;
         }
 
         setPaypalStatus("submitting");
-        setPaypalMessage("Capturing PayPal deposit...");
+        setPaypalMessage("Verifying PayPal deposit payment...");
 
-        const response = await fetch("/api/paypal/capture-order", {
-          body: JSON.stringify({
-            groupSize: currentForm.groupSize,
-            orderId,
-            packageId: currentForm.packageId
-          }),
+        const captureResponse = await fetch("/api/paypal/capture-order", {
+          body: JSON.stringify({ orderId }),
           headers: {
             "Content-Type": "application/json"
           },
           method: "POST"
         });
-        const capture = (await response.json().catch(() => ({}))) as PayPalCaptureOrderResponse;
 
-        if (!response.ok) {
-          throw new Error(capture.error || "Could not capture the PayPal payment.");
+        const capture = (await captureResponse.json()) as PayPalCaptureOrderResponse;
+
+        if (!captureResponse.ok) {
+          if (isMounted) {
+            setPaypalStatus("error");
+            setPaypalMessage(capture.error || "Could not verify the PayPal payment.");
+          }
+          return;
         }
 
         trackEvent("paypal_deposit_success", {
+          capture_id: capture.captureId,
           currency: capture.currency,
           deposit_amount: capture.depositAmount,
-          group_size: groupSizeForAnalytics(currentForm.groupSize),
-          package_id: currentForm.packageId,
-          paypal_order_id: capture.orderId || orderId
-        });
-
-        const depositLabel =
-          capture.depositAmount && capture.currency
-            ? formatPaymentAmount(Number.parseFloat(capture.depositAmount), capture.currency)
-            : "the 30% deposit";
-
-        setPaypalMessage("Deposit captured. Sending booking request...");
-        trackEvent("booking_submit", {
-          group_size: groupSizeForAnalytics(currentForm.groupSize),
-          package_id: currentForm.packageId,
-          source: "paypal_deposit"
+          order_id: capture.orderId || orderId,
+          package_id: latestSelectedPackageRef.current?.id,
+          total_amount: capture.totalAmount
         });
 
         await submitBookingRequest(
@@ -478,11 +744,11 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
         const currentForm = latestFormRef.current;
         const currentPackage = latestSelectedPackageRef.current;
         const currentPayment = latestPaymentSummaryRef.current;
-        const requiredFormError = getRequiredFormError(currentForm);
+        const requiredFormError = getRequiredFormError(currentForm, t.requiredError);
 
         if (requiredFormError || !currentPackage || !currentPayment) {
           setPaypalStatus("error");
-          setPaypalMessage(requiredFormError || "Please choose a package and group size first.");
+          setPaypalMessage(requiredFormError || t.requiredError);
           return actions.reject();
         }
 
@@ -524,17 +790,14 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       void buttons.close?.();
       container.innerHTML = "";
     };
-  }, [paypalScriptReady, submitBookingRequest]);
+  }, [paypalScriptReady, submitBookingRequest, t.requiredError]);
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
       <div className="booking-form-header">
-        <span className="section-kicker">Booking request</span>
-        <h2>Request availability for your trek</h2>
-        <p>
-          Send your details here and we receive the request by email. We contact you to confirm
-          availability before anything is booked.
-        </p>
+        <span className="section-kicker">{t.requestKicker}</span>
+        <h2>{t.requestHeading}</h2>
+        <p>{t.requestDesc}</p>
       </div>
 
       <label className="booking-honeypot" aria-hidden="true">
@@ -550,7 +813,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
 
       <div className="booking-fields">
         <label className="booking-field">
-          <span>Full name *</span>
+          <span>{t.fullName}</span>
           <input
             type="text"
             value={form.fullName}
@@ -561,7 +824,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
         </label>
 
         <label className="booking-field">
-          <span>Country</span>
+          <span>{t.country}</span>
           <input
             type="text"
             value={form.country}
@@ -571,7 +834,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
         </label>
 
         <label className="booking-field">
-          <span>Email address</span>
+          <span>{t.email}</span>
           <input
             type="email"
             value={form.email}
@@ -579,11 +842,11 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
             autoComplete="email"
             placeholder="name@example.com"
           />
-          <small>Optional, but useful as a backup contact.</small>
+          <small>{t.emailHelp}</small>
         </label>
 
         <label className="booking-field">
-          <span>WhatsApp number *</span>
+          <span>{t.whatsapp}</span>
           <input
             type="tel"
             value={form.whatsapp}
@@ -594,14 +857,14 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
             title="Use an international number with country code, like +1 555 123 4567."
             required
           />
-          <small>Required. Include country code, e.g. +1 for USA.</small>
+          <small>{t.whatsappHelp}</small>
         </label>
 
         <label className="booking-field booking-field-full">
-          <span>Package *</span>
+          <span>{t.package}</span>
           <select value={form.packageId} onChange={updateField("packageId")} required>
-            <option value="">Choose a trek or activity</option>
-            {bookingPackages.map((bookingPackage) => (
+            <option value="">{t.choosePackage}</option>
+            {packages.map((bookingPackage) => (
               <option key={bookingPackage.id} value={bookingPackage.id}>
                 {bookingPackage.title} - {bookingPackage.duration} - {bookingPackage.price}
               </option>
@@ -611,12 +874,12 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
         </label>
 
         <label className="booking-field">
-          <span>Preferred start date *</span>
+          <span>{t.startDate}</span>
           <input type="date" value={form.startDate} onChange={updateField("startDate")} required />
         </label>
 
         <label className="booking-field">
-          <span>Group size *</span>
+          <span>{t.groupSize}</span>
           <input
             type="number"
             min="1"
@@ -629,31 +892,31 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
         </label>
 
         <label className="booking-field">
-          <span>Transport help</span>
+          <span>{t.transport}</span>
           <select value={form.transport} onChange={updateField("transport")}>
-            <option value="">Choose an option</option>
-            <option value="No transport needed">No transport needed</option>
-            <option value="Pickup from Medan / KNO">Pickup from Medan / KNO</option>
-            <option value="Still deciding">Still deciding</option>
+            <option value="">{t.chooseOption}</option>
+            <option value="No transport needed">{t.transportOptions.none}</option>
+            <option value="Pickup from Medan / KNO">{t.transportOptions.pickup}</option>
+            <option value="Still deciding">{t.transportOptions.deciding}</option>
           </select>
         </label>
 
         <label className="booking-field">
-          <span>Accommodation help</span>
+          <span>{t.accommodation}</span>
           <select value={form.accommodation} onChange={updateField("accommodation")}>
-            <option value="">Choose an option</option>
-            <option value="Already booked">Already booked</option>
-            <option value="Need help finding a place">Need help finding a place</option>
-            <option value="Not sure yet">Not sure yet</option>
+            <option value="">{t.chooseOption}</option>
+            <option value="Already booked">{t.accommodationOptions.booked}</option>
+            <option value="Need help finding a place">{t.accommodationOptions.help}</option>
+            <option value="Not sure yet">{t.accommodationOptions.notSure}</option>
           </select>
         </label>
 
         <label className="booking-field booking-field-full">
-          <span>Notes</span>
+          <span>{t.notes}</span>
           <textarea
             value={form.notes}
             onChange={updateField("notes")}
-            placeholder="Tell us about food needs, fitness level, timing, or any special request."
+            placeholder={t.notesPlaceholder}
           />
         </label>
       </div>
@@ -664,38 +927,35 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
             <span className="section-kicker">
               PayPal {paypalPaymentMode === "checkout" ? paypalEnvironment : "manual"}
             </span>
-            <h3 id="paypal-deposit-title">Pay {Math.round(depositRate * 100)}% deposit</h3>
-            <p>Send only the deposit shown below. The remaining balance is handled after confirmation.</p>
+            <h3 id="paypal-deposit-title">{t.payDeposit}</h3>
+            <p>{t.depositSub}</p>
           </div>
 
           <div className="payment-summary" aria-label="Payment summary">
             <div>
-              <span>Package total</span>
+              <span>{t.packageTotal}</span>
               <strong>
-                {paymentSummary ? formatPaymentAmount(paymentSummary.totalAmount) : "Add group size"}
+                {paymentSummary ? formatPaymentAmount(paymentSummary.totalAmount) : t.addGroupSize}
               </strong>
             </div>
             <div>
-              <span>Deposit due</span>
+              <span>{t.depositDue}</span>
               <strong>
-                {paymentSummary ? formatPaymentAmount(paymentSummary.depositAmount) : "30% of total"}
+                {paymentSummary ? formatPaymentAmount(paymentSummary.depositAmount) : t.depositPercentage}
               </strong>
             </div>
           </div>
 
           <p className="paypal-deposit-note">
             <ShieldCheck size={14} />
-            Total is calculated from {selectedPackage.price} x group size.
+            {t.totalCalculation(selectedPackage.price)}
           </p>
 
           {paypalPaymentMode === "manual" ? (
             <div className="manual-paypal-box">
-              <span>Send the deposit manually to this PayPal email</span>
+              <span>{t.manualDepositTo}</span>
               <strong>{paypalManualEmail}</strong>
-              <p>
-                Add your name, travel date, and package in the PayPal note. After payment, send the PayPal
-                reference by WhatsApp or write it in the notes before submitting this form.
-              </p>
+              <p>{t.manualInstructions}</p>
               <a
                 className="secondary-button dark"
                 href="https://www.paypal.com/myaccount/transfer/send"
@@ -712,7 +972,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
                   })
                 }
               >
-                Open PayPal
+                {t.openPaypal}
               </a>
             </div>
           ) : paypalClientId ? (
@@ -744,7 +1004,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
       <div className="booking-actions">
         <button className="primary-button" type="submit" disabled={!isReady || status === "submitting"}>
           <Mail size={18} />
-          {status === "submitting" ? "Sending..." : "Send request"}
+          {status === "submitting" ? t.sending : t.sendRequest}
         </button>
         <a
           className="secondary-button dark"
@@ -761,7 +1021,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
           }
         >
           <MessageCircle size={18} />
-          WhatsApp
+          {t.whatsappBtn}
         </a>
       </div>
 
@@ -774,7 +1034,7 @@ export function BookingForm({ initialPackageId = "" }: BookingFormProps) {
 
       <p className="booking-form-note">
         <Sparkles size={14} />
-        No booking is confirmed automatically. We check availability first, then reply with next steps.
+        {t.noBookingConfirmed}
       </p>
     </form>
   );

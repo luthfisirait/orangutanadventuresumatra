@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "./site-content";
-import { defaultLocale, languageAlternates, siteUrl } from "./seo";
+import { defaultLocale, getLanguageAlternates, languageAlternates, siteUrl } from "./seo";
 import { blogPosts } from "./travel-content";
 import { trekDetailList } from "./trek-details";
 import { landingPages } from "./seo-landing-pages";
@@ -30,19 +30,12 @@ function blogLastModified(post: (typeof blogPosts)[number]) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const legacyPageLastModified = asLastModified("2026-06-09");
   // Localized titles, H1s, language signals, and review schema were updated on this date.
-  const metaRewriteLastModified = asLastModified("2026-10-11");
+  const metaRewriteLastModified = asLastModified("2026-10-15");
   const seoReleaseLastModified = asLastModified("2026-07-21");
   const landingPageLastModified = asLastModified("2026-09-26");
   const latestBlogPostDate = new Date(
     Math.max(...blogPosts.map((post) => blogLastModified(post).getTime()))
   );
-  const staticPages = [
-    { path: "/booking", lastModified: legacyPageLastModified, priority: 0.88 },
-    { path: "/treks", lastModified: legacyPageLastModified, priority: 0.84 },
-    { path: "/payment-and-deposit", lastModified: legacyPageLastModified, priority: 0.62 },
-    { path: "/essential-information", lastModified: metaRewriteLastModified, priority: 0.82 },
-    { path: "/privacy", lastModified: legacyPageLastModified, priority: 0.35 }
-  ];
   const blogIndexLastModified =
     seoReleaseLastModified > latestBlogPostDate ? seoReleaseLastModified : latestBlogPostDate;
 
@@ -57,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     },
     ...locales.filter((locale) => locale !== defaultLocale).map((locale) => ({
-      url: locale === "en" ? siteUrl : `${siteUrl}/${locale}`,
+      url: `${siteUrl}/${locale}`,
       lastModified: metaRewriteLastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
@@ -86,12 +79,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: blogIndexLanguageAlternates
       }
     })),
-    ...staticPages.map((page) => ({
-      url: `${siteUrl}${page.path}`,
-      lastModified: page.lastModified,
+    // Localized core pages: /booking, /treks, /essential-information
+    ...(["/booking", "/treks", "/essential-information"] as const).flatMap((subpath) =>
+      locales.map((locale) => {
+        const url = locale === defaultLocale ? `${siteUrl}${subpath}` : `${siteUrl}/${locale}${subpath}`;
+        const priority = subpath === "/booking" ? 0.88 : subpath === "/treks" ? 0.84 : 0.82;
+        return {
+          url,
+          lastModified: metaRewriteLastModified,
+          changeFrequency: "weekly" as const,
+          priority: locale === defaultLocale ? priority : Math.round((priority - 0.05) * 100) / 100,
+          alternates: {
+            languages: getLanguageAlternates(subpath)
+          }
+        };
+      })
+    ),
+    {
+      url: `${siteUrl}/payment-and-deposit`,
+      lastModified: legacyPageLastModified,
       changeFrequency: "monthly" as const,
-      priority: page.priority
-    })),
+      priority: 0.62
+    },
+    {
+      url: `${siteUrl}/privacy`,
+      lastModified: legacyPageLastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.35
+    },
     ...blogPosts.map((post) => ({
       url: `${siteUrl}${blogPostPath(post)}`,
       lastModified: blogLastModified(post),
@@ -105,11 +120,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
           }
         : {})
     })),
-    ...trekDetailList.map((page) => ({
-      url: `${siteUrl}/treks/${page.slug}`,
-      lastModified: legacyPageLastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.74
-    }))
+    // Localized trek detail pages for all 11 treks
+    ...trekDetailList.flatMap((page) =>
+      locales.map((locale) => {
+        const url =
+          locale === defaultLocale
+            ? `${siteUrl}/treks/${page.slug}`
+            : `${siteUrl}/${locale}/treks/${page.slug}`;
+        return {
+          url,
+          lastModified: metaRewriteLastModified,
+          changeFrequency: "monthly" as const,
+          priority: locale === defaultLocale ? 0.78 : 0.72,
+          alternates: {
+            languages: getLanguageAlternates(`/treks/${page.slug}`)
+          }
+        };
+      })
+    )
   ];
 }

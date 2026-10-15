@@ -37,14 +37,18 @@ export const localeLabels: Record<Locale, string> = {
   en: "English",
   de: "Deutsch",
   fr: "Français",
-  nl: "Nederlands"
+  nl: "Nederlands",
+  zh: "中文",
+  id: "Bahasa Indonesia"
 };
 
 const openGraphLocales: Record<Locale, string> = {
   en: "en_US",
   de: "de_DE",
   fr: "fr_FR",
-  nl: "nl_NL"
+  nl: "nl_NL",
+  zh: "zh_CN",
+  id: "id_ID"
 };
 
 const localeKeywords: Record<Locale, string[]> = {
@@ -94,6 +98,25 @@ const localeKeywords: Record<Locale, string[]> = {
     "Sumatra jungle tour",
     "duurzame reizen Sumatra",
     "privé jungletrek Bukit Lawang"
+  ],
+  zh: [
+    "苏门答腊红毛猩猩徒步",
+    "武吉拉旺雨林徒步",
+    "古农列尤择国家公园",
+    "印尼红毛猩猩生态游",
+    "苏门答腊丛林探险",
+    "武吉拉旺私人向导",
+    "印尼生态旅游"
+  ],
+  id: [
+    "trekking orangutan bukit lawang",
+    "tur orangutan sumatera",
+    "paket trekking bukit lawang",
+    "taman nasional gunung leuser",
+    "pemandu lokal bukit lawang",
+    "arung jeram ban bukit lawang",
+    "wisata alam sumatera utara",
+    "ekowisata bukit lawang"
   ]
 };
 
@@ -101,6 +124,17 @@ export const languageAlternates = Object.fromEntries([
   ...locales.map((locale) => [locale, locale === defaultLocale ? siteUrl : `${siteUrl}/${locale}`]),
   ["x-default", siteUrl]
 ]) as Record<string, string>;
+
+export function getLanguageAlternates(subpath: string): Record<string, string> {
+  const cleanPath = subpath.startsWith("/") ? subpath : `/${subpath}`;
+  return Object.fromEntries([
+    ...locales.map((locale) => [
+      locale,
+      locale === defaultLocale ? `${siteUrl}${cleanPath}` : `${siteUrl}/${locale}${cleanPath}`
+    ]),
+    ["x-default", `${siteUrl}${cleanPath}`]
+  ]);
+}
 
 export function absoluteUrl(path = "") {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;

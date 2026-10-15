@@ -93,10 +93,90 @@ function updateGoogleConsent(choice: ConsentChoice) {
   });
 }
 
+import type { Locale } from "../site-content";
+
+const cookieCopy: Record<
+  Locale,
+  {
+    title: string;
+    text: string;
+    privacy: string;
+    decline: string;
+    allow: string;
+  }
+> = {
+  en: {
+    title: "Cookies.",
+    text: "Essential cookies keep the site working. Analytics only run if you allow them.",
+    privacy: "Privacy",
+    decline: "Decline",
+    allow: "Allow"
+  },
+  de: {
+    title: "Cookies.",
+    text: "Notwendige Cookies halten die Website funktionsfähig. Analysen laufen nur mit deiner Erlaubnis.",
+    privacy: "Datenschutz",
+    decline: "Ablehnen",
+    allow: "Erlauben"
+  },
+  fr: {
+    title: "Cookies.",
+    text: "Les cookies essentiels assurent le bon fonctionnement du site. Les mesures d'audience ne s'activent qu'avec votre accord.",
+    privacy: "Confidentialité",
+    decline: "Refuser",
+    allow: "Accepter"
+  },
+  nl: {
+    title: "Cookies.",
+    text: "Essentiële cookies zorgen voor een goede werking van de website. Analytics worden alleen ingeschakeld met jouw toestemming.",
+    privacy: "Privacy",
+    decline: "Weigeren",
+    allow: "Accepteren"
+  },
+  zh: {
+    title: "Cookie 政策。",
+    text: "基础 Cookie 用于保障网站正常运行。数据分析 Cookie 仅在您允许时启用。",
+    privacy: "隐私政策",
+    decline: "拒绝",
+    allow: "同意"
+  },
+  id: {
+    title: "Kebijakan Cookie.",
+    text: "Cookie penting menjaga situs web berfungsi optimal. Cookie analitik hanya berjalan jika Anda mengizinkannya.",
+    privacy: "Privasi",
+    decline: "Tolak",
+    allow: "Izinkan"
+  }
+};
+
+function getActiveLocale(): Locale {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const pathname = window.location.pathname;
+  if (pathname === "/de" || pathname.startsWith("/de/")) return "de";
+  if (pathname === "/fr" || pathname.startsWith("/fr/")) return "fr";
+  if (pathname === "/nl" || pathname.startsWith("/nl/")) return "nl";
+  if (pathname === "/zh" || pathname.startsWith("/zh/")) return "zh";
+  if (pathname === "/id" || pathname.startsWith("/id/")) return "id";
+
+  const stored = window.localStorage.getItem("oas-locale");
+  if (stored === "de" || stored === "fr" || stored === "nl" || stored === "zh" || stored === "id") return stored;
+
+  const docLang = document.documentElement.lang;
+  if (docLang === "de" || docLang === "fr" || docLang === "nl" || docLang === "zh" || docLang === "id") return docLang;
+
+  return "en";
+}
+
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
+    setLocale(getActiveLocale());
+
     const storedChoice = parseStoredChoice(window.localStorage.getItem(consentStorageKey)) ?? readCookieChoice();
 
     if (storedChoice) {
@@ -117,21 +197,23 @@ export function CookieConsent() {
     return null;
   }
 
+  const copy = cookieCopy[locale] ?? cookieCopy.en;
+
   return (
     <div className="cookie-consent" role="region" aria-label="Cookie consent">
       <div className="cookie-consent-panel">
         <div className="cookie-consent-copy">
           <p>
-            <strong>Cookies.</strong> Essential cookies keep the site working. Analytics only run if you allow them.{" "}
-            <Link href="/privacy">Privacy</Link>
+            <strong>{copy.title}</strong> {copy.text}{" "}
+            <Link href="/privacy">{copy.privacy}</Link>
           </p>
         </div>
         <div className="cookie-consent-actions">
           <button className="secondary-button dark" type="button" onClick={() => handleChoice("declined")}>
-            Decline
+            {copy.decline}
           </button>
           <button className="primary-button" type="button" onClick={() => handleChoice("accepted")}>
-            Allow
+            {copy.allow}
           </button>
         </div>
       </div>

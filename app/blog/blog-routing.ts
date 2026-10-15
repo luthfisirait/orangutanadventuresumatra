@@ -2,7 +2,7 @@ import { absoluteUrl, defaultLocale } from "../seo";
 import { locales, type Locale } from "../site-content";
 import { blogPosts, type BlogPost } from "../travel-content";
 
-export const localizedBlogLocales = ["de", "fr", "nl"] as const;
+export const localizedBlogLocales = ["de", "fr", "nl", "zh", "id"] as const;
 
 export function blogPostLocale(post: BlogPost): Locale {
   return post.locale ?? defaultLocale;

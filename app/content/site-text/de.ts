@@ -29,7 +29,8 @@ export const de = {
     title: "Moderne Abenteuer, lokale Wurzeln, echter Respekt für den Wald.",
     paragraphs: [
       "Orangutan Adventure Sumatra organisiert ethische Dschungeltreks rund um Bukit Lawang, dem Tor zum Gunung-Leuser-Nationalpark. Das Erlebnis ist für Reisende gedacht, die einen echten Regenwaldtag suchen, ohne Wildtiere zur Show zu machen.",
-      "Wähle zwischen kurzen Walks, klassischen Übernachtungstouren, exklusiven Privatpaketen, Bat-Cave-Besuchen und Dorftouren. Syaipul übernimmt Tempo, Route, Mahlzeiten, Camp-Aufbau und bei Bedarf die Rückfahrt über den Fluss."
+      "Wähle zwischen kurzen Walks, klassischen Übernachtungstouren, exklusiven Privatpaketen, Bat-Cave-Besuchen und Dorftouren. Syaipul übernimmt Tempo, Route, Mahlzeiten, Camp-Aufbau und bei Bedarf die Rückfahrt über den Fluss.",
+      "Egal ob du eine eintägige Regenwald-Wanderung oder eine mehrtägige Expedition tief in den Gunung-Leuser-Nationalpark planst: Unsere Kleingruppen- und Privattouren konzentrieren sich auf respektvolle Wildtierbegegnungen ohne Fütterung oder Störung der Tiere."
     ],
     promises: [
       "Lokaler indonesischer Guide",

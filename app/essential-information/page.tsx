@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
-import { StaticFooter, StaticHeader } from "../site-chrome";
-import { absoluteUrl, siteName, siteUrl } from "../seo";
-import { bookingWhatsappUrl, essentialInformation } from "../travel-content";
+import { getLanguageAlternates, siteName, siteUrl } from "../seo";
+import { essentialInfoByLocale } from "../content/essential-information-i18n";
+import { EssentialInformationView } from "./essential-information-view";
+
+const enInfo = essentialInfoByLocale.en;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${essentialInformation.title} | ${siteName}`,
-  description: essentialInformation.description,
+  title: `${enInfo.title} | ${siteName}`,
+  description: enInfo.description,
   alternates: {
-    canonical: "/essential-information"
+    canonical: "/essential-information",
+    languages: getLanguageAlternates("/essential-information")
   },
   keywords: [
     "Bukit Lawang essential information",
@@ -20,174 +20,28 @@ export const metadata: Metadata = {
     "ethical orangutan trekking information"
   ],
   openGraph: {
-    title: `${essentialInformation.title} | ${siteName}`,
-    description: essentialInformation.description,
+    title: `${enInfo.title} | ${siteName}`,
+    description: enInfo.description,
     url: "/essential-information",
     siteName,
     type: "article",
     images: [
       {
-        url: essentialInformation.image,
+        url: enInfo.image,
         width: 1200,
         height: 800,
-        alt: essentialInformation.imageAlt
+        alt: enInfo.imageAlt
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: `${essentialInformation.title} | ${siteName}`,
-    description: essentialInformation.description,
-    images: [essentialInformation.image]
+    title: `${enInfo.title} | ${siteName}`,
+    description: enInfo.description,
+    images: [enInfo.image]
   }
 };
 
 export default function EssentialInformationPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "TravelGuide",
-        "@id": `${absoluteUrl("/essential-information")}#guide`,
-        name: essentialInformation.title,
-        description: essentialInformation.description,
-        image: absoluteUrl(essentialInformation.image),
-        about: {
-          "@type": "TouristDestination",
-          name: "Bukit Lawang",
-          address: {
-            "@type": "PostalAddress",
-            addressRegion: "North Sumatra",
-            addressCountry: "ID"
-          }
-        },
-        publisher: {
-          "@type": "TravelAgency",
-          name: siteName,
-          url: siteUrl
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${absoluteUrl("/essential-information")}#faq`,
-        mainEntity: essentialInformation.faq.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.a
-          }
-        }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${absoluteUrl("/essential-information")}#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: siteName,
-            item: siteUrl
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Essential information",
-            item: absoluteUrl("/essential-information")
-          }
-        ]
-      }
-    ]
-  };
-
-  return (
-    <main className="resource-main">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
-        }}
-      />
-      <StaticHeader />
-      <section className="resource-hero">
-        <Image src={essentialInformation.image} alt={essentialInformation.imageAlt} fill priority sizes="100vw" />
-        <div className="resource-hero-shade" />
-        <div className="resource-hero-content">
-          <span className="section-kicker">Trip planning</span>
-          <h1>{essentialInformation.title}</h1>
-          <p>{essentialInformation.intro}</p>
-          <div className="hero-actions">
-            <a className="primary-button" href={bookingWhatsappUrl} target="_blank" rel="noreferrer">
-              <MessageCircle size={18} />
-              Ask a guide
-            </a>
-            <Link className="secondary-button" href="/blog">
-              Read blog
-              <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="resource-content">
-        <div className="highlight-strip">
-          {essentialInformation.highlights.map((item) => (
-            <div key={item}>
-              <Check size={18} />
-              <span>{item}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="resource-grid">
-          {essentialInformation.sections.map((section) => (
-            <article className="info-block" key={section.title}>
-              <h2>{section.title}</h2>
-              {section.paragraphs?.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-              {section.bullets ? (
-                <ul>
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>
-                      <Check size={16} />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </article>
-          ))}
-        </div>
-
-        <div className="info-block landing-faq-block">
-          <h2>Bukit Lawang trekking FAQ</h2>
-          <div className="faq-list landing-faq-list">
-            {essentialInformation.faq.map((item) => (
-              <details key={item.q}>
-                <summary>
-                  {item.q}
-                  <ArrowRight size={18} />
-                </summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-
-        <div className="resource-links">
-          <Link className="secondary-button dark" href="/sumatra-orangutan-tour">
-            Compare Sumatra orangutan tours
-          </Link>
-          <Link className="secondary-button dark" href="/3-day-bukit-lawang-orangutan-trek">
-            3-day Bukit Lawang orangutan trek
-          </Link>
-          <Link className="secondary-button dark" href="/booking">
-            Booking form
-          </Link>
-        </div>
-      </section>
-      <StaticFooter />
-    </main>
-  );
+  return <EssentialInformationView locale="en" />;
 }
