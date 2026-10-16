@@ -98,7 +98,7 @@ export const de = {
     },
     {
       q: "Wie läuft die Zahlung ab?",
-      a: "Das Buchungsformular weist eine PayPal-Anzahlung von 30% des Paketpreises aus. Gäste senden die Anzahlung direkt an die offizielle PayPal-E-Mail im Formular. Der Restbetrag kann beim Treffen mit dem Team in bar bezahlt werden, oder 2 Tage vor Abreise nach E-Mail-Bestätigung."
+      a: "Das Buchungsformular weist eine Anzahlung von 30 % aus. Gäste können bequem per Wise (empfohlen für minimale Gebühren in EUR), PayPal oder Banküberweisung anzahlen. Flexible Zahlungsvereinbarungen sind nach Absprache jederzeit möglich. Der Restbetrag (70 %) wird bei Ankunft in Bukit Lawang in bar (EUR, USD, IDR) oder per Wise beglichen."
     },
     {
       q: "Wo ist der Treffpunkt?",

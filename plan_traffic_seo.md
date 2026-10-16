@@ -1,8 +1,8 @@
 # Traffic & SEO Growth Plan — Orangutan Adventure Sumatra
 
-_Last updated: 29 September 2026_
+_Last updated: 16 October 2026_
 
-This plan is tailored to the actual codebase (Next.js 15 App Router, multilingual EN/DE/FR/NL, deployed at `https://orangutanadventuresumatra.com`). It separates what is already done well from concrete, prioritized growth actions. The goal is more qualified organic traffic and more direct bookings (bypassing OTA commissions of 20–30%).
+This plan is tailored to the actual codebase (Next.js 15 App Router, multilingual EN/DE/FR/NL/ZH/ID, deployed at `https://orangutanadventuresumatra.com`). It separates what is already done well from concrete, prioritized growth actions. The goal is more qualified organic traffic and more direct bookings (bypassing OTA commissions of 20–30%).
 
 ---
 
@@ -146,6 +146,50 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 
 ---
 
+### 3.10 All-Inclusive Bundling: "Jungle + Lodge + Transport" (P0 — Sumatra Orangutan Explore Model)
+International travelers (particularly European first-timers) face significant anxiety when coordinating logistics across fragmented providers (KNO airport drivers, village guesthouses, park permits, and pack-out gear). Competitors like *Sumatra Orangutan Explore* convert heavily by bundling these into a single frictionless price:
+
+- **Core Bundle Packages to Introduce:**
+  1. **"Jungle Weekend Escape" (2D/1N or 3D/2N Basecamp Bundle):**
+     - Private AC car pickup from Medan / KNO Airport direct to Bukit Lawang riverside.
+     - 1 Night in partner riverside eco-lodge/guesthouse (with breakfast).
+     - 2-Day / 1-Night Jungle Trek with English-speaking licensed guide, all meals, camping gear, national park permits.
+     - Return to village via traditional Bohorok river tubing ("jungle taxi").
+     - Private return transfer back to Medan / KNO Airport.
+     - *Target Price:* €195 – €225 per person (min. 2 pax).
+  2. **"Complete Jungle Explorer" (4D/3N Full Package):**
+     - Airport pickup + 1 night lodge before trek + 3-day deep jungle trek (2 nights camping) + tubing return + 1 night lodge post-trek + return airport transfer.
+     - *Target Price:* €295 – €340 per person (min. 2 pax).
+- **Code Implementation Architecture:**
+  - Add bundle data structure into `app/site-content.ts` (`category: "bundle"`, `bundle-2d1n-lodge`, `bundle-3d2n-lodge`).
+  - Integrate bundle cards into `app/treks/` and `app/[locale]/treks/` with transparent itemized inclusions.
+  - Extend `app/booking/booking-form.tsx` with a "All-Inclusive Lodge & Transport" toggle, reducing decision fatigue and increasing average booking value by 40–80%.
+
+### 3.11 External Review Acquisition Engine & Social Proof (P0 — Cross-Platform Trust)
+Established competitors (*Sumatra EcoTravel*, *Sumatra Orangutan Explore*) rely on hundreds of verified reviews across TripAdvisor and Google Maps. Ranking alone does not close bookings; social proof does.
+
+- **Systematic Post-Trek Review Workflow:**
+  1. **Physical Touchpoint:** Printed eco-friendly wooden/kraft QR cards presented by guides at the exit riverbank: *"Help protect Gunung Leuser & support our local guides — leave a review"*. The QR code deep-links directly to the Google Maps Review submission URL and TripAdvisor profile.
+  2. **Automated WhatsApp Follow-up (Trek Day + 1 at 10:00 AM):** Personalized message with links to Google Maps and TripAdvisor, asking for their favorite wildlife highlight and guide feedback.
+  3. **Photo/Video Sharing Permission:** Request 2-3 guest smartphone photos/videos to feature with credit on the website and Instagram, demonstrating real, untampered guest satisfaction.
+- **On-Page & Schema Integration:**
+  - Connect TripAdvisor URL to `sameAs` in `LocalBusiness` structured data alongside Google Maps, Instagram, and Facebook.
+  - Add a dedicated "Verified Guest Reviews" trust strip on the `/booking` page displaying live Google Places ratings and TripAdvisor badges.
+
+### 3.12 Regional Multi-Destination Overland Packages (P1 — Sumatra EcoTravel Model)
+Many international tourists taking long-haul flights to Sumatra want to explore more than just Bukit Lawang in a single trip. *Sumatra EcoTravel* captures high-ticket bookings by offering complete North Sumatra circuits.
+
+- **Signature Multi-Destination Circuits to Offer:**
+  1. **"Sumatra Wildlife & Wilderness" (4D/3N):**
+     - Bukit Lawang 2-Day Orangutan Trek + 4x4 overland jeep to Tangkahan (ethical river elephant bathing & patrol observation, hidden waterfalls).
+     - *Target Price:* €310 – €360 per person.
+  2. **"North Sumatra Highlights Circuit" (6D/5N or 7D/6N):**
+     - Bukit Lawang (Orangutan trek & river tubing) -> Berastagi (Mount Sibayak sunrise volcano hike & hot springs) -> Lake Toba / Samosir Island (Batak cultural villages & volcanic lake relaxation) -> Medan/KNO transfer.
+     - *Target Price:* €520 – €680 per person.
+- **Target SEO Keywords & Content:**
+  - Create dedicated cluster guides: *"Bukit Lawang and Tangkahan 4-day tour"*, *"North Sumatra itinerary 7 days"*, *"Bukit Lawang to Lake Toba tour guide"*.
+  - Implement `TouristTrip` schema with multi-stage `itinerary` nodes for each day.
+
 ## 4. 90-day roadmap
 
 **Implementation status audited: 29 September 2026**
@@ -163,7 +207,8 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 - [ ] **External:** Claim and fully optimize Google Business Profile; verify NAP consistency against the website schema.
 - [x] **Code:** Add `sameAs`, `AggregateRating`, and dated visible Google `Review` nodes to the `LocalBusiness` schema when Places data is available.
 - [ ] **Deploy:** Publish the ISR, localized H1, review-date, sitemap, and snippet changes and verify production output.
-- [ ] **External:** Launch the post-trek Google review-request workflow.
+- [ ] **External:** Launch the post-trek review-request workflow (Google Maps + TripAdvisor QR cards & WhatsApp templates).
+- [ ] **Code:** Implement All-Inclusive "Jungle + Lodge + KNO Transport" bundle package cards in `app/treks/` and booking selector.
 - [x] **External:** Establish the GSC baseline report for impressions, clicks, CTR, positions, countries, devices, and priority queries.
 
 ### Month 2 — Content & on-page
@@ -176,6 +221,7 @@ AI engines already have crawl access (good). Now optimize for being *cited*:
 ### Month 3 — Authority & scale
 - [ ] **External:** Run backlink/digital-PR outreach with 10–15 targeted pitches.
 - [ ] **External:** Reclaim unlinked brand and guide-name mentions.
+- [ ] **Code:** Publish North Sumatra Overland packages (Bukit Lawang + Tangkahan + Berastagi + Lake Toba) with itinerary schemas.
 - [ ] **Partial:** Core comparison, cost, safety, and Medan transport clusters are translated; newer English guides still need performance-led DE/FR/NL prioritization.
 - [ ] **Measure:** Review post-update GSC data and double down on queries ranking in positions 5–15.
 - [ ] **Measure:** Iterate landing-page copy after enough GA4 conversion data has accumulated.

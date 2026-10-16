@@ -105,15 +105,21 @@ const formText = {
     notes: "Notes",
     notesPlaceholder: "Tell us about food needs, fitness level, timing, or any special request.",
     payDeposit: "Pay 30% deposit",
-    depositSub: "Send only the deposit shown below. The remaining balance is handled after confirmation.",
+    depositKicker: "Payment & Deposit Options",
+    depositSub: "Send only the 30% deposit shown below to secure your dates and guide. We accept Wise (recommended for lowest EUR/GBP/USD fees), PayPal, and flexible options. Remaining 70% is settled upon arrival.",
     packageTotal: "Package total",
-    depositDue: "Deposit due",
+    depositDue: "Deposit due (30%)",
     addGroupSize: "Add group size",
     depositPercentage: "30% of total",
     totalCalculation: (price: string) => `Total is calculated from ${price} x group size.`,
-    manualDepositTo: "Send the deposit manually to this PayPal email",
+    wiseTitle: "Wise (Recommended for Lowest Fees)",
+    wiseDesc: "Save on high currency conversion fees. Pay directly from EUR, GBP, or USD accounts. Message us on WhatsApp or note it in the form to receive our Wise details.",
+    paypalTitle: "PayPal (Card or Balance)",
+    manualDepositTo: "PayPal account for manual deposit",
     manualInstructions:
-      "Add your name, travel date, and package in the PayPal note. After payment, send the PayPal reference by WhatsApp or write it in the notes before submitting this form.",
+      "Send to our official PayPal email below. Add your name, travel date, and package in the note. You can also share the transaction reference via WhatsApp.",
+    flexibleTitle: "Flexible Payment Options",
+    flexibleDesc: "Need a bank transfer, custom arrangement, or preferred currency? Let us know in the notes or on WhatsApp. Remaining 70% balance is payable in cash (EUR, USD, IDR) or Wise upon arrival.",
     openPaypal: "Open PayPal",
     sendRequest: "Send request",
     sending: "Sending...",
@@ -155,15 +161,21 @@ const formText = {
     notes: "Besondere Hinweise / Wünsche",
     notesPlaceholder: "Besondere Ernährung, Fitnesslevel, Zeitplanung oder sonstige Wünsche...",
     payDeposit: "30 % Anzahlung leisten",
-    depositSub: "Zahlen Sie vorab nur die unten angezeigte Anzahlung. Der Restbetrag wird nach Bestätigung beglichen.",
+    depositKicker: "Zahlungs- & Anzahlungsoptionen",
+    depositSub: "Zahlen Sie vorab nur die 30 % Anzahlung. Wir akzeptieren Wise (empfohlen für minimale Gebühren in EUR), PayPal und flexible Zahlungswege. Der Restbetrag (70 %) wird bei Ankunft beglichen.",
     packageTotal: "Gesamtpreis Paket",
-    depositDue: "Fällige Anzahlung",
+    depositDue: "Fällige Anzahlung (30 %)",
     addGroupSize: "Gruppengröße angeben",
     depositPercentage: "30 % des Gesamtpreises",
     totalCalculation: (price: string) => `Gesamtpreis berechnet sich aus ${price} x Gruppengröße.`,
-    manualDepositTo: "Senden Sie die Anzahlung manuell an diese PayPal-E-Mail",
+    wiseTitle: "Wise (Empfohlen für minimale Gebühren)",
+    wiseDesc: "Sparen Sie teure Bank- und Wechselgebühren. Zahlen Sie direkt von Ihrem europäischen Konto per Wise. Fordern Sie die Wise-Daten per WhatsApp an oder notieren Sie es im Formular.",
+    paypalTitle: "PayPal (Kreditkarte oder Guthaben)",
+    manualDepositTo: "Offizielles PayPal-Konto für Anzahlungen",
     manualInstructions:
-      "Geben Sie Ihren Namen, Reisedatum und das gewählte Paket als Betreff an. Senden Sie die PayPal-Referenz per WhatsApp oder tragen Sie sie im Notizfeld ein.",
+      "Senden Sie die Anzahlung an die untenstehende PayPal-Adresse mit Name, Reisedatum und Tour als Betreff. Senden Sie die Referenz gern per WhatsApp.",
+    flexibleTitle: "Flexible Zahlungsoptionen",
+    flexibleDesc: "Wünschen Sie eine klassische Banküberweisung oder individuelle Zahlungsmodalitäten? Geben Sie uns einfach Bescheid. Der Restbetrag (70 %) kann bei Ankunft in bar (EUR, USD, IDR) oder per Wise gezahlt werden.",
     openPaypal: "PayPal öffnen",
     sendRequest: "Anfrage absenden",
     sending: "Wird gesendet...",
@@ -207,15 +219,21 @@ const formText = {
     notes: "Remarques et demandes",
     notesPlaceholder: "Régime alimentaire, niveau physique, horaires ou demandes spécifiques...",
     payDeposit: "Régler l'acompte de 30 %",
-    depositSub: "Envoyez uniquement l'acompte indiqué ci-dessous. Le solde est réglé après confirmation.",
+    depositKicker: "Options d'acompte et de paiement",
+    depositSub: "Réglez uniquement l'acompte de 30 % pour bloquer vos dates et guides. Nous acceptons Wise (recommandé pour les frais réduits en EUR), PayPal et des options sur mesure. Le solde de 70 % est réglé à l'arrivée.",
     packageTotal: "Total formule",
-    depositDue: "Acompte à régler",
+    depositDue: "Acompte à régler (30 %)",
     addGroupSize: "Préciser la taille du groupe",
     depositPercentage: "30 % du total",
     totalCalculation: (price: string) => `Le total est calculé à partir de ${price} x nombre de personnes.`,
-    manualDepositTo: "Envoyez l'acompte manuellement à cette adresse PayPal",
+    wiseTitle: "Wise (Recommandé pour réduire les frais)",
+    wiseDesc: "Évitez les frais de change élevés. Réglez directement en euros via Wise. Demandez nos coordonnées Wise sur WhatsApp ou mentionnez-le dans vos notes.",
+    paypalTitle: "PayPal (Carte bancaire ou solde)",
+    manualDepositTo: "Compte PayPal officiel pour l'acompte",
     manualInstructions:
-      "Ajoutez votre nom, date et formule dans la note PayPal. Après paiement, transmettez la référence PayPal par WhatsApp ou indiquez-la dans vos notes.",
+      "Envoyez l'acompte à l'adresse PayPal ci-dessous en mentionnant votre nom, date et formule. Vous pouvez aussi envoyer la référence via WhatsApp.",
+    flexibleTitle: "Options flexibles selon vos besoins",
+    flexibleDesc: "Besoin d'un virement bancaire ou d'un arrangement spécifique ? Faites-le nous savoir. Le solde de 70 % est payable à votre arrivée à Bukit Lawang en espèces (EUR, USD, IDR) ou via Wise.",
     openPaypal: "Ouvrir PayPal",
     sendRequest: "Envoyer la demande",
     sending: "Envoi en cours...",
@@ -258,15 +276,21 @@ const formText = {
     notes: "Opmerkingen",
     notesPlaceholder: "Dieetwensen, conditieniveau, tijden of speciale verzoeken...",
     payDeposit: "Betaal 30% aanbetaling",
-    depositSub: "Maak alleen de onderstaande aanbetaling over. Het restantbedrag wordt na bevestiging afgehandeld.",
+    depositKicker: "Betaal- en aanbetalingsopties",
+    depositSub: "Maak alleen de aanbetaling van 30% over om uw datum en gids vast te leggen. Wij accepteren Wise (aanbevolen voor minimale kosten in EUR), PayPal en maatwerkopties. De overige 70% wordt voldaan bij aankomst.",
     packageTotal: "Totaalbedrag pakket",
-    depositDue: "Verschuldigde aanbetaling",
+    depositDue: "Verschuldigde aanbetaling (30%)",
     addGroupSize: "Vul groepsgrootte in",
     depositPercentage: "30% van het totaal",
     totalCalculation: (price: string) => `Totaal wordt berekend als ${price} x aantal personen.`,
-    manualDepositTo: "Maak de aanbetaling handmatig over naar dit PayPal-adres",
+    wiseTitle: "Wise (Aanbevolen voor lage kosten)",
+    wiseDesc: "Bespaar op dure wisselkoersen. Maak rechtstreeks over vanaf uw Europese rekening via Wise. Vraag onze Wise-gegevens op via WhatsApp of vermeld dit in het formulier.",
+    paypalTitle: "PayPal (Creditcard of saldo)",
+    manualDepositTo: "Officieel PayPal-adres voor aanbetaling",
     manualInstructions:
-      "Vermeld uw naam, reisdatum en pakket in de PayPal-opmerking. Stuur na betaling de PayPal-referentie via WhatsApp of noteer deze in het formulier.",
+      "Maak het bedrag over naar onderstaand PayPal-adres onder vermelding van uw naam, reisdatum en pakket. U kunt de bevestiging ook via WhatsApp sturen.",
+    flexibleTitle: "Flexibele betaalopties",
+    flexibleDesc: "Liever een bankoverschrijving of speciale regeling? Laat het ons weten. Het restantbedrag (70%) kan bij aankomst in Bukit Lawang contant (EUR, USD, IDR) of via Wise worden voldaan.",
     openPaypal: "Open PayPal",
     sendRequest: "Aanvraag versturen",
     sending: "Versturen...",
@@ -309,15 +333,21 @@ const formText = {
     notes: "特殊要求与备注",
     notesPlaceholder: "请告知任何过敏或饮食禁忌、体能状况、航班时间或其他特别需求...",
     payDeposit: "支付 30% 定金",
-    depositSub: "仅需预付下方显示的定金金额。余款将在行程确认后现场或出发前付清。",
+    depositKicker: "定金与灵活支付方式",
+    depositSub: "仅需预付下方显示的30%定金以锁定向导与国家公园入园许可。我们支持 Wise（推荐低手续费方式）、PayPal 及银行转账，可按需灵活协调。70%尾款于抵达时结算。",
     packageTotal: "套餐总额",
-    depositDue: "应付定金",
+    depositDue: "应付定金 (30%)",
     addGroupSize: "请输入出行人数",
     depositPercentage: "总额的 30%",
     totalCalculation: (price: string) => `总额按 ${price} x 人数计算。`,
-    manualDepositTo: "请手动向该官方 PayPal 账户支付定金",
+    wiseTitle: "Wise 国际汇款（推荐，费率低）",
+    wiseDesc: "可从您的外币账户以极低费用直汇。如需通过 Wise 转账，欢迎在 WhatsApp 咨询或在备注中注明以获取收款详情。",
+    paypalTitle: "PayPal 转账（支持信用卡或余额）",
+    manualDepositTo: "官方 PayPal 定金收款账户",
     manualInstructions:
-      "请在 PayPal 转账备注中填写您的姓名、出行日期及套餐名称。转账后请通过 WhatsApp 发送交易号或直接填写在表单备注中。",
+      "请向下方 PayPal 地址转账，并在备注中注明您的姓名、日期和套餐。转账后可在 WhatsApp 发送交易凭据。",
+    flexibleTitle: "满足不同需求的灵活支付",
+    flexibleDesc: "如需银行电汇或其他货币结算，请在备注或 WhatsApp 中告知。余款70%可在抵达武吉拉旺与向导会面时以现金（印尼盾、欧元或美元）或 Wise 支付。",
     openPaypal: "打开 PayPal 转账",
     sendRequest: "发送预订请求",
     sending: "正在发送...",
@@ -359,16 +389,22 @@ const formText = {
     },
     notes: "Catatan khusus / Permintaan",
     notesPlaceholder: "Beri tahu kami pantangan makanan, tingkat kebugaran, jadwal tiba, atau kebutuhan khusus...",
+    depositKicker: "Opsi Pembayaran & Deposit",
     payDeposit: "Bayar deposit 30%",
-    depositSub: "Bayar hanya nilai deposit yang tertera di bawah. Sisa pembayaran dilunasi setelah jadwal dikonfirmasi.",
+    depositSub: "Bayar hanya deposit 30% untuk mengamankan jadwal pemandu dan izin TNGL. Kami menerima Wise (sangat direkomendasikan untuk biaya transfer termurah), PayPal, dan transfer bank. Sisa 70% dilunasi saat tiba.",
     packageTotal: "Total harga paket",
-    depositDue: "Nilai deposit",
+    depositDue: "Nilai deposit (30%)",
     addGroupSize: "Masukkan jumlah orang",
     depositPercentage: "30% dari total",
     totalCalculation: (price: string) => `Total dihitung dari ${price} x jumlah orang.`,
-    manualDepositTo: "Kirim deposit secara manual ke rekening PayPal atau Bank resmi",
+    wiseTitle: "Wise (Direkomendasikan untuk Transfer Luar Negeri / Valas)",
+    wiseDesc: "Hemat biaya konversi kurs. Tamu dari Eropa/internasional dapat transfer langsung dengan kurs riil. Hubungi kami via WhatsApp atau tulis di catatan untuk nomor rekening Wise.",
+    paypalTitle: "PayPal (Kartu Kredit Internasional atau Saldo)",
+    manualDepositTo: "Akun PayPal resmi untuk pembayaran deposit",
     manualInstructions:
       "Tuliskan nama Anda, tanggal perjalanan, dan paket pada catatan transfer. Setelah transfer, kirimkan bukti pembayaran via WhatsApp atau tulis nomor referensi pada catatan formulir.",
+    flexibleTitle: "Opsi Fleksibel Sesuai Kebutuhan",
+    flexibleDesc: "Butuh transfer bank lokal (BCA/Mandiri) atau kesepakatan khusus? Sampaikan di catatan atau WhatsApp. Sisa pembayaran 70% dapat dilunasi saat tiba di Bukit Lawang secara tunai (Rupiah, Euro, USD) atau via Wise.",
     openPaypal: "Buka PayPal",
     sendRequest: "Kirim formulir pemesanan",
     sending: "Mengirim...",
@@ -925,7 +961,7 @@ export function BookingForm({ initialPackageId, locale = "en" }: BookingFormProp
         <section className="paypal-deposit-section" aria-labelledby="paypal-deposit-title">
           <div className="paypal-deposit-header">
             <span className="section-kicker">
-              PayPal {paypalPaymentMode === "checkout" ? paypalEnvironment : "manual"}
+              {t.depositKicker}
             </span>
             <h3 id="paypal-deposit-title">{t.payDeposit}</h3>
             <p>{t.depositSub}</p>
@@ -953,27 +989,48 @@ export function BookingForm({ initialPackageId, locale = "en" }: BookingFormProp
 
           {paypalPaymentMode === "manual" ? (
             <div className="manual-paypal-box">
-              <span>{t.manualDepositTo}</span>
-              <strong>{paypalManualEmail}</strong>
-              <p>{t.manualInstructions}</p>
-              <a
-                className="secondary-button dark"
-                href="https://www.paypal.com/myaccount/transfer/send"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
-                  trackEvent("paypal_deposit_start", {
-                    currency: paymentSummary?.currency,
-                    deposit_amount: paymentSummary?.depositAmount,
-                    group_size: paymentSummary?.groupSize,
-                    package_id: selectedPackage.id,
-                    package_name: selectedPackage.title,
-                    payment_mode: "manual"
-                  })
-                }
-              >
-                {t.openPaypal}
-              </a>
+              <div className="payment-channel-card wise-channel">
+                <div className="channel-badge-row">
+                  <span className="payment-badge recommended">Wise • Recommended</span>
+                </div>
+                <strong>{t.wiseTitle}</strong>
+                <p>{t.wiseDesc}</p>
+              </div>
+
+              <div className="payment-channel-card paypal-channel">
+                <div className="channel-badge-row">
+                  <span className="payment-badge">PayPal</span>
+                </div>
+                <span>{t.manualDepositTo}</span>
+                <strong className="payment-highlight-address">{paypalManualEmail}</strong>
+                <p>{t.manualInstructions}</p>
+                <a
+                  className="secondary-button dark"
+                  href="https://www.paypal.com/myaccount/transfer/send"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() =>
+                    trackEvent("paypal_deposit_start", {
+                      currency: paymentSummary?.currency,
+                      deposit_amount: paymentSummary?.depositAmount,
+                      group_size: paymentSummary?.groupSize,
+                      package_id: selectedPackage.id,
+                      package_name: selectedPackage.title,
+                      payment_mode: "manual"
+                    })
+                  }
+                >
+                  {t.openPaypal}
+                </a>
+              </div>
+
+              <div className="payment-channel-card flexible-channel">
+                <div className="channel-badge-row">
+                  <span className="payment-badge">Flexible & On-Arrival</span>
+                </div>
+                <strong>{t.flexibleTitle}</strong>
+                <p>{t.flexibleDesc}</p>
+              </div>
             </div>
           ) : paypalClientId ? (
             <>

@@ -116,14 +116,15 @@ export const bookingContentByLocale: Record<Locale, BookingPageContent> = {
       {
         step: "4",
         title: "Pay deposit and prepare",
-        text: "Pay only the 30% deposit manually by PayPal, then receive final confirmation and trip notes."
+        text: "Pay the 30% deposit via Wise, PayPal or direct transfer, then receive final confirmation and trip notes."
       }
     ],
     assurances: [
       "We contact you after checking guide and date availability.",
-      "The booking form shows the 30% PayPal deposit based on package price and group size.",
-      "Send the PayPal payment reference by WhatsApp or include it in your booking notes.",
-      "The final balance is paid in cash when you meet the team, or 2 days before departure after email confirmation."
+      "The booking form shows the 30% deposit based on package price and group size.",
+      "We accept Wise (recommended for lowest EUR/GBP fees), PayPal, or flexible payment arrangements on request.",
+      "Send your Wise or PayPal payment reference by WhatsApp or include it in your booking notes.",
+      "The remaining 70% balance is paid in cash (EUR, USD, IDR) or via Wise when you meet the team in Bukit Lawang, or customized on request."
     ]
   },
   de: {

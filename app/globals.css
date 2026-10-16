@@ -1759,6 +1759,51 @@ footer .footer-contact-links {
   color: var(--teal);
 }
 
+
+/* Payment Channels Box */
+.payment-channel-card {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: rgba(24, 32, 25, 0.03);
+  border: 1px solid rgba(24, 32, 25, 0.08);
+}
+
+.payment-channel-card.wise-channel {
+  background: rgba(18, 120, 80, 0.05);
+  border-color: rgba(18, 120, 80, 0.2);
+}
+
+.channel-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(24, 32, 25, 0.1);
+  color: var(--forest);
+}
+
+.payment-badge.recommended {
+  background: var(--forest);
+  color: #fff;
+}
+
+.payment-highlight-address {
+  color: var(--forest);
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
 .manual-paypal-box {
   display: grid;
   gap: 10px;

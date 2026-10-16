@@ -98,7 +98,7 @@ export const nl = {
     },
     {
       q: "Hoe werkt de betaling?",
-      a: "Het boekingsformulier berekent een PayPal-aanbetaling van 30% van het totale pakketbedrag. Gasten kunnen deze aanbetaling rechtstreeks overmaken naar het officiële PayPal-adres op het formulier. Het resterende bedrag kan contant worden voldaan bij aankomst in Bukit Lawang, of 2 dagen voor vertrek na bevestiging per e-mail."
+      a: "Het boekingsformulier berekent een aanbetaling van 30%. Gasten kunnen betalen via Wise (aanbevolen voor minimale kosten in EUR), PayPal of bankoverschrijving. Flexibele betaalopties zijn op verzoek mogelijk. Het restantbedrag (70%) kan bij aankomst in Bukit Lawang contant (EUR, USD, IDR) of via Wise worden voldaan."
     },
     {
       q: "Waar is het ontmoetingspunt?",
@@ -112,7 +112,7 @@ export const nl = {
   contact: {
     kicker: "Direct boeken",
     title: "Geef Syaipul je data, groepsgrootte en gewenste trek door.",
-    text: "WhatsApp is het snelst voor beschikbaarheid. E-mail wordt gebruikt om de 30% aanbetaling, betaling van het resterende bedrag, transport, accommodatie en route-details te bevestigen.",
+    text: "WhatsApp is het snelst voor beschikbaarheid. Per e-mail of WhatsApp bevestigen we Wise/PayPal-aanbetalingen, flexibele betaalopties, transfers en verblijf.",
     bookingLabel: "Boekingsformulier openen",
     whatsappLabel: "+62 853-6240-5752",
     emailLabel: "support@orangutanadventuresumatra.com"

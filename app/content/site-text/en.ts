@@ -22,7 +22,7 @@ export const en = {
     "Daily starts around 8:30",
     "Bukit Lawang, North Sumatra",
     "River camps and rafting options",
-    "30% PayPal deposit"
+    "30% deposit via Wise, PayPal or Bank Transfer"
   ],
   intro: {
     kicker: "Why this trek",
@@ -98,7 +98,7 @@ export const en = {
     },
     {
       q: "How does payment work?",
-      a: "The booking form displays a 30% PayPal deposit for the package total. Guests can send the deposit directly to the official PayPal email shown on the form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after email confirmation."
+      a: "The booking form displays a 30% deposit for the package total. Guests can send the deposit via Wise (recommended for lowest EUR/GBP/USD fees), PayPal, or direct bank transfer. Flexible payment options are available upon request. The remaining 70% balance is settled upon arrival in Bukit Lawang in cash (EUR, USD, or IDR) or via Wise before departure."
     },
     {
       q: "Where is the meeting point?",
@@ -112,7 +112,7 @@ export const en = {
   contact: {
     kicker: "Book direct",
     title: "Tell Syaipul your dates, group size, and preferred trek.",
-    text: "WhatsApp is fastest for availability. Email is used to confirm manual PayPal deposit references, balance payment options, transport, accommodation, and detailed itinerary questions.",
+    text: "WhatsApp is fastest for availability. Email or WhatsApp is used to confirm Wise/PayPal deposit references, flexible payment options, transport, accommodation, and detailed itinerary questions.",
     bookingLabel: "Open booking form",
     whatsappLabel: "+62 853-6240-5752",
     emailLabel: "support@orangutanadventuresumatra.com"

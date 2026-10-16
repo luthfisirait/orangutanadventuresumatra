@@ -98,7 +98,7 @@ export const fr = {
     },
     {
       q: "Comment se passe le paiement ?",
-      a: "Le formulaire de réservation calcule un acompte PayPal de 30% du montant du forfait. Les voyageurs transmettent cet acompte directement à l'adresse PayPal officielle indiquée sur le formulaire. Le solde peut être réglé en espèces lors de la rencontre avec l'équipe à Bukit Lawang, ou 2 jours avant le départ après confirmation par e-mail."
+      a: "Le formulaire calcule un acompte de 30 %. Vous pouvez régler cet acompte via Wise (recommandé pour les frais réduits en EUR), PayPal ou virement bancaire. Des modalités flexibles sont disponibles sur demande. Le solde restant de 70 % est réglé à votre arrivée à Bukit Lawang en espèces (EUR, USD, IDR) ou par Wise."
     },
     {
       q: "Où est le point de rendez-vous ?",

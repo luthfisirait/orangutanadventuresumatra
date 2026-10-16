@@ -212,7 +212,7 @@ export const essentialInformation = {
     },
     {
       q: "How much deposit is needed to book a trek?",
-      a: "The booking form calculates a 30% PayPal deposit from your selected package and group size. The balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure."
+      a: "The booking form calculates a 30% deposit to secure your dates and guide. We accept Wise (recommended for low EUR/GBP fees), PayPal, and bank transfers, with flexible options available. The remaining 70% balance can be paid in cash (EUR, USD, IDR) or via Wise when you meet the guide team in Bukit Lawang."
     },
     {
       q: "What food is available on multi-day treks?",
@@ -572,7 +572,7 @@ const informationBlogPosts: BlogPost[] = [
       {
         title: "Deposit and booking notes",
         paragraphs: [
-          "The booking form calculates a 30% PayPal deposit from the selected package price and group size. Guests send that deposit directly to the official PayPal email shown on the booking form. The remaining balance can be paid in cash when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
+          "The booking form calculates a 30% deposit from the selected package price and group size to secure your dates and permits. Guests can send the deposit via Wise (recommended for lowest transfer fees in EUR/GBP), PayPal, or bank transfer. The remaining 70% balance can be paid in cash (EUR, USD, IDR) or via Wise when you meet the team in Bukit Lawang, or 2 days before departure after final email confirmation.",
           "Do not compare only the cheapest headline price. Ask what is included, who guides the trek, how wildlife rules are handled, where you sleep, what happens if river levels are unsafe, and whether the team can support transport or accommodation."
         ]
       }
@@ -3756,7 +3756,7 @@ export const blogPosts: BlogPost[] = [
         title: "Why the booking form asks for a deposit",
         paragraphs: [
           "A jungle trek needs real preparation before the first step into the forest. Guides, cooks, food, permits, camp equipment, transport timing, and accommodation notes all need to be coordinated around your travel date and group size.",
-          "The PayPal amount shown on the booking form is designed as a deposit only. It helps secure the booking process without asking guests to pay the full trek cost online before arrival."
+          "The deposit amount shown on the booking form (30%) is designed to secure your trekking dates, licensed guides, and official Gunung Leuser National Park permits without asking guests to pay the full trek cost upfront. We accept Wise (strongly recommended for lowest EUR/GBP fees), PayPal, and bank transfers, with flexible options tailored to your needs."
         ]
       },
       {

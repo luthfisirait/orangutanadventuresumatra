@@ -112,10 +112,10 @@ export const essentialInfoByLocale: Record<Locale, EssentialInfoContent> = {
       {
         title: "Deposits, payments, and cancellation",
         paragraphs: [
-          "The booking form calculates a 30% PayPal deposit from your selected package and group size. Guests send the deposit directly to the official PayPal email shown on the form.",
-          "After payment, send the PayPal reference by WhatsApp or include it in your booking notes. The remaining balance is handled separately after the trip details are confirmed.",
-          "The remaining balance can be paid in cash when you meet the guide team in Bukit Lawang, or 2 days before departure after final payment instructions are confirmed by email.",
-          "If plans change, contact the guide as early as possible. Local teams buy food and organize staff before multi-day treks, so late cancellations can affect people in the village."
+          "The booking form calculates a 30% deposit from your selected package and group size to secure your trekking dates and National Park permits. We accept Wise (strongly recommended for travelers from Europe/UK/USA for near-zero currency fees), PayPal, or direct bank transfer.",
+          "Flexible payment options: We tailor payment methods to what is easiest for you. After submitting your request or sending payment, share the transaction reference via WhatsApp or email.",
+          "The remaining 70% balance can be settled in person when you meet the guide team in Bukit Lawang (in cash: EUR, USD, or Indonesian Rupiah), or via Wise shortly before departure.",
+          "If plans change, contact the guide as early as possible. Local teams buy fresh supplies and schedule guides and porters in advance, so early communication is warmly appreciated."
         ]
       },
       {
@@ -247,9 +247,9 @@ export const essentialInfoByLocale: Record<Locale, EssentialInfoContent> = {
       {
         title: "Anzahlung, Zahlung & Stornierung",
         paragraphs: [
-          "Das Buchungsformular berechnet 30 % PayPal-Anzahlung basierend auf Tourpreis und Teilnehmerzahl.",
-          "Nach der Zahlung senden Sie den Beleg per WhatsApp oder notieren ihn im Buchungsformular.",
-          "Der Restbetrag wird bei Ankunft vor Ort in bar oder 2 Tage vor Abreise nach E-Mail-Bestätigung beglichen."
+          "Das Buchungsformular berechnet eine 30 % Anzahlung, um Ihre Wunschtermine und Nationalpark-Permits fest zu reservieren. Wir akzeptieren Wise (empfohlen für minimale Wechselgebühren in EUR), PayPal sowie Banküberweisungen.",
+          "Flexible Zahlungswege: Wir richten uns nach Ihren Wünschen. Nach Absenden Ihrer Anfrage erhalten Sie auf Wunsch direkt die Wise-Bankverbindung oder können per PayPal zahlen.",
+          "Der Restbetrag (70 %) wird entspannt bei Ihrer Ankunft in Bukit Lawang in bar (EUR, USD oder IDR) oder vor Abreise per Wise beglichen."
         ]
       },
       {
@@ -381,9 +381,9 @@ export const essentialInfoByLocale: Record<Locale, EssentialInfoContent> = {
       {
         title: "Acompte, paiement et annulation",
         paragraphs: [
-          "Le formulaire calcule l'acompte de 30 % réglable par PayPal de manière sécurisée.",
-          "Après paiement, envoyez la référence par WhatsApp ou inscrivez-la dans le formulaire.",
-          "Le solde est réglé en espèces sur place à votre arrivée ou 2 jours avant le départ."
+          "Le formulaire calcule un acompte de 30 % pour réserver vos dates et vos permis de parc. Nous acceptons Wise (recommandé pour des frais de change minimes en euros), PayPal et virement bancaire.",
+          "Options flexibles : nous nous adaptons à ce qui est le plus pratique pour vous. Les coordonnées Wise ou PayPal vous sont confirmées par WhatsApp ou email.",
+          "Le solde restant de 70 % se règle en espèces à votre arrivée à Bukit Lawang (en EUR, USD ou IDR) ou par Wise avant le départ."
         ]
       },
       {
@@ -793,7 +793,15 @@ export const essentialInfoByLocale: Record<Locale, EssentialInfoContent> = {
       ]
     },
     {
-      title: "Etika Pelestarian Satwa & Keamanan Arung Jeram Ban",
+      title: "Deposit, Pembayaran & Opsi Fleksibel",
+        paragraphs: [
+          "Formulir pemesanan menghitung deposit 30% untuk menjamin ketersediaan pemandu resmi dan perizinan Taman Nasional Gunung Leuser. Kami menerima pembayaran via Wise (sangat direkomendasikan untuk transfer valas berbiaya rendah), PayPal, dan transfer bank lokal.",
+          "Opsi pembayaran fleksibel: Kami menyesuaikan metode yang paling mudah dan nyaman bagi tamu. Bukti atau nomor referensi pembayaran dapat dikirimkan langsung melalui WhatsApp.",
+          "Sisa pelunasan 70% dapat dibayarkan saat Anda tiba di Bukit Lawang secara tunai (Rupiah, Euro, USD) atau via Wise sebelum trekking dimulai."
+        ]
+      },
+      {
+        title: "Etika Pelestarian Satwa & Keamanan Arung Jeram Ban",
       paragraphs: [
         "Taman Nasional Gunung Leuser adalah rumah bagi orangutan Sumatra liar dan semi-liar yang terancam punah. Karena orangutan memiliki kesamaan DNA hingga 97% dengan manusia, mereka sangat rentan tertular penyakit flu atau kulit dari manusia.",
         "Aturan ketat wajib dipatuhi: jaga jarak aman minimal 7-10 meter, jangan pernah menyentuh orangutan, dilarang keras memberi makan apa pun kepada satwa liar, bawa kembali semua sampah plastik keluar hutan, dan jangan gunakan lampu kilat (flash) kamera.",

@@ -22,7 +22,7 @@ export const id = {
     "Berangkat setiap hari pukul 08:30",
     "Bukit Lawang, Sumatra Utara",
     "Pilihan berkemah tepi sungai & arung jeram ban",
-    "Deposit 30% via PayPal atau Transfer Bank"
+    "Deposit 30% via Wise, PayPal atau Transfer Bank"
   ],
   intro: {
     kicker: "Mengapa memilih kami",
@@ -98,7 +98,7 @@ export const id = {
     },
     {
       q: "Bagaimana sistem pembayaran dan deposit?",
-      a: "Formulir pemesanan menampilkan deposit 30% via PayPal atau transfer bank untuk mengamankan jadwal pemandu dan izin TNGL. Sisa pembayaran dapat dilunasi tunai (Rupiah atau Euro) saat tiba di Bukit Lawang, atau sebelum keberangkatan sesuai konfirmasi."
+      a: "Formulir pemesanan menampilkan deposit 30% untuk mengamankan jadwal pemandu dan izin TNGL. Kami menerima pembayaran via Wise (sangat direkomendasikan untuk biaya transfer termurah dalam EUR/GBP/USD), PayPal, transfer bank lokal, maupun opsi fleksibel sesuai kebutuhan tamu. Sisa 70% pembayaran dapat dilunasi secara tunai (Rupiah, Euro, USD) atau via Wise saat Anda tiba di Bukit Lawang."
     },
     {
       q: "Di mana titik kumpul pertemuannya?",
