@@ -200,6 +200,7 @@ const landingPages: Record<string, LandingPage> = {
     ],
     relatedLinks: [
       { href: "/", label: "Meet the local Bukit Lawang guide" },
+      { href: "/treks", label: "Bukit Lawang orangutan trekking packages and prices" },
       { href: "/3-day-bukit-lawang-orangutan-trek", label: "3-day Bukit Lawang orangutan trek" },
       { href: "/blog/sumatra-orangutan-trekking-cost-price-guide-2026", label: "Sumatra orangutan trekking cost guide" },
       { href: "/blog/1-day-vs-2-day-vs-3-day-bukit-lawang-trek", label: "Compare 1-day, 2-day and 3-day treks" },
@@ -292,6 +293,7 @@ const landingPages: Record<string, LandingPage> = {
       }
     ],
     relatedLinks: [
+      { href: "/treks/3-day-jungle-trek", label: "Full 3-day jungle trek details: inclusions and packing list" },
       { href: "/sumatra-orangutan-tour", label: "Sumatra orangutan tour" },
       { href: "/blog/3-day-bukit-lawang-jungle-trek-itinerary", label: "Read the day-by-day 3-day itinerary" },
       { href: "/", label: "Bukit Lawang orangutan trekking" },

@@ -82,7 +82,9 @@ export function buildTrekDetail(id: TrekId, locale: Locale = "en"): TrekDetail {
     id,
     slug,
     title,
-    metaTitle: `${title} - Bukit Lawang Jungle Trek | ${siteName}`,
+    // Place name is locale-neutral; the old "Bukit Lawang Jungle Trek" suffix repeated the title
+    // in English on every locale and pushed titles past 70 characters.
+    metaTitle: `${title} - Bukit Lawang | ${siteName}`,
     metaDescription: input.heroDescription,
     heroKicker: input.heroKicker,
     heroTitle: title,
@@ -93,6 +95,11 @@ export function buildTrekDetail(id: TrekId, locale: Locale = "en"): TrekDetail {
     highlights: localizedInfo.highlights,
     relatedLinks: [
       { href: `${prefix}/treks`, label: labels.browseAll },
+      // Both 3-day formats share one English booking landing page; link it back from every locale
+      // so the two pages reinforce each other instead of competing for the same query.
+      ...(id === "3d" || id === "p3d"
+        ? [{ href: "/3-day-bukit-lawang-orangutan-trek", label: labels.threeDayLanding }]
+        : []),
       { href: trekBookingHref(id, locale), label: labels.openBooking }
     ],
     sections: [

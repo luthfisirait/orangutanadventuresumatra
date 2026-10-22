@@ -44,6 +44,7 @@ export const trekLabels: Record<
     heroKicker: string;
     heroHeading: string;
     viewDetails: string;
+    threeDayLanding: string;
     strip: [string, string, string, string];
   }
 > = {
@@ -64,11 +65,12 @@ export const trekLabels: Record<
       price: "Price",
       bestFor: "Best for"
     },
-    pageTitle: "Bukit Lawang Trek Packages: Options, Prices & Itineraries",
+    pageTitle: "Bukit Lawang Orangutan Trekking Packages: Prices & Itineraries 2026",
     pageDescription: "Compare all official Bukit Lawang orangutan trek packages. Review duration, trail intensity, river campsites, tube rafting returns, and EUR prices per person.",
     heroKicker: "Trek details",
-    heroHeading: "Compare each Bukit Lawang package before you book",
+    heroHeading: "Orangutan trekking in Bukit Lawang: compare every package before you book",
     viewDetails: "View details",
+    threeDayLanding: "Book the 3-day Bukit Lawang orangutan trek: price and availability",
     strip: [
       "Compare details first",
       "4 hours to 5 days",
@@ -93,11 +95,12 @@ export const trekLabels: Record<
       price: "Preis",
       bestFor: "Ideal für"
     },
-    pageTitle: "Bukit Lawang Trekking Pakete: Touren, Preise & Routen",
+    pageTitle: "Orang-Utan-Trekking Bukit Lawang: Pakete, Preise & Routen 2026",
     pageDescription: "Vergleiche alle offiziellen Orang-Utan-Trekking-Touren in Bukit Lawang. Dauer, Fitnesslevel, Fluss-Camps, Rafting und Preise im Überblick.",
     heroKicker: "Touren-Details",
-    heroHeading: "Vergleiche alle Bukit-Lawang-Pakete vor deiner Buchung",
+    heroHeading: "Orang-Utan-Trekking in Bukit Lawang: alle Touren im Vergleich vor deiner Buchung",
     viewDetails: "Details ansehen",
+    threeDayLanding: "3-Tage-Orang-Utan-Trek in Bukit Lawang buchen: Preis und Verfügbarkeit",
     strip: [
       "Detaillierter Tourvergleich",
       "4 Stunden bis 5 Tage",
@@ -122,11 +125,12 @@ export const trekLabels: Record<
       price: "Tarif",
       bestFor: "Idéal pour"
     },
-    pageTitle: "Treks Orang-Outan à Bukit Lawang : Formules, Prix & Itinéraires",
+    pageTitle: "Trek Orang-Outan Bukit Lawang : Formules, Prix & Itinéraires 2026",
     pageDescription: "Comparez tous les forfaits de trek avec les orangs-outans à Bukit Lawang. Durée, niveau d'effort, bivouacs en rivière, rafting et tarifs en euros.",
     heroKicker: "Détails des treks",
-    heroHeading: "Comparez chaque formule à Bukit Lawang avant de réserver",
+    heroHeading: "Trek orang-outan à Bukit Lawang : comparez chaque formule avant de réserver",
     viewDetails: "Voir les détails",
+    threeDayLanding: "Réserver le trek orang-outan de 3 jours à Bukit Lawang : prix et disponibilités",
     strip: [
       "Comparez les formules",
       "De 4 heures à 5 jours",
@@ -151,11 +155,12 @@ export const trekLabels: Record<
       price: "Prijs",
       bestFor: "Ideaal voor"
     },
-    pageTitle: "Bukit Lawang Trekking Pakketten: Opties, Prijzen & Routes",
+    pageTitle: "Orang-oetan Trekking Bukit Lawang: Pakketten, Prijzen & Routes 2026",
     pageDescription: "Vergelijk alle officiële orang-oetan trekkings in Bukit Lawang. Duur, zwaarte, rivierkampen, tube rafting en heldere prijzen per persoon.",
     heroKicker: "Trekdetails",
-    heroHeading: "Vergelijk alle Bukit Lawang arrangementen voor je boekt",
+    heroHeading: "Orang-oetan trekking in Bukit Lawang: vergelijk alle pakketten voor je boekt",
     viewDetails: "Bekijk details",
+    threeDayLanding: "Boek de 3-daagse orang-oetan trek in Bukit Lawang: prijs en beschikbaarheid",
     strip: [
       "Vergelijk vooraf de routes",
       "Van 4 uur tot 5 dagen",
@@ -180,11 +185,12 @@ export const trekLabels: Record<
       price: "价格",
       bestFor: "适合人群"
     },
-    pageTitle: "武吉拉旺徒步套餐：路线、价格与详细行程对比",
+    pageTitle: "武吉拉旺红毛猩猩徒步套餐：路线、价格与行程 2026",
     pageDescription: "全面对比武吉拉旺官方红毛猩猩徒步路线。查看徒步时长、难度、河畔露营点、轮胎漂流返程及人均欧元价格。",
     heroKicker: "行程路线详情",
-    heroHeading: "预订前全面对比武吉拉旺各项雨林套餐",
+    heroHeading: "武吉拉旺红毛猩猩徒步：预订前对比所有雨林套餐",
     viewDetails: "查看行程详情",
+    threeDayLanding: "预订3天武吉拉旺红毛猩猩徒步：价格与档期",
     strip: [
       "行前全面对比细节",
       "4小时至5天全长行程",
@@ -209,11 +215,12 @@ export const trekLabels: Record<
       price: "Harga",
       bestFor: "Cocok untuk"
     },
-    pageTitle: "Paket Trekking Bukit Lawang: Pilihan, Harga & Rute",
+    pageTitle: "Paket Trekking Orangutan Bukit Lawang: Harga & Rute 2026",
     pageDescription: "Bandingkan seluruh paket resmi trekking orangutan di Bukit Lawang. Informasi durasi, tingkat kesulitan, kemah tepi sungai, arung jeram ban, dan rincian harga per orang.",
     heroKicker: "Rincian rute paket",
-    heroHeading: "Bandingkan seluruh paket Bukit Lawang sebelum memesan",
+    heroHeading: "Trekking orangutan di Bukit Lawang: bandingkan semua paket sebelum memesan",
     viewDetails: "Lihat rincian paket",
+    threeDayLanding: "Pesan trek orangutan 3 hari Bukit Lawang: harga dan ketersediaan",
     strip: [
       "Bandingkan rute dengan jelas",
       "Pilihan 4 jam hingga 5 hari",

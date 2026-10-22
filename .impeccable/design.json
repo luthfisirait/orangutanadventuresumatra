@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-31T00:26:36.8204649+07:00",
+  "generatedAt": "2026-10-22T18:30:00+07:00",
   "title": "Design System: Orangutan Adventure Sumatra",
   "extensions": {
     "colorMeta": {
@@ -16,6 +16,12 @@
         "canonical": "#0b3524",
         "tonalRamp": ["#04150e", "#0b3524", "#15553a", "#2a7454", "#529274", "#82b19a", "#b4d0c1", "#e8f1ec"]
       },
+      "leaf": {
+        "role": "primary",
+        "displayName": "Leaf",
+        "canonical": "#17613d",
+        "tonalRamp": ["#001201", "#003015", "#044f2f", "#2f704d", "#589170", "#81b394", "#aad5ba", "#d4f9e2"]
+      },
       "signal": {
         "role": "secondary",
         "displayName": "Field Signal",
@@ -28,6 +34,18 @@
         "canonical": "#0e6b76",
         "tonalRamp": ["#042329", "#0a4750", "#0e6b76", "#268c98", "#56aab3", "#87c7cd", "#bce2e5", "#ecf7f8"]
       },
+      "river-bright": {
+        "role": "secondary",
+        "displayName": "River Bright",
+        "canonical": "#32a8b5",
+        "tonalRamp": ["#001016", "#002d34", "#004d55", "#006f79", "#21929e", "#4cb7c3", "#80dae5", "#b1feff"]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Camp Amber",
+        "canonical": "#ffb51b",
+        "tonalRamp": ["#1b0400", "#3a1e00", "#5e3900", "#855700", "#ad7600", "#d89700", "#ffba2a", "#ffe273"]
+      },
       "russet": {
         "role": "tertiary",
         "displayName": "Orangutan Russet",
@@ -39,12 +57,34 @@
         "displayName": "Forest Mist",
         "canonical": "#edf1e7",
         "tonalRamp": ["#1d211a", "#394036", "#596253", "#7d8777", "#a4ada0", "#c8cfc3", "#edf1e7", "#fafbf8"]
+      },
+      "field-paper": {
+        "role": "neutral",
+        "displayName": "Field Paper",
+        "canonical": "#f8faf3",
+        "tonalRamp": ["#0b0b09", "#252523", "#424240", "#61625e", "#82837f", "#a4a6a1", "#c8cac4", "#edefe9"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#0b0b0b", "#252525", "#424242", "#616161", "#828282", "#a5a5a5", "#c9c9c9", "#eeeeee"]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Galvanized Steel",
+        "canonical": "#b9c3ba",
+        "tonalRamp": ["#090c09", "#222623", "#3e443f", "#5d635d", "#7d857e", "#9fa8a0", "#c2ccc3", "#e8f1e9"]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Trailhead Display",
-        "purpose": "Hero offers, section theses, trek names, and guide names."
+        "purpose": "Hero offers and major guide names only."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Primary section statements."
       },
       "body": {
         "displayName": "International Body",
@@ -59,19 +99,24 @@
       {
         "name": "mounted-sheet",
         "value": "9px 9px 0 rgba(7, 27, 20, 0.16)",
-        "purpose": "Framed booking strips and itinerary tools."
+        "purpose": "Booking strips and framed tools."
       },
       {
         "name": "field-card",
         "value": "7px 7px 0 rgba(7, 27, 20, 0.13)",
         "purpose": "Repeated reviews and editorial cards."
+      },
+      {
+        "name": "navigation-rail",
+        "value": "8px 8px 0 rgba(7, 27, 20, 0.24)",
+        "purpose": "Fixed navigation over photography."
       }
     ],
     "motion": [
       {
         "name": "expedition-reveal",
-        "value": "1100ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "One first-viewport photographic and copy reveal."
+        "value": "780ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "One first-viewport photographic and copy reveal, staggered by 120ms and 240ms delays."
       },
       {
         "name": "state-change",
@@ -131,6 +176,13 @@
       "css": ".ds-route-card { display: grid; grid-template-columns: .8fr 1.2fr; min-height: 260px; border: 2px solid var(--steel, #b9c3ba); background: var(--surface, #f8faf3); color: var(--ink, #071b14); } .ds-route-photo { min-height: 260px; background: var(--forest, #0b3524); } .ds-route-copy { padding: 28px; } .ds-route-copy span { display: inline-block; padding: 5px 8px; background: var(--clay, #a84322); color: #fff; font: 800 .76rem/1 var(--font-body, sans-serif); } .ds-route-copy h3 { margin: 18px 0 10px; font: 700 2.2rem/.98 var(--font-display, sans-serif); } .ds-route-copy strong { color: var(--clay, #a84322); } .ds-route-copy p { max-width: 48ch; line-height: 1.6; }"
     },
     {
+      "name": "Framed Note",
+      "kind": "custom",
+      "description": "An in-article planning note: a full River Ink rule on a tinted field, square corners, no side tab.",
+      "html": "<p class=\"ds-framed-note\">Planning tip: compare inclusions and current rates on the Sumatra orangutan tours page, or message guide Syaipul on WhatsApp to check open dates.</p>",
+      "css": ".ds-framed-note { margin: 0; padding: 18px 22px; border: 1px solid var(--river, #0e6b76); border-radius: 2px; background: rgba(14,107,118,.08); color: var(--forest, #0b3524); font: 800 1.02rem/1.65 var(--font-body, sans-serif); }"
+    },
+    {
       "name": "Field Navigation",
       "kind": "nav",
       "description": "The fixed dark route rail with one high-visibility action.",
@@ -140,7 +192,7 @@
   ],
   "narrative": {
     "northStar": "Forest Transect",
-    "overview": "The interface borrows its authority from rainforest fieldwork: numbered trail tags, waterproof route charts, measured observation, and equipment made to be read outdoors. Real photography supplies emotion and proof; the system around it supplies orientation. The visual world stays useful across persuasive, booking, and editorial surfaces.",
+    "overview": "The interface borrows its authority from rainforest fieldwork: numbered trail tags, waterproof route charts, measured observation, and equipment made to be read outdoors. Real photography supplies emotion and proof; the system around it supplies orientation. The result feels local, capable, and specific rather than luxurious, generic, or over-polished.\n\nThe visual world stays useful across persuasive, booking, and editorial surfaces. A continuous route can organize a trek, a page, or a process. Field markers label duration, camp nights, ethical rules, and booking states only when those labels carry real information.",
     "keyCharacteristics": [
       "Documentary photography at decisive scale.",
       "Strong black structural rules and measured grid alignment.",

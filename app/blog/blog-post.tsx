@@ -28,7 +28,7 @@ const dateLocales: Record<Locale, string> = {
   id: "id-ID"
 };
 
-const blogCopy = {
+export const blogCopy = {
   en: {
     heroKicker: "Bukit Lawang travel guide",
     updated: "Updated",
@@ -36,6 +36,7 @@ const blogCopy = {
     browseTreks: "Browse trek details",
     planTitle: "Plan your trek",
     bukitLawang: "Bukit Lawang orangutan trekking",
+    trekPackages: "Bukit Lawang trek packages & prices",
     sumatraTour: "Sumatra orangutan tours",
     threeDay: "3-day Bukit Lawang orangutan trek",
     booking: "Booking form",
@@ -56,6 +57,7 @@ const blogCopy = {
     browseTreks: "Trek-Details ansehen",
     planTitle: "Plane deinen Trek",
     bukitLawang: "Orang-Utan-Trekking in Bukit Lawang",
+    trekPackages: "Trekking-Pakete & Preise in Bukit Lawang",
     sumatraTour: "Orang-Utan-Touren auf Sumatra",
     threeDay: "3-Tage-Orang-Utan-Trek in Bukit Lawang",
     booking: "Buchungsformular",
@@ -76,6 +78,7 @@ const blogCopy = {
     browseTreks: "Voir les détails des treks",
     planTitle: "Planifier votre trek",
     bukitLawang: "Trek orang-outan à Bukit Lawang",
+    trekPackages: "Formules et prix des treks à Bukit Lawang",
     sumatraTour: "Circuits orang-outan à Sumatra",
     threeDay: "Trek orang-outan de 3 jours à Bukit Lawang",
     booking: "Formulaire de réservation",
@@ -96,6 +99,7 @@ const blogCopy = {
     browseTreks: "Bekijk trekdetails",
     planTitle: "Plan je trek",
     bukitLawang: "Orang-oetan trekking in Bukit Lawang",
+    trekPackages: "Trekpakketten & prijzen in Bukit Lawang",
     sumatraTour: "Orang-oetan tours op Sumatra",
     threeDay: "3-daagse orang-oetan trek in Bukit Lawang",
     booking: "Boekingsformulier",
@@ -116,6 +120,7 @@ const blogCopy = {
     browseTreks: "浏览徒步详情",
     planTitle: "规划您的徒步",
     bukitLawang: "武吉拉旺红毛猩猩徒步",
+    trekPackages: "武吉拉旺徒步套餐与价格",
     sumatraTour: "苏门答腊红毛猩猩之旅",
     threeDay: "3天武吉拉旺红毛猩猩徒步",
     booking: "预订表格",
@@ -136,6 +141,7 @@ const blogCopy = {
     browseTreks: "Lihat rincian paket trek",
     planTitle: "Rencanakan trek Anda",
     bukitLawang: "Trekking orangutan Bukit Lawang",
+    trekPackages: "Paket & harga trekking Bukit Lawang",
     sumatraTour: "Tur orangutan Sumatra",
     threeDay: "Trek orangutan 3 hari Bukit Lawang",
     booking: "Formulir pemesanan",
@@ -300,15 +306,19 @@ export function BlogPostView({ post }: { post: BlogPost }) {
       ? { href: "/booking", label: copy.booking }
       : { href: "/sumatra-orangutan-tour", label: copy.sumatraTour }
     : { href: localizedHome, label: copy.bukitLawang };
+  const treksHref = isEnglish ? "/treks" : `/${locale}/treks`;
   const planningLinks = isEnglish
     ? [
         { href: localizedHome, label: copy.bukitLawang },
+        // Exact-match anchor to the package listing so commercial queries land on /treks, not /blog.
+        { href: treksHref, label: copy.trekPackages },
         { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },
         { href: "/3-day-bukit-lawang-orangutan-trek", label: copy.threeDay },
         { href: "/booking", label: copy.booking }
       ]
     : [
         { href: localizedHome, label: copy.bukitLawang },
+        { href: treksHref, label: copy.trekPackages },
         // The tour comparison and 3-day pages are English-only, but every locale has a label for
         // them. Linking out beats leaving Tier-1 EU readers with no route to a commercial page.
         { href: "/sumatra-orangutan-tour", label: copy.sumatraTour },

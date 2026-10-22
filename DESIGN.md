@@ -111,7 +111,7 @@ The full palette combines canopy shade, survey tape, river water, orangutan russ
 - **Camp Amber:** Small icons and secondary field signals on dark surfaces.
 
 ### Neutral
-- **Forest Mist:** Main page ground and survey-grid canvas.
+- **Forest Mist:** Main page ground, kept as a plain surface so photography and route lines carry the structure.
 - **Field Paper:** Route cards and readable content surfaces.
 - **Galvanized Steel:** Quiet borders and muted equipment references.
 

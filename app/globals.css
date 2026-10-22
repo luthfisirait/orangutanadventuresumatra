@@ -804,9 +804,9 @@ img {
   margin-top: 28px;
 }
 
+/* Row layout and rules come from the Forest Transect block further down. */
 .package-timeline article {
-  padding: 4px 0 18px 20px;
-  border-left: 3px solid var(--river);
+  padding: 4px 0 18px;
 }
 
 .package-timeline span,
@@ -1998,15 +1998,6 @@ footer .footer-contact-links {
   border-bottom: 0;
 }
 
-.article-callout {
-  padding: 16px 18px;
-  border-left: 4px solid var(--river);
-  border-radius: 8px;
-  background: rgba(34, 143, 128, 0.09);
-  color: var(--forest) !important;
-  font-weight: 800;
-}
-
 .info-block ul,
 .article-body ul {
   display: grid;
@@ -2164,14 +2155,18 @@ footer .footer-contact-links {
   line-height: 1.7;
 }
 
-.article-callout {
+/* Framed note inside the article: full context-tinted rule, square corners, no side tab.
+   The scoped selector outranks `.article-body p` so no !important is needed. */
+.article-callout,
+.article-body .article-callout {
   margin: 28px 0;
   padding: 18px 22px;
-  border-left: 4px solid var(--forest);
-  border-radius: 0 8px 8px 0;
+  border: 1px solid var(--river);
+  border-radius: 2px;
   background: rgba(14, 107, 118, 0.08);
-  color: var(--ink);
+  color: var(--forest);
   font-size: 1.02rem;
+  font-weight: 800;
   line-height: 1.65;
 }
 
@@ -2667,10 +2662,6 @@ footer .footer-contact-links {
 
 body {
   background-color: var(--bg);
-  background-image:
-    linear-gradient(rgba(7, 27, 20, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 27, 20, 0.035) 1px, transparent 1px);
-  background-size: 96px 96px;
 }
 
 ::selection {
@@ -3323,7 +3314,6 @@ body {
   grid-template-columns: 78px 1fr;
   padding: 18px 0;
   border-bottom: 1px solid var(--line-strong);
-  border-left: 0;
 }
 
 .package-timeline span {
@@ -4405,4 +4395,17 @@ footer {
   .resource-hero h1 {
     font-size: 3.3rem;
   }
+}
+
+/* Blog index: inline row of commercial planning links above the article grid. */
+.blog-index-links {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 22px;
+  display: flex;
+}
+
+.blog-index-links a {
+  min-height: 36px;
 }

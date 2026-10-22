@@ -362,8 +362,8 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Compare Bukit Lawang trekking with Tanjung Puting klotok trips by Medan access, comfort, wildlife ethics, and travel style.",
     date: "2026-06-09",
-    dateModified: "2026-09-26",
-    readingTime: "7 min read",
+    dateModified: "2026-10-22",
+    readingTime: "8 min read",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orangutan resting in the rainforest canopy",
     tags: ["Bukit Lawang", "Tanjung Puting", "orangutan travel", "Sumatra vs Borneo"],
@@ -430,6 +430,34 @@ const informationBlogPosts: BlogPost[] = [
           "Choose Bukit Lawang if you have 3 to 5 nights in North Sumatra and want trekking to be the main activity — our [3-day rainforest trek](/3-day-bukit-lawang-orangutan-trek) is the most popular balanced route.",
           "Choose Tanjung Puting if you are comfortable adding domestic flights and want the boat experience to be part of the trip.",
           "If you have two or three weeks in Indonesia, visiting both gives two very different orangutan habitats and travel styles."
+        ]
+      },
+      {
+        title: "Bukit Lawang vs Tanjung Puting: frequently asked questions",
+        paragraphs: [
+          "Short answers to the questions travelers ask most often when choosing between Sumatra and Borneo for orangutans."
+        ],
+        faq: [
+          {
+            q: "Is Bukit Lawang or Tanjung Puting better for seeing wild orangutans?",
+            a: "Both give good odds, but the style differs. Bukit Lawang sits on the edge of Gunung Leuser National Park, where you trek on foot with a local guide and often meet orangutans on forest trails. Tanjung Puting is a river journey where you mostly watch from a klotok boat and at feeding platforms. No ethical operator guarantees sightings in either place."
+          },
+          {
+            q: "Which is cheaper, Bukit Lawang or Tanjung Puting?",
+            a: "Bukit Lawang is usually cheaper. Published local guide prices start at 55 EUR per person for a 4-hour trek and 170 EUR per person for the classic 3-day trek, and the village is about 3 to 4 hours by car from Medan. Tanjung Puting normally adds a domestic flight to Pangkalan Bun plus a multi-day klotok boat charter."
+          },
+          {
+            q: "How many days do you need in Bukit Lawang?",
+            a: "Two to four nights works for most travelers: one night before the trek so you arrive in daylight, then a 1-day, 2-day, or 3-day trek. The 3-day trek with two jungle nights is the most popular balance of wildlife time, camp life, and river return."
+          },
+          {
+            q: "Can you visit both Bukit Lawang and Tanjung Puting on one trip?",
+            a: "Yes, with two to three weeks in Indonesia. They are on different islands, Sumatra and Borneo, with separate airports at Kualanamu near Medan and Pangkalan Bun, so plan at least one domestic flight and a rest day between them."
+          },
+          {
+            q: "Is Bukit Lawang orangutan trekking safe and ethical?",
+            a: "Yes, when you trek with a licensed local guide who keeps distance, never feeds or touches orangutans, and adapts the route to river and weather conditions. Trails are steep and humid, so honest fitness information and good shoes matter more than previous trekking experience."
+          }
         ]
       }
     ]
@@ -685,8 +713,8 @@ const informationBlogPosts: BlogPost[] = [
     description:
       "Safety guide for Bukit Lawang solo and female travelers: guides, transport, jungle trekking, rivers, arrivals, private treks, and practical precautions.",
     date: "2026-06-09",
-    dateModified: "2026-09-29",
-    readingTime: "7 min read",
+    dateModified: "2026-10-22",
+    readingTime: "8 min read",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Traveler walking through a green Bukit Lawang village path",
     tags: ["Bukit Lawang safety", "solo female travel", "Sumatra travel safety"],
@@ -749,6 +777,34 @@ const informationBlogPosts: BlogPost[] = [
           "What happens if weather or river levels change?",
           "Is transport from Medan or Kualanamu arranged by a known driver?",
           "What should I carry, and where can I leave main luggage?"
+        ]
+      },
+      {
+        title: "Solo female travel in Bukit Lawang: frequently asked questions",
+        paragraphs: [
+          "Direct answers to the safety questions solo and female travelers send us most often before booking."
+        ],
+        faq: [
+          {
+            q: "Is Bukit Lawang safe for a woman traveling alone?",
+            a: "Yes, for most travelers who book a reputable guide in advance, arrive in daylight, and apply normal travel caution. Bukit Lawang is a small, established jungle village with many solo visitors. The practical risks are slippery trails, heat, river currents, and late-night transport rather than crime."
+          },
+          {
+            q: "Can I book a private trek as a solo female traveler?",
+            a: "Yes. Private 1-day to 3-day treks with a certified local guide can be arranged for one person. Ask in advance who will guide, how the camp is set up, how many staff join an overnight trek, and what the single-traveler price is before you confirm."
+          },
+          {
+            q: "Will I share a jungle camp with strangers on an overnight trek?",
+            a: "Only if you join a shared group. On a private trek the riverside camp is for your group only, and you can request a separate sleeping area. Camps are simple shelters with tarpaulins and mats, and the guide team stays on site through the night."
+          },
+          {
+            q: "How do I get from Medan airport to Bukit Lawang safely?",
+            a: "A pre-arranged private car from Kualanamu International Airport is the most direct option, about 3 to 4 hours door to door, and avoids transfers and late arrivals. Share the driver details with someone at home and plan to reach the village before dark."
+          },
+          {
+            q: "What should I pack for safety on a Bukit Lawang trek?",
+            a: "Closed shoes with grip, a headlamp or flashlight, a refillable water bottle, light long layers for insects and sun, a small first-aid kit, a dry bag for your phone and passport, and enough cash, because ATMs in the village are limited."
+          }
         ]
       }
     ]
@@ -1201,8 +1257,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Ein praktischer Vergleich zwischen Sumatra-Trekking in Bukit Lawang und Klotok-Bootstouren in Tanjung Puting.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 Min. Lesezeit",
+    dateModified: "2026-10-22",
+    readingTime: "6 Min. Lesezeit",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-Utan im Regenwald",
     tags: ["Bukit Lawang", "Tanjung Puting", "Orang-Utan Reise"],
@@ -1232,6 +1288,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Ethische Erwartungen",
         paragraphs: [
           "In beiden Gebieten gilt: Orang-Utans nicht füttern, nicht berühren und Abstand halten. Ein guter Guide verspricht keine erzwungene Begegnung, sondern erklärt die Regeln vor dem Start."
+        ]
+      },
+      {
+        title: "Bukit Lawang oder Tanjung Puting: häufige Fragen",
+        paragraphs: [
+          "Kurze Antworten auf die Fragen, die Reisende bei der Wahl zwischen Sumatra und Borneo am häufigsten stellen."
+        ],
+        faq: [
+          {
+            q: "Bukit Lawang oder Tanjung Puting: Wo sieht man wilde Orang-Utans besser?",
+            a: "Beide Orte bieten gute Chancen, aber der Stil unterscheidet sich. Bukit Lawang liegt am Rand des Gunung-Leuser-Nationalparks: Du wanderst zu Fuß mit einem lokalen Guide und triffst Orang-Utans oft direkt auf den Waldpfaden. Tanjung Puting ist eine Flussreise, bei der du vor allem vom Klotok-Boot und an Fütterungsplattformen beobachtest. Kein seriöser Anbieter garantiert Sichtungen."
+          },
+          {
+            q: "Was ist günstiger: Bukit Lawang oder Tanjung Puting?",
+            a: "Bukit Lawang ist meist günstiger. Die veröffentlichten Preise lokaler Guides beginnen bei 55 EUR pro Person für einen 4-Stunden-Trek und 170 EUR pro Person für den klassischen 3-Tage-Trek; das Dorf liegt etwa 3 bis 4 Autostunden von Medan entfernt. Tanjung Puting erfordert in der Regel einen Inlandsflug nach Pangkalan Bun plus eine mehrtägige Klotok-Bootscharter."
+          },
+          {
+            q: "Wie viele Tage braucht man in Bukit Lawang?",
+            a: "Zwei bis vier Nächte reichen für die meisten Reisenden: eine Nacht vor dem Trek, damit du bei Tageslicht ankommst, dann ein 1-, 2- oder 3-Tage-Trek. Der 3-Tage-Trek mit zwei Dschungelnächten ist die beliebteste Balance aus Tierbeobachtung, Camp-Leben und Rückkehr über den Fluss."
+          },
+          {
+            q: "Kann man Bukit Lawang und Tanjung Puting auf einer Reise kombinieren?",
+            a: "Ja, mit zwei bis drei Wochen in Indonesien. Die Orte liegen auf verschiedenen Inseln, Sumatra und Borneo, mit getrennten Flughäfen in Kualanamu bei Medan und Pangkalan Bun. Plane mindestens einen Inlandsflug und einen Ruhetag dazwischen ein."
+          },
+          {
+            q: "Ist Orang-Utan-Trekking in Bukit Lawang sicher und ethisch?",
+            a: "Ja, wenn du mit einem lizenzierten lokalen Guide gehst, der Abstand hält, Orang-Utans weder füttert noch berührt und die Route an Fluss- und Wetterbedingungen anpasst. Die Pfade sind steil und feucht, deshalb zählen ehrliche Angaben zur Fitness und gute Schuhe mehr als Trekking-Erfahrung."
+          }
         ]
       }
     ]
@@ -1329,8 +1413,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Sicherheitsnotizen für Bukit Lawang: Guides, Transport, Dschungelpfade, Fluss, Unterkunft und Solo-Reisen.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 Min. Lesezeit",
+    dateModified: "2026-10-22",
+    readingTime: "6 Min. Lesezeit",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Reisende auf einem grünen Weg in Bukit Lawang",
     tags: ["Bukit Lawang Sicherheit", "Solo Travel", "Frauenreise Sumatra"],
@@ -1356,6 +1440,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Dschungel und Fluss",
         paragraphs: [
           "Die realen Risiken sind oft praktisch: Hitze, Dehydrierung, Insekten, müde Beine, rutschige Abstiege und Flussbedingungen. Gute Schuhe, Wasser und ehrliche Angaben zur Fitness sind wichtiger als Mut."
+        ]
+      },
+      {
+        title: "Allein reisen als Frau in Bukit Lawang: häufige Fragen",
+        paragraphs: [
+          "Direkte Antworten auf die Sicherheitsfragen, die Solo- und Frauenreisende uns vor der Buchung am häufigsten stellen."
+        ],
+        faq: [
+          {
+            q: "Ist Bukit Lawang für eine allein reisende Frau sicher?",
+            a: "Ja, für die meisten Reisenden, die vorab einen seriösen Guide buchen, bei Tageslicht ankommen und normale Vorsicht walten lassen. Bukit Lawang ist ein kleines, etabliertes Dschungeldorf mit vielen Alleinreisenden. Die praktischen Risiken sind rutschige Pfade, Hitze, Flussströmung und späte Transporte, nicht Kriminalität."
+          },
+          {
+            q: "Kann ich als Solo-Reisende einen privaten Trek buchen?",
+            a: "Ja. Private 1- bis 3-Tage-Treks mit einem zertifizierten lokalen Guide lassen sich auch für eine Person organisieren. Frag vorab, wer dich führt, wie das Camp aufgebaut ist, wie viele Teammitglieder bei einer Übernachtung dabei sind und wie der Preis für Einzelreisende aussieht, bevor du bestätigst."
+          },
+          {
+            q: "Teile ich das Dschungelcamp bei einer Übernachtung mit Fremden?",
+            a: "Nur, wenn du dich einer Gruppe anschließt. Bei einem privaten Trek gehört das Camp am Fluss nur deiner Gruppe, und du kannst einen separaten Schlafbereich erbitten. Die Camps sind einfache Unterstände mit Planen und Matten; das Guide-Team bleibt die ganze Nacht vor Ort."
+          },
+          {
+            q: "Wie komme ich sicher vom Flughafen Medan nach Bukit Lawang?",
+            a: "Ein vorab gebuchter Privatwagen ab dem Flughafen Kualanamu ist die direkteste Option, etwa 3 bis 4 Stunden von Tür zu Tür, ohne Umstiege und späte Ankunft. Teile die Fahrerdaten mit jemandem zu Hause und plane, das Dorf vor Einbruch der Dunkelheit zu erreichen."
+          },
+          {
+            q: "Was sollte ich für die Sicherheit auf dem Trek einpacken?",
+            a: "Geschlossene Schuhe mit Profil, Stirnlampe oder Taschenlampe, eine wiederbefüllbare Trinkflasche, leichte lange Kleidung gegen Insekten und Sonne, ein kleines Erste-Hilfe-Set, einen wasserdichten Beutel für Handy und Pass und genug Bargeld, da es im Dorf nur wenige Geldautomaten gibt."
+          }
         ]
       }
     ]
@@ -1528,8 +1640,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Comparaison simple entre trek à Sumatra et voyage en bateau klotok à Tanjung Puting pour voir des orangs-outans.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min de lecture",
+    dateModified: "2026-10-22",
+    readingTime: "6 min de lecture",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-outan dans la canopée",
     tags: ["Bukit Lawang", "Tanjung Puting", "orang-outan Indonésie"],
@@ -1564,6 +1676,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         ],
         callout:
           "Conseil aux voyageurs : Envie de découvrir les orangs-outans de Sumatra dans leur habitat naturel ? Découvrez nos [forfaits de trek de 1 à 5 jours à Bukit Lawang](/fr#treks) ou discutez directement avec notre guide local Syaipul sur WhatsApp (+62 853 6240 5752) pour poser vos questions."
+      },
+      {
+        title: "Bukit Lawang ou Tanjung Puting : questions fréquentes",
+        paragraphs: [
+          "Réponses courtes aux questions que les voyageurs posent le plus souvent avant de choisir entre Sumatra et Bornéo pour voir des orangs-outans."
+        ],
+        faq: [
+          {
+            q: "Bukit Lawang ou Tanjung Puting : où voit-on le mieux des orangs-outans sauvages ?",
+            a: "Les deux offrent de bonnes chances, mais le style diffère. Bukit Lawang se trouve en lisière du parc national de Gunung Leuser : vous marchez avec un guide local et croisez souvent des orangs-outans sur les sentiers. Tanjung Puting est un voyage fluvial où l'on observe surtout depuis un bateau klotok et aux plateformes de nourrissage. Aucun opérateur éthique ne garantit les observations."
+          },
+          {
+            q: "Lequel est le moins cher, Bukit Lawang ou Tanjung Puting ?",
+            a: "Bukit Lawang est généralement moins cher. Les tarifs publiés des guides locaux commencent à 55 € par personne pour un trek de 4 heures et 170 € par personne pour le trek classique de 3 jours ; le village est à environ 3 à 4 heures de route de Medan. Tanjung Puting ajoute normalement un vol intérieur vers Pangkalan Bun et la location d'un klotok sur plusieurs jours."
+          },
+          {
+            q: "Combien de jours faut-il prévoir à Bukit Lawang ?",
+            a: "Deux à quatre nuits conviennent à la plupart des voyageurs : une nuit avant le trek pour arriver de jour, puis un trek de 1, 2 ou 3 jours. Le trek de 3 jours avec deux nuits en jungle est l'équilibre le plus populaire entre faune, vie de camp et retour par la rivière."
+          },
+          {
+            q: "Peut-on combiner Bukit Lawang et Tanjung Puting dans un même voyage ?",
+            a: "Oui, avec deux à trois semaines en Indonésie. Ils se trouvent sur deux îles différentes, Sumatra et Bornéo, avec des aéroports distincts à Kualanamu près de Medan et à Pangkalan Bun. Prévoyez au moins un vol intérieur et une journée de repos entre les deux."
+          },
+          {
+            q: "Le trek orang-outan à Bukit Lawang est-il sûr et éthique ?",
+            a: "Oui, lorsque vous partez avec un guide local agréé qui garde ses distances, ne nourrit ni ne touche jamais les orangs-outans et adapte l'itinéraire aux conditions de la rivière et de la météo. Les sentiers sont raides et humides : une évaluation honnête de votre forme et de bonnes chaussures comptent plus que l'expérience du trek."
+          }
+        ]
       }
     ]
   },
@@ -1662,8 +1802,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Conseils de sécurité pour Bukit Lawang: guides, transport, trek jungle, rivière et voyage solo.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min de lecture",
+    dateModified: "2026-10-22",
+    readingTime: "6 min de lecture",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Voyageuse sur un chemin vert à Bukit Lawang",
     tags: ["sécurité Bukit Lawang", "voyage solo", "femmes Sumatra"],
@@ -1691,6 +1831,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Jungle et rivière",
         paragraphs: [
           "Les risques les plus courants sont la chaleur, la fatigue, les insectes, les descentes glissantes et les conditions de rivière. De bonnes chaussures et une communication honnête avec le guide comptent beaucoup."
+        ]
+      },
+      {
+        title: "Voyager seule à Bukit Lawang : questions fréquentes",
+        paragraphs: [
+          "Réponses directes aux questions de sécurité que les voyageuses et voyageurs solo nous posent le plus souvent avant de réserver."
+        ],
+        faq: [
+          {
+            q: "Bukit Lawang est-il sûr pour une femme qui voyage seule ?",
+            a: "Oui, pour la plupart des voyageuses qui réservent un guide sérieux à l'avance, arrivent de jour et appliquent les précautions habituelles. Bukit Lawang est un petit village de jungle bien établi qui accueille beaucoup de voyageurs solo. Les risques concrets sont les sentiers glissants, la chaleur, le courant de la rivière et les transports tardifs, pas la criminalité."
+          },
+          {
+            q: "Puis-je réserver un trek privé en tant que voyageuse solo ?",
+            a: "Oui. Des treks privés de 1 à 3 jours avec un guide local certifié peuvent être organisés pour une seule personne. Demandez à l'avance qui vous guidera, comment le camp est installé, combien de membres de l'équipe participent à une nuit en jungle et quel est le tarif pour une personne seule avant de confirmer."
+          },
+          {
+            q: "Vais-je partager le camp avec des inconnus lors d'un trek avec nuit ?",
+            a: "Seulement si vous rejoignez un groupe. Lors d'un trek privé, le camp au bord de la rivière est réservé à votre groupe et vous pouvez demander un espace de couchage séparé. Les camps sont des abris simples avec bâches et matelas, et l'équipe du guide reste sur place toute la nuit."
+          },
+          {
+            q: "Comment rejoindre Bukit Lawang depuis l'aéroport de Medan en toute sécurité ?",
+            a: "Une voiture privée réservée à l'avance depuis l'aéroport international de Kualanamu est l'option la plus directe, environ 3 à 4 heures porte à porte, sans correspondance ni arrivée tardive. Partagez les coordonnées du chauffeur avec un proche et prévoyez d'arriver au village avant la nuit."
+          },
+          {
+            q: "Que dois-je emporter pour ma sécurité pendant le trek ?",
+            a: "Des chaussures fermées avec une bonne adhérence, une lampe frontale ou une lampe de poche, une gourde réutilisable, des vêtements longs et légers contre les insectes et le soleil, une petite trousse de premiers secours, un sac étanche pour le téléphone et le passeport, et assez d'espèces car les distributeurs sont rares au village."
+          }
         ]
       }
     ]
@@ -1865,8 +2033,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Een praktische vergelijking tussen jungletrekking in Sumatra en een klotok-bootreis in Tanjung Puting.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min leestijd",
+    dateModified: "2026-10-22",
+    readingTime: "6 min leestijd",
     image: "/images/stock/wildlife-13.webp",
     imageAlt: "Orang-oetan in het regenwoud",
     tags: ["Bukit Lawang", "Tanjung Puting", "orang-oetan Indonesië"],
@@ -1896,6 +2064,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Ethisch kijken",
         paragraphs: [
           "In beide gebieden geldt: afstand houden, niet voeren en orang-oetans nooit aanraken. Een goede gids forceert geen ontmoeting."
+        ]
+      },
+      {
+        title: "Bukit Lawang of Tanjung Puting: veelgestelde vragen",
+        paragraphs: [
+          "Korte antwoorden op de vragen die reizigers het vaakst stellen bij de keuze tussen Sumatra en Borneo voor orang-oetans."
+        ],
+        faq: [
+          {
+            q: "Bukit Lawang of Tanjung Puting: waar zie je wilde orang-oetans beter?",
+            a: "Beide bieden goede kansen, maar de stijl verschilt. Bukit Lawang ligt aan de rand van Nationaal Park Gunung Leuser: je trekt te voet met een lokale gids en komt orang-oetans vaak tegen op de bospaden. Tanjung Puting is een rivierreis waarbij je vooral kijkt vanaf een klotokboot en bij voederplatforms. Geen enkele ethische aanbieder garandeert waarnemingen."
+          },
+          {
+            q: "Wat is goedkoper, Bukit Lawang of Tanjung Puting?",
+            a: "Bukit Lawang is meestal goedkoper. Gepubliceerde prijzen van lokale gidsen beginnen bij 55 EUR per persoon voor een trek van 4 uur en 170 EUR per persoon voor de klassieke 3-daagse trek; het dorp ligt op ongeveer 3 tot 4 uur rijden van Medan. Tanjung Puting vraagt doorgaans een binnenlandse vlucht naar Pangkalan Bun plus een meerdaagse klotokboot-charter."
+          },
+          {
+            q: "Hoeveel dagen heb je nodig in Bukit Lawang?",
+            a: "Twee tot vier nachten werkt voor de meeste reizigers: één nacht vóór de trek zodat je bij daglicht aankomt, daarna een trek van 1, 2 of 3 dagen. De 3-daagse trek met twee junglenachten is de populairste balans tussen wildlife, kampleven en de terugtocht over de rivier."
+          },
+          {
+            q: "Kun je Bukit Lawang en Tanjung Puting in één reis combineren?",
+            a: "Ja, met twee tot drie weken in Indonesië. Ze liggen op verschillende eilanden, Sumatra en Borneo, met aparte luchthavens bij Kualanamu nabij Medan en Pangkalan Bun. Reken op minstens één binnenlandse vlucht en een rustdag ertussen."
+          },
+          {
+            q: "Is orang-oetan trekking in Bukit Lawang veilig en ethisch?",
+            a: "Ja, als je trekt met een erkende lokale gids die afstand houdt, orang-oetans nooit voert of aanraakt en de route aanpast aan rivier- en weersomstandigheden. De paden zijn steil en vochtig, dus eerlijke informatie over je conditie en goede schoenen tellen zwaarder dan trekervaring."
+          }
         ]
       }
     ]
@@ -1993,8 +2189,8 @@ const translatedInformationBlogPosts: BlogPost[] = [
     description:
       "Veiligheidsadvies voor Bukit Lawang: gidsen, transport, jungle, rivier, accommodatie en solo reizen.",
     date: "2026-06-09",
-    dateModified: "2026-08-14",
-    readingTime: "5 min leestijd",
+    dateModified: "2026-10-22",
+    readingTime: "6 min leestijd",
     image: "/images/stock/activity-05.webp",
     imageAlt: "Reiziger op een groen pad in Bukit Lawang",
     tags: ["Bukit Lawang veiligheid", "solo travel", "vrouwelijke reizigers Sumatra"],
@@ -2020,6 +2216,34 @@ const translatedInformationBlogPosts: BlogPost[] = [
         title: "Jungle en rivier",
         paragraphs: [
           "De meest voorkomende risico's zijn hitte, vermoeidheid, insecten, gladde afdalingen en veranderende riviercondities. Goede schoenen en eerlijk overleg met je gids zijn belangrijk."
+        ]
+      },
+      {
+        title: "Alleen reizen als vrouw in Bukit Lawang: veelgestelde vragen",
+        paragraphs: [
+          "Directe antwoorden op de veiligheidsvragen die solo- en vrouwelijke reizigers ons het vaakst stellen vóór het boeken."
+        ],
+        faq: [
+          {
+            q: "Is Bukit Lawang veilig voor een vrouw die alleen reist?",
+            a: "Ja, voor de meeste reizigers die vooraf een betrouwbare gids boeken, bij daglicht aankomen en normale voorzichtigheid toepassen. Bukit Lawang is een klein, gevestigd jungledorp met veel soloreizigers. De praktische risico's zijn gladde paden, hitte, rivierstroming en laat vervoer, niet criminaliteit."
+          },
+          {
+            q: "Kan ik als soloreizigster een privétrek boeken?",
+            a: "Ja. Privétreks van 1 tot 3 dagen met een gecertificeerde lokale gids kunnen voor één persoon worden geregeld. Vraag vooraf wie je gids is, hoe het kamp is opgezet, hoeveel teamleden meegaan bij een overnachting en wat de prijs voor één reiziger is voordat je bevestigt."
+          },
+          {
+            q: "Deel ik het junglekamp met vreemden bij een overnachting?",
+            a: "Alleen als je bij een groep aansluit. Bij een privétrek is het rivierkamp uitsluitend voor jouw groep en kun je om een aparte slaapplek vragen. De kampen zijn eenvoudige schuilplaatsen met zeilen en matten, en het gidsenteam blijft de hele nacht ter plaatse."
+          },
+          {
+            q: "Hoe kom ik veilig van de luchthaven van Medan naar Bukit Lawang?",
+            a: "Een vooraf geregelde privéauto vanaf Kualanamu International Airport is de meest directe optie, ongeveer 3 tot 4 uur van deur tot deur, zonder overstappen of late aankomst. Deel de gegevens van de chauffeur met iemand thuis en plan om het dorp vóór het donker te bereiken."
+          },
+          {
+            q: "Wat moet ik inpakken voor mijn veiligheid tijdens de trek?",
+            a: "Dichte schoenen met grip, een hoofdlamp of zaklamp, een hervulbare waterfles, lichte lange kleding tegen insecten en zon, een kleine EHBO-set, een waterdichte zak voor telefoon en paspoort en voldoende contant geld, want geldautomaten in het dorp zijn beperkt."
+          }
         ]
       }
     ]

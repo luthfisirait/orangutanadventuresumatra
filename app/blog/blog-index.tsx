@@ -6,6 +6,7 @@ import { StaticFooter, StaticHeader } from "../site-chrome";
 import { absoluteUrl, siteName, siteUrl } from "../seo";
 import type { Locale } from "../site-content";
 import { blogPosts } from "../travel-content";
+import { blogCopy } from "./blog-post";
 import {
   blogIndexLanguageAlternates,
   blogIndexPath,
@@ -13,9 +14,11 @@ import {
   blogPostPath
 } from "./blog-routing";
 
+// Titles deliberately avoid "orangutan trekking" so the index stops outranking /treks and the
+// homepage for commercial queries; the guides themselves still carry the trekking keywords.
 const blogIndexCopy = {
   en: {
-    title: "Bukit Lawang Travel Blog | Orangutan Trekking",
+    title: "Bukit Lawang Travel Blog: Trip Planning Guides",
     description:
       "Bukit Lawang travel guides for orangutan trekking, transport, packing, safety, costs, best time to visit, and ethical jungle tours.",
     kicker: "Travel blog",
@@ -23,7 +26,7 @@ const blogIndexCopy = {
     read: "Read article"
   },
   de: {
-    title: "Bukit Lawang Reiseführer | Orang-Utan-Trekking",
+    title: "Bukit Lawang Reiseblog: Guides zur Reiseplanung",
     description:
       "Reiseführer für Bukit Lawang mit Orang-Utan-Trekking, Transport, Sicherheit, Kosten und ethischen Dschungeltouren.",
     kicker: "Reiseblog",
@@ -31,7 +34,7 @@ const blogIndexCopy = {
     read: "Artikel lesen"
   },
   fr: {
-    title: "Guide de voyage Bukit Lawang | Trek orang-outan",
+    title: "Blog voyage Bukit Lawang : guides de préparation",
     description:
       "Guides pratiques sur Bukit Lawang : trek orang-outan, transport, sécurité, prix et tourisme responsable dans la jungle.",
     kicker: "Guide de voyage",
@@ -39,7 +42,7 @@ const blogIndexCopy = {
     read: "Lire l'article"
   },
   nl: {
-    title: "Bukit Lawang Reisgids | Orang-oetan trekking",
+    title: "Bukit Lawang Reisblog: gidsen voor je reisplanning",
     description:
       "Praktische Bukit Lawang reisgidsen over orang-oetan trekking, vervoer, veiligheid, prijzen en verantwoord jungletoerisme.",
     kicker: "Reisgids",
@@ -47,7 +50,7 @@ const blogIndexCopy = {
     read: "Lees artikel"
   },
   zh: {
-    title: "武吉拉旺旅行攻略 | 红毛猩猩生态徒步指南",
+    title: "武吉拉旺旅行攻略博客：行前规划指南",
     description:
       "最实用的武吉拉旺旅行攻略：红毛猩猩徒步路线、交通指南、行李装备清单、安全须知、费用预算与最佳旅行季节。",
     kicker: "旅行攻略",
@@ -55,7 +58,7 @@ const blogIndexCopy = {
     read: "阅读全文"
   },
   id: {
-    title: "Blog Perjalanan Bukit Lawang | Trekking Orangutan Sumatra",
+    title: "Blog Perjalanan Bukit Lawang: Panduan Persiapan Liburan",
     description:
       "Panduan perjalanan Bukit Lawang lengkap untuk trekking orangutan, transportasi dari Medan, perlengkapan bawaan, keamanan, estimasi biaya, dan waktu terbaik berkunjung.",
     kicker: "Blog perjalanan",
@@ -109,6 +112,15 @@ export function BlogIndexView({ locale }: { locale: Locale }) {
     );
   const path = blogIndexPath(locale);
   const localizedHome = locale === "en" ? "/" : `/${locale}`;
+  const links = blogCopy[locale];
+  // Commercial pages linked with exact-match anchors from the index, so "orangutan trekking
+  // bukit lawang" style queries are routed to the homepage and /treks instead of this listing.
+  const planningLinks = [
+    { href: localizedHome, label: links.bukitLawang },
+    { href: locale === "en" ? "/treks" : `/${locale}/treks`, label: links.trekPackages },
+    { href: "/3-day-bukit-lawang-orangutan-trek", label: links.threeDay },
+    { href: locale === "en" ? "/booking" : `/${locale}/booking`, label: links.booking }
+  ];
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -182,6 +194,15 @@ export function BlogIndexView({ locale }: { locale: Locale }) {
       </section>
 
       <section className="resource-content">
+        <nav className="article-planning-links blog-index-links" aria-label={links.planTitle}>
+          <strong>{links.planTitle}</strong>
+          {planningLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              <span>{link.label}</span>
+              <ArrowRight size={15} />
+            </Link>
+          ))}
+        </nav>
         <div className="blog-grid">
           {posts.map((post) => (
             <article className="blog-card" key={post.slug}>

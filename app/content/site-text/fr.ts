@@ -7,7 +7,7 @@ export const fr = {
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Aventure éducative et éthique à Bukit Lawang",
-    title: "Aventure éducative avec les orangs-outans à Sumatra",
+    title: "Trek orang-outan à Bukit Lawang, Sumatra",
     description:
       "Découvrez la forêt de Bukit Lawang avec un guide local, des rencontres responsables avec la faune, des camps au bord de la rivière et un retour possible en tube rafting.",
     primary: "Découvrir les treks",
