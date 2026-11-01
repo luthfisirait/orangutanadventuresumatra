@@ -10,6 +10,7 @@
     "lint": "eslint . --cache --max-warnings=0"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "0.511.0",
     "next": "15.5.26",
     "nodemailer": "^10.0.12",
