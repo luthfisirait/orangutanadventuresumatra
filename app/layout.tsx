@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Narrow, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { CookieConsent } from "./components/cookie-consent";
 import "./globals.css";
 import { defaultLocale, metadataForLocale } from "./seo";
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         {children}
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
