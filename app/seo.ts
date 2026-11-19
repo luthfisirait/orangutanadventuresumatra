@@ -14,6 +14,9 @@ export const brandAlternateNames = [
   "Bukit Lawang Orangutan Trekking"
 ] as const;
 
+// Homepage topics (also used in its JSON-LD knowsAbout/keywords). "Sumatra orangutan tour(s)" is
+// deliberately absent: that query belongs to /sumatra-orangutan-tour. In GSC, Google swapped it
+// from the homepage (Jul, pos 4.8) to the landing page (Aug, pos 12) and both then slid past 30.
 export const coreSearchPhrases = [
   "orang utan",
   "orangutan",
@@ -28,8 +31,6 @@ export const coreSearchPhrases = [
   "orangutanadventuresumatra",
   "Sumatra",
   "Sumatra orangutan trekking",
-  "Sumatra orangutan tour",
-  "Sumatra orangutan tours",
   "Gunung Leuser National Park"
 ] as const;
 

@@ -86,7 +86,7 @@ const landingPages: Record<string, LandingPage> = {
       "Sumatra orangutan trekking packages"
     ],
     comparison: {
-      title: "Compare the main Sumatra orangutan trek options",
+      title: "Compare Sumatra orangutan tours by length and price",
       description:
         "Start with the time you have and the kind of forest experience you want. Prices are per person; routes and availability are confirmed before payment.",
       options: [
