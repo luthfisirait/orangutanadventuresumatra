@@ -69,7 +69,7 @@ export const de = {
     "p3d": { title: "3-Tage-Exklusivpaket Eco Jungle", highlights: ["Privater Guide-Fluss", "Transport- und Unterkunftsplanung", "Balance aus Dorf und Dschungel"] },
     "p4d": { title: "4-Tage-Exklusivpaket Eco Jungle", highlights: ["Privater Mehrtagesplan", "Unterkunftskoordination", "Flexibles Bukit-Lawang-Tempo"] },
     "p5d": { title: "5-Tage-Exklusivpaket Eco Jungle", highlights: ["Kompletter privater Aufenthalt", "Trekking, Rafting, Dorfzeit", "Ideal für den ersten Besuch"] },
-    "batcave": { title: "Bat Cave", highlights: ["Felsformationen und Höhlenräume", "Fledermäuse, Schwalben, Insekten und Frösche", "Optionales BBQ am Landak River"] },
+    "batcave": { title: "Fledermaushöhle", highlights: ["Felsformationen und Höhlenräume", "Fledermäuse, Schwalben, Insekten und Frösche", "Optionales BBQ am Landak River"] },
     "village": { title: "Dorftour", highlights: ["Mit Becak oder Fahrrad", "Reisfelder, Gärten, Tofu und brauner Zucker", "Optionaler Marktbesuch und lokales Mittagessen"] }
   },
   experience: [

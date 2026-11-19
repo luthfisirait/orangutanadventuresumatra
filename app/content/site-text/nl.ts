@@ -69,8 +69,8 @@ export const nl = {
     "p3d": { title: "Exclusief eco jungle-pakket van 3 dagen", highlights: ["Privégids", "Transport en accommodatie geregeld", "Balans tussen dorp en jungle"] },
     "p4d": { title: "Exclusief eco jungle-pakket van 4 dagen", highlights: ["Privé meerdaagse route", "Accommodatiecoördinatie", "Flexibel tempo in Bukit Lawang"] },
     "p5d": { title: "Exclusief eco jungle-pakket van 5 dagen", highlights: ["Compleet privéverblijf", "Trekking, rafting en dorpsmomenten", "Perfect voor een eerste bezoek"] },
-    "batcave": { title: "Bat Cave", highlights: ["Rotsformaties en grotkamers", "Vleermuizen, zwaluwen, insecten en kikkers", "Optionele BBQ aan de Landak River"] },
-    "village": { title: "Village Tour", highlights: ["Met becak of fiets", "Rijstvelden, tuinen, tofu en bruine suiker", "Marktbezoek op bepaalde dagen"] }
+    "batcave": { title: "Vleermuisgrot", highlights: ["Rotsformaties en grotkamers", "Vleermuizen, zwaluwen, insecten en kikkers", "Optionele BBQ aan de Landak River"] },
+    "village": { title: "Dorpstour", highlights: ["Met becak of fiets", "Rijstvelden, tuinen, tofu en bruine suiker", "Marktbezoek op bepaalde dagen"] }
   },
   experience: [
     { title: "Start in Bukit Lawang", text: "Ontmoet Syaipul, check je uitrusting en ga met een lokale gids het regenwoud in." },

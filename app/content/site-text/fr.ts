@@ -1,9 +1,9 @@
 import type { LocaleContent } from "../../site-content";
 
 export const fr = {
-  metaTitle: "Aventure Éducative & Trek Orang-Outan Sumatra | Bukit Lawang dès 55€",
+  metaTitle: "Trek Orang-Outan Sumatra à Bukit Lawang | Dès 55 €",
   metaDescription:
-    "Aventure éducative & éthique avec les orangs-outans à Sumatra (Bukit Lawang). Treks 1 à 5 jours, bivouac, rafting et guide local certifié dès 55€. Contact direct !",
+    "Aventure éducative et éthique avec les orangs-outans à Bukit Lawang (Sumatra) : treks de 4 h à 5 jours, bivouac, rafting, guide local certifié. Dès 55 €.",
   nav: { treks: "Treks", experience: "Expérience", guides: "Guide", faq: "FAQ", contact: "Contact" },
   hero: {
     eyebrow: "Aventure éducative et éthique à Bukit Lawang",
@@ -69,8 +69,8 @@ export const fr = {
     "p3d": { title: "Forfait exclusif eco jungle de 3 jours", highlights: ["Guide privé", "Transport et hébergement organisés", "Équilibre village et jungle"] },
     "p4d": { title: "Forfait exclusif eco jungle de 4 jours", highlights: ["Programme privé sur plusieurs jours", "Coordination de l’hébergement", "Rythme flexible à Bukit Lawang"] },
     "p5d": { title: "Forfait exclusif eco jungle de 5 jours", highlights: ["Séjour privé complet", "Trek, rafting, temps au village", "Parfait pour une première visite"] },
-    "batcave": { title: "Bat Cave", highlights: ["Formations rocheuses et salles de grotte", "Chauves-souris, hirondelles, insectes et grenouilles", "BBQ optionnel sur la rivière Landak"] },
-    "village": { title: "Village Tour", highlights: ["En becak ou à vélo", "Rizières, jardins, tofu et sucre brun", "Marchés locaux certains jours"] }
+    "batcave": { title: "Grotte aux chauves-souris", highlights: ["Formations rocheuses et salles de grotte", "Chauves-souris, hirondelles, insectes et grenouilles", "BBQ optionnel sur la rivière Landak"] },
+    "village": { title: "Visite du village", highlights: ["En becak ou à vélo", "Rizières, jardins, tofu et sucre brun", "Marchés locaux certains jours"] }
   },
   experience: [
     { title: "Départ à Bukit Lawang", text: "Rencontre Syaipul, vérifie ton équipement et entre dans la forêt avec un guide local." },

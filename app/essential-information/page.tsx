@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getLanguageAlternates, siteName, siteUrl } from "../seo";
+import { getProductLanguageAlternates, siteName, siteUrl } from "../seo";
 import { essentialInfoByLocale } from "../content/essential-information-i18n";
 import { EssentialInformationView } from "./essential-information-view";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: enInfo.description,
   alternates: {
     canonical: "/essential-information",
-    languages: getLanguageAlternates("/essential-information")
+    languages: getProductLanguageAlternates("/essential-information")
   },
   keywords: [
     "Bukit Lawang essential information",

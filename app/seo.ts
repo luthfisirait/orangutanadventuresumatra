@@ -136,6 +136,28 @@ export function getLanguageAlternates(subpath: string): Record<string, string> {
   ]);
 }
 
+// zh and id product pages (treks, booking, essential information) sat in GSC as "Discovered -
+// currently not indexed" with no search traffic. Their homepages and blogs stay indexed; the
+// product pages stay reachable for visitors but are noindex and left out of hreflang and the
+// sitemap, so crawl attention goes to the en/de/fr/nl versions until zh/id get deeper content.
+export const productPageLocales: readonly Locale[] = ["en", "de", "fr", "nl"];
+
+export function hasIndexedProductPages(locale: Locale) {
+  return productPageLocales.includes(locale);
+}
+
+export function getProductLanguageAlternates(subpath: string): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(getLanguageAlternates(subpath)).filter(
+      ([language]) => language === "x-default" || productPageLocales.includes(language as Locale)
+    )
+  );
+}
+
+export function productPageRobots(locale: Locale): NonNullable<Metadata["robots"]> {
+  return hasIndexedProductPages(locale) ? { index: true, follow: true } : { index: false, follow: true };
+}
+
 export function absoluteUrl(path = "") {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }

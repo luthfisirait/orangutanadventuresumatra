@@ -1,6 +1,12 @@
 import type { MetadataRoute } from "next";
 import { locales } from "./site-content";
-import { defaultLocale, getLanguageAlternates, languageAlternates, siteUrl } from "./seo";
+import {
+  defaultLocale,
+  getProductLanguageAlternates,
+  languageAlternates,
+  productPageLocales,
+  siteUrl
+} from "./seo";
 import { blogPosts } from "./travel-content";
 import { trekDetailList } from "./trek-details";
 import { landingPages } from "./seo-landing-pages";
@@ -79,9 +85,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: blogIndexLanguageAlternates
       }
     })),
-    // Localized core pages: /booking, /treks, /essential-information
+    // Localized core pages: /booking, /treks, /essential-information (indexed product locales only)
     ...(["/booking", "/treks", "/essential-information"] as const).flatMap((subpath) =>
-      locales.map((locale) => {
+      productPageLocales.map((locale) => {
         const url = locale === defaultLocale ? `${siteUrl}${subpath}` : `${siteUrl}/${locale}${subpath}`;
         const priority = subpath === "/booking" ? 0.88 : subpath === "/treks" ? 0.84 : 0.82;
         return {
@@ -90,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "weekly" as const,
           priority: locale === defaultLocale ? priority : Math.round((priority - 0.05) * 100) / 100,
           alternates: {
-            languages: getLanguageAlternates(subpath)
+            languages: getProductLanguageAlternates(subpath)
           }
         };
       })
@@ -120,9 +126,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           }
         : {})
     })),
-    // Localized trek detail pages for all 11 treks
+    // Localized trek detail pages for all 11 treks (indexed product locales only)
     ...trekDetailList.flatMap((page) =>
-      locales.map((locale) => {
+      productPageLocales.map((locale) => {
         const url =
           locale === defaultLocale
             ? `${siteUrl}/treks/${page.slug}`
@@ -133,7 +139,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "monthly" as const,
           priority: locale === defaultLocale ? 0.78 : 0.72,
           alternates: {
-            languages: getLanguageAlternates(`/treks/${page.slug}`)
+            languages: getProductLanguageAlternates(`/treks/${page.slug}`)
           }
         };
       })

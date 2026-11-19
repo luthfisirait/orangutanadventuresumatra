@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getLanguageAlternates, siteName, siteUrl } from "../seo";
+import { getProductLanguageAlternates, siteName, siteUrl } from "../seo";
 import { trekLabels } from "../content/trek-details-i18n";
 import { TreksPageView } from "./treks-view";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: labels.pageDescription,
   alternates: {
     canonical: "/treks",
-    languages: getLanguageAlternates("/treks")
+    languages: getProductLanguageAlternates("/treks")
   },
   keywords: [
     "Bukit Lawang trek details",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "../../../site-content";
-import { getLanguageAlternates, isLocale, siteName, siteUrl } from "../../../seo";
+import { getProductLanguageAlternates, isLocale, productPageRobots, siteName, siteUrl } from "../../../seo";
 import { getTrekDetailBySlug, trekDetailList } from "../../../trek-details";
 import { TrekDetailView } from "../../../treks/trek-detail-view";
 
@@ -32,8 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: page.metaDescription,
     alternates: {
       canonical: `/${locale}/treks/${page.slug}`,
-      languages: getLanguageAlternates(`/treks/${page.slug}`)
+      languages: getProductLanguageAlternates(`/treks/${page.slug}`)
     },
+    robots: productPageRobots(locale),
     openGraph: {
       title: page.metaTitle,
       description: page.metaDescription,

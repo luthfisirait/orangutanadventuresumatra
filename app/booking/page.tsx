@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getGoogleReviewsData } from "../google-reviews";
-import { getLanguageAlternates, siteName, siteUrl } from "../seo";
+import { getProductLanguageAlternates, siteName, siteUrl } from "../seo";
 import { getBookingPageContent } from "./booking-data";
 import { BookingPageView } from "./booking-view";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: enContent.pageDescription,
   alternates: {
     canonical: "/booking",
-    languages: getLanguageAlternates("/booking")
+    languages: getProductLanguageAlternates("/booking")
   },
   keywords: [
     "Bukit Lawang booking form",

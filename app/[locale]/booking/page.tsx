@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getGoogleReviewsData } from "../../google-reviews";
 import { locales, type Locale } from "../../site-content";
-import { getLanguageAlternates, isLocale, siteName, siteUrl } from "../../seo";
+import { getProductLanguageAlternates, isLocale, productPageRobots, siteName, siteUrl } from "../../seo";
 import { getBookingPageContent } from "../../booking/booking-data";
 import { BookingPageView } from "../../booking/booking-view";
 
@@ -29,12 +29,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: content.pageDescription,
     alternates: {
       canonical: `/${locale}/booking`,
-      languages: getLanguageAlternates("/booking")
+      languages: getProductLanguageAlternates("/booking")
     },
-    robots: {
-      index: true,
-      follow: true
-    },
+    robots: productPageRobots(locale),
     openGraph: {
       title: content.pageTitle,
       description: content.pageDescription,

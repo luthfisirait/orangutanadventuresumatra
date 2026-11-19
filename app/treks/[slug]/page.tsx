@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getLanguageAlternates, siteName, siteUrl } from "../../seo";
+import { getProductLanguageAlternates, siteName, siteUrl } from "../../seo";
 import { getTrekDetailBySlug, trekDetailList } from "../../trek-details";
 import { TrekDetailView } from "../trek-detail-view";
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: TrekPageProps): Promise<Metad
     description: page.metaDescription,
     alternates: {
       canonical: `/treks/${page.slug}`,
-      languages: getLanguageAlternates(`/treks/${page.slug}`)
+      languages: getProductLanguageAlternates(`/treks/${page.slug}`)
     },
     openGraph: {
       title: page.metaTitle,

@@ -4370,7 +4370,7 @@ export const blogPosts: BlogPost[] = [
         title: "Does the season change your chance of seeing orangutans?",
         paragraphs: [
           "Not in the way most travelers expect. Orangutans in Gunung Leuser move toward fruiting trees, and fruiting is patchy across the year rather than tied to one tourist season. Guides read fresh nests and feeding signs on the day, which matters far more than the month you booked.",
-          "Trek length has a bigger effect than season. A 2-day or 3-day trek covers more forest and more hours in habitat than a 4-hour walk, so it simply gives more chances. No ethical operator can guarantee a sighting in any month."
+          "Trek length has a bigger effect than season. A [2-day](/treks/2-day-jungle-trek) or [3-day trek](/treks/3-day-jungle-trek) covers more forest and more hours in habitat than a 4-hour walk, so it simply gives more chances. No ethical operator can guarantee a sighting in any month."
         ],
         bullets: [
           "Longer trek, more forest hours, more chances.",
@@ -4396,9 +4396,9 @@ export const blogPosts: BlogPost[] = [
       {
         title: "How long should you stay?",
         bullets: [
-          "One full day in Bukit Lawang is enough for a short trek only.",
-          "Three nights in the area gives space for a 2-day trek plus recovery.",
-          "Four or five nights works better for a 3-day trek, village time, and a less rushed transfer."
+          "One full day in Bukit Lawang is enough for a short trek only, such as the [4-hour jungle trek](/treks/4-hour-jungle-trek) or [1-day jungle trek](/treks/1-day-jungle-trek).",
+          "Three nights in the area gives space for a [2-day jungle trek](/treks/2-day-jungle-trek) plus recovery.",
+          "Four or five nights works better for a [3-day Bukit Lawang trek](/3-day-bukit-lawang-orangutan-trek), village time, and a less rushed transfer."
         ]
       },
       {

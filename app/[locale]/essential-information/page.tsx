@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "../../site-content";
-import { getLanguageAlternates, isLocale, siteName, siteUrl } from "../../seo";
+import { getProductLanguageAlternates, isLocale, productPageRobots, siteName, siteUrl } from "../../seo";
 import { essentialInfoByLocale } from "../../content/essential-information-i18n";
 import { EssentialInformationView } from "../../essential-information/essential-information-view";
 
@@ -26,8 +26,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: info.description,
     alternates: {
       canonical: `/${locale}/essential-information`,
-      languages: getLanguageAlternates("/essential-information")
+      languages: getProductLanguageAlternates("/essential-information")
     },
+    robots: productPageRobots(locale),
     openGraph: {
       title: `${info.title} | ${siteName}`,
       description: info.description,
